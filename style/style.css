@@ -1,0 +1,102 @@
+body {
+  padding: 15px 30px 0px !important;
+}
+.katex .mord.text .mord{
+  word-wrap: normal !important;
+}
+.problem, .check_answers, .reward {
+  max-width: 620px;
+  margin-bottom: 30px;
+}
+
+.question-number {
+  margin-bottom: 12px;
+}
+
+.question img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.answers {
+  margin-top: 12px;
+  width: 160px;
+}
+.white_canvas {
+ margin-bottom: 12px;
+}
+.answers > .buttons {
+  width: 100%;
+}
+.choice {
+  text-align: left !important;
+}
+.button > i {
+  height: 100%;
+}
+.hint {
+  margin-bottom: 10px;
+}
+.intro, .final_score {
+  margin-top: 0 !important;
+}
+.final_score {
+  display: none;
+}
+.reward img {
+  width: 100%
+}
+.index .hint {
+  display: none;
+}
+
+/* EDITOR */
+.editor {
+  padding-bottom: 15px;
+  width: 100%;
+  height: calc(100% - 120px);
+
+}
+.editor .input, .output {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  height: 100%;
+}
+.output {
+  padding-left: 15px;
+  overflow-y: scroll;
+  background-repeat: repeat;
+}
+textarea {
+  width: 100%;
+  height: 100%;
+  font-size: 14px !important;
+  font-family: monospace !important;
+}
+.editor .add_hint {
+  display: none !important;
+}
+
+/* HOME */
+.intro {
+  font-size: 16px;
+  font-weight: bold;
+}
+.home .ui.button {
+  margin-bottom: 6px;
+  min-width: 150px;
+  padding: 7px !important;
+}
+.home .ui.button.huge {
+  margin-bottom: 10px;
+}
+.ui.progress {
+  margin: 0.5em 0 0 !important;
+}
+.ui.progress .bar {
+  height: 1em !important;
+}
+.bar .progress {
+  font-size: 0.7em !important;
+}
