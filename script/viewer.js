@@ -1,66 +1,146 @@
-selected = {}
+var query = window.location.search.substring(1);
+var qs = parseQueryString(query);
+lesson = qs["lesson"] || 1;
+lesson_url = "lessons/" + lesson + "/";
+var exercises_loaded = false;
+var config_loaded = false;
+var current_slide = 1;
+var exercise_data, config_data, slide_count, current_exercise;
+var responses = {}
+var code_mirrors = {}
 
-$.get("data/1.yaml", function(data) {
-  questions = parseYAML(data)
-  var question_numbers = getRandomSample(Object.keys(questions).length-1, NUM_QUESTIONS)
-  var html =
-    `<h1 class='intro'>${NUM_QUESTIONS} Question Quiz</h1>
-     <h1 class='final_score'>Final Score: <span class='score'></span> <small>/ ${NUM_QUESTIONS}</small></h1>`
-  for (var i = 0; i < question_numbers.length; i++) {
-    question_number = question_numbers[i]+1
-    answer = questions[question_number]
-    html += `
-      <div class='problem' num="${i+1}">
-        ${renderToString(i, answer)}
-      </div>
-    `
+$.get(lesson_url + "exercises.yaml", function(data) {
+  exercise_data = parseFormattedYAML(data);
+  exercises_loaded = true;
+
+  var nav_html = "";
+  for (section in exercise_data) {
+    nav_html += `<button class="ui button exercise_link" exercise=${section}>Slide ${section}</button>`;
   }
-  html += `
-    <div class="check_answers"><button class="ui button huge fluid blue">Check answers!</div></div>
-  `
-  $("body").append(html);
+  $("#exercises_nav").append(nav_html);
+  var problems_html = "";
+  for (section in exercise_data) {
+    problems_html += `<div class="exercise_set" exercise=${section}>`;
+    let exercises = exercise_data[section]["questions"];
+    let i = 0;
+    exercises.forEach((exercise) => {
+      let repeat = exercise.repeat || 1;
+      for (var j = 0; j < repeat; j++) {
+        problems_html += `
+          <div class='problem' num="${i+1}">
+            ${renderToString(i, exercise)}
+          </div>
+        `
+        i += 1;
+      }
+    })
+    problems_html += `</div>`;
+  }
+  $("#problem_sets").html(problems_html);
+  $(".codebox").each(function (i, element) {
+    let cm = CodeMirror.fromTextArea(element, {
+        mode: $(element).attr("code_lang"),
+        lineNumbers: true
+    });
+    let this_problem = getProblemOfElement(this);
+    if (!code_mirrors[this_problem.exercise]) {
+      code_mirrors[this_problem.exercise] = {}
+    }
+    code_mirrors[this_problem.exercise][this_problem.problem] = cm;
+    setTimeout(() => void cm.refresh(), 0)
+  })
 })
 
-$("body").on("click", ".answers button", function (evt) {
-  $(evt.target).parent().find("button").removeClass("blue").removeClass("selected")
-  $(evt.target).addClass("blue").addClass("selected")
-  var problem = $(evt.target).parent().parent().parent().parent().parent().attr('num')
-  selected[problem] = true
+$.get(lesson_url + "config.yaml", function(data) {
+  config_data = YAML.parse(data);
+  slide_count = config_data.slide_count;
+  $("#slide_count").text(slide_count);
+  var slide_html = ""
+  for (var i = 0; i < config_data.slide_count; i++) {
+    slide_html += `<img class="slide" slide=${i+1} src="${lesson_url}slides/Slide${i+1}.jpg" />`
+    responses[i+1] = {};
+  }
+  $("#slides").html(slide_html);
+  resetSlide(/*set_text=*/false);
 })
 
-$("body").on("click", ".add_hint", function (evt) {
-  var hints = $(evt.target).parent().find(".hint")
-  var opened = false
-  var hints_complete = true
-  for (var i = 0; i < hints.length; i++) {
-    if (opened) {
-      hints_complete = false
-    }
-    var hint = hints[i];
-    if ($(hint).is(":hidden") && opened == false) {
-      $(hint).show();
-      opened = true;
+$("body").on('click', '.exercise_link', function() {
+  $(".exercise_set").hide();
+  $(".exercise_link").removeClass("active_exercise").removeClass("blue");
+  if (!$(this).hasClass("complete_exercise")) {
+    $(this).addClass("active_exercise").removeClass("yellow").addClass("blue");
+  }
+  current_exercise = $(this).attr("exercise");
+  $(`.exercise_set[exercise=${current_exercise}]`).show();
+  $('html, body').animate({
+      scrollTop: ($('#exercises_nav').offset().top)
+  }, 500);
+})
+
+$("body").on('click', '.answers.multiple_choice button', function() {
+  let question_num = $(this).closest(".problem").attr("num");
+  if (!responses[current_exercise][question_num]) {
+    $(this).parent().find("button").removeClass("green").removeClass("red")
+    if ($(this).hasClass("correct")) {
+      $(this).addClass("green")
+      responses[current_exercise][question_num] = true;
+      // if (Object.keys(responses[current_exercise]).length ==
+      //     exercise_data[current_exercise]["questions"].length) {
+      //   $(`.exercise_link[exercise=${current_exercise}]`).removeClass("blue")
+      //     .removeClass("yellow").addClass("complete_exercise").addClass("green");
+      // }
+    } else {
+      $(this).addClass("red")
     }
   }
+})
 
-  if (hints_complete) {
-    $(evt.target).hide()
-  } else {
-    $(evt.target).text("Another Hint?")
+$("body").on('click', '.run_code', function() {
+  let output = $(this).closest(".problem").find(".output_box");
+  output.show();
+  output.html(`<iframe></iframe>`)
+  let this_problem = getProblemOfElement(this);
+  let cm = code_mirrors[this_problem.exercise][this_problem.problem];
+  let code = cm.getValue();
+  $iframe = output.find("iframe");
+  $iframe.ready(function() {
+    $iframe.contents().find("html").html(code);
+  });
+})
+
+function resetSlide(resetText) {
+  $(".slide").hide();
+  $(`.slide[slide=${current_slide}]`).show();
+  if (resetText) {
+    $("#current_slide").val(current_slide);
   }
-});
+  $(".exercise_link").removeClass("available_exercise").removeClass("yellow");
+  let target_exercise_link = $(`.exercise_link[exercise=${current_slide}]`);
+  target_exercise_link.addClass("available_exercise");
+  if (!target_exercise_link.hasClass("active_exercise") &&
+      !target_exercise_link.hasClass("complete_exercise")) {
+    target_exercise_link.addClass("yellow");
+  }
+}
 
-$("body").on("click", ".check_answers", function (evt) {
-  $(".check_answers").hide()
-  $(".add_hint").hide()
-  $(".hint").show()
-  $(".intro").hide()
-  $(".final_score").show()
-  $(".selected").removeClass("blue")
-  $(".selected:not(.correct)").addClass("red")
-  $(".selected.correct").addClass("green")
-  $(".choice").addClass("disabled")
-  $(".score").text($(".selected.correct").length)
-  window.scrollTo(0,document.body.scrollHeight)
-  $("html, body").animate({ scrollTop: 0 }, "slow")
+$("#left").click(function () {
+  if (current_slide != 1) {
+    current_slide -= 1;
+  }
+  resetSlide(/*set_text=*/true);
+})
+
+$("#right").click(function () {
+  if (current_slide != slide_count) {
+    current_slide += 1;
+  }
+  resetSlide(/*set_text=*/true);
+})
+
+$('#current_slide').on('input', function() {
+  let slide_num = parseInt($(this).val());
+  if (slide_num && slide_num >= 1 && slide_num <= slide_count) {
+    current_slide = slide_num;
+    resetSlide(/*set_text=*/false);
+  }
 });

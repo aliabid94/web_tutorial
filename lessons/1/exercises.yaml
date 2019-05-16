@@ -1,0 +1,170 @@
+3:
+  questions:
+    - question: "If I wanted to add text to my website, what language would I use?"
+      type: multiple_choice
+      choices:
+        - "HTML"
+        - "CSS"
+        - "JavaScript"
+    - question: "If I wanted to make that text blue, what language would I use?"
+      type: multiple_choice
+      choices:
+        - "CSS"
+        - "HTML"
+        - "JavaScript"
+    - question: "If I wanted to add an image of a cat to my website, what language would I use?"
+      type: multiple_choice
+      choices:
+        - "HTML"
+        - "CSS"
+        - "JavaScript"
+    - question: "If I wanted to make it so that if you clicked on the cat image on my website, it turned into a dog, what language would I use?"
+      type: multiple_choice
+      choices:
+        - "JavaScript"
+        - "HTML"
+        - "CSS"
+    - question: "If I wanted to add a button with the words 'Let's Learn!' to my website, what language would I use?"
+      type: multiple_choice
+      choices:
+        - "HTML"
+        - "CSS"
+        - "JavaScript"
+    - question: "If I wanted to make that button big and red, what language would I use?"
+      type: multiple_choice
+      choices:
+        - "CSS"
+        - "HTML"
+        - "JavaScript"
+    - question: "If I wanted to make it so that if you clicked the button, it would find a random fact from wikipedia and paste it into my website, what language would I use?"
+      type: multiple_choice
+      choices:
+        - "JavaScript"
+        - "CSS"
+        - "HTML"
+
+5:
+  questions:
+    - question: "Type the following element into the editor below: <code><<h1>>HTML is fun!<</h1>></code>"
+      type: code
+      code_language: html
+      answer: "<<h1>>HTML is fun!<</h1>>"
+    - question: "What is type of the element: <code><<h1>>HTML is fun!<</h1>></code>"
+      type: multiple_choice
+      choices:
+        - "h1"
+        - "HTML is fun!"
+        - "div"
+        - "HTML is hard!"
+    - question: "What is content of the element: <code><<h1>>HTML is fun!<</h1>></code>"
+      type: multiple_choice
+      choices:
+        - "HTML is fun!"
+        - "h1"
+        - "div"
+        - "HTML is hard!"
+    - question: "What is the open tag of the following element: <code><<h1>>HTML is fun!<</h1>></code>"
+      type: multiple_choice
+      choices:
+        - "<<h1>>"
+        - "HTML is fun!"
+        - "<</h1>>"
+      choices_are_code: true
+    - question: "What is the close tag of the following element: <code><<h1>>HTML is fun!<</h1>></code>"
+      type: multiple_choice
+      choices:
+        - "<</h1>>"
+        - "HTML is fun!"
+        - "<<h1>>"
+      choices_are_code: true
+    - question: "Type an <strong>h1</strong> element with your name as the content."
+      type: code
+      code_language: html
+
+6:
+  questions:
+    - question: "Type the following element into the editor below: <code>${code}</code>"
+      type: code
+      code_language: html
+      variables:
+        - name: code
+          values:
+            - "<<span>>I love coding<</span>>"
+            - "<<button>>Click me!<</button>>"
+            - "<<h1>>Lets Learn HTML!<</h1>>"
+            - "<<h3>>I like coding<</h3>>"
+      answer: "${code}"
+      repeat: 3
+    - question: "What is type of the following element?
+        <code><<${tag}>>${content}<</${tag}>></code>
+        "
+      type: multiple_choice
+      variables:
+        - name: tag
+          values: ["a", "h1", "button", "p", "span"]
+        - name: content
+          values: ["apple", "banana", "cat", "dog"]
+      choices:
+        - "${tag}"
+        - "${non_selected('tag')}"
+        - "${content}"
+        - "${non_selected('content')}"
+      repeat: 3
+    - question: "What is content of the following element?
+        <code><<${tag}>>${content}<</${tag}>></code>
+        "
+      type: multiple_choice
+      variables:
+        - name: tag
+          values: ["a", "h1", "button", "p", "span"]
+        - name: content
+          values: ["apple", "banana", "cat", "dog"]
+      choices:
+        - "${content}"
+        - "${non_selected('content')}"
+        - "${tag}"
+        - "${non_selected('tag')}"
+      choices_are_code: true
+      repeat: 3
+    - question: "What is open tag of the following element?
+        <code><<${tag}>>${content}<</${tag}>></code>
+        "
+      type: multiple_choice
+      variables:
+        - name: tag
+          values: ["a", "h1", "button", "p", "span"]
+        - name: content
+          values: ["apple", "banana", "cat", "dog"]
+      choices:
+        - "<<${tag}>>"
+        - "${tag}"
+        - "${content}"
+        - "<</${tag}>>"
+      choices_are_code: true
+      repeat: 2
+    - question: "What is close tag of the following element?
+        <code><<${tag}>>${content}<</${tag}>></code>
+        "
+      type: multiple_choice
+      variables:
+        - name: tag
+          values: ["a", "h1", "button", "p", "span"]
+        - name: content
+          values: ["apple", "banana", "cat", "dog"]
+      choices:
+        - "<</${tag}>>"
+        - "<<${tag}>>"
+        - "${tag}"
+        - "${content}"
+      choices_are_code: true
+      repeat: 2
+    - question: "Create an element with type <strong>${tag}</strong> and content <strong>${content}</strong>"
+      type: code
+      code_language: html
+      variables:
+        - name: tag
+          values: ["a", "h1", "button", "p", "span"]
+        - name: content
+          values: ["apple", "banana", "cat", "dog"]
+      answer: "<<${tag}>>${content}<</${tag}>>"
+      repeat: 3

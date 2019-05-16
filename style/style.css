@@ -1,25 +1,46 @@
 body {
   padding: 15px 30px 0px !important;
+  overflow-y: scroll;
 }
-.katex .mord.text .mord{
-  word-wrap: normal !important;
+#exercises_nav {
+  padding-top: 15px;
+  margin-bottom: 20px;
 }
-.problem, .check_answers, .reward {
-  max-width: 620px;
-  margin-bottom: 30px;
+.exercise_link {
+  margin-right: 15px !important;
 }
-
+.problem {
+  margin-bottom: 20px;
+  display: flex;
+}
+.problem_box, .output_box {
+  width: 500px;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+.output_box {
+  margin-left: 20px !important;
+  display: none;
+}
+.output_box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.exercise_set {
+  display: none;
+}
 .question-number {
   margin-bottom: 12px;
 }
-
 .question img {
     max-width: 100%;
     max-height: 100%;
 }
-
 .answers {
   margin-top: 12px;
+}
+.answers.multiple_choice {
   width: 160px;
 }
 .white_canvas {
@@ -31,25 +52,55 @@ body {
 .choice {
   text-align: left !important;
 }
-.button > i {
-  height: 100%;
+#slides {
+  justify-content: center;
+  display: flex;
+  height: calc(100vh - 135px);
+  min-height: 300px;
 }
-.hint {
-  margin-bottom: 10px;
-}
-.intro, .final_score {
-  margin-top: 0 !important;
-}
-.final_score {
+.slide {
   display: none;
+  max-height: 100%;
 }
-.reward img {
-  width: 100%
+#slide_control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
-.index .hint {
-  display: none;
+#slide_control button {
+  margin: 0px 6px !important;
 }
-
+#slide_control input {
+  text-align: center;
+  width: 60px;
+  margin-right: 6px !important;
+}
+#exercises {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 12px;
+}
+/* PROBLEMS */
+.problem code {
+  display: block;
+  background: #EEE;
+  padding: 4px;
+  margin: 4px 0;
+  border: solid 1px #BBB;
+  border-radius: 2px;
+}
+.problem textarea {
+  width: 100%;
+}
+.run_code {
+  margin-top: 10px !important;
+}
+/* CODE MIRROR */
+.CodeMirror {
+  cursor: text;
+}
 /* EDITOR */
 .editor {
   padding-bottom: 15px;
@@ -76,27 +127,4 @@ textarea {
 }
 .editor .add_hint {
   display: none !important;
-}
-
-/* HOME */
-.intro {
-  font-size: 16px;
-  font-weight: bold;
-}
-.home .ui.button {
-  margin-bottom: 6px;
-  min-width: 150px;
-  padding: 7px !important;
-}
-.home .ui.button.huge {
-  margin-bottom: 10px;
-}
-.ui.progress {
-  margin: 0.5em 0 0 !important;
-}
-.ui.progress .bar {
-  height: 1em !important;
-}
-.bar .progress {
-  font-size: 0.7em !important;
 }
