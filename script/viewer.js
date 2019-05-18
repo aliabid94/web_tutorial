@@ -1,7 +1,8 @@
 var query = window.location.search.substring(1);
 var qs = parseQueryString(query);
+course = qs["course"] || "basic_html";
 lesson = qs["lesson"] || 1;
-lesson_url = "lessons/" + lesson + "/";
+lesson_url = `lessons/${course}/${lesson}/`;
 var exercises_loaded = false;
 var config_loaded = false;
 var current_slide = 1;
@@ -25,14 +26,8 @@ $.get(lesson_url + "exercises.yaml", function(data) {
     let i = 0;
     exercises.forEach((exercise) => {
       let repeat = exercise.repeat || 1;
-      for (var j = 0; j < repeat; j++) {
-        problems_html += `
-          <div class='problem' num="${i+1}">
-            ${renderToString(i, exercise)}
-          </div>
-        `
-        i += 1;
-      }
+      problems_html += renderRepeat(i, exercise, repeat);
+      i += repeat;
     })
     problems_html += `</div>`;
   }

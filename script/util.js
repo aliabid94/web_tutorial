@@ -27,7 +27,18 @@ function getRandomSample(range, size) {
 }
 
 function parseFormattedYAML(str) {
-  let reformatted_str = str.replace(/<</g,'&lt;').replace(/>>/g,'&gt;').replace(/<<\\/g, '&lt;\\\\')
+  let replacements = [
+    [/<</g, '&lt;'],
+    [/>>/g, '&gt;'],
+    [/<<\\/g, '&lt;\\\\'],
+    [/\$\{\{~/g, "${false_variables['"],
+    [/\$\{\{/g, "${variables['"],
+    [/\}\}/g, "']}"],
+  ]
+  let reformatted_str = str;
+  replacements.forEach((replacement) => {
+    reformatted_str = reformatted_str.replace(replacement[0], replacement[1]);
+  })
   return YAML.parse(reformatted_str)
 }
 
@@ -58,4 +69,75 @@ function getProblemOfElement(obj) {
     "exercise" : $(obj).closest(".exercise_set").attr("exercise"),
     "problem" : $(obj).closest(".problem").attr("num")
   }
+}
+
+var isEqual = function (value, other) {
+
+	// Get the value type
+	var type = Object.prototype.toString.call(value);
+
+	// If the two objects are not the same type, return false
+	if (type !== Object.prototype.toString.call(other)) return false;
+
+	// If items are not an object or array, return false
+	if (['[object Array]', '[object Object]'].indexOf(type) < 0) return false;
+
+	// Compare the length of the length of the two items
+	var valueLen = type === '[object Array]' ? value.length : Object.keys(value).length;
+	var otherLen = type === '[object Array]' ? other.length : Object.keys(other).length;
+	if (valueLen !== otherLen) return false;
+
+	// Compare two items
+	var compare = function (item1, item2) {
+
+		// Get the object type
+		var itemType = Object.prototype.toString.call(item1);
+
+		// If an object or array, compare recursively
+		if (['[object Array]', '[object Object]'].indexOf(itemType) >= 0) {
+			if (!isEqual(item1, item2)) return false;
+		}
+
+		// Otherwise, do a simple comparison
+		else {
+
+			// If the two items are not the same type, return false
+			if (itemType !== Object.prototype.toString.call(item2)) return false;
+
+			// Else if it's a function, convert to a string and compare
+			// Otherwise, just compare
+			if (itemType === '[object Function]') {
+				if (item1.toString() !== item2.toString()) return false;
+			} else {
+				if (item1 !== item2) return false;
+			}
+
+		}
+	};
+
+	// Compare properties
+	if (type === '[object Array]') {
+		for (var i = 0; i < valueLen; i++) {
+			if (compare(value[i], other[i]) === false) return false;
+		}
+	} else {
+		for (var key in value) {
+			if (value.hasOwnProperty(key)) {
+				if (compare(value[key], other[key]) === false) return false;
+			}
+		}
+	}
+
+	// If nothing failed, return true
+	return true;
+
+};
+
+function hasMatch(list, obj) {
+  list.forEach((obj2) => {
+    if (isEqual(obj, obj2)) {
+      return true;
+    }
+  })
+  return false;
 }

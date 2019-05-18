@@ -1,13 +1,32 @@
-function renderToString(i, question) {
-  if ("variables" in question) {
-    for(variable_expression of question["variables"]) {
-      if ("values" in variable_expression) {
-        let final_value = pickRandom(variable_expression["values"]);
-        let expr_string = "var " + variable_expression["name"] + " = `" + final_value + "`";
-        eval(expr_string)
-      }
+function renderRepeat(i, question, repeat) {
+  let html = '';
+  used_variable_sets = [];
+  for (let r = 0; r < repeat; r++) {
+    let variable_set = {};
+    let false_variable_set = {};
+    if ("variables" in question) {
+      do {
+        for(variable_expression of question["variables"]) {
+          let true_variable = pickRandom(variable_expression["values"]);
+          let false_variable;
+          do {
+            false_variable = pickRandom(variable_expression["values"]);
+          } while (true_variable == false_variable)
+          variable_set[variable_expression["name"]] = true_variable;
+          false_variable_set[variable_expression["name"]] = false_variable;
+        }
+      } while (hasMatch(used_variable_sets, variable_set))
+      used_variable_sets.push(variable_set);
     }
+    html += `
+      <div class='problem' num="${i+1}">
+        ${renderToString(i, question, variable_set, false_variable_set)}
+      </div>`;
   }
+  return html;
+}
+
+function renderToString(i, question, variables, false_variables) {
   question = JSON.parse(eval(("`" + JSON.stringify(question) + "`").replace(/\\n/g,'')))
   let choices = question.choices || []
   let answers, answers_input;

@@ -18,7 +18,7 @@
         - "HTML"
         - "CSS"
         - "JavaScript"
-    - question: "If I wanted to make it so that if you clicked on the cat image on my website, it turned into a dog, what language would I use?"
+    - question: "If I wanted to make it so that if you clicked on the cat image on my website, it changed into a dog image, what language would I use?"
       type: multiple_choice
       choices:
         - "JavaScript"
@@ -83,7 +83,7 @@
 
 6:
   questions:
-    - question: "Type the following element into the editor below: <code>${code}</code>"
+    - question: "Type the following element into the editor below: <code>${{code}}</code>"
       type: code
       code_language: html
       variables:
@@ -93,10 +93,10 @@
             - "<<button>>Click me!<</button>>"
             - "<<h1>>Lets Learn HTML!<</h1>>"
             - "<<h3>>I like coding<</h3>>"
-      answer: "${code}"
+      answer: "${{code}}"
       repeat: 3
     - question: "What is type of the following element?
-        <code><<${tag}>>${content}<</${tag}>></code>
+        <code><<${{tag}}>>${{content}}<</${{tag}}>></code>
         "
       type: multiple_choice
       variables:
@@ -105,13 +105,13 @@
         - name: content
           values: ["apple", "banana", "cat", "dog"]
       choices:
-        - "${tag}"
-        - "${non_selected('tag')}"
-        - "${content}"
-        - "${non_selected('content')}"
+        - "${{tag}}"
+        - "${{~tag}}"
+        - "${{content}}"
+        - "${{~content}}"
       repeat: 3
     - question: "What is content of the following element?
-        <code><<${tag}>>${content}<</${tag}>></code>
+        <code><<${{tag}}>>${{content}}<</${{tag}}>></code>
         "
       type: multiple_choice
       variables:
@@ -120,14 +120,14 @@
         - name: content
           values: ["apple", "banana", "cat", "dog"]
       choices:
-        - "${content}"
-        - "${non_selected('content')}"
-        - "${tag}"
-        - "${non_selected('tag')}"
+        - "${{content}}"
+        - "${{~content}}"
+        - "${{tag}}"
+        - "${{~tag}}"
       choices_are_code: true
       repeat: 3
     - question: "What is open tag of the following element?
-        <code><<${tag}>>${content}<</${tag}>></code>
+        <code><<${{tag}}>>${{content}}<</${{tag}}>></code>
         "
       type: multiple_choice
       variables:
@@ -136,14 +136,14 @@
         - name: content
           values: ["apple", "banana", "cat", "dog"]
       choices:
-        - "<<${tag}>>"
-        - "${tag}"
-        - "${content}"
-        - "<</${tag}>>"
+        - "<<${{tag}}>>"
+        - "${{tag}}"
+        - "${{content}}"
+        - "<</${{tag}}>>"
       choices_are_code: true
       repeat: 2
     - question: "What is close tag of the following element?
-        <code><<${tag}>>${content}<</${tag}>></code>
+        <code><<${{tag}}>>${{content}}<</${{tag}}>></code>
         "
       type: multiple_choice
       variables:
@@ -152,13 +152,13 @@
         - name: content
           values: ["apple", "banana", "cat", "dog"]
       choices:
-        - "<</${tag}>>"
-        - "<<${tag}>>"
-        - "${tag}"
-        - "${content}"
+        - "<</${{tag}}>>"
+        - "<<${{tag}}>>"
+        - "${{tag}}"
+        - "${{content}}"
       choices_are_code: true
       repeat: 2
-    - question: "Create an element with type <strong>${tag}</strong> and content <strong>${content}</strong>"
+    - question: "Create an element with type <strong>${{tag}}</strong> and content <strong>${{content}}</strong>"
       type: code
       code_language: html
       variables:
@@ -166,5 +166,5 @@
           values: ["a", "h1", "button", "p", "span"]
         - name: content
           values: ["apple", "banana", "cat", "dog"]
-      answer: "<<${tag}>>${content}<</${tag}>>"
+      answer: "<<${{tag}}>>${{content}}<</${{tag}}>>"
       repeat: 3
