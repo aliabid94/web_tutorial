@@ -15,13 +15,25 @@ $.get(lesson_url + "exercises.yaml", function(data) {
   exercises_loaded = true;
 
   var nav_html = "";
+  let quiz_questions = []
   for (section in exercise_data) {
-    nav_html += `<button class="ui button exercise_link" exercise=${section}>Slide ${section}</button>`;
+    exercise_data[section]["questions"].forEach((question) => {
+      if (question["quiz"]) {
+        let quiz_question = jQuery.extend(true, {}, question);
+        quiz_question["repeat"] = 1
+        quiz_questions.push(quiz_question);
+      }
+    })
+  }
+  exercise_data["quiz"] = {questions: quiz_questions}
+  for (section in exercise_data) {
+    nav_html += `<button class="ui button exercise_link" exercise=${section}>${section == "quiz" ? "Quiz" : "Slide " + section}</button>`;
   }
   $("#exercises_nav").append(nav_html);
   var problems_html = "";
   for (section in exercise_data) {
     problems_html += `<div class="exercise_set" exercise=${section}>`;
+    responses[section] = {};
     let exercises = exercise_data[section]["questions"];
     let i = 0;
     exercises.forEach((exercise) => {
@@ -29,6 +41,9 @@ $.get(lesson_url + "exercises.yaml", function(data) {
       problems_html += renderRepeat(i, exercise, repeat);
       i += repeat;
     })
+    for (var j = 0; j < i; j++) {
+      responses[section][j+1] = false;
+    }
     problems_html += `</div>`;
   }
   $("#problem_sets").html(problems_html);
@@ -53,7 +68,6 @@ $.get(lesson_url + "config.yaml", function(data) {
   var slide_html = ""
   for (var i = 0; i < config_data.slide_count; i++) {
     slide_html += `<img class="slide" slide=${i+1} src="${lesson_url}slides/Slide${i+1}.jpg" />`
-    responses[i+1] = {};
   }
   $("#slides").html(slide_html);
   resetSlide(/*set_text=*/false);
@@ -73,18 +87,25 @@ $("body").on('click', '.exercise_link', function() {
 })
 
 $("body").on('click', '.answers.multiple_choice button', function() {
-  let question_num = $(this).closest(".problem").attr("num");
+  let problem_box = $(this).closest(".problem");
+  let question_num = problem_box.attr("num");
   if (!responses[current_exercise][question_num]) {
     $(this).parent().find("button").removeClass("green").removeClass("red")
     if ($(this).hasClass("correct")) {
       $(this).addClass("green")
       responses[current_exercise][question_num] = true;
-      // if (Object.keys(responses[current_exercise]).length ==
-      //     exercise_data[current_exercise]["questions"].length) {
-      //   $(`.exercise_link[exercise=${current_exercise}]`).removeClass("blue")
-      //     .removeClass("yellow").addClass("complete_exercise").addClass("green");
-      // }
+      let exerciseComplete = true;
+      for (problem in responses[current_exercise]) {
+        exerciseComplete &= responses[current_exercise][problem];
+      }
+      if (exerciseComplete) {
+        $(`.exercise_link[exercise=${current_exercise}]`).removeClass("blue")
+          .removeClass("yellow").addClass("complete_exercise").addClass("green");
+      }
+      problem_box.find(".no_message").hide();
+      problem_box.find(".yes_message").show();
     } else {
+      problem_box.find(".no_message").show();
       $(this).addClass("red")
     }
   }

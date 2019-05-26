@@ -14,7 +14,7 @@ body {
   display: flex;
 }
 .problem_box, .output_box {
-  width: 500px;
+  width: 600px;
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }
@@ -39,9 +39,6 @@ body {
 }
 .answers {
   margin-top: 12px;
-}
-.answers.multiple_choice {
-  width: 160px;
 }
 .white_canvas {
  margin-bottom: 12px;
@@ -82,6 +79,9 @@ body {
   font-size: 16px;
   margin-right: 12px;
 }
+.no_message, .yes_message {
+  display: none;
+}
 /* PROBLEMS */
 .problem code {
   display: block;
@@ -90,6 +90,7 @@ body {
   margin: 4px 0;
   border: solid 1px #BBB;
   border-radius: 2px;
+  user-select: none;
 }
 .problem textarea {
   width: 100%;

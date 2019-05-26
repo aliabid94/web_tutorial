@@ -134,10 +134,11 @@ var isEqual = function (value, other) {
 };
 
 function hasMatch(list, obj) {
-  list.forEach((obj2) => {
+  for (let i = 0; i < list.length; i++) {
+    obj2 = list[i];
     if (isEqual(obj, obj2)) {
       return true;
     }
-  })
+  }
   return false;
 }

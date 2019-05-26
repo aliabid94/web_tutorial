@@ -5,7 +5,9 @@ function renderRepeat(i, question, repeat) {
     let variable_set = {};
     let false_variable_set = {};
     if ("variables" in question) {
+      let run_count = 0;
       do {
+        variable_set = {};
         for(variable_expression of question["variables"]) {
           let true_variable = pickRandom(variable_expression["values"]);
           let false_variable;
@@ -15,12 +17,15 @@ function renderRepeat(i, question, repeat) {
           variable_set[variable_expression["name"]] = true_variable;
           false_variable_set[variable_expression["name"]] = false_variable;
         }
+        if (run_count++ > 100) {
+          throw "Unable to make unique."
+        }
       } while (hasMatch(used_variable_sets, variable_set))
       used_variable_sets.push(variable_set);
     }
     html += `
-      <div class='problem' num="${i+1}">
-        ${renderToString(i, question, variable_set, false_variable_set)}
+      <div class='problem' num="${i+r+1}">
+        ${renderToString(i + r, question, variable_set, false_variable_set)}
       </div>`;
   }
   return html;
@@ -39,7 +44,7 @@ function renderToString(i, question, variables, false_variables) {
       break;
     case "code":
       answers_input = `
-        <textarea class="codebox" code_lang=${question['code_language']}></textarea>
+        <textarea class="codebox" code_lang=${question['code_language']}>${question['preset_code'] || ""}</textarea>
         <button class="ui button run_code">Run Code</button>
       `
       break;
@@ -59,6 +64,9 @@ function renderToString(i, question, variables, false_variables) {
         </div>
       </div>
     </div>
+    <span class="no_message"><span class="header ui red">${noMessage()}</span>${
+        question.hint ? "<strong>Hint:</strong> " + question.hint : ""}</span>
+    <span class="yes_message"><span class="header ui green">${yesMessage()}</span></span>
   </div>
   <div class='output_box ui segment fluid'>
   </div>`
@@ -71,4 +79,14 @@ function generateScrambledMultipleChoices(choices) {
     choices_html += `<button class='ui button fluid choice ${order == 0 ? "correct" : ""}'>${alphabet.charAt(i) + ") &nbsp;" + choices[order]}</button>`
   })
   return choices_html
+}
+
+function yesMessage() {
+  let messages = ["Correct!", "Well done.", "You got it.", "Yep.", "Good job!"]
+  return pickRandom(messages);
+}
+
+function noMessage() {
+  let messages = ["Not quite, try again.", "Hmm, let's try again.", "Let's give it another shot.", "That's not correct, give it another try.", "Nope, try again."]
+  return pickRandom(messages);
 }
