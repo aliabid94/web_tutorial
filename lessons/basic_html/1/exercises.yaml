@@ -102,7 +102,7 @@
 
 7:
   questions:
-    - question: "Type the following element into the editor below: <code>${{code}}</code>"
+    - question: "Type the following element into the editor below: <code>${{code}}$</code>"
       type: code
       code_language: html
       variables:
@@ -114,7 +114,7 @@
             - "<<h3>>I like coding<</h3>>"
       repeat: 4
     - question: "What is the type of the following element?
-        <code><<${{tag}}>>${{content}}<</${{tag}}>></code>
+        <code><<${{tag}}$>>${{content}}$<</${{tag}}$>></code>
         "
       type: multiple_choice
       variables:
@@ -123,14 +123,14 @@
         - name: content
           values: ["apple", "banana", "cat", "dog"]
       choices:
-        - "${{tag}}"
-        - "${{~tag}}"
-        - "${{content}}"
-        - "${{~content}}"
+        - "${{tag}}$"
+        - "${{~tag}}$"
+        - "${{content}}$"
+        - "${{~content}}$"
       repeat: 3
       hint: "The type of an element is stated within the open tag."
     - question: "What is content of the following element?
-        <code><<${{tag}}>>${{content}}<</${{tag}}>></code>
+        <code><<${{tag}}$>>${{content}}$<</${{tag}}$>></code>
         "
       type: multiple_choice
       variables:
@@ -139,15 +139,15 @@
         - name: content
           values: ["apple", "banana", "cat", "dog"]
       choices:
-        - "${{content}}"
-        - "${{~content}}"
-        - "${{tag}}"
-        - "${{~tag}}"
+        - "${{content}}$"
+        - "${{~content}}$"
+        - "${{tag}}$"
+        - "${{~tag}}$"
       choices_are_code: true
       repeat: 3
       hint: "The content of an element is between the open tag and the close tag."
     - question: "What is open tag of the following element?
-        <code><<${{tag}}>>${{content}}<</${{tag}}>></code>
+        <code><<${{tag}}$>>${{content}}$<</${{tag}}$>></code>
         "
       type: multiple_choice
       variables:
@@ -156,15 +156,15 @@
         - name: content
           values: ["apple", "banana", "cat", "dog"]
       choices:
-        - "<<${{tag}}>>"
-        - "${{tag}}"
-        - "${{content}}"
-        - "<</${{tag}}>>"
+        - "<<${{tag}}$>>"
+        - "${{tag}}$"
+        - "${{content}}$"
+        - "<</${{tag}}$>>"
       choices_are_code: true
       repeat: 2
       hint: "The open tag is at the beginning of an element. It starts with <strong> << </strong> and ends with <strong> >> </strong>."
     - question: "What is close tag of the following element?
-        <code><<${{tag}}>>${{content}}<</${{tag}}>></code>
+        <code><<${{tag}}$>>${{content}}$<</${{tag}}$>></code>
         "
       type: multiple_choice
       variables:
@@ -173,14 +173,14 @@
         - name: content
           values: ["apple", "banana", "cat", "dog"]
       choices:
-        - "<</${{tag}}>>"
-        - "<<${{tag}}>>"
-        - "${{tag}}"
-        - "${{content}}"
+        - "<</${{tag}}$>>"
+        - "<<${{tag}}$>>"
+        - "${{tag}}$"
+        - "${{content}}$"
       choices_are_code: true
       repeat: 2
       hint: "The close tag is at the end of an element. It starts with <strong> <</ </strong> and ends with <strong> >> </strong>."
-    - question: "Create an element with type <strong>${{tag}}</strong> and content <strong>${{content}}</strong>"
+    - question: "Create an element with type <strong>${{tag}}$</strong> and content <strong>${{content}}$</strong>"
       quiz: true
       type: code
       code_language: html
@@ -213,7 +213,7 @@
     - question: "Type the following element into the editor below: <code><<h1>><br>&nbsp;&nbsp;My Favorite Animals<br><</h1>></code>"
       type: code
       code_language: html
-    - question: "Create an element in <strong>single-line style</strong> with type <strong>${{tag}}</strong> and content <strong>${{content}}</strong>"
+    - question: "Create an element in <strong>single-line style</strong> with type <strong>${{tag}}$</strong> and content <strong>${{content}}$</strong>"
       quiz: true
       type: code
       code_language: html
@@ -223,7 +223,7 @@
         - name: content
           values: ["apple", "banana", "cat", "dog"]
       repeat: 2
-    - question: "Create an element in <strong>multi-line style</strong> with type <strong>${{tag}}</strong> and content <strong>${{content}}</strong>"
+    - question: "Create an element in <strong>multi-line style</strong> with type <strong>${{tag}}$</strong> and content <strong>${{content}}$</strong>"
       quiz: true
       type: code
       code_language: html
@@ -389,10 +389,10 @@
       quiz: true
       type: code
       code_language: html
-    - question: "Type the following element into the editor below: <code><<span id='location' title='Starting Location'>> Palo Alto, CA <</span>></code>"
+    - question: "Type the following element into the editor below: <code><<span id='location' title='Starting Location'>><br>&nbsp; Palo Alto, CA <br><</span>></code>"
       type: code
       code_language: html
-    - question: "What is the value of the <strong> title </strong> attribute in this element: <code><<span id='location' title='Starting Location'>> Palo Alto, CA <</span>></code>"
+    - question: "What is the value of the <strong> title </strong> attribute in this element: <code><<span id='location' title='Starting Location'>><br>&nbsp; Palo Alto, CA <br><</span>></code>"
       quiz: true
       type: multiple_choice
       choices:
@@ -401,7 +401,7 @@
         - "span"
         - "Palo Alto, CA"
       hint: "Attributes are stated in the open tag. The name of the attribute is before the equals sign, and the value is after the equal sign."
-    - question: "What is the content in this element: <code><<span id='location' title='Starting Location'>> Palo Alto, CA <</span>></code>"
+    - question: "What is the content in this element: <code><<span id='location' title='Starting Location'>><br>&nbsp; Palo Alto, CA <br><</span>></code>"
       type: multiple_choice
       choices:
         - "Palo Alto, CA"

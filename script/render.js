@@ -18,7 +18,8 @@ function renderRepeat(i, question, repeat) {
           false_variable_set[variable_expression["name"]] = false_variable;
         }
         if (run_count++ > 100) {
-          throw "Unable to make unique."
+          break
+          throw "Unable to make unique: " + variable_expression["name"]
         }
       } while (hasMatch(used_variable_sets, variable_set))
       used_variable_sets.push(variable_set);
