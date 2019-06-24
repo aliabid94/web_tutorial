@@ -105,14 +105,8 @@ $("body").on('click', '.exercise_link', function() {
 $("body").on('click', '.answers.multiple_choice button', function() {
   let problem_box = $(this).closest(".problem");
   let question_num = problem_box.attr("num");
-  let isCorrect;
   let choice = $(this).attr("choice")
-  if ($(this).hasClass("correct")) {
-    isCorrect = true;
-    responses[current_exercise][question_num] = true;
-  } else {
-    isCorrect = false;
-  }
+  let isCorrect = $(this).hasClass("correct");
   api.uploadMultipleChoice(current_exercise, question_num, choice, isCorrect);
 })
 
@@ -129,26 +123,32 @@ function update_problem(exercise, question, choice, isCorrect) {
       problem_box.find(".no_message").show();
       problem_box.find(".yes_message").hide();
       problem_box.find(".submit_code, .submitting_code").addClass("invisible");
+      responses[exercise][question] = false;
       break;
     case 0:
+      problem_box.find(".no_message").hide();
+      problem_box.find(".yes_message").hide();
+      responses[exercise][question] = false;
       break;
     case 1:
       problem_box.addClass("green");
       choice_button.addClass("green");
       problem_box.find(".no_message").hide();
       problem_box.find(".yes_message").show();
-      let exerciseComplete = true;
-      for (question in responses[exercise]) {
-        exerciseComplete &= responses[exercise][question];
-      }
-      // if (exerciseComplete) {
-      //   $(`.exercise_link[exercise=${exercise}]`).removeClass("blue")
-      //     .removeClass("yellow").addClass("complete_exercise").addClass("green");
-      // }
+      responses[exercise][question] = true;
       problem_box.find(".submit_code, .submitting_code").addClass("invisible");
       break;
   }
-
+  let exerciseComplete = true;
+  for (question in responses[exercise]) {
+    exerciseComplete &= responses[exercise][question];
+  }
+  let exercise_link = $(`.exercise_link[exercise=${exercise}]`);
+  if (exerciseComplete) {
+    exercise_link.addClass("green");
+  } else {
+    exercise_link.removeClass("green");
+  }
 }
 
 $("body").on('click', '.run_code', function() {

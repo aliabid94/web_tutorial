@@ -4,10 +4,13 @@ body {
 }
 #exercises_nav {
   padding-top: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 .exercise_link {
   margin-right: 15px !important;
+}
+.exercise_link.green {
+  background-color: #21ba45 !important;
 }
 .problem {
   margin-bottom: 20px;
