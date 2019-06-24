@@ -1,8 +1,8 @@
 var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-var seed = Math.random() * 1000
+var seed = 100
 function random() {
     var x = Math.sin(seed++) * 10000;
-    return x - Math.floor(x);
+    return (x - Math.floor(x)).toFixed(5);
 }
 function roundf(f) {
   f = parseFloat(f)

@@ -34,14 +34,17 @@ body {
   margin-bottom: 12px;
 }
 .question img {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.question {
+  color: black;
 }
 .answers {
   margin-top: 12px;
 }
 .white_canvas {
- margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 .answers > .buttons {
   width: 100%;
@@ -49,10 +52,14 @@ body {
 .choice {
   text-align: left !important;
 }
+#top {
+  display: flex;
+  justify-content: space-between;
+}
 #slides {
   justify-content: center;
   display: flex;
-  height: calc(100vh - 135px);
+  height: calc(100vh - 173px);
   min-height: 300px;
 }
 .slide {
@@ -127,5 +134,12 @@ textarea {
   font-family: monospace !important;
 }
 .editor .add_hint {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
+.invisible {
   display: none !important;
 }

@@ -1,14 +1,17 @@
+var database = firebase.database();
 var query = window.location.search.substring(1);
 var qs = parseQueryString(query);
-course = qs["course"] || "basic_html";
-lesson = qs["lesson"] || 1;
-lesson_url = `lessons/${course}/${lesson}/`;
+var course = qs["course"] || "basic_html";
+var lesson = qs["lesson"] || 1;
+var lesson_url = `lessons/${course}/${lesson}/`;
+var course_tag = course + "_" + lesson;
 var exercises_loaded = false;
 var config_loaded = false;
 var current_slide = 1;
 var exercise_data, config_data, slide_count, current_exercise;
 var responses = {}
 var code_mirrors = {}
+var pending_review = []
 
 $.get(lesson_url + "exercises.yaml", function(data) {
   exercise_data = parseFormattedYAML(data);
@@ -73,7 +76,20 @@ $.get(lesson_url + "config.yaml", function(data) {
   resetSlide(/*set_text=*/false);
 })
 
+var name;
+var hasSetName = false;
 $("body").on('click', '.exercise_link', function() {
+  if (!hasSetName) {
+    if ($("#name").val()) {
+      name = $("#name").val();
+      $("#name").attr("disabled", "true");
+      api.init();
+      hasSetName = true;
+    } else {
+      alert("Please enter your name in the top right corner.")
+      return
+    }
+  }
   $(".exercise_set").hide();
   $(".exercise_link").removeClass("active_exercise").removeClass("blue");
   if (!$(this).hasClass("complete_exercise")) {
@@ -89,29 +105,58 @@ $("body").on('click', '.exercise_link', function() {
 $("body").on('click', '.answers.multiple_choice button', function() {
   let problem_box = $(this).closest(".problem");
   let question_num = problem_box.attr("num");
-  if (!responses[current_exercise][question_num]) {
-    $(this).parent().find("button").removeClass("green").removeClass("red")
-    if ($(this).hasClass("correct")) {
-      $(this).addClass("green")
-      responses[current_exercise][question_num] = true;
-      let exerciseComplete = true;
-      for (problem in responses[current_exercise]) {
-        exerciseComplete &= responses[current_exercise][problem];
-      }
-      if (exerciseComplete) {
-        $(`.exercise_link[exercise=${current_exercise}]`).removeClass("blue")
-          .removeClass("yellow").addClass("complete_exercise").addClass("green");
-      }
-      problem_box.find(".no_message").hide();
-      problem_box.find(".yes_message").show();
-    } else {
-      problem_box.find(".no_message").show();
-      $(this).addClass("red")
-    }
+  let isCorrect;
+  let choice = $(this).attr("choice")
+  if ($(this).hasClass("correct")) {
+    isCorrect = true;
+    responses[current_exercise][question_num] = true;
+  } else {
+    isCorrect = false;
   }
+  api.uploadMultipleChoice(current_exercise, question_num, choice, isCorrect);
 })
 
+function update_problem(exercise, question, choice, isCorrect) {
+  let problem_box = $(`.exercise_set[exercise=${exercise}]`)
+    .find(`.problem[num=${question}]`).find(".problem_box");
+  let choice_button = problem_box.find(`.choice[choice=${choice}]`);
+  problem_box.removeClass("red").removeClass("green");
+  problem_box.find(".choice").removeClass("red").removeClass("green");
+  switch(isCorrect) {
+    case -1:
+      problem_box.addClass("red");
+      choice_button.addClass("red");
+      problem_box.find(".no_message").show();
+      problem_box.find(".yes_message").hide();
+      problem_box.find(".submit_code, .submitting_code").addClass("invisible");
+      break;
+    case 0:
+      break;
+    case 1:
+      problem_box.addClass("green");
+      choice_button.addClass("green");
+      problem_box.find(".no_message").hide();
+      problem_box.find(".yes_message").show();
+      let exerciseComplete = true;
+      for (question in responses[exercise]) {
+        exerciseComplete &= responses[exercise][question];
+      }
+      // if (exerciseComplete) {
+      //   $(`.exercise_link[exercise=${exercise}]`).removeClass("blue")
+      //     .removeClass("yellow").addClass("complete_exercise").addClass("green");
+      // }
+      problem_box.find(".submit_code, .submitting_code").addClass("invisible");
+      break;
+  }
+
+}
+
 $("body").on('click', '.run_code', function() {
+  let problem_box = $(this).closest(".problem");
+  $(this).text("Rerun Code");
+  if (problem_box.find(".submitting_code").hasClass("invisible")) {
+    problem_box.find(".submit_code").removeClass("invisible");
+  }
   let output = $(this).closest(".problem").find(".output_box");
   output.show();
   output.html(`<iframe></iframe>`)
@@ -122,6 +167,18 @@ $("body").on('click', '.run_code', function() {
   $iframe.ready(function() {
     $iframe.contents().find("html").html(code);
   });
+})
+
+$("body").on('click', '.submit_code', function() {
+  let problem_box = $(this).closest(".problem");
+  let question_num = problem_box.attr("num");
+  pending_review.push([current_exercise, question_num]);
+  problem_box.find(".submit_code").addClass("invisible");
+  problem_box.find(".submitting_code").removeClass("invisible");
+  let this_problem = getProblemOfElement(this);
+  let cm = code_mirrors[this_problem.exercise][this_problem.problem];
+  let code = cm.getValue();
+  api.uploadCode(current_exercise, question_num, code);
 })
 
 function resetSlide(resetText) {
@@ -160,3 +217,12 @@ $('#current_slide').on('input', function() {
     resetSlide(/*set_text=*/false);
   }
 });
+
+if (localStorage) {
+  if ("name" in localStorage) {
+    $("#name").val(localStorage["name"])
+  }
+  $('#name').on('change', function() {
+    localStorage["name"] = $(this).val();
+  })
+}

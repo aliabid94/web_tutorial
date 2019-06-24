@@ -47,6 +47,8 @@ function renderToString(i, question, variables, false_variables) {
       answers_input = `
         <textarea class="codebox" code_lang=${question['code_language']}>${question['preset_code'] || ""}</textarea>
         <button class="ui button run_code">Run Code</button>
+        <button class="ui button blue submit_code invisible">Submit Code</button>
+        <button class="ui loading blue button submitting_code invisible">Loading</button>
       `
       break;
     default:
@@ -77,7 +79,11 @@ function generateScrambledMultipleChoices(choices) {
   var choices_html = ""
   var random_order = getRandomSample(choices.length-1, choices.length)
   random_order.forEach(function (order, i) {
-    choices_html += `<button class='ui button fluid choice ${order == 0 ? "correct" : ""}'>${alphabet.charAt(i) + ") &nbsp;" + choices[order]}</button>`
+    let char_choice = alphabet.charAt(i);
+    choices_html += `
+      <button choice=${char_choice} class='ui button fluid choice
+        ${order == 0 ? "correct" : ""}'>${char_choice + ") &nbsp;"
+      + choices[order]}</button>`
   })
   return choices_html
 }

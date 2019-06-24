@@ -8,6 +8,14 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/codemirror.min.css">
   </head>
   <body>
+    <div id="top">
+      <a href="/">
+        <button class="ui icon button"><i class="angle left icon"></i> Home</button>
+      </a>
+      <div class="ui input">
+        <input id="name" type="text" placeholder="Enter Name Here">
+      </div>
+    </div>
     <div id="slides"></div>
     <div id="slide_control">
       <button id="left" class="ui icon button"><i class="angle left icon"></i></button>
@@ -17,6 +25,21 @@
     <nav id="exercises_nav"><div id="exercises">Exercises:</div></nav>
     <div id="problem_sets"></div>
 
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyCvEoVUoW_T4Z3zx0raw9AuB51seYdiEFk",
+        authDomain: "code-camp-eda11.firebaseapp.com",
+        databaseURL: "https://code-camp-eda11.firebaseio.com",
+        projectId: "code-camp-eda11",
+        storageBucket: "",
+        messagingSenderId: "533329398326",
+        appId: "1:533329398326:web:f54ba88bfd153def"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
@@ -25,6 +48,7 @@
     <script src="script/util.js"></script>
     <script src="script/helpers.js"></script>
     <script src="script/render.js"></script>
+    <script src="script/api.js"></script>
     <script src="script/viewer.js"></script>
   </body>
 </html>
