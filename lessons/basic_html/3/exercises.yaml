@@ -1,0 +1,212 @@
+2:
+  questions:
+    - question: "Type the following element into the editor below:
+      <code>
+        <<h1>>My Food Site<</h1>><br>
+        <<h2>>Vegan Recipes<</h2>><br>
+        Vegan food is great!<br>
+        <<h2>>Non-Vegan Recipes<</h2>>
+      </code>"
+      type: code
+      code_language: html
+    - question: "Write code to replicate the demo shown. The largest header is <<h1>>, the country names are <<h2>>, and the city names are <<h3>>:"
+      demo_code: "<h1>Largest Cities Per Country</h1>
+      <h2>China</h2>
+      <h3>Shanghai</h3>
+      Shanghai has 24.1 million people!
+      <h3>Beijing</h3>
+      Beijing has 18 million people.
+      <h2>India</h2>
+      <h3>Dhaka</h3>
+      Dhaka has 16 million people"
+      quiz: true
+      type: code
+      code_language: html
+
+4:
+  questions:
+    - question: "Type the following element into the editor below:
+      <code>
+        Favorite Foods:<br>
+        <<ul>><br>
+        &nbsp;&nbsp;<<li>>Chicken<</li>><br>
+        &nbsp;&nbsp;<<li>>Rice<</li>><br>
+        &nbsp;&nbsp;<<li>>Corn<</li>><br>
+        <</ul>>
+      </code>"
+      type: code
+      code_language: html
+    - question: "Type the following element into the editor below:
+      <code>
+        Largest Countries:<br>
+        <<ol>><br>
+        &nbsp;&nbsp;<<li>>China<</li>><br>
+        &nbsp;&nbsp;<<li>>India<</li>><br>
+        &nbsp;&nbsp;<<li>>USA<</li>><br>
+        <</ul>>
+      </code>"
+      type: code
+      code_language: html
+    - question: "Create an unordered list with the names of the people in your family."
+      quiz: true
+      type: code
+      code_language: html
+    - question: "Write code to replicate the demo shown."
+      demo_code: "<h1>Largest Animals</h1>
+      <ol>
+        <li>Blue Whale</li>
+        <li>Squid</li>
+        <li>Elephant</li>
+      </ol>
+      "
+      type: code
+      code_language: html
+
+5:
+  questions:
+    - question: "Type the following element into the editor below:
+      <code>
+      <<table>>
+      ~~<<thead>>
+      ~~~~<<th>>Animal<</th>>
+      ~~~~<<th>>Weight (tons)<</th>>
+      ~~<</thead>>
+      ~~<<tr>>
+      ~~~~<<td>>Blue Whale<</td>>
+      ~~~~<<td>>200<</td>>
+      ~~<</tr>>
+      ~~<<tr>>
+      ~~~~<<td>>Squid<</td>>
+      ~~~~<<td>>1<</td>>
+      ~~<</tr>>
+      ~~<<tr>>
+      ~~~~<<td>>Elephant<</td>>
+      ~~~~<<td>>7<</td>>
+      ~~<</tr>><br>
+      <</table>>
+      </code>"
+      type: code
+      code_language: html
+    - question: "Create a table with header columns 'Name', 'Age', and 'Gender'. Add a row to this table for every member of your family."
+      type: code
+      code_language: html
+    - question: "Write code to replicate the demo shown."
+      quiz: true
+      demo_code: "<table>
+        <thead>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>City</th>
+        </thead>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+          <td>Chicago</td>
+        </tr>
+        <tr>
+          <td>Jane</td>
+          <td>Smith</td>
+          <td>New York</td>
+        </tr>
+      </table>"
+      type: code
+      code_language: html
+
+6:
+  questions:
+    - question: "Type the following element into the editor below:
+      <code>
+      What's your name? <<br>><br>
+      <<input type='text' placeholder='Enter Name'>>
+      </code>"
+      type: code
+      code_language: html
+    - question: "Create your own input text field that asks for your birthday."
+      quiz: true
+      type: code
+      code_language: html
+
+7:
+  questions:
+    - question: "Type the following element into the editor below:
+      <code>
+      What's your gender? <<br>><br>
+      <<input type='radio' name='gender' value='male'>> Male <<br>><br>
+      <<input type='radio' name='gender' value='female'>> Female <<br>><br>
+      <<input type='radio' name='gender' value='other'>> Other
+      </code>"
+      type: code
+      code_language: html
+    - question: "Create your own input radio field that asks your ethnic background."
+      quiz: true
+      type: code
+      code_language: html
+    - question: "Write code to replicate the demo shown."
+      demo_code: "What is your favorite color? <br>
+      <input type='radio' name='color' value='blue'> Blue <br>
+      <input type='radio' name='color' value='green'> Green <br>
+      <input type='radio' name='color' value='brown'> Brown <br>
+      "
+      type: code
+      code_language: html
+
+8:
+  questions:
+    - question: "Type the following element into the editor below:
+      <code>
+      Which countries have you visited? <<br>><br>
+      <<input type='checkbox' name='country' value='usa'>> USA <<br>><br>
+      <<input type='checkbox' name='country' value='france'>> France <<br>><br>
+      <<input type='checkbox' name='country' value='pakistan'>> Pakistan
+      </code>"
+      type: code
+      code_language: html
+    - question: "Create your own input checkbox field that gives you a menu of food items to order from."
+      type: code
+      code_language: html
+    - question: "Write code to replicate the demo shown."
+      quiz: true
+      demo_code: "Which clothes do you own? <br>
+      <input type='checkbox' name='clothes' value='shirt'> Shirt <br>
+      <input type='checkbox' name='clothes' value='pant'> Pant <br>
+      <input type='checkbox' name='clothes' value='hat'> Hat <br>
+      "
+      type: code
+      code_language: html
+
+9:
+  questions:
+    - question: "Type the following element into the editor below:
+      <code>
+      What's your gender? <<br>><br>
+      <<select name='gender'>>
+      ~~<<option value='male'>>Male<</option>>
+      ~~<<option value='female'>>Female<</option>>
+      ~~<<option value='other'>>Other<</option>> <br>
+      <</select>>
+      </code>"
+      type: code
+      code_language: html
+    - question: "Create your own select field that asks your ethnic background."
+      type: code
+      code_language: html
+    - question: "Write code to replicate the demo shown."
+      quiz: true
+      demo_code: "What is your favorite color? <br>
+      <select name='color'>
+        <option value='red'>Red</option>
+        <option value='blue'>Blue</option>
+        <option value='green'>Green</option>
+      </select>"
+      type: code
+      code_language: html
+
+10:
+  questions:
+    - question: "Create an input text field that allows a maximum of 10 letters to be entered. Search Google for 'html input text set maximum length' to learn how to do this. "
+      type: code
+      code_language: html
+    - question: "Create an input field that accepts a password. Search Google for 'html input password' to learn how to do this. "
+      quiz: true
+      type: code
+      code_language: html

@@ -47,6 +47,7 @@ function renderToString(i, question, variables, false_variables) {
       answers_input = `
         <textarea class="codebox" code_lang=${question['code_language']}>${question['preset_code'] || ""}</textarea>
         <button class="ui button run_code">Run Code</button>
+        ${question.demo_code ? `<button class="ui button yellow show_demo">Show Demo</button>` : ""}
         <button class="ui button blue submit_code invisible">Submit Code</button>
         <button class="ui loading blue button submitting_code invisible">Loading</button>
       `
@@ -71,8 +72,14 @@ function renderToString(i, question, variables, false_variables) {
         question.hint ? "<strong>Hint:</strong> " + question.hint : ""}</span>
     <span class="yes_message"><span class="header ui green">${yesMessage()}</span></span>
   </div>
-  <div class='output_box ui segment fluid'>
-  </div>`
+  <div class='output_box render_box ui message fluid'>
+  </div>
+  ${question.demo_code ? `
+  <div class='demo_box render_box yellow ui message fluid'>
+    <iframe srcdoc="${question.demo_code}"></iframe>
+  </div>
+    ` : ""}
+  `
 }
 
 function generateScrambledMultipleChoices(choices) {

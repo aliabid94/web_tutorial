@@ -62,6 +62,11 @@ $.get(lesson_url + "exercises.yaml", function(data) {
     code_mirrors[this_problem.exercise][this_problem.problem] = cm;
     setTimeout(() => void cm.refresh(), 0)
   })
+  // $(".demo_box").each(function (i, element) {
+  //   let exercise = $(element).closest(".exercise_set").attr("exercise")
+  //   let question_num = $(element).closest(".problem").attr("num")
+  //
+  // })
 })
 
 $.get(lesson_url + "config.yaml", function(data) {
@@ -153,20 +158,28 @@ function update_problem(exercise, question, choice, isCorrect) {
 
 $("body").on('click', '.run_code', function() {
   let problem_box = $(this).closest(".problem");
-  $(this).text("Rerun Code");
   if (problem_box.find(".submitting_code").hasClass("invisible")) {
     problem_box.find(".submit_code").removeClass("invisible");
   }
   let output = $(this).closest(".problem").find(".output_box");
+  let demo = $(this).closest(".problem").find(".demo_box");
   output.show();
+  demo.hide();
   output.html(`<iframe></iframe>`)
   let this_problem = getProblemOfElement(this);
   let cm = code_mirrors[this_problem.exercise][this_problem.problem];
   let code = cm.getValue();
   $iframe = output.find("iframe");
   $iframe.ready(function() {
-    $iframe.contents().find("html").html(code);
+    $iframe.contents().find("body").html(code);
   });
+})
+
+$("body").on('click', '.show_demo', function() {
+  let output = $(this).closest(".problem").find(".output_box");
+  let demo = $(this).closest(".problem").find(".demo_box");
+  output.hide();
+  demo.show();
 })
 
 $("body").on('click', '.submit_code', function() {

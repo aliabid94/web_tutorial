@@ -36,6 +36,8 @@ function parseFormattedYAML(str) {
     [/\}\}\$/g, "']}"],
     [/\{\{/g, "variables['"],
     [/\}\}/g, "']"],
+    [/ ~~/g, " <br>&nbsp;&nbsp;"],
+    [/~/g, "&nbsp;"],
   ]
   let reformatted_str = str;
   replacements.forEach((replacement) => {

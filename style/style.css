@@ -16,16 +16,18 @@ body {
   margin-bottom: 20px;
   display: flex;
 }
-.problem_box, .output_box {
+.problem_box, .render_box {
   width: 600px;
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }
-.output_box {
+.render_box {
   margin-left: 20px !important;
+}
+.output_box {
   display: none;
 }
-.output_box iframe {
+.render_box iframe {
   width: 100%;
   height: 100%;
   border: none;
