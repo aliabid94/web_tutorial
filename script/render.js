@@ -52,6 +52,9 @@ function renderToString(i, question, variables, false_variables) {
         <button class="ui loading blue button submitting_code invisible">Loading</button>
       `
       break;
+    case "todo":
+      answers_input = `<button class='ui button mark_complete'><i class="check circle icon"></i>Complete</button>`;
+      break;
     default:
       answers_input = "";
   }

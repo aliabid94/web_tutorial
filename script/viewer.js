@@ -28,7 +28,9 @@ $.get(lesson_url + "exercises.yaml", function(data) {
       }
     })
   }
-  exercise_data["quiz"] = {questions: quiz_questions}
+  if (quiz_questions.length) {
+    exercise_data["quiz"] = {questions: quiz_questions}
+  }
   for (section in exercise_data) {
     nav_html += `<button class="ui button exercise_link" exercise=${section}>${section == "quiz" ? "Quiz" : "Slide " + section}</button>`;
   }
@@ -115,10 +117,19 @@ $("body").on('click', '.answers.multiple_choice button', function() {
   api.uploadMultipleChoice(current_exercise, question_num, choice, isCorrect);
 })
 
+$("body").on('click', '.mark_complete', function() {
+  let problem_box = $(this).closest(".problem");
+  let question_num = problem_box.attr("num");
+  api.uploadTodo(current_exercise, question_num);
+})
+
 function update_problem(exercise, question, choice, isCorrect) {
   let problem_box = $(`.exercise_set[exercise=${exercise}]`)
     .find(`.problem[num=${question}]`).find(".problem_box");
-  let choice_button = problem_box.find(`.choice[choice=${choice}]`);
+  let choice_button = problem_box
+    .find(`.choice[choice=${choice}], .mark_complete`);
+  console.log(problem_box)
+  console.log(choice_button)
   problem_box.removeClass("red").removeClass("green");
   problem_box.find(".choice").removeClass("red").removeClass("green");
   switch(isCorrect) {

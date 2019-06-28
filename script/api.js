@@ -48,5 +48,13 @@ var api = {
       .ref('responses/' + course_tag + '/' + name + '/' + exercise + '_' +
           question)
       .update(question_data);
+  },
+  uploadTodo: function(exercise, question) {
+    firebase
+      .database()
+      .ref('responses/' + course_tag + '/' + name + '/' + exercise + '_' +
+          question)
+      .update({isCorrect : 1});    
   }
+
 }

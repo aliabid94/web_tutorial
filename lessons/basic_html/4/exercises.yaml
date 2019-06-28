@@ -1,0 +1,122 @@
+2:
+  questions:
+    - question: "Write code to replicate the demo shown.
+      <ul>
+        <li>Use <strong>html</strong> and <strong>body</strong> elements.<br>
+        <li>The url for the main image is <strong>images/tower.jpg</strong></li>
+        <li>Use the <<p>> element for each paragraph of text.</li>
+        <li>Make each header link to the wikipedia article for that tower.</li>
+      </ul>"
+      demo_code: "<h1>Tallest Towers in the World</h1>
+      <img src='images/tower.jpg' width='80' height='135'>
+      <a href='https://en.wikipedia.org/wiki/Burj_Khalifa'>
+        <h2>Burj Khalifa</h2>
+      </a>
+      <p>The Burj is the tallest tower in the world, at 828 meters tall!</p>
+      <p>It cost $1.5 billion to build!</p>
+      <a href='https://en.wikipedia.org/wiki/Shanghai_Tower'>
+        <h2>Shanghai Tower</h2>
+      </a>
+      <p>It is the tallest building in China and in East Asia</p>
+      <p>It is tallest twisted twisted building</p>
+      <h2>Other Top Lists</h2>
+      View other top lists:
+      <select>
+        <option>Tallest Towers</option>
+        <option>Largest Animals</option>
+        <option>Fastest Cars</option>
+      </select>
+      "
+      type: code
+      code_language: html
+    - question: "Write code to replicate the demo shown."
+      demo_code: "<h1>Willy's Pet Shelter</h1>
+      Take a look the list of our animals below. If any of them interest you, please adopt!
+      <table>
+        <thead>
+          <th>Species</th>
+          <th>Name</th>
+          <th>Color</th>
+          <th>Weight</th>
+          <th>Adopt</th>
+        </thead>
+        <tr>
+          <td>Cat</td>
+          <td>Doodle</td>
+          <td>Orange</td>
+          <td>12 pounds</td>
+          <td><button>Adopt Me</button></td>
+        </tr>
+        <tr>
+          <td>Cat</td>
+          <td>Sammy</td>
+          <td>Black</td>
+          <td>10 pounds</td>
+          <td><button>Adopt Me</button></td>
+        </tr>
+        <tr>
+          <td>Dog</td>
+          <td>Roger</td>
+          <td>Brown</td>
+          <td>34 pounds</td>
+          <td><button>Adopt Me</button></td>
+        </tr>
+      </table>
+      "
+      type: code
+      code_language: html
+    - question: "Write code to replicate the demo shown.
+      <ul>
+        <li>The url for the main image is <strong>images/biryani.jpg</strong></li>
+      </ul>"
+      demo_code: "<h1>Sireen's Recipes</h1>
+      <h2>Chicken Biryani</h2>
+      <img src='images/biryani.jpg' height='100'>
+      <h3>Ingredients</h3>
+      <ul>
+        <li>Chicken</li>
+        <li>Rice</li>
+        <li>Onion</li>
+        <li>Spices</li>
+      </ul>
+      <h3>Recipe</h3>
+      <ol>
+        <li>Fry onions.</li>
+        <li>Toss in chicken spices.</li>
+        <li>Mix in cooked rice.</li>
+        <li>Serve warm.</li>
+      </ol>
+      "
+      type: code
+      code_language: html
+
+
+4:
+  questions:
+    - question: "Open a new window and browse to any website. View the page source code. <br>
+      Mark 'Complete' when finished."
+      type: "todo"
+
+5:
+  questions:
+    - question: "Complete the following:
+        <ul>
+        <li>On your computer, create an empty folder called 'project'. </li>
+        <li>For any exercise from slide 2, copy the html code. </li>
+        <li>Open Notepad or Atom, paste the html code, and save the file as 'index.html' in the 'project' folder.</li>
+        </ul>"
+      type: "todo"
+
+6:
+  questions:
+    - question: "Open the 'index.html' file you saved earlier in a browser. <br>
+      Mark 'Complete' when finished."
+      type: "todo"
+
+7:
+  questions:
+    - question: "Open the netlify link~
+      <a href='https://app.netlify.com/drop' target='_blank'>https://app.netlify.com/drop</a>.
+      ~Drag and drop the 'projects' folder to upload your HTML file to the internet. <br>
+      Mark 'Complete' when finished."
+      type: "todo"
