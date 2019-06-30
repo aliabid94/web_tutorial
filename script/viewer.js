@@ -13,64 +13,6 @@ var responses = {}
 var code_mirrors = {}
 var pending_review = []
 
-$.get(lesson_url + "exercises.yaml", function(data) {
-  exercise_data = parseFormattedYAML(data);
-  exercises_loaded = true;
-
-  var nav_html = "";
-  let quiz_questions = []
-  for (section in exercise_data) {
-    exercise_data[section]["questions"].forEach((question) => {
-      if (question["quiz"]) {
-        let quiz_question = jQuery.extend(true, {}, question);
-        quiz_question["repeat"] = 1
-        quiz_questions.push(quiz_question);
-      }
-    })
-  }
-  if (quiz_questions.length) {
-    exercise_data["quiz"] = {questions: quiz_questions}
-  }
-  for (section in exercise_data) {
-    nav_html += `<button class="ui button exercise_link" exercise=${section}>${section == "quiz" ? "Quiz" : "Slide " + section}</button>`;
-  }
-  $("#exercises_nav").append(nav_html);
-  var problems_html = "";
-  for (section in exercise_data) {
-    problems_html += `<div class="exercise_set" exercise=${section}>`;
-    responses[section] = {};
-    let exercises = exercise_data[section]["questions"];
-    let i = 0;
-    exercises.forEach((exercise) => {
-      let repeat = exercise.repeat || 1;
-      problems_html += renderRepeat(i, exercise, repeat);
-      i += repeat;
-    })
-    for (var j = 0; j < i; j++) {
-      responses[section][j+1] = false;
-    }
-    problems_html += `</div>`;
-  }
-  $("#problem_sets").html(problems_html);
-  $(".codebox").each(function (i, element) {
-    let cm = CodeMirror.fromTextArea(element, {
-        mode: $(element).attr("code_lang"),
-        lineNumbers: true
-    });
-    let this_problem = getProblemOfElement(this);
-    if (!code_mirrors[this_problem.exercise]) {
-      code_mirrors[this_problem.exercise] = {}
-    }
-    code_mirrors[this_problem.exercise][this_problem.problem] = cm;
-    setTimeout(() => void cm.refresh(), 0)
-  })
-  // $(".demo_box").each(function (i, element) {
-  //   let exercise = $(element).closest(".exercise_set").attr("exercise")
-  //   let question_num = $(element).closest(".problem").attr("num")
-  //
-  // })
-})
-
 $.get(lesson_url + "config.yaml", function(data) {
   config_data = YAML.parse(data);
   slide_count = config_data.slide_count;
@@ -81,6 +23,59 @@ $.get(lesson_url + "config.yaml", function(data) {
   }
   $("#slides").html(slide_html);
   resetSlide(/*set_text=*/false);
+}).then(function () {
+  $.get(lesson_url + "exercises.yaml", function(data) {
+    exercise_data = parseFormattedYAML(data);
+    exercises_loaded = true;
+
+    var nav_html = "";
+    let quiz_questions = []
+    for (section in exercise_data) {
+      exercise_data[section]["questions"].forEach((question) => {
+        if (question["quiz"]) {
+          let quiz_question = jQuery.extend(true, {}, question);
+          quiz_question["repeat"] = 1
+          quiz_questions.push(quiz_question);
+        }
+      })
+    }
+    if (quiz_questions.length) {
+      exercise_data["quiz"] = {questions: quiz_questions}
+    }
+    for (section in exercise_data) {
+      nav_html += `<button class="ui button exercise_link" exercise=${section}>${section == "quiz" ? "Quiz" : "Slide " + section}</button>`;
+    }
+    $("#exercises_nav").append(nav_html);
+    var problems_html = "";
+    for (section in exercise_data) {
+      problems_html += `<div class="exercise_set" exercise=${section}>`;
+      responses[section] = {};
+      let exercises = exercise_data[section]["questions"];
+      let i = 0;
+      exercises.forEach((exercise) => {
+        let repeat = exercise.repeat || 1;
+        problems_html += renderRepeat(i, exercise, repeat);
+        i += repeat;
+      })
+      for (var j = 0; j < i; j++) {
+        responses[section][j+1] = false;
+      }
+      problems_html += `</div>`;
+    }
+    $("#problem_sets").html(problems_html);
+    $(".codebox").each(function (i, element) {
+      let cm = CodeMirror.fromTextArea(element, {
+          mode: $(element).attr("code_lang"),
+          lineNumbers: true
+      });
+      let this_problem = getProblemOfElement(this);
+      if (!code_mirrors[this_problem.exercise]) {
+        code_mirrors[this_problem.exercise] = {}
+      }
+      code_mirrors[this_problem.exercise][this_problem.problem] = cm;
+      setTimeout(() => void cm.refresh(), 0)
+    })
+  })
 })
 
 var name;

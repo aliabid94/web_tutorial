@@ -1,3 +1,10 @@
+h1, h3 {
+  text-align: center;
+}
+h3 {
+  margin: 0px !important;
+}
 body {
   padding: 15px 30px 0px !important;
+  background: url('memphis-mini.png') !important;
 }

@@ -45,6 +45,10 @@ function renderToString(i, question, variables, false_variables) {
       break;
     case "code":
       answers_input = `
+        <div class="ui top attached tabular menu">
+          <div class="item">HTML</div>
+          <div class="item">CSS</div>
+        </div>
         <textarea class="codebox" code_lang=${question['code_language']}>${question['preset_code'] || ""}</textarea>
         <button class="ui button run_code">Run Code</button>
         ${question.demo_code ? `<button class="ui button yellow show_demo">Show Demo</button>` : ""}
