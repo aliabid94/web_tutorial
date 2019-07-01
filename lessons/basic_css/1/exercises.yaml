@@ -270,7 +270,7 @@
       </code>  "
       type: code
       code_language: html
-    - question: "Make a table with the name, age, and gender of every member of your family.
-      Make any row with a male memeber have a 'salmon' background, and any row with a female member have a 'cyan' background."
+    - question: "Make a table with the name, age, and gender of every member of your family. Make any row with a male member have a 'salmon' background,
+      ~and any row with a female member have a 'cyan' background."
       type: code
       code_language: html
