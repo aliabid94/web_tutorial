@@ -28,6 +28,7 @@ function getRandomSample(range, size) {
 
 function parseFormattedYAML(str) {
   let replacements = [
+    [/#/g, '&#35;'],
     [/<</g, '&lt;'],
     [/>>/g, '&gt;'],
     [/<<\\/g, '&lt;\\\\'],

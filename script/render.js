@@ -44,12 +44,21 @@ function renderToString(i, question, variables, false_variables) {
         </div>`
       break;
     case "code":
+      let tab_code = "";
+      let textbox_code = "";
+      for (let i = 0; i < config_data.lang.length; i++) {
+          let lang = config_data.lang[i];
+          tab_code += `<div class="${i == 0 ? "active" : ""}
+              item lang_link" lang=${lang}>${lang}</div>`
+          textbox_code += `<div class="codebox_holder" lang="${lang}">
+              <textarea class="codebox"></textarea>
+            </div>`
+      }
       answers_input = `
         <div class="ui top attached tabular menu">
-          <div class="item">HTML</div>
-          <div class="item">CSS</div>
+          ${tab_code}
         </div>
-        <textarea class="codebox" code_lang=${question['code_language']}>${question['preset_code'] || ""}</textarea>
+        ${textbox_code}
         <button class="ui button run_code">Run Code</button>
         ${question.demo_code ? `<button class="ui button yellow show_demo">Show Demo</button>` : ""}
         <button class="ui button blue submit_code invisible">Submit Code</button>

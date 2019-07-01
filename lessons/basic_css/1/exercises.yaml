@@ -1,0 +1,276 @@
+6:
+  questions:
+    - question: "Type the following HTML: <code>
+      <<h1>>HTML is fun!<</h1>>
+      </code>
+      and the following CSS: <code>
+      h1 {
+      ~~color: red;<br>
+      }</code>  "
+      type: code
+    - question: "Type the following HTML: <code>
+      <<h1>>My Favorite Food<</h1>><br>
+      <<h2>>Vegan Foods<</h2>><br>
+      <<ul>>
+      ~~<<li>>Spaghetti<</li>>
+      ~~<<li>>Rice<</li>> <br>
+      <</ul>> <br>
+      <<h2>>Meaty Foods<</h2>> <br>
+      <<ul>>
+      ~~<<li>>Meatball<</li>>
+      ~~<<li>>Biryani<</li>> <br>
+      <</ul>>
+      </code>
+      and the following CSS: <code>
+      h2 {
+      ~~color: gray;<br>
+      }<br>
+      ul {
+      ~~text-align: center;
+      ~~background-color: khaki; <br>
+      }<br>
+      </code>  "
+      type: code
+    - question: "What is the selector of the following rule-set: <code>
+      h1 {
+      ~~color: red;<br>
+      }</code>  "
+      type: multiple_choice
+      choices:
+        - "h1"
+        - "color"
+        - "red"
+    - question: "How many rules in this rule-set:
+      <code>
+      h1 {
+      ~~color: red;
+      ~~background-color: black;
+      ~~text-align: center;<br>
+      }</code>  "
+      type: multiple_choice
+      choices:
+        - "3"
+        - "2"
+        - "1"
+    - question: "Which of the following is NOT a property defined by this rule-set:
+      <code>
+      h1 {
+      ~~color: red;
+      ~~background-color: black;
+      ~~text-align: center;<br>
+      }</code>  "
+      type: multiple_choice
+      choices:
+        - "center"
+        - "color"
+        - "background-color"
+        - "text-align"
+    - question: "What is the value of the <strong>background-color</strong> property in this rule-set:
+      <code>
+      h1 {
+      ~~color: red;
+      ~~background-color: black;
+      ~~text-align: center;<br>
+      }</code>  "
+      type: multiple_choice
+      choices:
+        - "black"
+        - "red"
+        - "yellow"
+        - "center"
+
+7:
+  questions:
+    - question: "Write code to replicate the demo shown."
+      demo_code: "<html>
+      <head>
+        <style>
+          h1 {
+            text-align: center;
+            color: purple;
+          }
+          button {
+            background-color: yellow;
+            font-size: 18px;
+          }
+        </style>
+        <body>
+          <h1>The Pet Store</h1>
+          <p>Click to buy any of the pets below!</p>
+          <button>Cat</button>
+          <button>Dog</button>
+          <button>Elephant</button>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown."
+      demo_code: "<html>
+      <head>
+        <style>
+          h1 {
+            font-size: 50px;
+          }
+          h2 {
+            text-align: center;
+            background-color: brown;
+            color: white;
+          }
+        </style>
+        <body>
+          <h1>LARGEST MOUNTAINS</h1>
+          <h2>Everest</h2>
+          Tallest mountain ever, at over 8800 meters!
+          <h2>K2</h2>
+          This one is in Pakistan! it's 8600 meters tall and one of the most dangerous.
+          <h2>Kangchenjunga</h2>
+          This one is about 8500 meters between India and Nepal.
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown."
+      demo_code: "<html>
+      <head>
+        <style>
+          thead {
+            background-color: green;
+          }
+          th {
+            color: white;
+          }
+          td {
+            color: green;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Flower Sales Per Year</h1>
+        <table>
+          <thead>
+            <th>Year</th>
+            <th>Tulip Sales</th>
+            <th>Rose Sales</th>
+          </thead>
+          <tr>
+            <td>2015</td>
+            <td>144</td>
+            <td>102</td>
+          </tr>
+          <tr>
+            <td>2016</td>
+            <td>188</td>
+            <td>140</td>
+          </tr>
+          <tr>
+            <td>2017</td>
+            <td>190</td>
+            <td>180</td>
+          </tr>
+        </table>
+      </body>
+      </html>
+      "
+      type: code
+
+8:
+  questions:
+    - question: "Type the following HTML: <code>
+      Today's date is <<span id='date'>>May 12th<</span>> <<br>><br>
+      and the time is <<span id='time'>>6:00 pm<</span>>
+      </code>
+      and the following CSS: <code>
+      span {
+      ~~font-size: 22px; <br>
+      } <br>
+      #date {
+      ~~color: blue; <br>
+      } <br>
+      #time {
+      ~~color: gray;  <br>
+      } <br>
+      </code>  "
+      type: code
+      code_language: html
+    - question: "Write code to replicate the demo shown."
+      demo_code: "<html>
+      <head>
+        <style>
+          h1 {
+            text-align: center;
+          }
+          button {
+            background-color: blue;
+            color: white;
+          }
+          #giant {
+            font-size: 30px;
+          }
+        </style>
+        <body>
+          <h1>Animals</h1>
+          <p>What's your favorite animal?</p>
+          <button>Cat</button>
+          <button>Dog</button> <br>
+          <button id='giant'>Elephant</button>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown."
+      demo_code: "<html>
+      <head>
+        <style>
+          #pk {
+            color: green;
+          }
+        </style>
+        <body>
+          Countries I've visited:
+          <ul>
+            <li>USA</li>
+            <li>Canada</li>
+            <li id='pk'>Pakistan</li>
+            <li>France</li>
+          </ul>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Which of the following is not true about ids?"
+      type: multiple_choice
+      choices:
+        - "Multiple elements can have the same id."
+        - "The name for an id cannot have a space in it"
+        - "To select an id in CSS, use the # symbol"
+
+9:
+  questions:
+    - question: "Type the following HTML: <code>
+      My favorite animals: <br>
+      <<ul>>
+      ~~<<li>>Elephant<</li>
+      ~~<<li class='marine'>>Whale<</li>
+      ~~<<li>>Hamster<</li>
+      ~~<<li class='marine'>>Dolphin<</li>
+      ~~<<li class='marine'>>Squid<</li> <br>
+      <</ul>>
+      </code>
+      and the following CSS: <code>
+      li {
+      ~~text-align: center; <br>
+      } <br>
+      .marine {
+      ~~color: blue; <br>
+      }
+      </code>  "
+      type: code
+      code_language: html
+    - question: "Make a table with the name, age, and gender of every member of your family.
+      Make any row with a male memeber have a 'salmon' background, and any row with a female member have a 'cyan' background."
+      type: code
+      code_language: html

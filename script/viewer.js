@@ -68,13 +68,18 @@ $.get(lesson_url + "config.yaml", function(data) {
           mode: $(element).attr("code_lang"),
           lineNumbers: true
       });
+      let lang = $(element).closest(".codebox_holder").attr("lang")
       let this_problem = getProblemOfElement(this);
       if (!code_mirrors[this_problem.exercise]) {
         code_mirrors[this_problem.exercise] = {}
       }
-      code_mirrors[this_problem.exercise][this_problem.problem] = cm;
+      if (!code_mirrors[this_problem.exercise][this_problem.problem]) {
+        code_mirrors[this_problem.exercise][this_problem.problem] = {};
+      }
+      code_mirrors[this_problem.exercise][this_problem.problem][lang] = cm;
       setTimeout(() => void cm.refresh(), 0)
     })
+    $(`.codebox_holder[lang=${config_data.lang[0] || "html"}]`).show();
   })
 })
 
@@ -123,8 +128,6 @@ function update_problem(exercise, question, choice, isCorrect) {
     .find(`.problem[num=${question}]`).find(".problem_box");
   let choice_button = problem_box
     .find(`.choice[choice=${choice}], .mark_complete`);
-  console.log(problem_box)
-  console.log(choice_button)
   problem_box.removeClass("red").removeClass("green");
   problem_box.find(".choice").removeClass("red").removeClass("green");
   switch(isCorrect) {
@@ -162,6 +165,33 @@ function update_problem(exercise, question, choice, isCorrect) {
   }
 }
 
+$("body").on('click', '.lang_link', function() {
+  let lang = $(this).attr('lang');
+  let problem_box = $(this).closest(".problem");
+  problem_box.find('.lang_link').removeClass("active");
+  $(this).addClass('active');
+  problem_box.find('.codebox_holder').hide();
+  problem_box.find(`.codebox_holder[lang=${lang}]`).show();
+})
+
+function getCodeSet(cm_set) {
+  let code_set = {
+    html: "",
+    css: "",
+    js: "",
+  };
+  if ("html" in cm_set) {
+    code_set["html"] = cm_set["html"].getValue();
+  }
+  if ("css" in cm_set) {
+    code_set["css"] = cm_set["css"].getValue();
+  }
+  if ("js" in cm_set) {
+    code_set["js"] = cm_set["js"].getValue();
+  }
+  return code_set;
+}
+
 $("body").on('click', '.run_code', function() {
   let problem_box = $(this).closest(".problem");
   if (problem_box.find(".submitting_code").hasClass("invisible")) {
@@ -173,11 +203,12 @@ $("body").on('click', '.run_code', function() {
   demo.hide();
   output.html(`<iframe></iframe>`)
   let this_problem = getProblemOfElement(this);
-  let cm = code_mirrors[this_problem.exercise][this_problem.problem];
-  let code = cm.getValue();
+  let cm_set = code_mirrors[this_problem.exercise][this_problem.problem];
+  let code_set = getCodeSet(cm_set);
   $iframe = output.find("iframe");
   $iframe.ready(function() {
-    $iframe.contents().find("body").html(code);
+    $iframe.contents().find("body").html(code_set.html);
+    $iframe.contents().find("head").html("<style>" + code_set.css + "</style>");
   });
 })
 
@@ -195,9 +226,9 @@ $("body").on('click', '.submit_code', function() {
   problem_box.find(".submit_code").addClass("invisible");
   problem_box.find(".submitting_code").removeClass("invisible");
   let this_problem = getProblemOfElement(this);
-  let cm = code_mirrors[this_problem.exercise][this_problem.problem];
-  let code = cm.getValue();
-  api.uploadCode(current_exercise, question_num, code);
+  let cm_set = code_mirrors[this_problem.exercise][this_problem.problem];
+  let code_set = getCodeSet(cm_set);
+  api.uploadCode(current_exercise, question_num, code_set);
 })
 
 function resetSlide(resetText) {

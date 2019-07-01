@@ -113,8 +113,15 @@ body {
 .problem textarea {
   width: 100%;
 }
+.lang_link {
+  text-transform: uppercase !important;
+  cursor: pointer;
+}
 .run_code {
   margin-top: 10px !important;
+}
+.codebox_holder {
+  display: none;
 }
 /* CODE MIRROR */
 .CodeMirror {
