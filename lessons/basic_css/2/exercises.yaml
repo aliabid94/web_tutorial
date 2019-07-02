@@ -232,3 +232,64 @@
       quiz: true
       type: code
       code_language: html
+
+7:
+  questions:
+    - question: "What will be the color of the text in the div with id 'hello'? The HTML is <code>
+      <<div class='A'>>
+      ~~<<div>>
+      ~~~~<<div class='B'>>
+      ~~~~<</div>>
+      ~~<</div>>
+      ~~~~<<div class='C'>>
+      ~~~~~~<<div id='hello'>>
+      ~~~~~~~~Hello!
+      ~~~~~~<</div>>
+      ~~~~<</div>>
+      ~~<</div>> <br>
+      <</div>>
+      </code> and the CSS is <code>
+        .A {
+        ~~color: red; <br>
+        } <br>
+        .B {
+        ~~color: blue; <br>
+        } <br>
+        .C {
+        ~~color: yellow; <br>
+        } <br>
+        #hello {
+        ~~background-color: green; <br>
+        }<br>
+      </code>"
+      type: multiple_choice
+      choices:
+        - "yellow"
+        - "blue"
+        - "red"
+        - "green"
+    - question: "Write code to replicate the demo shown."
+      quiz: true
+      demo_code: "<html>
+      <head>
+        <style>
+          ul {
+            color: salmon;
+          }
+          .breakfast {
+            text-decoration: underline;
+          }
+        </style>
+        <body>
+          <p>These are the foods I've eaten lately. I've underlined my breakfast meals: </p>
+          <ul>
+            <li class='breakfast'>Eggs</li>
+            <li>Sandwich</li>
+            <li class='breakfast'>Burrito</li>
+            <li>Salad</li>
+          </ul>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
