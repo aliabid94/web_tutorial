@@ -1,0 +1,14 @@
+2:
+  questions:
+    - question: "Type the following HTML: <code>
+      My name is Sal and I like to play <<span class='typo'>>sokker<</span>>. <br>
+      I have many <<span class='typo'>>frends<</span>> at my <<span class='typo'>>scool<</span>>.
+      </code>
+      and the following CSS: <code>
+      .typo {
+      ~~font-weight: bold;
+      ~~text-decoration: underline;
+      ~~color: red; <br>
+      }
+      </code>"
+      type: code

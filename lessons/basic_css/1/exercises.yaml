@@ -7,6 +7,7 @@
       h1 {
       ~~color: red;<br>
       }</code>  "
+      quiz: true
       type: code
     - question: "Type the following HTML: <code>
       <<h1>>My Favorite Food<</h1>><br>
@@ -35,6 +36,7 @@
       h1 {
       ~~color: red;<br>
       }</code>  "
+      quiz: true
       type: multiple_choice
       choices:
         - "h1"
@@ -72,6 +74,7 @@
       ~~background-color: black;
       ~~text-align: center;<br>
       }</code>  "
+      quiz: true
       type: multiple_choice
       choices:
         - "black"
@@ -104,6 +107,7 @@
       </head>
       </html>
       "
+      quiz: true
       type: code
     - question: "Write code to replicate the demo shown."
       demo_code: "<html>
@@ -195,6 +199,7 @@
       type: code
       code_language: html
     - question: "Write code to replicate the demo shown."
+      quiz: true
       demo_code: "<html>
       <head>
         <style>
@@ -272,5 +277,6 @@
       code_language: html
     - question: "Make a table with the name, age, and gender of every member of your family. Make any row with a male member have a 'salmon' background,
       ~and any row with a female member have a 'cyan' background."
+      quiz: true
       type: code
       code_language: html
