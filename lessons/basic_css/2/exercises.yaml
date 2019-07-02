@@ -12,3 +12,216 @@
       }
       </code>"
       type: code
+    - question: "Write code to replicate the demo shown."
+      demo_code: "<html>
+      <head>
+        <style>
+          p {
+            font-weight: bold;
+          }
+          .favorite {
+            text-decoration: underline;
+          }
+        </style>
+        <body>
+          <p>These are the countries I've visited. My favorites are underlined: </p>
+          <ul>
+            <li>USA</li>
+            <li>Canada</li>
+            <li class='favorite'>Pakistan</li>
+            <li>France</li>
+            <li class='favorite'>Brunei</li>
+          </ul>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Make a table with your favorite foods and their calorie count. Italicize foods that are healthy. "
+      quiz: true
+      type: code
+      code_language: html
+
+3:
+  questions:
+    - question: "Write code to replicate the demo shown. The font used is 'Helvetica'."
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Helvetica;
+          }
+          h1 {
+            text-align: center;
+          }
+          #date {
+            font-style: italic;
+          }
+        </style>
+        <body>
+          <h1>My Diary</h1>
+          <p id='date'>June 21, 2017</p>
+          <p>What a day I've had!</p>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown. The font used is 'Comic Sans MS'."
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Comic Sans MS;
+          }
+          #warn {
+            font-weight: bold;
+            color: red;
+          }
+        </style>
+        <body>
+          <h1>What a sillyyy site!</h1>
+          <p>Fonts can change the aesthetic of a site so much!</p>
+          <p>People tend to hate this font cause its so cliche - <span id='warn'>avoid using it!</span></p>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+
+4:
+  questions:
+    - question: "Write code to replicate the demo shown. The font used is 'Georgia'."
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Georgia;
+          }
+          h1 {
+            text-align: center;
+            background-color: #d4bce0;
+          }
+          p {
+            color: #7e2ca8;
+            font-weight: bold;
+          }
+        </style>
+        <body>
+          <h1>My Flower Shop!</h1>
+          <p>Come buy my flowers!</p>
+          <p>Tulips! Roses! Anything you want!</p>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown. The font used is 'Courier'."
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Courier;
+          }
+          p {
+            color: #5fa34d;
+            font-weight: bold;
+          }
+          button {
+            color: white;
+            font-size: 24px;
+          }
+          #yes {
+            background-color: #7dd180;
+          }
+          #no {
+            background-color: #d1927b;
+          }
+        </style>
+        <body>
+          <p>Do you feel like a coder now??</p>
+          <button id='yes'>Yes</button>
+          <button id='no'>No</button>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+
+5:
+  questions:
+    - question: "Write code to replicate the demo shown."
+      demo_code: "<html>
+      <head>
+        <style>
+          div {
+            background-color: salmon;
+            width: 300px;
+            height: 300px;
+          }
+        </style>
+        <body>
+          <div>
+            <h1>Local News</h1>
+            In local news, a man was attacked by a a giant squid. He refused to let the squid eat him.
+          </div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown."
+      demo_code: "<html>
+      <head>
+        <style>
+          button {
+            font-size: 24px;
+            width: 120px;
+          }
+          #yes {
+            background-color: #7dd180;
+          }
+          #no {
+            background-color: #d1927b;
+          }
+          #maybe {
+            background-color: gold;
+          }
+        </style>
+        <body>
+          <p>Are you coming to this event?</p>
+          <button id='yes'>Yes</button>
+          <button id='no'>No</button>
+          <button id='maybe'>Maybe</button>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+
+6:
+  questions:
+    - question: "Which of the following is not default css?"
+      quiz: true
+      type: multiple_choice
+      choices:
+        - "<code>
+          a {
+          ~~font-size: 24px; <br>
+          }
+          </code>"
+        - "<code>
+          h1 {
+          ~~font-weight: bold; <br>
+          }
+          </code>"
+        - "<code>
+          a {
+          ~~color: blue; <br>
+          }
+          </code>"
+        - "<code>
+          a {
+          ~~text-decoration: underline; <br>
+          }
+          </code>"
