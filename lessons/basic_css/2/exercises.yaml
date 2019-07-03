@@ -241,7 +241,8 @@
       ~~~~<<div class='B'>>
       ~~~~<</div>>
       ~~<</div>>
-      ~~~~<<div class='C'>>
+      ~~<<div class='C'>>
+      ~~~~<<div>>
       ~~~~~~<<div id='hello'>>
       ~~~~~~~~Hello!
       ~~~~~~<</div>>
@@ -268,12 +269,12 @@
         - "blue"
         - "red"
         - "green"
-    - question: "Write code to replicate the demo shown."
+    - question: "Write code to replicate the demo shown. Only apply the color rule on a single element."
       quiz: true
       demo_code: "<html>
       <head>
         <style>
-          ul {
+          div {
             color: salmon;
           }
           .breakfast {
@@ -281,13 +282,16 @@
           }
         </style>
         <body>
-          <p>These are the foods I've eaten lately. I've underlined my breakfast meals: </p>
-          <ul>
-            <li class='breakfast'>Eggs</li>
-            <li>Sandwich</li>
-            <li class='breakfast'>Burrito</li>
-            <li>Salad</li>
-          </ul>
+          <div>
+            <p>These are the foods I've eaten lately. I've underlined my breakfast meals: </p>
+            <ul>
+              <li class='breakfast'>Eggs</li>
+              <li>Sandwich</li>
+              <li class='breakfast'>Burrito</li>
+              <li>Salad</li>
+            </ul>
+          </div>
+          What have you eaten?
         </body>
       </head>
       </html>
