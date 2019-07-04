@@ -1,0 +1,119 @@
+3:
+  questions:
+    - question: "Type the following HTML: <code>
+      Choose a Day: <<br>> <br>
+      <<button>>Monday<</button>> <br>
+      <<button>>Tuesday<</button>> <br>
+      <<button>>Wednesday<</button>>
+      </code>
+      and the following CSS: <code>
+      button {
+      ~~display: block;
+      ~~width: 80% <br>
+      }
+      </code>"
+      type: code
+    - question: "Type the following HTML: <code>
+      Menu Items: <<br>> <br>
+      <<div class='item'>>
+      ~~<<h2>>Pizza<</h2>>
+      ~~<<img src='images/pizza.jpg'>> <br>
+      <</div>> <br>
+      <<div class='item'>>
+      ~~<<h2>>Biryani<</h2>>
+      ~~<<img src='images/biryani.jpg'>> <br>
+      <</div>> <br>
+      <<div class='item'>>
+      ~~<<h2>>Tofu<</h2>>
+      ~~<<img src='images/tofu.jpg'>> <br>
+      <</div>>
+      </code>
+      and the following CSS: <code>
+      .item {
+      ~~display: inline-block; <br>
+      } <br>
+      img {
+      ~~height: 100px; <br>
+      }
+      </code>"
+      type: code
+    - question: "Which of the following is true?"
+      type: multiple_choice
+      choices:
+        - "By default,  <<p>> elements next to each other appear in different lines."
+        - "By default, <<img>> elements next to each other appear in different lines."
+        - "By default, <<div>> elements next to each other appear in the same line."
+        - "By default, <<h1>> elements next to each other appear in the same line."
+    - question: "Create two span elements next to each other with different background colors. Demonstrate word wrap with these elements."
+      type: code
+
+4:
+  questions:
+    - question: "Type the following HTML: <code>
+      Menu Items: <<br>> <br>
+      <<div class='item'>>
+      ~~<<h2>>Pizza<</h2>>
+      ~~<<img src='images/pizza.jpg'>> <br>
+      <</div>> <br>
+      <<div class='item'>>
+      ~~<<h2>>Biryani<</h2>>
+      ~~<<img src='images/biryani.jpg'>> <br>
+      <</div>> <br>
+      <<div class='item'>>
+      ~~<<h2>>Tofu<</h2>>
+      ~~<<img src='images/tofu.jpg'>> <br>
+      <</div>>
+      </code>
+      and the following CSS: <code>
+      .item {
+      ~~display: inline-block;
+      ~~vertical-align: top; <br>
+      } <br>
+      img {
+      ~~width: 100px; <br>
+      }
+      </code>"
+      type: code
+    - question: "Write code to replicate the demo shown. <ul>
+        <li>The font used is 'Verdana'.</li>
+        <li>The cat image used is 'images/cat.jpg'.</li>
+        <li>The dog image used is 'images/dog.jpg'.</li>
+        <li>The elephant image used is 'images/elephant.jpg'.</li>
+        </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          .pet {
+            display: inline-block;
+            vertical-align: top;
+            width: 160px;
+          }
+          img {
+            width: 100%;
+          }
+        </style>
+        <body>
+          <h1>My Pets!</h1>
+          <div class='pet'>
+            <h2>Doodle</h2>
+            <img src='images/cat.jpg'>
+            I love my baby cat doodle!
+          </div>
+          <div class='pet'>
+            <h2>Spot</h2>
+            <img src='images/dog.jpg'>
+            Spot is a good boy! He loves chewing on Doodle!
+          </div>
+          <div class='pet'>
+            <h2>Minnie</h2>
+            <img src='images/elephant.jpg'>
+            Minnie is the loveliest elephant! He loves eating trees!
+          </div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
