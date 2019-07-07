@@ -9,7 +9,7 @@
       and the following CSS: <code>
       button {
       ~~display: block;
-      ~~width: 80% <br>
+      ~~width: 100px <br>
       }
       </code>"
       type: code
@@ -38,6 +38,7 @@
       </code>"
       type: code
     - question: "Which of the following is true?"
+      quiz: true
       type: multiple_choice
       choices:
         - "By default,  <<p>> elements next to each other appear in different lines."
@@ -74,12 +75,46 @@
       }
       </code>"
       type: code
+      quiz: true
+    - question: "Write code to replicate the demo shown. <ul>
+        <li>The font used is 'Garamond'.</li>
+        </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Garamond;
+          }
+          .tower {
+            display: inline-block;
+            vertical-align: top;
+            width: 170px;
+          }
+        </style>
+        <body>
+          <h1>Tallest towers!</h1>
+          <div class='tower'>
+            <h2>Burj Khalifa</h2>
+            <p>The Burj is the tallest tower in the world, at 828 meters tall!</p>
+            <p>It cost $1.5 billion to build!</p>
+          </div>
+          <div class='tower'>
+            <h2>Shanghai Tower</h2>
+            <p>It is the tallest building in China and in East Asia</p>
+            <p>It is tallest twisted twisted building</p>
+          </div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
     - question: "Write code to replicate the demo shown. <ul>
         <li>The font used is 'Verdana'.</li>
         <li>The cat image used is 'images/cat.jpg'.</li>
         <li>The dog image used is 'images/dog.jpg'.</li>
         <li>The elephant image used is 'images/elephant.jpg'.</li>
         </ul>"
+      quiz: true
       demo_code: "<html>
       <head>
         <style>
@@ -117,3 +152,718 @@
       </html>
       "
       type: code
+
+5:
+  questions:
+    - question: "Analyze the demo shown. Try to visualize how the page could be broken into rows and columns.
+      <div style='height: 400px'></div>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          div {
+            box-sizing: border-box;
+          }
+          .column {
+            display: inline-block;
+            vertical-align: top;
+          }
+          .row.color {
+            border: dashed 2px #AA0000;
+          }
+          .column.color {
+            border: dashed 2px #0000AA;
+          }
+          h1 {
+            text-align: center;
+            color: crimson;
+          }
+          #months {
+            width: 100px;
+          }
+          #current_month {
+            font-weight: bold;
+          }
+          #content {
+            width: 300px;
+          }
+          img {
+            height: 60px;
+          }
+          .valid_day {
+            background-color: turquoise;
+            font-weight: bold;
+          }
+        </style>
+        <body>
+          <h1 class='row'>Apple Picking Orchard!</h1>
+          <div class='row'>
+            <div class='column' id='months'>
+              <h3 class='row'>Month</h3>
+              <div class='row'>January</div>
+              <div class='row'>February</div>
+              <div id='current_month' class='row'>March</div>
+            </div>
+            <div class='column' id='content'>
+              <div class='row'>
+                <img src='images/apples/1.jpg'>
+                <img src='images/apples/2.jpg'>
+                <img src='images/apples/3.jpg'>
+              </div>
+              <p>
+                The highlighted days on the calendar are when the orchard is open for apple picking!
+              </p>
+              <h3>March</h3>
+              <table>
+                <thead><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></thead>
+                <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                <tr><td class='valid_day'>14</td><td class='valid_day'>15</td><td class='valid_day'>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+                <tr><td class='valid_day'>21</td><td class='valid_day'>22</td><td class='valid_day'>23</td><td class='valid_day'>24</td><td class='valid_day'>25</td><td>26</td><td>27</td></tr>
+                <tr><td class='valid_day'>28</td><td class='valid_day'>29</td><td class='valid_day'>30</td><td>31</td><td></td><td></td><td></td></tr>
+            </div>
+          </div>
+        </body>
+      </head>
+      </html>"
+      type: todo
+    - question: "Analyze the demo shown. Try to visualize how the page could be broken into rows and columns.
+      <div style='height: 400px'></div>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Arial;
+          }
+          div {
+            box-sizing: border-box;
+          }
+          .column {
+            display: inline-block;
+            vertical-align: top;
+          }
+          .row.color {
+            border: dashed 2px #AA0000;
+          }
+          .column.color {
+            border: dashed 2px #0000AA;
+          }
+          img {
+            width: 100%;
+          }
+          .car {
+            width: 130px;
+            height: 280px;
+            text-align: center;
+          }
+          #car1 {
+            background-color: #DDDDDD;
+          }
+          #car2 {
+            background-color: goldenrod;
+          }
+          #car3 {
+            background-color: royalblue;
+          }
+          #car4 {
+            background-color: white;
+          }
+          #car5 {
+            background-color: crimson;
+          }
+          p {
+            font-size: 14px;
+          }
+        </style>
+        <body>
+          <h1 class='row'>Vote for your Favorite Car!</h1>
+          <div class='row'>
+            <div class='column car' id='car1'>
+              <h3>Aston Martin</h3>
+              <img src='/images/cars/1.jpg'>
+              <p>Gorgeous luxury sports car from Britain</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+            <div class='column car' id='car2'>
+              <h3>Ferarri</h3>
+              <img src='/images/cars/2.jpg'>
+              <p>A stunning racing machine from Italy</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+            <div class='column car' id='car3'>
+              <h3>Mercedes</h3>
+              <img src='/images/cars/3.jpg'>
+              <p>What a powerful and beautiful tank</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+          </div>
+          <div class='row'>
+            <div class='column car' id='car4'>
+              <h3>Jaguar</h3>
+              <img src='/images/cars/4.jpg'>
+              <p>An American classic!</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+            <div class='column car' id='car5'>
+              <h3>Tesla</h3>
+              <img src='/images/cars/5.jpg'>
+              <p>Drive a spaceship on the road!</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+          </div>
+        </body>
+      </head>
+      </html>"
+      type: todo
+
+6:
+  questions:
+    - question: "Write code ONLY to create the divs for the rows highlighted! <ul>
+      <li>If an element can be further broken down into columns, leave the content empty for now - otherwise fill it in.</li>
+      <li>Make sure all row elements are <strong>display: block;</strong></li>
+      <li>The font used is Verdana</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          div {
+            box-sizing: border-box;
+          }
+          .column {
+            display: inline-block;
+            vertical-align: top;
+          }
+          .row.color {
+            border: dashed 2px #AA0000;
+          }
+          .column.color {
+            border: dashed 2px #0000AA;
+          }
+          h1 {
+            text-align: center;
+            color: crimson;
+          }
+          #months {
+            width: 100px;
+          }
+          #current_month {
+            font-weight: bold;
+          }
+          #content {
+            width: 300px;
+          }
+          img {
+            height: 60px;
+          }
+          .valid_day {
+            background-color: turquoise;
+            font-weight: bold;
+          }
+        </style>
+        <body>
+          <h1 class='row color'>Apple Picking Orchard!</h1>
+          <div class='row color'>
+            <div class='column' id='months'>
+              <h3 class='row'>Month</h3>
+              <div class='row'>January</div>
+              <div class='row'>February</div>
+              <div id='current_month' class='row'>March</div>
+            </div>
+            <div class='column' id='content'>
+              <div class='row'>
+                <img src='images/apples/1.jpg'>
+                <img src='images/apples/2.jpg'>
+                <img src='images/apples/3.jpg'>
+              </div>
+              <p>
+                The highlighted days on the calendar are when the orchard is open for apple picking!
+              </p>
+              <h3>March</h3>
+              <table>
+                <thead><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></thead>
+                <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                <tr><td class='valid_day'>14</td><td class='valid_day'>15</td><td class='valid_day'>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+                <tr><td class='valid_day'>21</td><td class='valid_day'>22</td><td class='valid_day'>23</td><td class='valid_day'>24</td><td class='valid_day'>25</td><td>26</td><td>27</td></tr>
+                <tr><td class='valid_day'>28</td><td class='valid_day'>29</td><td class='valid_day'>30</td><td>31</td><td></td><td></td><td></td></tr>
+            </div>
+          </div>
+        </body>
+      </head>
+      </html>"
+      type: code
+    - question: "Write code ONLY to create the divs for the rows highlighted! <ul>
+      <li>If an element can be further broken down into columns, leave the content empty for now - otherwise fill it in.</li>
+      <li>Make sure all row elements are <strong>display: block;</strong></li>
+      <li>The font used is Arial</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Arial;
+          }
+          div {
+            box-sizing: border-box;
+          }
+          .column {
+            display: inline-block;
+            vertical-align: top;
+          }
+          .row.color {
+            border: dashed 2px #AA0000;
+          }
+          .column.color {
+            border: dashed 2px #0000AA;
+          }
+          img {
+            width: 100%;
+          }
+          .car {
+            width: 130px;
+            height: 280px;
+            text-align: center;
+          }
+          #car1 {
+            background-color: #DDDDDD;
+          }
+          #car2 {
+            background-color: goldenrod;
+          }
+          #car3 {
+            background-color: royalblue;
+          }
+          #car4 {
+            background-color: white;
+          }
+          #car5 {
+            background-color: crimson;
+          }
+          p {
+            font-size: 14px;
+          }
+        </style>
+        <body>
+          <h1 class='row color'>Vote for your Favorite Car!</h1>
+          <div class='row color'>
+            <div class='column car' id='car1'>
+              <h3>Aston Martin</h3>
+              <img src='/images/cars/1.jpg'>
+              <p>Gorgeous luxury sports car from Britain</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+            <div class='column car' id='car2'>
+              <h3>Ferarri</h3>
+              <img src='/images/cars/2.jpg'>
+              <p>A stunning racing machine from Italy</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+            <div class='column car' id='car3'>
+              <h3>Mercedes</h3>
+              <img src='/images/cars/3.jpg'>
+              <p>What a powerful and beautiful tank</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+          </div>
+          <div class='row color'>
+            <div class='column car' id='car4'>
+              <h3>Jaguar</h3>
+              <img src='/images/cars/4.jpg'>
+              <p>An American classic!</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+            <div class='column car' id='car5'>
+              <h3>Tesla</h3>
+              <img src='/images/cars/5.jpg'>
+              <p>Drive a spaceship on the road!</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+          </div>
+        </body>
+      </head>
+      </html>"
+      type: code
+
+8:
+  questions:
+    - question: "Write code ONLY to create the divs for the columns highlighted! <ul>
+      <li>If an element can be further broken down into rows, leave the content empty for now - otherwise fill it in.</li>
+      <li>Make sure all column elements are <strong>display: inline-block;</strong> and <strong>vertical-align: top;</strong></li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          div {
+            box-sizing: border-box;
+          }
+          .column {
+            display: inline-block;
+            vertical-align: top;
+          }
+          .row.color {
+            border: dashed 2px #AA0000;
+          }
+          .column.color {
+            border: dashed 2px #0000AA;
+          }
+          h1 {
+            text-align: center;
+            color: crimson;
+          }
+          #months {
+            width: 100px;
+          }
+          #current_month {
+            font-weight: bold;
+          }
+          #content {
+            width: 300px;
+          }
+          img {
+            height: 60px;
+          }
+          .valid_day {
+            background-color: turquoise;
+            font-weight: bold;
+          }
+        </style>
+        <body>
+          <h1 class='row color'>Apple Picking Orchard!</h1>
+          <div class='row color'>
+            <div class='column color' id='months'>
+              <h3 class='row'>Month</h3>
+              <div class='row'>January</div>
+              <div class='row'>February</div>
+              <div id='current_month' class='row'>March</div>
+            </div>
+            <div class='column color' id='content'>
+              <div class='row'>
+                <img src='images/apples/1.jpg'>
+                <img src='images/apples/2.jpg'>
+                <img src='images/apples/3.jpg'>
+              </div>
+              <p>
+                The highlighted days on the calendar are when the orchard is open for apple picking!
+              </p>
+              <h3>March</h3>
+              <table>
+                <thead><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></thead>
+                <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                <tr><td class='valid_day'>14</td><td class='valid_day'>15</td><td class='valid_day'>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+                <tr><td class='valid_day'>21</td><td class='valid_day'>22</td><td class='valid_day'>23</td><td class='valid_day'>24</td><td class='valid_day'>25</td><td>26</td><td>27</td></tr>
+                <tr><td class='valid_day'>28</td><td class='valid_day'>29</td><td class='valid_day'>30</td><td>31</td><td></td><td></td><td></td></tr>
+            </div>
+          </div>
+        </body>
+      </head>
+      </html>"
+      type: code
+    - question: "Write code ONLY to create the divs for the columns highlighted! <ul>
+      <li>If an element can be further broken down into rows, leave the content empty for now - otherwise fill it in.</li>
+      <li>Make sure all column elements are <strong>display: inline-block;</strong> and <strong>vertical-align: top;</strong></li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Arial;
+          }
+          div {
+            box-sizing: border-box;
+          }
+          .column {
+            display: inline-block;
+            vertical-align: top;
+          }
+          .row.color {
+            border: dashed 2px #AA0000;
+          }
+          .column.color {
+            border: dashed 2px #0000AA;
+          }
+          img {
+            width: 100%;
+          }
+          .car {
+            width: 130px;
+            height: 280px;
+            text-align: center;
+          }
+          #car1 {
+            background-color: #DDDDDD;
+          }
+          #car2 {
+            background-color: goldenrod;
+          }
+          #car3 {
+            background-color: royalblue;
+          }
+          #car4 {
+            background-color: white;
+          }
+          #car5 {
+            background-color: crimson;
+          }
+          p {
+            font-size: 14px;
+          }
+        </style>
+        <body>
+          <h1 class='row color'>Vote for your Favorite Car!</h1>
+          <div class='row color'>
+            <div class='column car color' id='car1'>
+              <h3>Aston Martin</h3>
+              <img src='/images/cars/1.jpg'>
+              <p>Gorgeous luxury sports car from Britain</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+            <div class='column car color' id='car2'>
+              <h3>Ferarri</h3>
+              <img src='/images/cars/2.jpg'>
+              <p>A stunning racing machine from Italy</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+            <div class='column car color' id='car3'>
+              <h3>Mercedes</h3>
+              <img src='/images/cars/3.jpg'>
+              <p>What a powerful and beautiful tank</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+          </div>
+          <div class='row color'>
+            <div class='column car color' id='car4'>
+              <h3>Jaguar</h3>
+              <img src='/images/cars/4.jpg'>
+              <p>An American classic!</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+            <div class='column car color' id='car5'>
+              <h3>Tesla</h3>
+              <img src='/images/cars/5.jpg'>
+              <p>Drive a spaceship on the road!</p>
+              Vote for Favorite: <input type='radio' name='cars'>
+            </div>
+          </div>
+        </body>
+      </head>
+      </html>"
+      type: code
+
+9:
+  questions:
+    - question: "Breakdown all the remaining elements! <ul>
+      <li>The apple images used are '/images/apple/1.jpg', '/images/apple/2.jpg', '/images/apple/3.jpg'</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          div {
+            box-sizing: border-box;
+          }
+          .column {
+            display: inline-block;
+            vertical-align: top;
+          }
+          .row.color {
+            border: dashed 2px #AA0000;
+          }
+          .column.color {
+            border: dashed 2px #0000AA;
+          }
+          h1 {
+            text-align: center;
+            color: crimson;
+          }
+          #months {
+            width: 100px;
+          }
+          #current_month {
+            font-weight: bold;
+          }
+          #content {
+            width: 300px;
+          }
+          img {
+            height: 60px;
+          }
+          .valid_day {
+            background-color: turquoise;
+            font-weight: bold;
+          }
+        </style>
+        <body>
+          <h1 class='row color'>Apple Picking Orchard!</h1>
+          <div class='row color'>
+            <div class='column color' id='months'>
+              <h3 class='row color'>Month</h3>
+              <div class='row color'>January</div>
+              <div class='row color'>February</div>
+              <div id='current_month' class='row color'>March</div>
+            </div>
+            <div class='column color' id='content'>
+              <div class='row color'>
+                <img class='column color' src='images/apples/1.jpg'>
+                <img class='column color' src='images/apples/2.jpg'>
+                <img class='column color' src='images/apples/3.jpg'>
+              </div>
+              <p class='row color'>
+                The highlighted days on the calendar are when the orchard is open for apple picking!
+              </p class='row color'>
+              <h3 class='row color'>March</h3>
+              <table class='row color'>
+                <thead><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></thead>
+                <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                <tr><td class='valid_day'>14</td><td class='valid_day'>15</td><td class='valid_day'>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+                <tr><td class='valid_day'>21</td><td class='valid_day'>22</td><td class='valid_day'>23</td><td class='valid_day'>24</td><td class='valid_day'>25</td><td>26</td><td>27</td></tr>
+                <tr><td class='valid_day'>28</td><td class='valid_day'>29</td><td class='valid_day'>30</td><td>31</td><td></td><td></td><td></td></tr>
+            </div>
+          </div>
+        </body>
+      </head>
+      </html>"
+      type: code
+    - question: "Breakdown all the remaining elements! <ul>
+      <li>The car images used are '/images/cars/1.jpg', '/images/cars/2.jpg', etc.</li>
+      </ul>"
+      quiz: true
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Arial;
+          }
+          div {
+            box-sizing: border-box;
+          }
+          .column {
+            display: inline-block;
+            vertical-align: top;
+          }
+          .row.color {
+            border: dashed 2px #AA0000;
+          }
+          .column.color {
+            border: dashed 2px #0000AA;
+          }
+          img {
+            width: 100%;
+          }
+          .car {
+            width: 130px;
+            height: 280px;
+            text-align: center;
+          }
+          #car1 {
+            background-color: #DDDDDD;
+          }
+          #car2 {
+            background-color: goldenrod;
+          }
+          #car3 {
+            background-color: royalblue;
+          }
+          #car4 {
+            background-color: white;
+          }
+          #car5 {
+            background-color: crimson;
+          }
+          p {
+            font-size: 14px;
+          }
+        </style>
+        <body>
+          <h1 class='row color'>Vote for your Favorite Car!</h1>
+          <div class='row color'>
+            <div class='column car color' id='car1'>
+              <h3 class='row color'>Aston Martin</h3>
+              <img src='/images/cars/1.jpg' class='row color'>
+              <p class='row color'>Gorgeous luxury sports car from Britain</p>
+              <div class='row color'>Vote for Favorite: <input type='radio' name='cars'></div>
+            </div>
+            <div class='column car color' id='car2'>
+              <h3 class='row color'>Ferarri</h3>
+              <img src='/images/cars/2.jpg' class='row color'>
+              <p class='row color'>A stunning racing machine from Italy</p>
+              <div class='row color'>Vote for Favorite: <input type='radio' name='cars'></div>
+            </div>
+            <div class='column car color' id='car3'>
+              <h3 class='row color'>Mercedes</h3>
+              <img src='/images/cars/3.jpg' class='row color'>
+              <p class='row color'>What a powerful and beautiful tank</p>
+              <div class='row color'>Vote for Favorite: <input type='radio' name='cars'></div>
+            </div>
+          </div>
+          <div class='row color'>
+            <div class='column car color' id='car4'>
+              <h3 class='row color'>Jaguar</h3>
+              <img src='/images/cars/4.jpg' class='row color'>
+              <p class='row color'>An American classic!</p>
+              <div class='row color'>Vote for Favorite: <input type='radio' name='cars'></div>
+            </div>
+            <div class='column car color' id='car5'>
+              <h3 class='row color'>Tesla</h3>
+              <img src='/images/cars/5.jpg' class='row color'>
+              <p class='row color'>Drive a spaceship on the road!</p>
+              <div class='row color'>Vote for Favorite: <input type='radio' name='cars'></div>
+            </div>
+          </div>
+        </body>
+      </head>
+      </html>"
+      type: code
+
+10:
+  questions:
+    - question: "Type the following HTML: <code>
+      My Favorite Hobbies <br>
+      <<ul>>
+      ~~<<li>>Writing<</li>>
+      ~~<<li>>Eating<</li>>
+      ~~<<li class='secret'>>Dancing<</li>>
+      ~~<<li>>Building<</li>>
+      ~~<<li class='secret'>>Killing<</li>><br>
+      <</ul>>
+      </code>
+      and the following CSS: <code>
+      .secret {
+      ~~display: none; <br>
+      }
+      </code>"
+      type: code
+    - question: "Type the following HTML: <code>
+      My Favorite Hobbies <br>
+      <<ul>>
+      ~~<<li>>Writing<</li>>
+      ~~<<li>>Eating<</li>>
+      ~~<<li class='secret'>>Dancing<</li>>
+      ~~<<li>>Building<</li>>
+      ~~<<li class='secret'>>Killing<</li>><br>
+      <</ul>>
+      </code>
+      and the following CSS: <code>
+      .secret {
+      ~~visibility: hidden; <br>
+      }
+      </code>"
+      type: code
+    - question: "If I want to visually remove an element, including any space it takes up, which CSS rule should I apply?"
+      type: multiple_choice
+      choices:
+        - "display: none"
+        - "display: block"
+        - "display: inline"
+        - "visibility: hidden"
