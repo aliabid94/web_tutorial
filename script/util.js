@@ -27,9 +27,10 @@ function getRandomSample(range, size) {
 }
 
 function parseFormattedYAML(str) {
-  let replacements = [
+  let pre_replacements = [
     [/#/g, '&#35;'],
     [/<</g, '&lt;'],
+    [/<code(.*)>(\r\n|\n|\r) */g, '<code$1>'],
     [/>>/g, '&gt;'],
     [/<<\\/g, '&lt;\\\\'],
     [/\$\{\{~/g, "${false_variables['"],
@@ -39,12 +40,19 @@ function parseFormattedYAML(str) {
     [/\}\}/g, "']"],
     [/ ~~/g, " <br>&nbsp;&nbsp;"],
     [/~/g, "&nbsp;"],
-  ]
-  let reformatted_str = str;
+  ];
+  let post_replacements = [
+   [/\|\*/g, '']
+  ];
+  let parsed_data = YAML.parse(replaceAll(str, pre_replacements))
+  return JSON.parse(replaceAll(JSON.stringify(parsed_data), post_replacements))
+}
+
+function replaceAll(str, replacements) {
   replacements.forEach((replacement) => {
-    reformatted_str = reformatted_str.replace(replacement[0], replacement[1]);
+    str = str.replace(replacement[0], replacement[1]);
   })
-  return YAML.parse(reformatted_str)
+  return str;
 }
 
 function parseQueryString(query) {

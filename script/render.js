@@ -33,7 +33,7 @@ function renderRepeat(i, question, repeat) {
 }
 
 function renderToString(i, question, variables, false_variables) {
-  question = JSON.parse(eval(("`" + JSON.stringify(question) + "`").replace(/\\n/g,'')))
+  question = JSON.parse(eval(("`" + JSON.stringify(question) + "`").replace(/\\n/g,'\\\\n')))
   let choices = question.choices || []
   let answers, answers_input;
   switch (question.type) {

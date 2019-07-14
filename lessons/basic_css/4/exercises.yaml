@@ -1,0 +1,51 @@
+2:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <nav>
+          <a href='#link1'>Home</a>
+          <a href='#link2'>Shop</a>
+          <a href='#link3'>Checkout</a>
+          <a href='#link4'>Contact</a>
+        </nav>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        a {
+          color: black;
+          font-weight: bold;
+          padding: 10px 25px;
+          background-color: #DDDDDD;
+        }
+        </code>
+      type: code
+    - question: "Write code to replicate the demo shown."
+      demo_code: "<html>
+      <head>
+        <style>
+          button {
+            padding: 10px;
+            font-weight: bold;
+          }
+          div {
+            display: inline-block;
+            padding: 10px;
+          }
+          #o1 {
+            background-color: salmon;
+          }
+          #o2 {
+            background-color: turquoise;
+          }
+        </style>
+        <body>
+          <div id=o1>Republicans</div> - or - <div id=o2>Democrats</div> <br>
+          Pick your vote! <br>
+          <button>Republican!</button>
+          <button>Democrat!</button> <br>
+        </body>
+      </head>
+      </html>
+      "
+      type: code

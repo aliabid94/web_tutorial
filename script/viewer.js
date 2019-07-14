@@ -80,6 +80,15 @@ $.get(lesson_url + "config.yaml", function(data) {
       setTimeout(() => void cm.refresh(), 0)
     })
     $(`.codebox_holder[lang=${config_data.lang[0] || "html"}]`).show();
+    $("code[lang=html]").each(function (i, element) {
+      let html = $(element).get(0).innerHTML;
+      let replacements = [
+        [/</g, '&lt;'],
+        [/>/g, '&gt;'],
+        [/<\\/g, '&lt;\\\\'],
+      ]
+      $(element).html(replaceAll(html, replacements));
+    })
   })
 })
 
