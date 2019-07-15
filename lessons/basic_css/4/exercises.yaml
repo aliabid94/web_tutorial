@@ -20,6 +20,28 @@
         }
         </code>
       type: code
+    - question: "Write code to replicate the demo shown. Use the <strong>div</strong> element for each line."
+      demo_code: "<html>
+      <head>
+        <style>
+          div {
+            padding: 12px;
+            background-color: #CCEECC;
+          }
+          .mid {
+            padding: 12px;
+            background-color: #CCCCEE;
+          }
+        </style>
+        <body>
+          <div>Once upon a time...</div>
+          <div class='mid'>Then the hero...</div>
+          <div>...and they lived happily ever after.</div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
     - question: "Write code to replicate the demo shown."
       demo_code: "<html>
       <head>
@@ -38,12 +60,251 @@
           #o2 {
             background-color: turquoise;
           }
+          #holder {
+            padding: 12px;
+            background-color: #DDCCFF;
+            text-align: center;
+          }
         </style>
         <body>
-          <div id=o1>Republicans</div> - or - <div id=o2>Democrats</div> <br>
-          Pick your vote! <br>
-          <button>Republican!</button>
-          <button>Democrat!</button> <br>
+          <div id='holder'>
+            <div id=o1>Republicans</div> - or - <div id=o2>Democrats</div> <br>
+            Pick your vote! <br>
+            <button>Republican!</button>
+            <button>Democrat!</button> <br>
+          </div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+
+3:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <nav>
+          <a href='#link1' id='current_page'>Home</a>
+          <a href='#link2'>Shop</a>
+          <a href='#link3'>Checkout</a>
+          <a href='#link4'>Contact</a>
+        </nav>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        a {
+          color: black;
+          font-weight: bold;
+          padding: 10px 25px;
+          background-color: #DDDDDD;
+          border-bottom: solid 4px pink;
+        }
+        #current_page {
+          border-bottom: solid 4px purple;
+        }
+        </code>
+      type: code
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <input type='text' id='search' placeholder='Search Inventory'>
+        <button>Search</button>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        #search {
+          border: none;
+          padding: 6px;
+          font-size: 20px;
+          font-family: Garamond;
+          background-color: #EEEEEE;
+        }
+        button {
+          border: none;
+          font-size: 20px;
+          padding: 6px;
+          background-color: salmon;
+        }
+        </code>
+      type: code
+    - question: "Write code to replicate the demo shown."
+      quiz: true
+      demo_code: "<html>
+      <head>
+        <style>
+          div {
+            display: inline-block;
+            padding: 12px;
+            background-color: gold;
+            border: dashed 3px red;
+          }
+        </style>
+        <body>
+          <h1>Select Your Order Items:</h1>
+          <div>
+            <input type='checkbox' group='items'>Bread
+          </div>
+          <div>
+            <input type='checkbox' group='items'>Eggs
+          </div>
+          <div>
+            <input type='checkbox' group='items'>Milk
+          </div>
+          <div>
+            <input type='checkbox' group='items'>Spinach
+          </div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+
+4:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <nav>
+          <a href='#link1' id='current_page'>Home</a>
+          <a href='#link2'>Shop</a>
+          <a href='#link3'>Checkout</a>
+          <a href='#link4'>Contact</a>
+        </nav>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        a {
+          color: black;
+          font-weight: bold;
+          padding: 10px 25px;
+          background-color: #DDDDDD;
+          border-bottom: solid 4px pink;
+          margin-right: 12px;
+        }
+        #current_page {
+          border-bottom: solid 4px purple;
+        }
+        </code>
+      quiz: true
+      type: code
+    - question: "Write code to replicate the demo shown. Use the <strong>div</strong> element for each line."
+      demo_code: "<html>
+      <head>
+        <style>
+          div {
+            padding: 12px;
+            background-color: #CCEECC;
+            margin-bottom: 16px;
+          }
+          .mid {
+            padding: 12px;
+            background-color: #CCCCEE;
+          }
+        </style>
+        <body>
+          <div>Once upon a time...</div>
+          <div class='mid'>Then the hero...</div>
+          <div>...and they lived happily ever after.</div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown. Use the <strong>div</strong> element for each line."
+      quiz: true
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          div {
+            display: inline-block;
+            padding: 12px;
+            background-color: #DDDDDD;
+            margin-right: 16px;
+            width: 200px;
+          }
+        </style>
+        <body>
+          <h1>Local News</h1>
+          <div>
+            <h3>Man Eaten By Bear</h3>
+            <p>Today by the coast, a man...</p>
+          </div>
+          <div>
+            <h3>Bear Eaten By Man</h3>
+            <p>In a revenge attack, a man...</p>
+          </div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+
+7:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        Gender: <br>
+        <div>
+          <input type='radio' name='gender' value='male'>Male
+        </div>
+        <div>
+          <input type='radio' name='gender' value='female'>Female
+        </div>
+        <div>
+          <input type='radio' name='gender' value='other'>Other
+        </div>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        div {
+          display: inline-block;
+          background-color: gold;
+          padding: 8px 20px;
+          border-radius: 6px;
+          margin-right: 12px;
+        }
+        </code>
+      type: code
+    - question: "Write code to replicate the demo shown. Use the <strong>div</strong> element for each line."
+      quiz: true
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          div {
+            display: inline-block;
+            padding: 12px;
+            background-color: #DDDDFF;
+            margin-right: 16px;
+            width: 200px;
+            border-radius: 10px;
+            text-align: center;
+          }
+          img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+          }
+        </style>
+        <body>
+          <h1>My Pets!</h1>
+          <div>
+            <h3>Doodle</h3>
+            <img src='images/cat.jpg'>
+            <p>Doodle is such a lovely cat!!!</p>
+          </div>
+          <div>
+            <h3>Spot</h3>
+            <img src='images/dog.jpg'>
+            <p>Spot is the best little boy ever!</p>
+          </div>
         </body>
       </head>
       </html>
