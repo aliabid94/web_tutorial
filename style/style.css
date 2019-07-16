@@ -108,7 +108,7 @@ body {
   margin: 4px 0;
   border: solid 1px #BBB;
   border-radius: 2px;
-  user-select: none;
+  user-selects: none;
   white-space: pre;
 }
 .problem textarea {

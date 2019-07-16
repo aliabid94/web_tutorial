@@ -1,0 +1,88 @@
+2:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <<html>>
+          <<head>>
+            <<link rel='stylesheet' type='text/css' href='style.css'>>
+          <</head>>
+          <<body>>
+            <nav>
+              <a href='#link1'>Shop</a>
+              <a href='#link2'>Inventory</a>
+              <a href='#link3'>History</a>
+              <a href='#link4' id='current'>Login</a>
+            </nav>
+            <main>
+              <div id='login_box'>
+                <h2>Login</h2>
+                <h4>USERNAME</h4>
+                <input type='text' class='full'>
+                <h4>PASSWORD</h4>
+                <input type='password' class='full'>
+                <div id='remember'>
+                  <input type='checkbox'>Remember Me
+                </div>
+                <button id='login' class='full'>Login</button>
+                <button id='signup' class='full'>Signup</button>
+              </div>
+            </main>
+          <</body>>
+        <</html>>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        body {
+          font-family: Verdana;
+        }
+        nav {
+          background-color: indigo;
+          padding: 10px 40px;
+        }
+        a {
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+          padding: 4px;
+          margin: 0px 10px;
+        }
+        #current {
+          border-bottom: solid 3px white;
+        }
+        #login_box {
+          margin: 20px 40px;
+          width: 300px;
+          background-color: #EEEEEE;
+          border: solid 1px #888888;
+          border-radius: 6px;
+          padding: 10px;
+        }
+        h2 {
+          margin-top: 0;
+        }
+        h4 {
+          margin-bottom: 0;
+        }
+        .full {
+          width: 100%;
+          padding: 6px;
+        }
+        #remember {
+          margin: 6px 0px;
+        }
+        button {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        #login {
+          background-color: gold;
+          border: none;
+          margin-bottom: 10px;
+        }
+        #signup {
+          background-color: white;
+          border: solid 2px black;
+        }
+        </code>
+      type: code
