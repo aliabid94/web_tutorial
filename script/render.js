@@ -89,9 +89,15 @@ function renderToString(i, question, variables, false_variables) {
     <span class="yes_message"><span class="header ui green">${yesMessage()}</span></span>
   </div>
   <div class='output_box render_box ui message fluid'>
+    <div class='open_max'>
+      <img src='images/open.png'>
+    </div>
   </div>
   ${question.demo_code ? `
   <div class='demo_box render_box yellow ui message fluid'>
+    <div class='open_max'>
+      <img src='images/open.png'>
+    </div>
     <iframe srcdoc="${question.demo_code}"></iframe>
   </div>
     ` : ""}

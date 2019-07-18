@@ -210,7 +210,8 @@ $("body").on('click', '.run_code', function() {
   let demo = $(this).closest(".problem").find(".demo_box");
   output.show();
   demo.hide();
-  output.html(`<iframe></iframe>`)
+  output.find('iframe').remove();
+  output.append(`<iframe></iframe>`)
   let this_problem = getProblemOfElement(this);
   let cm_set = code_mirrors[this_problem.exercise][this_problem.problem];
   let code_set = getCodeSet(cm_set);
@@ -219,6 +220,14 @@ $("body").on('click', '.run_code', function() {
     $iframe.contents().find("body").html(code_set.html);
     $iframe.contents().find("head").html("<style>" + code_set.css + "</style>");
   });
+})
+
+$("body").on('click', '.open_max', function() {
+  let html = $(this).parent().find('iframe').contents().find("html").html();
+  let is_demo = $(this).closest('.render_box').hasClass('demo_box')
+  var win = window.open('', (is_demo ? 'demo' : 'output'),'height=600,width=480');
+  win.document.write(html);
+  win.focus();
 })
 
 $("body").on('click', '.show_demo', function() {

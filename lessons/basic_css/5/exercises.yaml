@@ -465,7 +465,7 @@
           }
         </style>
         <body>
-          <input type='text' id='search' placeholder='Search for Cuisines..'>
+          <input type='text' id='search' placeholder='Search for Cuisines..'><br>
           TAGS:
           <div class='tag'>
             entree <img class='close' src='images/x-mark.jpg'>
