@@ -89,10 +89,10 @@
     - question: "Write code to replicate the demo shown. <ul>
       <li>The font used is Verdana.</li>
       <li>You will need to use <strong>vertical-align: middle</strong> to centrally align each image with the description text next to it.</li>
-      <li>The cat image used is <strong>/images/cat.jpg</strong></li>
-      <li>The dog image used is <strong>/images/dog.jpg</strong></li>
-      <li>The elephant image used is <strong>/images/elephant.jpg</strong></li>
-      <li>The squid image used is <strong>/images/squid.jpg</strong></li>
+      <li>The cat image used is <strong>images/cat.jpg</strong></li>
+      <li>The dog image used is <strong>images/dog.jpg</strong></li>
+      <li>The elephant image used is <strong>images/elephant.jpg</strong></li>
+      <li>The squid image used is <strong>images/squid.jpg</strong></li>
       </ul>"
       demo_code: "<html>
       <head>
@@ -126,28 +126,28 @@
         <body>
           <h1>My Pets</h1>
           <div class='pet'>
-            <img src='/images/cat.jpg'>
+            <img src='images/cat.jpg'>
             <div class='info'>
               <h3>Doodle</h3>
               <p>What a darling cat doodle is!</p>
             </div>
           </div>
           <div class='pet'>
-            <img src='/images/dog.jpg'>
+            <img src='images/dog.jpg'>
             <div class='info'>
               <h3>Spot</h3>
               <p>Spot is such a good boy!</p>
             </div>
           </div>
           <div class='pet'>
-            <img src='/images/elephant.jpg'>
+            <img src='images/elephant.jpg'>
             <div class='info'>
               <h3>Elephant</h3>
               <p>Elephant is such a good elephant!</p>
             </div>
           </div>
           <div class='pet'>
-            <img src='/images/squid.jpg'>
+            <img src='images/squid.jpg'>
             <div class='info'>
               <h3>Squidward</h3>
               <p>Squidward gives the best hugs!</p>
@@ -415,9 +415,9 @@
       type: code
     - question: "Write code to replicate the demo shown. <ul>
       <li>The font used in the page is Verdana.</li>
-      <li>The x-mark image used is <strong>/images/x-mark.jpg</strong></li>
-      <li>The pizza image used is <strong>/images/pizza.jpg</strong></li>
-      <li>The tofu image used is <strong>/images/tofu.jpg</strong></li>
+      <li>The x-mark image used is <strong>images/x-mark.jpg</strong></li>
+      <li>The pizza image used is <strong>images/pizza.jpg</strong></li>
+      <li>The tofu image used is <strong>images/tofu.jpg</strong></li>
       </ul>"
       demo_code: "<html>
       <head>
@@ -468,23 +468,23 @@
           <input type='text' id='search' placeholder='Search for Cuisines..'>
           TAGS:
           <div class='tag'>
-            entree <img class='close' src='/images/x-mark.jpg'>
+            entree <img class='close' src='images/x-mark.jpg'>
           </div>
           <div class='tag'>
-            carbs <img class='close' src='/images/x-mark.jpg'>
+            carbs <img class='close' src='images/x-mark.jpg'>
           </div>
           <div>
             <div class='result'>
               <h4>Pizza</h4>
               Prep Time: <em>40 min.</em> <br>
               Cook Time: <em>20 min.</em>
-              <img src='/images/pizza.jpg'>
+              <img src='images/pizza.jpg'>
             </div>
             <div class='result'>
               <h4>Tofu</h4>
               Prep Time: <em>30 min.</em> <br>
               Cook Time: <em>10 min.</em>
-              <img src='/images/tofu.jpg'>
+              <img src='images/tofu.jpg'>
             </div>
           </div>
         </body>
