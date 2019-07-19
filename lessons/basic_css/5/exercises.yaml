@@ -596,14 +596,14 @@
           <h1>Find Your Next House.</h1>
           <nav>
             <div class='label'>
-              I'm looking to
+              I want to
               <select>
                 <option>Rent or Buy</option>
                 <option>Rent Only</option>
                 <option>Buy Only</option>
               </select>
             </div>
-            at a price range between
+            at a price between
             <div class='label'>
               <input type='text' placeholder='Min. Price'>
               and
@@ -624,6 +624,89 @@
             <h3>301 College Ave, Palo Alto, CA.</h3>
             Bedrooms: <em>2</em><br>
             Bathrooms: <em>2</em>
+            </div>
+          </div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>The font used in the page is Arial.</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Arial;
+          }
+          h1 {
+            background-color: lightgray;
+            margin: 0;
+            padding: 12px;
+          }
+          #messages {
+            background-color: #EEE;
+            padding: 10px;
+          }
+          .message {
+            background-color: white;
+            padding: 4px 8px;
+            border-radius: 2px;
+            width: auto;
+            margin-bottom: 10px;
+          }
+          .message p, .sender, .you {
+            display: inline-block;
+          }
+          .sender, .you {
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 0 6px;
+          }
+          .sender {
+            background-color: #CCC;
+          }
+          .you, button {
+            background-color: #4287f5;
+            color: white;
+          }
+          input[type=text], button {
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            vertical-align: top;
+          }
+
+        </style>
+        <body>
+          <h1>Family Chat</h1>
+          <div id='messages'>
+            <div class='message'>
+              <div class='sender'>Mom</div>
+              <p>Hey, where are you?</p>
+            </div>
+            <div class='message'>
+              <div class='you'>You</div>
+              <p>I'm in my room.</p>
+            </div>
+            <div class='message'>
+              <div class='sender'>Mom</div>
+              <p>Food's ready.</p>
+            </div>
+            <div class='message'>
+              <div class='sender'>Dad</div>
+              <p>We're waiting for you downstairs.</p>
+            </div>
+            <div class='message'>
+              <div class='you'>You</div>
+              <p>Coming!</p>
+            </div>
+            <div id='input'>
+              <input type='text'>
+              <button>Send</button>
             </div>
           </div>
         </body>

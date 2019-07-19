@@ -29,8 +29,8 @@ body {
   display: none;
 }
 .render_box iframe {
-  width: calc(100% - 30px);
-  height: 100%;
+  width: 100%;
+  height: calc(100% - 30px);
   border: none;
 }
 .exercise_set {
