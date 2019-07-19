@@ -492,3 +492,142 @@
       </html>
       "
       type: code
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>The font used in the page is Arial.</li>
+      <li>The x-mark image used is <strong>images/roses1.jpg</strong></li>
+      <li>The pizza image used is <strong>images/roses2.jpg</strong></li>
+      <li>Use <strong>vertical-align: middle</strong> to align the text with the images.</li>
+      <li>Note that there is extra space between each line in the paragraph. Use Google to learn how to set this.</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Arial;
+          }
+          .row {
+            background-color: pink;
+            display: inline-block;
+          }
+          .row img {
+            height: 120px;
+            width: 180px;
+            vertical-align: middle;
+            padding: 4px;
+          }
+          .text-col {
+            width: 180px;
+            vertical-align: middle;
+            display: inline-block;
+            text-align: center;
+          }
+          #mininote {
+            font-size: 10px;
+          }
+          p {
+            line-height: 1.8em;
+          }
+        </style>
+        <body>
+          <h1>Amber's Rose Shop</h1>
+          <div class='row'>
+            <img src='images/roses1.jpg'>
+            <div class='text-col'>Mother's Day<br>SALE</div>
+          </div><br>
+          <div class='row'>
+            <div class='text-col'>
+              50% off
+              <div id='mininote'>*Select items only. See details.</div>
+            </div>
+            <img src='images/roses2.jpg'>
+          </div>
+          <h3>This year, give your mother something special.</h3>
+          <p>Mother's Day is a celebration honoring the mother of the family, as well as motherhood, maternal bonds, and the influence of mothers in society. It is celebrated on various days in many parts of the world, most commonly in the months of March or May. It complements similar celebrations honoring family members, such as Father's Day, Siblings Day, and Grandparents Day.</p>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>The font used in the page is Verdana.</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          nav {
+            background-color: salmon;
+            padding: 6px;
+            font-size: 11px;
+          }
+          .label {
+            display: inline-block;
+          }
+          input[type=text] {
+            width: 70px;
+            background-color: #FFDDDD;
+            border: none;
+            padding: 4px;
+          }
+          .house {
+            border-radius: 4px;
+            margin: 8px 0;
+            border: solid 1px black;
+            padding: 6px;
+          }
+          .price {
+            padding: 8px;
+            padding-top: 0px;
+            text-align: right;
+            color: green;
+            font-weight: bold;
+          }
+          .not_available {
+            border: dashed 4px #AAA;
+            background-color: #EEE;
+            padding: 20px;
+            font-size: 24px;
+            text-align: center;
+          }
+        </style>
+        <body>
+          <h1>Find Your Next House.</h1>
+          <nav>
+            <div class='label'>
+              I'm looking to
+              <select>
+                <option>Rent or Buy</option>
+                <option>Rent Only</option>
+                <option>Buy Only</option>
+              </select>
+            </div>
+            at a price range between
+            <div class='label'>
+              <input type='text' placeholder='Min. Price'>
+              and
+              <input type='text' placeholder='Max. Price'>
+            </div>
+          </nav>
+          <div class='house'>
+            <div class='price'>$4500 / mo.</div>
+            <div class='not_available'>Image Not Available</div>
+            <h3>40 Royal Oak Court, Mountain View, CA.</h3>
+            Bedrooms: <em>4</em><br>
+            Bathrooms: <em>3</em>
+            </div>
+          </div>
+          <div class='house'>
+            <div class='price'>$3000 / mo.</div>
+            <div class='not_available'>Image Not Available</div>
+            <h3>301 College Ave, Palo Alto, CA.</h3>
+            Bedrooms: <em>2</em><br>
+            Bathrooms: <em>2</em>
+            </div>
+          </div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code

@@ -29,7 +29,7 @@ body {
   display: none;
 }
 .render_box iframe {
-  width: 100%;
+  width: calc(100% - 30px);
   height: 100%;
   border: none;
 }
