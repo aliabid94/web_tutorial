@@ -494,9 +494,8 @@
       type: code
     - question: "Write code to replicate the demo shown. <ul>
       <li>The font used in the page is Arial.</li>
-      <li>The x-mark image used is <strong>images/roses1.jpg</strong></li>
-      <li>The pizza image used is <strong>images/roses2.jpg</strong></li>
-      <li>Use <strong>vertical-align: middle</strong> to align the text with the images.</li>
+      <li>The first rose image used is <strong>images/roses1.jpg</strong></li>
+      <li>The second rose image used is <strong>images/roses2.jpg</strong></li>
       <li>Note that there is extra space between each line in the paragraph. Use Google to learn how to set this.</li>
       </ul>"
       demo_code: "<html>
@@ -508,38 +507,53 @@
           .row {
             background-color: pink;
             display: inline-block;
+            margin-bottom: 6px;
           }
           .row img {
             height: 120px;
             width: 180px;
-            vertical-align: middle;
+            vertical-align: top;
             padding: 4px;
           }
           .text-col {
             width: 180px;
-            vertical-align: middle;
+            vertical-align: top;
             display: inline-block;
             text-align: center;
           }
           #mininote {
             font-size: 10px;
+            margin: 8px;
+          }
+          h5 {
+            margin-top: 14px;
+            margin-bottom: 8px;
           }
           p {
             line-height: 1.8em;
+          }
+          button {
+            margin: 8px;
+            background-color: lightblue;
+            padding: 6px;
           }
         </style>
         <body>
           <h1>Amber's Rose Shop</h1>
           <div class='row'>
             <img src='images/roses1.jpg'>
-            <div class='text-col'>Mother's Day<br>SALE</div>
+            <div class='text-col'>
+              <h5>Pink Rose Sale!</h5>
+              <button>View Sale</button>
+            </div>
           </div><br>
           <div class='row'>
+            <img src='images/roses2.jpg'>
             <div class='text-col'>
-              50% off
+              <h5>Mother's Day Special!</h5>
+              <button>View Sale</button>
               <div id='mininote'>*Select items only. See details.</div>
             </div>
-            <img src='images/roses2.jpg'>
           </div>
           <h3>This year, give your mother something special.</h3>
           <p>Mother's Day is a celebration honoring the mother of the family, as well as motherhood, maternal bonds, and the influence of mothers in society. It is celebrated on various days in many parts of the world, most commonly in the months of March or May. It complements similar celebrations honoring family members, such as Father's Day, Siblings Day, and Grandparents Day.</p>
@@ -679,7 +693,6 @@
             border: none;
             vertical-align: top;
           }
-
         </style>
         <body>
           <h1>Family Chat</h1>
