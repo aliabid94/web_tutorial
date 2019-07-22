@@ -727,3 +727,325 @@
       </html>
       "
       type: code
+
+3:
+  questions:
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>The font used in the page is Verdana.</li>
+      <li>Use Google to learn how to implement the range input object.</li>
+      <li>Use Google to learn how to implement the shadow effect for each flight card.</li>
+      <li>The Istanbul image used is <strong>images/istanbul.jpg</strong></li>
+      <li>The Karachi image used is <strong>images/karachi.jpg</strong></li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          .field {
+            margin-bottom: 10px;
+          }
+          h5 {
+            color: gray;
+          }
+          img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+          }
+          .flight {
+            background-color: white;
+            border: solid 1px black;
+            padding: 16px;
+            box-shadow: 0px 4px 4px grey;
+            margin-bottom: 16px;
+          }
+          h3 {
+            margin-top: 0;
+            text-align: center;
+          }
+          h5 {
+            margin-top: 0;
+          }
+          .left {
+            width: 60%;
+          }
+          .left, .right {
+            vertical-align: middle;
+            display: inline-block;
+          }
+          .right {
+            text-align: center;
+            width: 38%;
+          }
+          button {
+            padding: 8px;
+            font-size: 20px;
+            background-color: gold;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 8px;
+            text-align: center;
+            border: none;
+            border-radius: 4px;
+          }
+        </style>
+        <body>
+         <h1>Find The Cheapest Flight. To Anywhere.</h1>
+         <nav>
+           <div class='field'>
+             Origin:
+             <select>
+               <option>- Select Origin -</option>
+               <option>New York</option>
+               <option>Chicago</option>
+               <option>Los Angeles</option>
+             </select>
+           </div>
+           <div class='field'>
+             Max Cost: $0 <input type='range'> $1500
+           </div>
+         </nav>
+         <div class='flight'>
+           <h3>New York - Istanbul</h3>
+           <div class='left'>
+             <h5>Visit the great cultural capital of Istanbul - the crossroads of Europe and Asia!</h5>
+             Price: <strong> $840 </strong><br>
+             Dates: <strong> Jan. 16 - Jan. 22 </strong><br>
+             Flight Duration: <strong> 16h </strong><br>
+           </div>
+           <div class='right'>
+             <img src='images/istanbul.jpg'>
+           </div>
+           <button>Purchase</button>
+         </div>
+         <div class='flight'>
+           <h3>Los Angeles - Karachi</h3>
+           <div class='left'>
+             <h5>Visit this vibrant economic and cultural hub of Pakistan!</h5>
+             Price: <strong> $990 </strong><br>
+             Dates: <strong> Jan. 17 - Jan. 23 </strong><br>
+             Flight Duration: <strong> 22h </strong><br>
+           </div>
+           <div class='right'>
+             <img src='images/karachi.jpg'>
+           </div>
+           <button>Purchase</button>
+         </div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>The font used in the page is Verdana.</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+            line-height: 1.5em;
+          }
+          a {
+            cursor: pointer;
+            padding: 6px 12px;
+            margin-right: 2px;
+            background-color: rgb(240, 200, 255);
+          }
+          #selected {
+            font-weight: bold;
+            background-color: rgb(200, 160, 255);
+          }
+          nav {
+            margin-bottom: 10px;
+          }
+          .left, .right {
+            display: inline-block;
+            vertical-align: top;
+          }
+          .left {
+            width: 50%;
+            padding-right: 6px;
+            border-right: solid 1px black;
+          }
+          .right {
+            text-align: center;
+            padding-left: 6px;
+            width: 46%;
+          }
+          h6 {
+            margin: 5px 0;
+            padding: 0;
+          }
+          button {
+            background-color: #DDD;
+            border: none;
+            color: #AE3E31;
+            font-weight: bold;
+            padding: 10px;
+            margin-top: 4px;
+            width: 100%;
+          }
+        </style>
+        <body>
+         <h1>Pejmon's Fantastic Rugs.</h1>
+         <nav>
+           <a>HOME</a>
+           <a id='selected'>ABOUT</a>
+           <a>STORE</a>
+           <a>CONTACT</a>
+         </nav>
+         <div class='left'>
+           <p>We are luxury, handmade area rug experts that have been in business for over 30 years. Our role is to help guide you through the process and make it simple and stress free as possible.</p>
+           <p>With numerous beautiful imported rugs, Pejmon aims to provide the widest degree of choices for customers.</p>
+         </div>
+         <div class='right'>
+          <h6>View by Price</h6>
+          <button>Up to $500</button>
+          <button>$500 to $1500</button>
+          <button>$1500 to $5000</button>
+          <button>Over $5000</button>
+         </div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>The font used in the page is Arial.</li>
+      <li>The sunny image used is <strong>images/sunny.jpg</strong></li>
+      <li>The cloudy image used is <strong>images/cloudy.jpg</strong></li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Arial;
+          }
+          h1 span {
+            color: salmon;
+          }
+          table {
+            font-size: 14px;
+          }
+          td:first-child {
+            font-weight: bold;
+          }
+          td {
+            padding: 3px;
+          }
+          .heat_start {
+            background-color: salmon;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+          }
+          .heat {
+            background-color: salmon;
+          }
+          .heat_end {
+            background-color: salmon;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+          }
+          .mininote {
+            color: red;
+            font-size: 12px;
+            font-weight: bold;
+          }
+          .forecast_box {
+            text-align: center;
+            width: 130px;
+            display: inline-block;
+            padding: 6px;
+            background-color: #EEE;
+            margin-right: 10px;
+          }
+
+        </style>
+      </head>
+      <body>
+        <h1>Weather in <span>Los Gatos</span></h1>
+        <h3>Weather Today</h3>
+        <table>
+          <tr>
+            <td>Time</td>
+            <td>8am</td>
+            <td>9am</td>
+            <td>10am</td>
+            <td>11am</td>
+            <td>12pm</td>
+            <td>1pm</td>
+            <td>2pm</td>
+            <td>3pm</td>
+            <td>4pm</td>
+            <td>5pm</td>
+            <td>6pm</td>
+          </tr>
+          <tr>
+            <td>Temp</td>
+            <td>76</td>
+            <td>78</td>
+            <td>80</td>
+            <td>88</td>
+            <td class='heat_start'>95</td>
+            <td class='heat'>96</td>
+            <td class='heat'>96</td>
+            <td class='heat'>99</td>
+            <td class='heat_end'>91</td>
+            <td>84</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>Rain</td>
+            <td>10%</td>
+            <td>5%</td>
+            <td>10%</td>
+            <td>10%</td>
+            <td>20%</td>
+            <td>20%</td>
+            <td>30%</td>
+            <td>40%</td>
+            <td>60%</td>
+            <td>60%</td>
+            <td>70%</td>
+          </tr>
+        </table>
+        <span class='mininote'>*Heat wave during highlighted hours - avoid outdoor activity.</span>
+        <h3>Weather Forecast</h3>
+        <div class='forecast_box'>
+          <h4>Tomorrow</h4>
+          <div class='img_holder'>
+            <img src='images/sunny.jpg'>
+          </div>
+          <p>Temperature: <br><em>80 / 63 F</em></p>
+          <p>Rain: <em>40%</em></p>
+        </div>
+        <div class='forecast_box'>
+          <h4>Wednesday</h4>
+          <div class='img_holder'>
+            <img src='images/cloudy.jpg'>
+          </div>
+          <p>Temperature: <br><em>72 / 58 F</em></p>
+          <p>Rain: <em>80%</em></p>
+        </div>
+        <div class='forecast_box'>
+          <h4>Thursday</h4>
+          <div class='img_holder'>
+            <img src='images/cloudy.jpg'>
+          </div>
+          <p>Temperature: <br><em>70 / 58 F</em></p>
+          <p>Rain: <em>80%</em></p>
+        </div>
+      </body>
+      </html>
+      "
+      type: code
+    - question: "Create your own website with at least the following requirements: <ul>
+      <li>Use the elements <strong>h1</strong>, <strong>table</strong>, and <strong>ul</strong> or <strong>ol</strong>.</li>
+      <li>Some elements should be organized horizontally with the use of <strong>inline-block</strong></li>
+      <li>Make generous use of padding and margin for proper spacing.</li>
+      <li>Use at least one image, taken from the internet. You may need to use Google to learn how to get the source URL of an image.</li>
+      </ul>"
+      type: code
