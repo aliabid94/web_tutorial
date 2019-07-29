@@ -110,6 +110,7 @@ body {
   border-radius: 2px;
   user-select: none;
   white-space: pre;
+  overflow-x: auto;
 }
 .problem textarea {
   width: 100%;

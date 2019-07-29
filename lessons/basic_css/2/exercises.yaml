@@ -1,16 +1,19 @@
 2:
   questions:
-    - question: "Type the following HTML: <code>
-      My name is Sal and I like to play <<span class='typo'>>sokker<</span>>. <br>
-      I have many <<span class='typo'>>frends<</span>> at my <<span class='typo'>>scool<</span>>.
-      </code>
-      and the following CSS: <code>
-      .typo {
-      ~~font-weight: bold;
-      ~~text-decoration: underline;
-      ~~color: red; <br>
-      }
-      </code>"
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        My name is Sal and I like to play <span class='typo'>sokker</span>.
+        I have many <span class='typo'>frends</span> at my <span class='typo'>scool</span>.
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        .typo {
+          font-weight: bold;
+          text-decoration: underline;
+          color: red;
+        }
+        </code>
       type: code
     - question: "Write code to replicate the demo shown."
       quiz: true
@@ -210,22 +213,22 @@
       choices:
         - "<code>
           a {
-          ~~font-size: 24px; <br>
+          ~~font-size: 24px;
           }
           </code>"
         - "<code>
           h1 {
-          ~~font-weight: bold; <br>
+          ~~font-weight: bold;
           }
           </code>"
         - "<code>
           a {
-          ~~color: blue; <br>
+          ~~color: blue;
           }
           </code>"
         - "<code>
           a {
-          ~~text-decoration: underline; <br>
+          ~~text-decoration: underline;
           }
           </code>"
     - question: "Write a small news page. Include <strong>a</strong> and <strong>h1</strong> elements, but override their default css entirely."
@@ -235,34 +238,38 @@
 
 7:
   questions:
-    - question: "What will be the color of the text in the div with id 'hello'? The HTML is <code>
-      <<div class='A'>>
-      ~~<<div>>
-      ~~~~<<div class='B'>>
-      ~~~~<</div>>
-      ~~<</div>>
-      ~~<<div class='C'>>
-      ~~~~<<div>>
-      ~~~~~~<<div id='hello'>>
-      ~~~~~~~~Hello!
-      ~~~~~~<</div>>
-      ~~~~<</div>>
-      ~~<</div>> <br>
-      <</div>>
-      </code> and the CSS is <code>
+    - question: |*
+        What will be the color of the text in the div with id 'hello'? The HTML is
+        <code lang='html'>
+        <div class='A'>
+          <div>
+            <div class='B'>
+            </div>
+          </div>
+          <div class='C'>
+            <div>
+              <div id='hello'>
+                Hello!
+              </div>
+            </div>
+          </div> <br>
+        </div>
+        </code>
+        and the CSS is
+        <code lang='css'>
         .A {
-        ~~color: red; <br>
-        } <br>
+          color: red;
+        }
         .B {
-        ~~color: blue; <br>
-        } <br>
+          color: blue;
+        }
         .C {
-        ~~color: yellow; <br>
-        } <br>
+          color: yellow;
+        }
         #hello {
-        ~~background-color: green; <br>
-        }<br>
-      </code>"
+          background-color: green;
+        }
+        </code>
       type: multiple_choice
       choices:
         - "yellow"

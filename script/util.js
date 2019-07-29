@@ -38,14 +38,20 @@ function parseFormattedYAML(str) {
     [/\}\}\$/g, "']}"],
     [/\{\{/g, "variables['"],
     [/\}\}/g, "']"],
-    [/ ~~/g, " <br>&nbsp;&nbsp;"],
     [/~/g, "&nbsp;"],
   ];
   let post_replacements = [
    [/\|\*/g, '']
   ];
   let parsed_data = YAML.parse(replaceAll(str, pre_replacements))
-  return JSON.parse(replaceAll(JSON.stringify(parsed_data), post_replacements))
+  let string_data = JSON.stringify(parsed_data);
+  let replaced_string_data = replaceAll(string_data, post_replacements);
+  try {
+    return JSON.parse(replaced_string_data)
+  } catch (e) {
+    console.log(e);
+    console.log(replaced_string_data)
+  }
 }
 
 function replaceAll(str, replacements) {

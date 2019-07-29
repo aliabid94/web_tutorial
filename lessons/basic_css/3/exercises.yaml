@@ -1,41 +1,45 @@
 3:
   questions:
-    - question: "Type the following HTML: <code>
-      Choose a Day: <<br>> <br>
-      <<button>>Monday<</button>> <br>
-      <<button>>Tuesday<</button>> <br>
-      <<button>>Wednesday<</button>>
-      </code>
-      and the following CSS: <code>
-      button {
-      ~~display: block;
-      ~~width: 100px <br>
-      }
-      </code>"
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        Choose a Day: <br>
+        <button>Monday</button>
+        <button>Tuesday</button>
+        <button>Wednesday</button>
+        </code>
+        and the following CSS: <code lang='css'>
+        button {
+          display: block;
+          width: 100px;
+        }
+        </code>
       type: code
-    - question: "Type the following HTML: <code>
-      Menu Items: <<br>> <br>
-      <<div class='item'>>
-      ~~<<h2>>Pizza<</h2>>
-      ~~<<img src='images/pizza.jpg'>> <br>
-      <</div>> <br>
-      <<div class='item'>>
-      ~~<<h2>>Biryani<</h2>>
-      ~~<<img src='images/biryani.jpg'>> <br>
-      <</div>> <br>
-      <<div class='item'>>
-      ~~<<h2>>Tofu<</h2>>
-      ~~<<img src='images/tofu.jpg'>> <br>
-      <</div>>
-      </code>
-      and the following CSS: <code>
-      .item {
-      ~~display: inline-block; <br>
-      } <br>
-      img {
-      ~~height: 100px; <br>
-      }
-      </code>"
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        Menu Items: <br>
+        <div class='item'>
+          <h2>Pizza</h2>
+          <img src='images/pizza.jpg'>
+        </div>
+        <div class='item'>
+          <h2>Biryani</h2>
+          <img src='images/biryani.jpg'>
+        </div>
+        <div class='item'>
+          <h2>Tofu</h2>
+          <img src='images/tofu.jpg'>
+        </div>
+        </code>
+        and the following CSS: <code lang='css'>
+        .item {
+          display: inline-block;
+        }
+        img {
+          height: 100px;
+        }
+        </code>
       type: code
     - question: "Which of the following is true?"
       quiz: true
@@ -50,30 +54,32 @@
 
 4:
   questions:
-    - question: "Type the following HTML: <code>
-      Menu Items: <<br>> <br>
-      <<div class='item'>>
-      ~~<<h2>>Pizza<</h2>>
-      ~~<<img src='images/pizza.jpg'>> <br>
-      <</div>> <br>
-      <<div class='item'>>
-      ~~<<h2>>Biryani<</h2>>
-      ~~<<img src='images/biryani.jpg'>> <br>
-      <</div>> <br>
-      <<div class='item'>>
-      ~~<<h2>>Tofu<</h2>>
-      ~~<<img src='images/tofu.jpg'>> <br>
-      <</div>>
-      </code>
-      and the following CSS: <code>
-      .item {
-      ~~display: inline-block;
-      ~~vertical-align: top; <br>
-      } <br>
-      img {
-      ~~width: 100px; <br>
-      }
-      </code>"
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        Menu Items: <br>
+        <div class='item'>
+          <h2>Pizza</h2>
+          <img src='images/pizza.jpg'>
+        </div>
+        <div class='item'>
+          <h2>Biryani</h2>
+          <img src='images/biryani.jpg'>
+        </div>
+        <div class='item'>
+          <h2>Tofu</h2>
+          <img src='images/tofu.jpg'>
+        </div>
+        </code>
+        and the following CSS: <code lang='css'>
+        .item {
+          display: inline-block;
+          vertical-align: top;
+        }
+        img {
+          width: 100px;
+        }
+        </code>
       type: code
       quiz: true
     - question: "Write code to replicate the demo shown. <ul>
@@ -828,37 +834,39 @@
 
 10:
   questions:
-    - question: "Type the following HTML: <code>
-      My Favorite Hobbies <br>
-      <<ul>>
-      ~~<<li>>Writing<</li>>
-      ~~<<li>>Eating<</li>>
-      ~~<<li class='secret'>>Dancing<</li>>
-      ~~<<li>>Building<</li>>
-      ~~<<li class='secret'>>Killing<</li>><br>
-      <</ul>>
-      </code>
-      and the following CSS: <code>
-      .secret {
-      ~~display: none; <br>
-      }
-      </code>"
+    - question: |*
+        Type the following HTML: <code lang='html'>
+        My Favorite Hobbies
+        <ul>
+          <li>Writing</li>
+          <li>Eating</li>
+          <li class='secret'>Dancing</li>
+          <li>Building</li>
+          <li class='secret'>Killing</li>
+        </ul>
+        </code>
+        and the following CSS: <code lang='css'>
+        .secret {
+          display: none;
+        }
+        </code>
       type: code
-    - question: "Type the following HTML: <code>
-      My Favorite Hobbies <br>
-      <<ul>>
-      ~~<<li>>Writing<</li>>
-      ~~<<li>>Eating<</li>>
-      ~~<<li class='secret'>>Dancing<</li>>
-      ~~<<li>>Building<</li>>
-      ~~<<li class='secret'>>Killing<</li>><br>
-      <</ul>>
-      </code>
-      and the following CSS: <code>
-      .secret {
-      ~~visibility: hidden; <br>
-      }
-      </code>"
+    - question: |*
+        Type the following HTML: <code lang='html'>
+        My Favorite Hobbies
+        <ul>
+          <li>Writing</li>
+          <li>Eating</li>
+          <li class='secret'>Dancing</li>
+          <li>Building</li>
+          <li class='secret'>Killing</li>
+        </ul>
+        </code>
+        and the following CSS: <code lang='css'>
+        .secret {
+          visibility: hidden;
+        }
+        </code>
       type: code
     - question: "If I want to visually remove an element, including any space it takes up, which CSS rule should I apply?"
       type: multiple_choice

@@ -1,79 +1,95 @@
 6:
   questions:
-    - question: "Type the following HTML: <code>
-      <<h1>>HTML is fun!<</h1>>
-      </code>
-      and the following CSS: <code>
-      h1 {
-      ~~color: red;<br>
-      }</code>  "
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <h1>HTML is fun!</h1>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        h1 {
+          color: red;
+        }
+        </code>
       quiz: true
       type: code
-    - question: "Type the following HTML: <code>
-      <<h1>>My Favorite Food<</h1>><br>
-      <<h2>>Vegan Foods<</h2>><br>
-      <<ul>>
-      ~~<<li>>Spaghetti<</li>>
-      ~~<<li>>Rice<</li>> <br>
-      <</ul>> <br>
-      <<h2>>Meaty Foods<</h2>> <br>
-      <<ul>>
-      ~~<<li>>Meatball<</li>>
-      ~~<<li>>Biryani<</li>> <br>
-      <</ul>>
-      </code>
-      and the following CSS: <code>
-      h2 {
-      ~~color: gray;<br>
-      }<br>
-      ul {
-      ~~text-align: center;
-      ~~background-color: khaki; <br>
-      }<br>
-      </code>  "
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <h1>My Favorite Food</h1>
+        <h2>Vegan Foods</h2>
+        <ul>
+          <li>Spaghetti</li>
+          <li>Rice</li>
+        </ul>
+        <h2>Meaty Foods</h2>
+        <ul>
+          <li>Meatball</li>
+          <li>Biryani</li>
+        </ul>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        h2 {
+          color: gray;
+        }
+        ul {
+          text-align: center;
+          background-color: khaki;
+        }
+        </code>
       type: code
-    - question: "What is the selector of the following rule-set: <code>
-      h1 {
-      ~~color: red;<br>
-      }</code>  "
+    - question: |*
+        What is the selector of the following rule-set:
+        <code lang='css'>
+        h1 {
+          color: red;
+        }
+        </code>
       quiz: true
       type: multiple_choice
       choices:
         - "h1"
         - "color"
         - "red"
-    - question: "How many rules in this rule-set:
-      <code>
-      h1 {
-      ~~color: red;
-      ~~background-color: black;
-      ~~text-align: center;<br>
-      }</code>  "
+    - question: |*
+        How many rules in this rule-set:
+        <code lang='css'>
+        h1 {
+          color: red;
+          background-color: black;
+          text-align: center;
+        }
+        </code>
       type: multiple_choice
       choices:
         - "3"
         - "2"
         - "1"
-    - question: "Which of the following is NOT a property defined by this rule-set:
-      <code>
-      h1 {
-      ~~color: red;
-      ~~background-color: black;
-      ~~text-align: center;<br>
-      }</code>  "
+    - question: |*
+        Which of the following is NOT a property defined by this rule-set:
+        <code lang='css'>
+        h1 {
+          color: red;
+          background-color: black;
+          text-align: center;
+        }
+        </code>
       type: multiple_choice
       choices:
         - "center"
         - "color"
         - "background-color"
         - "text-align"
-    - question: "What is the value of the <strong>background-color</strong> property in this rule-set:
-      <code>
-      h1 {
-      ~~color: red;
-      ~~background-color: black;
-      ~~text-align: center;<br>
-      }</code>  "
+    - question: |*
+        What is the value of the <strong>background-color</strong> property in this rule-set:
+        <code lang='css'>
+        h1 {
+          color: red;
+          background-color: black;
+          text-align: center;
+        }
+        </code>
       quiz: true
       type: multiple_choice
       choices:
@@ -181,23 +197,25 @@
 
 8:
   questions:
-    - question: "Type the following HTML: <code>
-      Today's date is <<span id='date'>>May 12th<</span>> <<br>><br>
-      and the time is <<span id='time'>>6:00 pm<</span>>
-      </code>
-      and the following CSS: <code>
-      span {
-      ~~font-size: 22px; <br>
-      } <br>
-      #date {
-      ~~color: blue; <br>
-      } <br>
-      #time {
-      ~~color: gray;  <br>
-      } <br>
-      </code>  "
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        Today's date is <span id='date'>May 12th</span> <br>
+        and the time is <span id='time'>6:00 pm</span>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        span {
+          font-size: 22px;
+        }
+        #date {
+          color: blue;
+        }
+        #time {
+          color: gray;
+        }
+        </code>
       type: code
-      code_language: html
     - question: "Write code to replicate the demo shown."
       quiz: true
       demo_code: "<html>
@@ -218,7 +236,7 @@
           <h1>Animals</h1>
           <p>What's your favorite animal?</p>
           <button>Cat</button>
-          <button>Dog</button> <br>
+          <button>Dog</button>
           <button id='giant'>Elephant</button>
         </body>
       </head>
@@ -255,28 +273,30 @@
 
 9:
   questions:
-    - question: "Type the following HTML: <code>
-      My favorite animals: <br>
-      <<ul>>
-      ~~<<li>>Elephant<</li>
-      ~~<<li class='marine'>>Whale<</li>
-      ~~<<li>>Hamster<</li>
-      ~~<<li class='marine'>>Dolphin<</li>
-      ~~<<li class='marine'>>Squid<</li> <br>
-      <</ul>>
-      </code>
-      and the following CSS: <code>
-      li {
-      ~~text-align: center; <br>
-      } <br>
-      .marine {
-      ~~color: blue; <br>
-      }
-      </code>  "
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        My favorite animals:
+        <ul>
+          <li>Elephant</li>
+          <li class='marine'>Whale</li>
+          <li>Hamster</li>
+          <li class='marine'>Dolphin</li>
+          <li class='marine'>Squid</li>
+        </ul>
+        </code>
+        and the following CSS: <code lang='css'>
+        li {
+          text-align: center;
+        }
+        .marine {
+          color: blue;
+        }
+        </code>
       type: code
       code_language: html
     - question: "Make a table with the name, age, and gender of every member of your family. Make any row with a male member have a 'salmon' background,
-      ~and any row with a female member have a 'cyan' background."
+       and any row with a female member have a 'cyan' background."
       quiz: true
       type: code
       code_language: html

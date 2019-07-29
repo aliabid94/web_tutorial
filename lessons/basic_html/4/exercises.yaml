@@ -2,7 +2,7 @@
   questions:
     - question: "Write code to replicate the demo shown.
       <ul>
-        <li>Use <strong>html</strong> and <strong>body</strong> elements.<br>
+        <li>Use <strong>html</strong> and <strong>body</strong> elements.</li>
         <li>The url for the main image is <strong>images/tower.jpg</strong></li>
         <li>Use the <<p>> element for each paragraph of text.</li>
         <li>Make each header link to the wikipedia article for that tower.</li>

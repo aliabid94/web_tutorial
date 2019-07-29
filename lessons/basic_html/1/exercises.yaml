@@ -54,16 +54,32 @@
 
 5:
   questions:
-    - question: "Type the following element into the editor below: <code><<h1>>HTML is fun!<</h1>></code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <h1>HTML is fun!</h1>
+        </code>
       type: code
       code_language: html
-    - question: "Type the following element into the editor below: <code><<h1>>My Cooking Website<</h1>></code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <h1>My Cooking Website</h1>
+        </code>
       type: code
       code_language: html
-    - question: "Type the following element into the editor below: <code><<h1>>My Favorite Animals<</h1>></code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <h1>My Favorite Animals</h1>
+        </code>
       type: code
       code_language: html
-    - question: "What is the type of the element: <code><<h1>>HTML is fun!<</h1>></code>"
+    - question: |*
+        What is the type of the element:
+        <code lang='html'>
+        <h1>HTML is fun!</h1>
+        </code>
       type: multiple_choice
       choices:
         - "h1"
@@ -71,7 +87,11 @@
         - "div"
         - "HTML is hard!"
       hint: "The type of an element is stated within the open tag."
-    - question: "What is content of the element: <code><<h1>>HTML is fun!<</h1>></code>"
+    - question: |*
+        What is content of the element:
+        <code lang='html'>
+        <h1>HTML is fun!</h1>
+        </code>
       quiz: true
       type: multiple_choice
       choices:
@@ -80,7 +100,11 @@
         - "div"
         - "HTML is hard!"
       hint: "The content of an element is between the open tag and the close tag."
-    - question: "What is the open tag of the following element: <code><<h1>>HTML is fun!<</h1>></code>"
+    - question: |*
+        What is the open tag of the following element:
+        <code lang='html'>
+        <h1>HTML is fun!</h1>
+        </code>
       type: multiple_choice
       choices:
         - "<<h1>>"
@@ -88,7 +112,11 @@
         - "<</h1>>"
       hint: "The open tag is at the beginning of an element. It starts with <strong> << </strong> and ends with <strong> >> </strong>."
       choices_are_code: true
-    - question: "What is the close tag of the following element: <code><<h1>>HTML is fun!<</h1>></code>"
+    - question: |*
+        What is the close tag of the following element:
+        <code lang='html'>
+        <h1>HTML is fun!</h1>
+        </code>
       type: multiple_choice
       choices:
         - "<</h1>>"
@@ -102,20 +130,26 @@
 
 7:
   questions:
-    - question: "Type the following element into the editor below: <code>${{code}}$</code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        ${{code}}$
+        </code>
       type: code
       code_language: html
       variables:
         - name: code
           values:
-            - "<<span>>I love coding<</span>>"
-            - "<<button>>Click me!<</button>>"
-            - "<<h1>>Lets Learn HTML!<</h1>>"
-            - "<<h3>>I like coding<</h3>>"
+            - "<span>I love coding</span>"
+            - "<button>Click me!</button>"
+            - "<h1>Lets Learn HTML!</h1>"
+            - "<h3>I like coding</h3>"
       repeat: 4
-    - question: "What is the type of the following element?
-        <code><<${{tag}}$>>${{content}}$<</${{tag}}$>></code>
-        "
+    - question: |*
+        What is the type of the following element?
+        <code lang='html'>
+        <${{tag}}$>${{content}}$</${{tag}}$>
+        </code>
       type: multiple_choice
       variables:
         - name: tag
@@ -129,9 +163,11 @@
         - "${{~content}}$"
       repeat: 3
       hint: "The type of an element is stated within the open tag."
-    - question: "What is content of the following element?
-        <code><<${{tag}}$>>${{content}}$<</${{tag}}$>></code>
-        "
+    - question: |*
+        What is content of the following element?
+        <code lang='html'>
+        <${{tag}}$>${{content}}$</${{tag}}$>
+        </code>
       type: multiple_choice
       variables:
         - name: tag
@@ -146,9 +182,11 @@
       choices_are_code: true
       repeat: 3
       hint: "The content of an element is between the open tag and the close tag."
-    - question: "What is open tag of the following element?
-        <code><<${{tag}}$>>${{content}}$<</${{tag}}$>></code>
-        "
+    - question: |*
+        What is open tag of the following element?
+        <code lang='html'>
+        <${{tag}}$>${{content}}$</${{tag}}$>
+        </code>
       type: multiple_choice
       variables:
         - name: tag
@@ -163,9 +201,11 @@
       choices_are_code: true
       repeat: 2
       hint: "The open tag is at the beginning of an element. It starts with <strong> << </strong> and ends with <strong> >> </strong>."
-    - question: "What is close tag of the following element?
-        <code><<${{tag}}$>>${{content}}$<</${{tag}}$>></code>
-        "
+    - question: |*
+        What is close tag of the following element?
+        <code lang='html'>
+        <${{tag}}$>${{content}}$</${{tag}}$>
+        </code>
       type: multiple_choice
       variables:
         - name: tag
@@ -193,24 +233,54 @@
 
 8:
   questions:
-    - question: "Type the following element into the editor below: <code><<h1>>HTML is fun!<</h1>></code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <h1>HTML is fun!</h1>
+        </code>
       quiz: true
       type: code
       code_language: html
-    - question: "Type the following element into the editor below: <code><<h1>><br>&nbsp;&nbsp;HTML is fun!<br><</h1>></code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <h1>
+          HTML is fun!
+        </h1>
+        </code>
       type: code
       code_language: html
-    - question: "Type the following element into the editor below: <code><<h1>>My Cooking Website<</h1>></code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <h1>My Cooking Website</h1>
+        </code>
       type: code
       code_language: html
-    - question: "Type the following element into the editor below: <code><<h1>><br>&nbsp;&nbsp;My Cooking Website<br><</h1>></code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <h1>
+          My Cooking Website
+        </h1>
+        </code>
       quiz: true
       type: code
       code_language: html
-    - question: "Type the following element into the editor below: <code><<h1>>My Favorite Animals<</h1>></code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <h1>My Favorite Animals</h1>
+        </code>
       type: code
       code_language: html
-    - question: "Type the following element into the editor below: <code><<h1>><br>&nbsp;&nbsp;My Favorite Animals<br><</h1>></code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <h1>
+          My Favorite Animals
+        </h1>
+        </code>
       type: code
       code_language: html
     - question: "Create an element in <strong>single-line style</strong> with type <strong>${{tag}}$</strong> and content <strong>${{content}}$</strong>"
@@ -236,10 +306,18 @@
 
 9:
   questions:
-    - question: "Type the following element into the editor below: <code>I want to <<br>> EAT!</code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        I want to <br> EAT!
+        </code>
       type: code
       code_language: html
-    - question: "Type the following element into the editor below: <code>I <<br>> love <<br>> HTML!</code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        I <br> love <br> HTML!
+        </code>
       quiz: true
       type: code
       code_language: html
@@ -252,7 +330,13 @@
 
 11:
   questions:
-    - question: "Type the following element into the editor below: <code><<a href='https://wikipedia.org'><br>&nbsp;&nbsp;Let's Learn!<br><</a>></code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <a href='https://wikipedia.org'>
+          Let's Learn!
+        </a>
+        </code>
       type: code
       code_language: html
     - question: "The <strong> href </strong> attribute does what?"
@@ -262,7 +346,11 @@
         - "provides the URL the link should go to"
         - "provides text to show when hovering over the element"
         - "names the element"
-    - question: "What is the type of the element: <code><<a href='https://wikipedia.org'>Let's Learn!<</a>></code>"
+    - question: |*
+        What is the type of the element:
+        <code lang='html'>
+        <a href='https://wikipedia.org'>Let's Learn!</a>
+        </code>
       type: multiple_choice
       choices:
         - "a"
@@ -270,7 +358,11 @@
         - "Let's Learn!"
         - "https://wikipedia.org"
       hint: "The type of an element is stated at the beginning of an open tag."
-    - question: "What is the name of the attribute in this element: <code><<a href='https://wikipedia.org'>Let's Learn!<</a>></code>"
+    - question: |*
+        What is the name of the attribute in this element:
+        <code lang='html'>
+        <a href='https://wikipedia.org'>Let's Learn!</a>
+        </code>
       type: multiple_choice
       choices:
         - "href"
@@ -278,7 +370,11 @@
         - "Let's Learn!"
         - "https://wikipedia.org"
       hint: "Attributes are stated in the open tag. The name of the attribute is before the equals sign, and the value is after the equal sign."
-    - question: "What is the value of the <strong> href </strong> attribute in this element: <code><<a href='https://wikipedia.org'>Let's Learn!<</a>></code>"
+    - question: |*
+        What is the value of the <strong> href </strong> attribute in this element:
+        <code lang='html'>
+        <a href='https://wikipedia.org'>Let's Learn!</a>
+        </code>
       type: multiple_choice
       choices:
         - "https://wikipedia.org"
@@ -286,7 +382,11 @@
         - "a"
         - "Let's Learn!"
       hint: "Attributes are stated in the open tag. The name of the attribute is before the equals sign, and the value is after the equal sign."
-    - question: "What is the content of the element: <code><<a href='https://wikipedia.org'>Let's Learn!<</a>></code>"
+    - question: |*
+        What is the content of the element:
+        <code lang='html'>
+        <a href='https://wikipedia.org'>Let's Learn!</a>
+        </code>
       type: multiple_choice
       choices:
         - "Let's Learn!"
@@ -294,17 +394,25 @@
         - "href"
         - "a"
       hint: "The content of an element is between the open tag and the close tag."
-    - question: "If you clicked on this element, what URL would the page go to? <code><<a href='https://wikipedia.org'>Let's Learn!<</a>></code>"
+    - question: |*
+        If you clicked on this element, what URL would the page go to? <code lang='html'>
+        <a href='https://wikipedia.org'>Let's Learn!</a>
+        </code>
       type: multiple_choice
       choices:
         - "https://wikipedia.org"
         - "https://google.com"
         - "https://facebook.org"
       hint: "In an <strong>a</strong> element, the <strong>href</strong> attribute provides the destination of the link."
-    - question: "Type the following element into the editor below: <code><<img src='images/cat.jpg'>></code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <img src='images/cat.jpg'>
+        </code>
       type: code
       code_language: html
-    - question: "The <strong> src </strong> attribute in an <strong>img</strong> element does what?"
+    - question: |*
+        The <strong> src </strong> attribute in an <strong>img</strong> element does what?
       quiz: true
       type: multiple_choice
       choices:
@@ -312,20 +420,32 @@
         - "provides the URL to go to if you click the image"
         - "provides text to show when hovering over the element"
         - "names the element"
-    - question: "What is the type of the element: <code><<img src='images/cat.jpg'>></code>"
+    - question: |*
+        What is the type of the element:
+        <code lang='html'>
+        <img src='images/cat.jpg'>
+        </code>
       type: multiple_choice
       choices:
         - "img"
         - "src"
         - "images/cat.jpg"
-    - question: "What is the name of the attribute in this element: <code><<img src='images/cat.jpg'>></code>"
+    - question: |*
+        What is the name of the attribute in this element:
+        <code lang='html'>
+        <img src='images/cat.jpg'>
+        </code>
       quiz: true
       type: multiple_choice
       choices:
         - "src"
         - "href"
         - "images/cat.jpg"
-    - question: "What is the value of the <strong> src </strong> attribute in this element: <code><<img src='images/cat.jpg'>></code>"
+    - question: |*
+        What is the value of the <strong> src </strong> attribute in this element:
+        <code lang='html'>
+        <img src='images/cat.jpg'>
+        </code>
       type: multiple_choice
       choices:
         - "images/cat.jpg"
@@ -358,10 +478,18 @@
 
 12:
   questions:
-    - question: "Type the following element into the editor below: <code><<img src='images/cat.jpg' width='200' height='800'>></code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <img src='images/cat.jpg' width='200' height='800'>
+        </code>
       type: code
       code_language: html
-    - question: "What is the value of the <strong> src </strong> attribute in this element: <code><<img src='images/cat.jpg' width='200' height='800'>></code>"
+    - question: |*
+        What is the value of the <strong> src </strong> attribute in this element:
+        <code lang='html'>
+        <img src='images/cat.jpg' width='200' height='800'>
+        </code>
       type: multiple_choice
       choices:
         - "images/cat.jpg"
@@ -369,7 +497,11 @@
         - "200"
         - "800"
       hint: "Attributes are stated in the open tag. The name of the attribute is before the equals sign, and the value is after the equal sign."
-    - question: "What is the value of the <strong> height </strong> attribute in this element: <code><<img src='images/cat.jpg' width='200' height='800'>></code>"
+    - question: |*
+        What is the value of the <strong> height </strong> attribute in this element:
+        <code lang='html'>
+        <img src='images/cat.jpg' width='200' height='800'>
+        </code>
       type: multiple_choice
       choices:
         - "800"
@@ -377,7 +509,11 @@
         - "img"
         - "200"
       hint: "Attributes are stated in the open tag. The name of the attribute is before the equals sign, and the value is after the equal sign."
-    - question: "How many attributes are in this element: <code><<img src='images/cat.jpg' width='200' height='800'>></code>"
+    - question: |*
+        How many attributes are in this element:
+        <code lang='html'>
+        <img src='images/cat.jpg' width='200' height='800'>
+        </code>
       type: multiple_choice
       choices:
         - "3"
@@ -389,10 +525,22 @@
       quiz: true
       type: code
       code_language: html
-    - question: "Type the following element into the editor below: <code><<span id='location' title='Starting Location'>><br>&nbsp; Palo Alto, CA <br><</span>></code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <span id='location' title='Starting Location'>
+          Palo Alto, CA
+        </span>
+        </code>
       type: code
       code_language: html
-    - question: "What is the value of the <strong> title </strong> attribute in this element: <code><<span id='location' title='Starting Location'>><br>&nbsp; Palo Alto, CA <br><</span>></code>"
+    - question: |*
+        What is the value of the <strong> title </strong> attribute in this element:
+        <code lang='html'>
+        <span id='location' title='Starting Location'>
+          Palo Alto, CA
+        </span>
+        </code>
       quiz: true
       type: multiple_choice
       choices:
@@ -401,7 +549,13 @@
         - "span"
         - "Palo Alto, CA"
       hint: "Attributes are stated in the open tag. The name of the attribute is before the equals sign, and the value is after the equal sign."
-    - question: "What is the content in this element: <code><<span id='location' title='Starting Location'>><br>&nbsp; Palo Alto, CA <br><</span>></code>"
+    - question: |*
+        What is the content in this element:
+        <code lang='html'>
+        <span id='location' title='Starting Location'>
+          Palo Alto, CA
+        </span>
+        </code>
       type: multiple_choice
       choices:
         - "Palo Alto, CA"

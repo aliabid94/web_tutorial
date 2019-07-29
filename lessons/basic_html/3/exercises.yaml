@@ -1,12 +1,13 @@
 2:
   questions:
-    - question: "Type the following element into the editor below:
-      <code>
-        <<h1>>My Food Site<</h1>><br>
-        <<h2>>Vegan Recipes<</h2>><br>
-        Vegan food is great!<br>
-        <<h2>>Non-Vegan Recipes<</h2>>
-      </code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <h1>My Food Site</h1>
+        <h2>Vegan Recipes</h2>
+        Vegan food is great!
+        <h2>Non-Vegan Recipes</h2>
+        </code>
       type: code
       code_language: html
     - question: "Write code to replicate the demo shown. The largest header is <<h1>>, the country names are <<h2>>, and the city names are <<h3>>:"
@@ -25,26 +26,28 @@
 
 4:
   questions:
-    - question: "Type the following element into the editor below:
-      <code>
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
         Favorite Foods:<br>
-        <<ul>><br>
-        &nbsp;&nbsp;<<li>>Chicken<</li>><br>
-        &nbsp;&nbsp;<<li>>Rice<</li>><br>
-        &nbsp;&nbsp;<<li>>Corn<</li>><br>
-        <</ul>>
-      </code>"
+        <ul>
+          <li>Chicken</li>
+          <li>Rice</li>
+          <li>Corn</li>
+        </ul>
+        </code>
       type: code
       code_language: html
-    - question: "Type the following element into the editor below:
-      <code>
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
         Largest Countries:<br>
-        <<ol>><br>
-        &nbsp;&nbsp;<<li>>China<</li>><br>
-        &nbsp;&nbsp;<<li>>India<</li>><br>
-        &nbsp;&nbsp;<<li>>USA<</li>><br>
-        <</ul>>
-      </code>"
+        <ol>
+          <li>China</li>
+          <li>India</li>
+          <li>USA</li>
+        </ol>
+        </code>
       type: code
       code_language: html
     - question: "Create an unordered list with the names of the people in your family."
@@ -64,27 +67,28 @@
 
 5:
   questions:
-    - question: "Type the following element into the editor below:
-      <code>
-      <<table>>
-      ~~<<thead>>
-      ~~~~<<th>>Animal<</th>>
-      ~~~~<<th>>Weight (tons)<</th>>
-      ~~<</thead>>
-      ~~<<tr>>
-      ~~~~<<td>>Blue Whale<</td>>
-      ~~~~<<td>>200<</td>>
-      ~~<</tr>>
-      ~~<<tr>>
-      ~~~~<<td>>Squid<</td>>
-      ~~~~<<td>>1<</td>>
-      ~~<</tr>>
-      ~~<<tr>>
-      ~~~~<<td>>Elephant<</td>>
-      ~~~~<<td>>7<</td>>
-      ~~<</tr>><br>
-      <</table>>
-      </code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        <table>
+          <thead>
+            <th>Animal</th>
+            <th>Weight (tons)</th>
+          </thead>
+          <tr>
+            <td>Blue Whale</td>
+            <td>200</td>
+          </tr>
+          <tr>
+            <td>Squid</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Elephant</td>
+            <td>7</td>
+          </tr>
+        </table>
+        </code>
       type: code
       code_language: html
     - question: "Create a table with header columns 'Name', 'Age', and 'Gender'. Add a row to this table for every member of your family."
@@ -114,11 +118,12 @@
 
 6:
   questions:
-    - question: "Type the following element into the editor below:
-      <code>
-      What's your name? <<br>><br>
-      <<input type='text' placeholder='Enter Name'>>
-      </code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        What's your name? <br>
+        <input type='text' placeholder='Enter Name'>
+        </code>
       type: code
       code_language: html
     - question: "Create your own input text field that asks for your birthday."
@@ -128,13 +133,14 @@
 
 7:
   questions:
-    - question: "Type the following element into the editor below:
-      <code>
-      What's your gender? <<br>><br>
-      <<input type='radio' name='gender' value='male'>> Male <<br>><br>
-      <<input type='radio' name='gender' value='female'>> Female <<br>><br>
-      <<input type='radio' name='gender' value='other'>> Other
-      </code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        What's your gender? <br>
+        <input type='radio' name='gender' value='male'> Male <br>
+        <input type='radio' name='gender' value='female'> Female <br>
+        <input type='radio' name='gender' value='other'> Other
+        </code>
       type: code
       code_language: html
     - question: "Create your own input radio field that asks your ethnic background."
@@ -152,13 +158,14 @@
 
 8:
   questions:
-    - question: "Type the following element into the editor below:
-      <code>
-      Which countries have you visited? <<br>><br>
-      <<input type='checkbox' name='country' value='usa'>> USA <<br>><br>
-      <<input type='checkbox' name='country' value='france'>> France <<br>><br>
-      <<input type='checkbox' name='country' value='pakistan'>> Pakistan
-      </code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        Which countries have you visited? <br>
+        <input type='checkbox' name='country' value='usa'> USA <br>
+        <input type='checkbox' name='country' value='france'> France <br>
+        <input type='checkbox' name='country' value='pakistan'> Pakistan
+        </code>
       type: code
       code_language: html
     - question: "Create your own input checkbox field that gives you a menu of food items to order from."
@@ -176,15 +183,16 @@
 
 9:
   questions:
-    - question: "Type the following element into the editor below:
-      <code>
-      What's your gender? <<br>><br>
-      <<select name='gender'>>
-      ~~<<option value='male'>>Male<</option>>
-      ~~<<option value='female'>>Female<</option>>
-      ~~<<option value='other'>>Other<</option>> <br>
-      <</select>>
-      </code>"
+    - question: |*
+        Type the following element into the editor below:
+        <code lang='html'>
+        What's your gender? <br>
+        <select name='gender'>
+          <option value='male'>Male</option>
+          <option value='female'>Female</option>
+          <option value='other'>Other</option> <br>
+        </select>
+        </code>
       type: code
       code_language: html
     - question: "Create your own select field that asks your ethnic background."

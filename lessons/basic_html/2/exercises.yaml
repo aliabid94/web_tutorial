@@ -1,20 +1,30 @@
 2:
   questions:
-    - question: "Type the following element into the editor below: <code>${{code1}}$<br>${{code2}}$</code>"
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='html'>
+        ${{code1}}$
+        ${{code2}}$
+        </code>
       type: code
       code_language: html
       variables:
         - name: code1
           values:
-            - "<<span>>I love coding<</span>>"
-            - "<<button>>Click me!<</button>>"
-            - "<<p>>What a website!<</p>>"
+            - "<span>I love coding</span>"
+            - "<button>Click me!</button>"
+            - "<p>What a website!</p>"
         - name: code2
           values:
-            - "<<h1>>Lets Learn HTML!<</h1>>"
-            - "<<h3>>I like coding<</h3>>"
+            - "<h1>Lets Learn HTML!</h1>"
+            - "<h3>I like coding</h3>"
       repeat: 2
-    - question: "Which element is placed first in the following code: <code>${{code1}}$<br>${{code2}}$</code>"
+    - question: |*
+        Which element is placed first in the following code:
+        <code lang='html'>
+        ${{code1}}$
+        ${{code2}}$
+        </code>
       type: multiple_choice
       quiz: true
       variables:
@@ -33,7 +43,12 @@
         - "${{code2}}$"
         - "${{~code2}}$"
       repeat: 2
-    - question: "Which element is placed second in the following code: <code>${{code1}}$<br>${{code2}}$</code>"
+    - question: |*
+        Which element is placed second in the following code:
+        <code lang='html'>
+        ${{code1}}$
+        ${{code2}}$
+        </code>
       type: multiple_choice
       variables:
         - name: code1
@@ -54,48 +69,61 @@
 
 3:
   questions:
-    - question: "Type the following element into the editor below: <code>${{code1}}$<br>${{code2}}$</code>"
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='html'>
+        ${{code1}}$
+        ${{code2}}$
+        </code>
       type: code
       code_language: html
       variables:
         - name: code1
           values:
-            - "<<span>>I love coding<</span>>"
-            - "<<button>>Click me!<</button>>"
+            - "<span>I love coding</span>"
+            - "<button>Click me!</button>"
         - name: code2
           values:
-            - "<<a href='https://wikipedia.org'>>Lets Learn!<</a>>"
-            - "<<img src='images/cat.jpg' width='20' height='20'>>"
+            - "<a href='https://wikipedia.org'>Lets Learn!</a>"
+            - "<img src='images/cat.jpg' width='20' height='20'>"
       repeat: 2
-    - question: "How will the elements appear in the following code: <code>${ {{elem1}}[0] }<br>${ {{elem2}}[0] }</code>"
+    - question: "How will the elements appear in the following code:
+        <code lang='html'>
+        ${ {{elem1}}[0] }
+        ${ {{elem2}}[0] }
+        </code>"
       quiz: true
       type: multiple_choice
       variables:
         - name: elem1
           values:
-            - ["<<span>>I love coding<</span>>", "span"]
-            - ["<<button>>Click me!<</button>>", "button"]
+            - ["<span>I love coding</span>", "span"]
+            - ["<button>Click me!</button>", "button"]
         - name: elem2
           values:
-            - ["<<a href='https://wikipedia.org'>>Lets Learn!<</a>>", "a"]
-            - ["<<img src='images/cat.jpg' width='20' height='20'>>", "img"]
+            - ["<a href='https://wikipedia.org'>Lets Learn!</a>", "a"]
+            - ["<img src='images/cat.jpg' width='20' height='20'>", "img"]
       choices:
         - "The <<${ {{elem1}}[1] }>> element appears TO THE LEFT OF the <<${ {{elem2}}[1] }>> element"
         - "The <<${ {{elem1}}[1] }>> element appears TO THE RIGHT OF the <<${ {{elem2}}[1] }>> element"
         - "The <<${ {{elem1}}[1] }>> element appears ABOVE the <<${ {{elem2}}[1] }>> element"
         - "The <<${ {{elem1}}[1] }>> element appears BELOW the <<${ {{elem2}}[1] }>> element"
       repeat: 2
-    - question: "How will the elements appear in the following code: <code>${ {{elem1}}[0] }<br>${ {{elem2}}[0] }</code>"
+    - question: "How will the elements appear in the following code:
+        <code lang='html'>
+        ${ {{elem1}}[0] }
+        ${ {{elem2}}[0] }
+        </code>"
       type: multiple_choice
       variables:
         - name: elem1
           values:
-            - ["<<span>>I love coding<</span>>", "span"]
-            - ["<<button>>Click me!<</button>>", "button"]
+            - ["<span>I love coding</span>", "span"]
+            - ["<button>Click me!</button>", "button"]
         - name: elem2
           values:
-            - ["<<a href='https://wikipedia.org'>>Lets Learn!<</a>>", "a"]
-            - ["<<img src='images/cat.jpg' width='20' height='20'>>", "img"]
+            - ["<a href='https://wikipedia.org'>Lets Learn!</a>", "a"]
+            - ["<img src='images/cat.jpg' width='20' height='20'>", "img"]
       choices:
         - "The <<${ {{elem2}}[1] }>> element appears TO THE RIGHT OF the << ${ {{elem1}}[1] }>> element"
         - "The <<${ {{elem2}}[1] }>> element appears TO THE LEFT OF the << ${ {{elem1}}[1] }>> element"
@@ -104,49 +132,62 @@
 
 4:
   questions:
-    - question: "Type the following element into the editor below: <code>${{code1}}$<br>${{code2}}$</code>"
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='html'>
+        ${{code1}}$
+        ${{code2}}$
+        </code>
       type: code
       code_language: html
       variables:
         - name: code1
           values:
-            - "<<h1>>My Coding Tutorial<</h1>>"
-            - "<<h3>>Let's Learn HTML<</h3>>"
+            - "<h1>My Coding Tutorial</h1>"
+            - "<h3>Let's Learn HTML</h3>"
         - name: code2
           values:
-            - "<<p>>Coding is an essential skill.<</p>>"
-            - "<<div>>Let's Learn!<</div>>"
+            - "<p>Coding is an essential skill.</p>"
+            - "<div>Let's Learn!</div>"
       repeat: 2
-    - question: "How will the elements appear in the following code: <code>${ {{elem1}}[0] }<br>${ {{elem2}}[0] }</code>"
+    - question: "How will the elements appear in the following code:
+        <code lang='html'>
+        ${ {{elem1}}[0] }
+        ${ {{elem2}}[0] }
+        </code>"
       quiz: true
       type: multiple_choice
       variables:
         - name: elem1
           values:
-            - ["<<h1>>My Cooking Website<</h1>>", "h1"]
-            - ["<<h3>>My Top Recipes!<</h3>>", "h3"]
+            - ["<h1>My Cooking Website</h1>", "h1"]
+            - ["<h3>My Top Recipes!</h3>", "h3"]
         - name: elem2
           values:
-            - ["<<div>>Lets Eat!<</div>>", "div"]
-            - ["<<p>>These are my favorite recipes.<</p>>", "p"]
+            - ["<div>Lets Eat!</div>", "div"]
+            - ["<p>These are my favorite recipes.</p>", "p"]
       choices:
         - "The <<${ {{elem1}}[1] }>> element appears ABOVE the <<${ {{elem2}}[1] }>> element"
         - "The <<${ {{elem1}}[1] }>> element appears TO THE LEFT OF the <<${ {{elem2}}[1] }>> element"
         - "The <<${ {{elem1}}[1] }>> element appears TO THE RIGHT OF the <<${ {{elem2}}[1] }>> element"
         - "The <<${ {{elem1}}[1] }>> element appears BELOW the <<${ {{elem2}}[1] }>> element"
       repeat: 2
-    - question: "How will the elements appear in the following code: <code>${ {{elem1}}[0] }<br>${ {{elem2}}[0] }</code>"
+    - question: "How will the elements appear in the following code:
+        <code lang='html'>
+        ${ {{elem1}}[0] }
+        ${ {{elem2}}[0] }
+        </code>"
       quiz: true
       type: multiple_choice
       variables:
         - name: elem1
           values:
-            - ["<<h1>>My Cooking Website<</h1>>", "h1"]
-            - ["<<h3>>My Top Recipes!<</h3>>", "h3"]
+            - ["<h1>My Cooking Website</h1>", "h1"]
+            - ["<h3>My Top Recipes!</h3>", "h3"]
         - name: elem2
           values:
-            - ["<<span>>These are my favorite recipes.<</span>>", "span"]
-            - ["<<img src='images/cat.jpg'>>", "img"]
+            - ["<span>These are my favorite recipes.</span>", "span"]
+            - ["<img src='images/cat.jpg'>", "img"]
       choices:
         - "The <<${ {{elem2}}[1] }>> element appears BELOW the <<${ {{elem1}}[1] }>> element"
         - "The <<${ {{elem2}}[1] }>> element appears TO THE RIGHT OF the <<${ {{elem1}}[1] }>> element"
@@ -155,7 +196,12 @@
 
 5:
   questions:
-    - question: "Type the following element into the editor below: <code>${{code1}}$<br>${{code2}}$</code>"
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='html'>
+        ${{code1}}$
+        ${{code2}}$
+        </code>
       type: code
       code_language: html
       variables:
@@ -166,18 +212,26 @@
             - "Do you want to eat this?  "
         - name: code2
           values:
-            - "<<button>>Butter Chicken<</button>>"
-            - "<<img src='images/cat.jpg' height='20' width='30'>>"
-            - "<<p>>Corned Beef<</p>>"
+            - "<button>Butter Chicken</button>"
+            - "<img src='images/cat.jpg' height='20' width='30'>"
+            - "<p>Corned Beef</p>"
       repeat: 3
-    - question: "How will the elements appear in the following code: <code>My favorite animal is:<br><<img src='images/cat.jpg'>></code>"
+    - question: "How will the elements appear in the following code:
+        <code lang='html'>
+        My favorite animal is:
+        <img src='images/cat.jpg'>
+        </code>"
       type: multiple_choice
       choices:
         - "The text appears TO THE LEFT OF the <<img>> element"
         - "The text appears TO THE RIGHT the <<img>> element"
         - "The text appears BELOW the <<img>> element"
         - "The text appears ABOVE the <<img>> element"
-    - question: "How will the elements appear in the following code: <code>My favorite animal is:<br><<p>>a cat<</p>></code>"
+    - question: "How will the elements appear in the following code:
+        <code lang='html'>
+        My favorite animal is:
+        <p>a cat</p>
+        </code>"
       type: multiple_choice
       choices:
         - "The text appears ABOVE the <<p>> element"
@@ -187,31 +241,73 @@
 
 7:
   questions:
-    - question: "Type the following element into the editor below: <code>${{code}}$</code>"
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='html'>
+        <div>
+          <p>My favorite meal is an egg.</p>
+        </div>
+        </code>
       type: code
       code_language: html
-      variables:
-        - name: code
-          values:
-            - "<<div>><br>&nbsp;&nbsp;<<p>>My favorite meal is an egg.<</p>><br><</div>> "
-            - "<<button>><br>&nbsp;&nbsp;<<img src='images/cat.jpg' height='100' width='100'>><br><</button>> "
-            - "<<button>><br>&nbsp;&nbsp;<<span id='coupon'>> 10% off! <</span>><br><</button>> "
-      repeat: 3
-    - question: "What is the parent-child relationship in the following code: <code>${ {{code}}[0] }</code>"
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='html'>
+        <button>
+          <img src='images/cat.jpg' height='100' width='100'>
+        </button>
+        </code>
+      type: code
+      code_language: html
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='html'>
+        <button>
+          <span id='coupon'> 10% off! </span>
+        </button>
+        </code>
+      type: code
+      code_language: html
+    - question: |*
+        What is the parent-child relationship in the following code:
+        <code lang='html'>
+        <div>
+          <p>My favorite meal is an egg.</p>
+        </div>
+        </code>
       quiz: true
       type: multiple_choice
       choices:
-        - "The <<${ {{code}}[1] }>> element is the PARENT and <<${ {{code}}[2] }>> element is the CHILD"
-        - "The <<${ {{code}}[2] }>> element is the PARENT and <<${ {{code}}[1] }>> element is the CHILD"
-        - "The <<${ {{code}}[3] }>> element is the PARENT and <<${ {{code}}[2] }>> element is the CHILD"
-        - "The <<${ {{code}}[1] }>> element is the PARENT and <<${ {{code}}[3] }>> element is the CHILD"
-      variables:
-        - name: code
-          values:
-            - ["<<div>><br>&nbsp;&nbsp;<<p>>My favorite meal is an egg.<</p>><br><</div>>", "div", "p", "span"]
-            - ["<<button>><br>&nbsp;&nbsp;<<img src='images/cat.jpg' height='100' width='100'>><br><</button>> ", "button", "img", "height"]
-            - ["<<button>><br>&nbsp;&nbsp;<<span id='coupon'>> 10% off! <</span>><br><</button>>", "button", "span", "coupon"]
-      repeat: 3
+        - "The <<div>> element is the PARENT and <<p>> element is the CHILD"
+        - "The <<p>> element is the PARENT and <<div>> element is the CHILD"
+        - "The <<span>> element is the PARENT and <<p>> element is the CHILD"
+        - "The <<div>> element is the PARENT and <<span>> element is the CHILD"
+    - question: |*
+        What is the parent-child relationship in the following code:
+        <code lang='html'>
+        <button>
+          <img src='images/cat.jpg' height='100' width='100'>
+        </button>
+        </code>
+      type: multiple_choice
+      choices:
+        - "The <<button>> element is the PARENT and <<img>> element is the CHILD"
+        - "The <<img>> element is the PARENT and <<button>> element is the CHILD"
+        - "The <<height>> element is the PARENT and <<img>> element is the CHILD"
+        - "The <<button>> element is the PARENT and <<height>> element is the CHILD"
+    - question: |*
+        What is the parent-child relationship in the following code:
+        <code lang='html'>
+        <button>
+          <span id='coupon'> 10% off! </span>
+        </button>
+        </code>
+      type: multiple_choice
+      choices:
+        - "The <<button>> element is the PARENT and <<span>> element is the CHILD"
+        - "The <<span>> element is the PARENT and <<button>> element is the CHILD"
+        - "The <<coupon>> element is the PARENT and <<span>> element is the CHILD"
+        - "The <<button>> element is the PARENT and <<coupn>> element is the CHILD"
     - question: "Create a <strong> button </strong> element. Give it a child <strong> img </strong> element that has <strong> src </strong> attribute equal to 'images/cat.jpg'"
       quiz: true
       type: code
@@ -219,16 +315,43 @@
 
 9:
   questions:
-    - question: "Type the following element into the editor below: <code><<div>><br>&nbsp;&nbsp;<<p>><br>&nbsp;&nbsp;&nbsp;&nbsp;My favorite meal is an <br>&nbsp;&nbsp;&nbsp;&nbsp;<<span id='food'>>egg<</span>><br>&nbsp;&nbsp;<</p>><br><</div>></code>"
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='html'>
+        <div>
+          <p>
+            My favorite meal is an
+            <span id='food'>egg</span>
+          </p>
+        </div>
+        </code>
       type: code
       code_language: html
-    - question: "What is the parent of the <strong> p </strong> element in the following code: <code><<div>><br>&nbsp;&nbsp;<<p>><br>&nbsp;&nbsp;&nbsp;&nbsp;My favorite meal is an <br>&nbsp;&nbsp;&nbsp;&nbsp;<<span id='food'>>egg<</span>><br>&nbsp;&nbsp;<</p>><br><</div>></code>"
+    - question: |*
+        What is the parent of the <strong> p </strong> element in the following code:
+        <code lang='html'>
+        <div>
+          <p>
+            My favorite meal is an
+            <span id='food'>egg</span>
+          </p>
+        </div>
+        </code>
       type: multiple_choice
       choices:
         - "The <<div>> element"
         - "The <<p>> element"
         - "The <<span>> element"
-    - question: "What is the parent of the <strong> span </strong> element in the following code: <code><<div>><br>&nbsp;&nbsp;<<p>><br>&nbsp;&nbsp;&nbsp;&nbsp;My favorite meal is an <br>&nbsp;&nbsp;&nbsp;&nbsp;<<span id='food'>>egg<</span>><br>&nbsp;&nbsp;<</p>><br><</div>></code>"
+    - question: |*
+        What is the parent of the <strong> span </strong> element in the following code:
+        <code lang='html'>
+        <div>
+          <p>
+            My favorite meal is an
+            <span id='food'>egg</span>
+          </p>
+        </div>
+        </code>
       quiz: true
       type: multiple_choice
       choices:
