@@ -132,7 +132,7 @@ $("body").on('click', '.mark_complete', function() {
   api.uploadTodo(current_exercise, question_num);
 })
 
-function update_problem(exercise, question, choice, isCorrect) {
+function update_problem(exercise, question, choice, code, isCorrect, action) {
   let problem_box = $(`.exercise_set[exercise=${exercise}]`)
     .find(`.problem[num=${question}]`).find(".problem_box");
   let choice_button = problem_box
@@ -161,6 +161,13 @@ function update_problem(exercise, question, choice, isCorrect) {
       responses[exercise][question] = true;
       problem_box.find(".submit_code, .submitting_code").addClass("invisible");
       break;
+  }
+  if (code_mirrors[exercise][question]) {
+    for (let lang in code) {
+      if (lang in code_mirrors[exercise][question]) {
+        code_mirrors[exercise][question][lang].setValue(code[lang]);
+      }
+    }
   }
   let exerciseComplete = true;
   for (question in responses[exercise]) {

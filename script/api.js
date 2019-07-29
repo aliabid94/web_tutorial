@@ -1,27 +1,28 @@
-function parseSnapshot(snapshot, removed) {
+function parseSnapshot(snapshot, action) {
   let key_split = snapshot.key.split("_");
   let child = snapshot.val();
   let values = {
     exercise: key_split[0],
     question: key_split[1],
     choice: child.choice,
-    isCorrect: removed ? 0 : child.isCorrect
+    code: child.code,
+    isCorrect: action == "remove" ? 0 : child.isCorrect
   }
   update_problem(values.exercise, values.question, values.choice,
-      values.isCorrect);
+      values.code, values.isCorrect, action);
 }
 
 var api = {
   init: function() {
     let dbRef = firebase.database().ref('responses/' + course_tag + '/' + name);
     dbRef.on('child_added', function(snapshot) {
-      parseSnapshot(snapshot, false);
+      parseSnapshot(snapshot, "add");
     })
     dbRef.on('child_changed', function(snapshot) {
-      parseSnapshot(snapshot, false);
+      parseSnapshot(snapshot, "change");
     })
     dbRef.on('child_removed', function(snapshot) {
-      parseSnapshot(snapshot, true);
+      parseSnapshot(snapshot, "remove");
     })
   },
   uploadMultipleChoice: function(exercise, question, choice, isCorrect) {
