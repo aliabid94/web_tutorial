@@ -13,6 +13,7 @@
         </code>
       quiz: true
       type: code
+      autograder: copy
     - question: |*
         Type the following HTML:
         <code lang='html'>
@@ -39,6 +40,7 @@
         }
         </code>
       type: code
+      autograder: copy
     - question: |*
         What is the selector of the following rule-set:
         <code lang='css'>
@@ -216,6 +218,7 @@
         }
         </code>
       type: code
+      autograder: copy
     - question: "Write code to replicate the demo shown."
       quiz: true
       demo_code: "<html>
@@ -294,9 +297,8 @@
         }
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: "Make a table with the name, age, and gender of every member of your family. Make any row with a male member have a 'salmon' background,
        and any row with a female member have a 'cyan' background."
       quiz: true
       type: code
-      code_language: html

@@ -20,6 +20,7 @@
         }
         </code>
       type: code
+      autograder: copy
     - question: "Write code to replicate the demo shown. Use the <strong>div</strong> element for each line."
       demo_code: "<html>
       <head>
@@ -105,6 +106,7 @@
         }
         </code>
       type: code
+      autograder: copy
     - question: |*
         Type the following HTML:
         <code lang='html'>
@@ -128,6 +130,7 @@
         }
         </code>
       type: code
+      autograder: copy
     - question: "Write code to replicate the demo shown."
       quiz: true
       demo_code: "<html>
@@ -188,6 +191,7 @@
         </code>
       quiz: true
       type: code
+      autograder: copy
     - question: "Write code to replicate the demo shown. Use the <strong>div</strong> element for each line."
       demo_code: "<html>
       <head>
@@ -270,6 +274,7 @@
         }
         </code>
       type: code
+      autograder: copy
     - question: "Write code to replicate the demo shown. Use the <strong>div</strong> element for each line."
       quiz: true
       demo_code: "<html>

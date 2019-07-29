@@ -60,21 +60,21 @@
         <h1>HTML is fun!</h1>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: |*
         Type the following element into the editor below:
         <code lang='html'>
         <h1>My Cooking Website</h1>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: |*
         Type the following element into the editor below:
         <code lang='html'>
         <h1>My Favorite Animals</h1>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: |*
         What is the type of the element:
         <code lang='html'>
@@ -145,6 +145,7 @@
             - "<h1>Lets Learn HTML!</h1>"
             - "<h3>I like coding</h3>"
       repeat: 4
+      autograder: copy
     - question: |*
         What is the type of the following element?
         <code lang='html'>
@@ -240,7 +241,7 @@
         </code>
       quiz: true
       type: code
-      code_language: html
+      autograder: copy
     - question: |*
         Type the following element into the editor below:
         <code lang='html'>
@@ -249,14 +250,14 @@
         </h1>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: |*
         Type the following element into the editor below:
         <code lang='html'>
         <h1>My Cooking Website</h1>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: |*
         Type the following element into the editor below:
         <code lang='html'>
@@ -266,14 +267,14 @@
         </code>
       quiz: true
       type: code
-      code_language: html
+      autograder: copy
     - question: |*
         Type the following element into the editor below:
         <code lang='html'>
         <h1>My Favorite Animals</h1>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: |*
         Type the following element into the editor below:
         <code lang='html'>
@@ -282,7 +283,7 @@
         </h1>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: "Create an element in <strong>single-line style</strong> with type <strong>${{tag}}$</strong> and content <strong>${{content}}$</strong>"
       quiz: true
       type: code
@@ -312,7 +313,7 @@
         I want to <br> EAT!
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: |*
         Type the following element into the editor below:
         <code lang='html'>
@@ -320,7 +321,7 @@
         </code>
       quiz: true
       type: code
-      code_language: html
+      autograder: copy
     - question: "A void element only has what?"
       type: multiple_choice
       choices:
@@ -338,7 +339,7 @@
         </a>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: "The <strong> href </strong> attribute does what?"
       quiz: true
       type: multiple_choice
@@ -484,7 +485,7 @@
         <img src='images/cat.jpg' width='200' height='800'>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: |*
         What is the value of the <strong> src </strong> attribute in this element:
         <code lang='html'>
@@ -533,7 +534,7 @@
         </span>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: |*
         What is the value of the <strong> title </strong> attribute in this element:
         <code lang='html'>

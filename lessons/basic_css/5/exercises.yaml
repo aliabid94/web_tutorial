@@ -2,7 +2,7 @@
   questions:
     - question: |*
         Type the following HTML:
-        <code lang='html'>
+        <code lang='html' style='max-height: 300px; overflow-y: auto'>
         <<html>>
           <<head>>
             <<link rel='stylesheet' type='text/css' href='style.css'>>
@@ -32,7 +32,7 @@
         <</html>>
         </code>
         and the following CSS:
-        <code lang='css'>
+        <code lang='css' style='max-height: 300px; overflow-y: auto'>
         body {
           font-family: Verdana;
         }
@@ -86,6 +86,7 @@
         }
         </code>
       type: code
+      autograder: copy
     - question: "Write code to replicate the demo shown. <ul>
       <li>The font used is Verdana.</li>
       <li>You will need to use <strong>vertical-align: middle</strong> to centrally align each image with the description text next to it.</li>
@@ -727,9 +728,6 @@
       </html>
       "
       type: code
-
-3:
-  questions:
     - question: "Write code to replicate the demo shown. <ul>
       <li>The font used in the page is Verdana.</li>
       <li>Use Google to learn how to implement the range input object.</li>

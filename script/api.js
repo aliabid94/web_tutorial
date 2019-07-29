@@ -38,9 +38,10 @@ var api = {
           question)
       .update(question_data);
   },
-  uploadCode: function(exercise, question, code) {
+  uploadCode: function(exercise, question, code, isCorrect) {
+    isCorrect = isCorrect || 0;
     question_data = {
-      isCorrect: 0,
+      isCorrect: isCorrect,
       code: code
     }
     firebase
@@ -54,7 +55,7 @@ var api = {
       .database()
       .ref('responses/' + course_tag + '/' + name + '/' + exercise + '_' +
           question)
-      .update({isCorrect : 1});    
+      .update({isCorrect : 1});
   }
 
 }

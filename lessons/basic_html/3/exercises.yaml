@@ -9,7 +9,7 @@
         <h2>Non-Vegan Recipes</h2>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: "Write code to replicate the demo shown. The largest header is <<h1>>, the country names are <<h2>>, and the city names are <<h3>>:"
       demo_code: "<h1>Largest Cities Per Country</h1>
       <h2>China</h2>
@@ -37,7 +37,7 @@
         </ul>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: |*
         Type the following element into the editor below:
         <code lang='html'>
@@ -49,7 +49,7 @@
         </ol>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: "Create an unordered list with the names of the people in your family."
       quiz: true
       type: code
@@ -90,7 +90,7 @@
         </table>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: "Create a table with header columns 'Name', 'Age', and 'Gender'. Add a row to this table for every member of your family."
       type: code
       code_language: html
@@ -125,7 +125,7 @@
         <input type='text' placeholder='Enter Name'>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: "Create your own input text field that asks for your birthday."
       quiz: true
       type: code
@@ -142,7 +142,7 @@
         <input type='radio' name='gender' value='other'> Other
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: "Create your own input radio field that asks your ethnic background."
       quiz: true
       type: code
@@ -167,7 +167,7 @@
         <input type='checkbox' name='country' value='pakistan'> Pakistan
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: "Create your own input checkbox field that gives you a menu of food items to order from."
       type: code
       code_language: html
@@ -194,7 +194,7 @@
         </select>
         </code>
       type: code
-      code_language: html
+      autograder: copy
     - question: "Create your own select field that asks your ethnic background."
       type: code
       code_language: html

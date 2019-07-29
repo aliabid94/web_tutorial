@@ -15,6 +15,7 @@
         }
         </code>
       type: code
+      autograder: copy
     - question: |*
         Type the following HTML:
         <code lang='html'>
@@ -41,6 +42,7 @@
         }
         </code>
       type: code
+      autograder: copy
     - question: "Which of the following is true?"
       quiz: true
       type: multiple_choice
@@ -52,7 +54,7 @@
     - question: "Create two span elements next to each other with different background colors. Demonstrate word wrap with these elements."
       type: code
 
-4:
+5:
   questions:
     - question: |*
         Type the following HTML:
@@ -82,6 +84,7 @@
         </code>
       type: code
       quiz: true
+      autograder: copy
     - question: "Write code to replicate the demo shown. <ul>
         <li>The font used is 'Garamond'.</li>
         </ul>"
@@ -159,7 +162,7 @@
       "
       type: code
 
-5:
+6:
   questions:
     - question: "Analyze the demo shown. Try to visualize how the page could be broken into rows and columns.
       <div style='height: 400px'></div>"
@@ -324,7 +327,7 @@
       </html>"
       type: todo
 
-6:
+7:
   questions:
     - question: "Write code ONLY to create the divs for the rows highlighted! <ul>
       <li>If an element can be further broken down into columns, leave the content empty for now - otherwise fill it in.</li>
@@ -495,7 +498,7 @@
       </html>"
       type: code
 
-8:
+9:
   questions:
     - question: "Write code ONLY to create the divs for the columns highlighted! <ul>
       <li>If an element can be further broken down into rows, leave the content empty for now - otherwise fill it in.</li>
@@ -664,7 +667,7 @@
       </html>"
       type: code
 
-9:
+10:
   questions:
     - question: "Breakdown all the remaining elements! <ul>
       <li>The apple images used are '/images/apple/1.jpg', '/images/apple/2.jpg', '/images/apple/3.jpg'</li>
@@ -832,7 +835,7 @@
       </html>"
       type: code
 
-10:
+11:
   questions:
     - question: |*
         Type the following HTML: <code lang='html'>
@@ -851,6 +854,7 @@
         }
         </code>
       type: code
+      autograder: copy
     - question: |*
         Type the following HTML: <code lang='html'>
         My Favorite Hobbies

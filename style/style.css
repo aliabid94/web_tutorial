@@ -5,10 +5,11 @@ body {
 }
 #exercises_nav {
   padding-top: 15px;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 .exercise_link {
   margin-right: 15px !important;
+  margin-bottom: 12px !important;
 }
 .exercise_link.green {
   background-color: #21ba45 !important;
@@ -75,7 +76,10 @@ body {
 .slide {
   display: none;
   max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
   border: solid 1px #EEEEEE;
+  background-color: #EEEEEE;
 }
 #slide_control {
   display: flex;

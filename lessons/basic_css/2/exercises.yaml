@@ -15,6 +15,7 @@
         }
         </code>
       type: code
+      autograder: copy
     - question: "Write code to replicate the demo shown."
       quiz: true
       demo_code: "<html>
@@ -252,7 +253,7 @@
                 Hello!
               </div>
             </div>
-          </div> <br>
+          </div>
         </div>
         </code>
         and the CSS is
