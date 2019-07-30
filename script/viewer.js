@@ -116,6 +116,11 @@ $("body").on('click', '.exercise_link', function() {
   $('html, body').animate({
       scrollTop: ($('#exercises_nav').offset().top)
   }, 500);
+  for (let question_num in code_mirrors[current_exercise]) {
+    for (let lang in code_mirrors[current_exercise][question_num]) {
+      code_mirrors[current_exercise][question_num][lang].refresh();
+    }
+  }
 })
 
 $("body").on('click', '.answers.multiple_choice button', function() {
@@ -184,10 +189,12 @@ function update_problem(exercise, question, choice, code, isCorrect, action) {
 $("body").on('click', '.lang_link', function() {
   let lang = $(this).attr('lang');
   let problem_box = $(this).closest(".problem");
+  let question_num = problem_box.attr("num");
   problem_box.find('.lang_link').removeClass("active");
   $(this).addClass('active');
   problem_box.find('.codebox_holder').hide();
   problem_box.find(`.codebox_holder[lang=${lang}]`).show();
+  code_mirrors[current_exercise][question_num][lang].refresh();
 })
 
 function getCodeSet(cm_set) {
