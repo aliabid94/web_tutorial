@@ -1,55 +1,95 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
-    <title>Web Development</title>
+    <title>Silicon Prep</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style/index.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
   </head>
-  <body class="ui">
-    <div id="headers">
-      <h1 class="ui header">Web Development Courses</h1>
-      <h3 class="ui header">Presented by Silicon Prep</h3>
+  <link rel="stylesheet" type="text/css" href="style/sp.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <body>
+    <div class="sign_up_banner">
+      <span class="open_date_1"></span> thru <span class="open_date_2"></span> class at <a href="https://www.mcabayarea.org/" target="_blank">MCA</a> - registration open. <a href="#enroll">Enroll now!</a>
     </div>
-    <div class="ui horizontal divider">
-      Beginner
+    <nav>
+      <a class="selected" href="index.html">Silicon Prep</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="course.html">Course</a>
+    </nav>
+    <div class="banner">
+      <h1>Zero to Professional Coder in a Matter of Weeks</h1>
+      <h2>Free Live Curriculum led by Google Engineers.</h2>
+      <a href="#enroll">
+        <button class="ui button teal massive">Enroll Now</button>
+      </a>
     </div>
-    <h2 class="ui header">Basic HTML</h2>
-    <a href="viewer.html?course=basic_html&lesson=1"><button class="ui button">Starting HTML: Elements</button></a>
-    <a href="viewer.html?course=basic_html&lesson=2"><button class="ui button">Putting Elements Together</button></a>
-    <a href="viewer.html?course=basic_html&lesson=3"><button class="ui button">More Complex Elements</button></a>
-    <a href="viewer.html?course=basic_html&lesson=4"><button class="ui button">Putting Together a Full HTML Page</button></a>
-    <h2 class="ui header">Basic CSS</h2>
-    <a href="viewer.html?course=basic_css&lesson=1"><button class="ui button">Starting CSS: Rule-sets</button></a>
-    <a href="viewer.html?course=basic_css&lesson=2"><button class="ui button">More on Properties</button></a>
-    <a href="viewer.html?course=basic_css&lesson=3"><button class="ui button">The Display Property</button></a>
-    <a href="viewer.html?course=basic_css&lesson=4"><button class="ui button">Spacing and the Box Model</button></a>
-    <a href="viewer.html?course=basic_css&lesson=5"><button class="ui button">Putting Together a Full HTML and CSS Page</button></a>
-    <div class="ui horizontal divider">
-      Intermediate
+    <div class="content">
+      <div class="content-row">
+        <div class="info">
+          <h2>Master Web Development with Silicon Prep.</h2>
+          <p>Coding has become a <strong>core aspect</strong> in data science, robotics, medical sciences, data analysis, user experience, marketing — the mass of applications have created an enormous market demand for students and engineers with coding competence.</p>
+          <p>However, software engineering education has long been inaccessible and difficult. We’re Google engineers that have developed a full curriculum involving classes and projects for beginners to guide them to excel in this field.</p>
+          <p>We teach live classes in small groups to anyone without any background in software engineering needed, ranging from talented <strong>high-school students</strong> to working <strong>professionals</strong>. The course consists of 15 sessions over an 3 week period. See the <a href="calendar.html">class schedule</a> to view the next available course.</p>
+        </div>
+        <div class="contact">
+          <h3>Contact</h3>
+          <p><i class="envelope icon"></i><a href="mailto:info@siliconprep.com">team@siliconprep.com</a></p>
+          <p><i class="phone icon"></i>(678) 749-8673</p>
+          <h3>Testimonials</h3>
+          <p><em>This course made me so qualified! I now work developing websites. </em> - Rawish</p>
+          <p><em>I created my first professional app in only a matter of weeks!</em> - Hafeel</p>
+        </div>
+      </div>
+    <div class="form">
+      <h2 id="enroll">Enroll Now</h2>
+      <p>We're excited to have you join our free course. Leave your information below to get started!</p>
+      <form class="ui form">
+        <div class="field">
+          <label>Name</label>
+          <div class="two fields">
+            <div class="field">
+              <input type="text" placeholder="First Name">
+            </div>
+            <div class="field">
+              <input type="text" placeholder="Last Name">
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Contact</label>
+          <div class="two fields">
+            <div class="field">
+              <input type="text" placeholder="Email">
+            </div>
+            <div class="field">
+              <input type="text" placeholder="Phone Number">
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>I am a ...</label>
+          <div class="field">
+            <input type="text" placeholder="Profession">
+          </div>
+        </div>
+        <div class="field">
+          <label>Anything else you want us to know?</label>
+          <textarea rows="6"></textarea>
+        </div>
+        <button class="ui teal button" type="submit">Submit</button>
+      </form>
     </div>
-    <h2 class="ui header">Intermediate HTML &amp; CSS</h2>
-    <a href="viewer.html?course=advanced_html_css&lesson=1"><button class="ui button">The Inspector</button></a>
-    <a href="viewer.html?course=advanced_html_css&lesson=3"><button class="ui button">Flexbox</button></a>
-    <a href="viewer.html?course=advanced_html_css&lesson=4"><button class="ui button">Even More Selectors</button></a>
-    <a href="viewer.html?course=advanced_html_css&lesson=5"><button class="ui button">Common Web Components</button></a>
-    <a href="viewer.html?course=advanced_html_css&lesson=6"><button class="ui button">Libraries and Bootstrap</button></a>
-    <h2 class="ui header">Basic JavaScript</h2>
-    <a href="viewer.html?course=basic_js&lesson=1"><button class="ui button">Starting Javascript: Variables and Operations</button></a>
-    <a href="viewer.html?course=basic_js&lesson=2"><button class="ui button">Functions</button></a>
-    <a href="viewer.html?course=basic_js&lesson=3"><button class="ui button">If Statements</button></a>
-    <a href="viewer.html?course=basic_js&lesson=4"><button class="ui button">Arrays and Strings</button></a>
-    <a href="viewer.html?course=basic_js&lesson=5"><button class="ui button">Variable Scopes</button></a>
-    <a href="viewer.html?course=basic_js&lesson=6"><button class="ui button">Loops</button></a>
-    <a href="viewer.html?course=basic_js&lesson=7"><button class="ui button">Objects</button></a>
-    <h2 class="ui header">JavaScript, JQuery, &amp; HTML</h2>
-    <a href="viewer.html?course=basic_js&lesson=1"><button class="ui button">Starting JQuery: DOM Selectors</button></a>
-    <a href="viewer.html?course=basic_js&lesson=2"><button class="ui button">Modifying Content</button></a>
-    <a href="viewer.html?course=basic_js&lesson=3"><button class="ui button">Adding Event Listeners</button></a>
-    <a href="viewer.html?course=basic_js&lesson=4"><button class="ui button">Sending Requests</button></a>
-    <a href="viewer.html?course=basic_js&lesson=5"><button class="ui button">Putting Everything Together</button></a>
-
+    <script src="script/sp.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+    <script>
+      $('.ui.dropdown') .dropdown();
+      api.getClassDates(function loadDates(dates) {
+        var start_open = moment(dates.open.sort()[0], "YYYYMMDD");
+        var end_open = moment(dates.open.sort()[dates.open.length-1], "YYYYMMDD");
+        $(".open_date_1").html(start_open.format("MMMM DD"));
+        $(".open_date_2").html(end_open.format("MMMM DD"));
+      });
+    </script>
   </body>
 </html>

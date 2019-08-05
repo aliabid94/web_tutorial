@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Development</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/sp.css">
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  </head>
+  <body class="ui">
+    <div class="sign_up_banner">
+      <span class="open_date_1"></span> thru <span class="open_date_2"></span> class at <a href="https://www.mcabayarea.org/" target="_blank">MCA</a> - registration open. <a href="index.html#enroll">Enroll now!</a>
+    </div>
+    <nav>
+      <a href="index.html">Silicon Prep</a>
+      <a href="calendar.html">Calendar</a>
+      <a class="selected" href="course.html">Course</a>
+    </nav>
+    <main>
+      <h2>Course</h2>
+      <div class="ui horizontal divider">
+        Beginner
+      </div>
+      <h3 class="ui header teal">Basic HTML</h3>
+      <a href="viewer.html?course=basic_html&lesson=1"><button class="ui button basic">Starting HTML: Elements</button></a>
+      <a href="viewer.html?course=basic_html&lesson=2"><button class="ui button basic">Putting Elements Together</button></a>
+      <a href="viewer.html?course=basic_html&lesson=3"><button class="ui button basic">More Complex Elements</button></a>
+      <a href="viewer.html?course=basic_html&lesson=4"><button class="ui button basic">Putting Together a Full HTML Page</button></a>
+      <h3 class="ui header teal">Basic CSS</h3>
+      <a href="viewer.html?course=basic_css&lesson=1"><button class="ui button basic">Starting CSS: Rule-sets</button></a>
+      <a href="viewer.html?course=basic_css&lesson=2"><button class="ui button basic">More on Properties</button></a>
+      <a href="viewer.html?course=basic_css&lesson=3"><button class="ui button basic">The Display Property</button></a>
+      <a href="viewer.html?course=basic_css&lesson=4"><button class="ui button basic">Spacing and the Box Model</button></a>
+      <a href="viewer.html?course=basic_css&lesson=5"><button class="ui button basic">Putting Together a Full HTML and CSS Page</button></a>
+      <div class="ui horizontal divider">
+        Intermediate
+      </div>
+      <h3 class="ui header teal">Intermediate HTML &amp; CSS</h3>
+      <a href="viewer.html?course=advanced_html_css&lesson=1"><button class="ui button basic">The Inspector</button></a>
+      <a href="viewer.html?course=advanced_html_css&lesson=3"><button class="ui button basic">Flexbox</button></a>
+      <a href="viewer.html?course=advanced_html_css&lesson=4"><button class="ui button basic">Selectors</button></a>
+      <a href="viewer.html?course=advanced_html_css&lesson=5"><button class="ui button basic">Common Web Components</button></a>
+      <a href="viewer.html?course=advanced_html_css&lesson=6"><button class="ui button basic">Libraries and Bootstrap</button></a>
+      <h3 class="ui header teal">Basic JavaScript</h3>
+      <a href="viewer.html?course=basic_js&lesson=1"><button class="ui button basic">Starting Javascript: Variables and Operations</button></a>
+      <a href="viewer.html?course=basic_js&lesson=2"><button class="ui button basic">Functions</button></a>
+      <a href="viewer.html?course=basic_js&lesson=3"><button class="ui button basic">If Statements</button></a>
+      <a href="viewer.html?course=basic_js&lesson=4"><button class="ui button basic">Arrays and Strings</button></a>
+      <a href="viewer.html?course=basic_js&lesson=5"><button class="ui button basic">Variable Scopes</button></a>
+      <a href="viewer.html?course=basic_js&lesson=6"><button class="ui button basic">Loops</button></a>
+      <a href="viewer.html?course=basic_js&lesson=7"><button class="ui button basic">Objects</button></a>
+      <h3 class="ui header teal">JavaScript, JQuery, &amp; HTML</h3>
+      <a href="viewer.html?course=basic_js&lesson=1"><button class="ui button basic">Starting JQuery: DOM Selectors</button></a>
+      <a href="viewer.html?course=basic_js&lesson=2"><button class="ui button basic">Modifying Content</button></a>
+      <a href="viewer.html?course=basic_js&lesson=3"><button class="ui button basic">Adding Event Listeners</button></a>
+      <a href="viewer.html?course=basic_js&lesson=4"><button class="ui button basic">Sending Requests</button></a>
+      <a href="viewer.html?course=basic_js&lesson=5"><button class="ui button basic">Putting Everything Together</button></a>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="script/sp.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+    <script>
+      api.getClassDates(function loadDates(dates) {
+        var start_open = moment(dates.open.sort()[0], "YYYYMMDD");
+        var end_open = moment(dates.open.sort()[dates.open.length-1], "YYYYMMDD");
+        $(".open_date_1").html(start_open.format("MMMM DD"));
+        $(".open_date_2").html(end_open.format("MMMM DD"));
+      });
+    </script>
+
+  </body>
+</html>
