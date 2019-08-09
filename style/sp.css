@@ -9,8 +9,8 @@ html, body {
   padding-bottom: 40px;
 }
 body > * {
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 8%;
+  padding-right: 8%;
 }
 .sign_up_banner {
   padding-top: 10px;
@@ -63,19 +63,22 @@ nav a.selected, nav a:hover {
 }
 .content {
   font-size: 15px;
+  margin-top: 12px;
 }
 .content-row {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .info {
   margin-right: 20px;
+  flex: 2 0 320px;
 }
 .contact {
-  min-width: 320px;
+  flex: 1 0 180px;
 }
 .contact, .info, .form {
-  margin-top: 22px;
+  margin-top: 10px;
 }
 p {
   line-height: 1.8em !important;
@@ -124,9 +127,11 @@ p {
   display: inline-block;
   border-radius: 2px;
   vertical-align: top;
-  margin-right: 9px;
-  margin-left: 9px;
+  margin-right: 18px;
   margin-bottom: 12px;
+}
+.calendar:last-child {
+  margin-right: 0;
 }
 .calendar_row .button {
   margin: 9px !important;
@@ -195,4 +200,9 @@ p {
 }
 .info {
   margin-bottom: 18px;
+}
+@media only screen and (max-width: 480px) {
+  .calendar_row button {
+    display: none !important;
+  }
 }
