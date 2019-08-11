@@ -7,5 +7,8 @@ var api = {
       "20190909", "20190910", "20190911", "20190912", "20190913",
     ]
     });
+  },
+  getLocation: function() {
+    return "TBD Location."
   }
 }
