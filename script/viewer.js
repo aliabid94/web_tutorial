@@ -240,7 +240,7 @@ window_count = 1;
 $("body").on('click', '.open_max img', function() {
   let html = $(this).closest('.render_box').find('iframe').contents().find("html").html();
   let is_demo = $(this).closest('.render_box').hasClass('demo_box')
-  var win = window.open('', (is_demo ? 'demo' : 'output') + (++window_count),'height=600,width=480');
+  var win = window.open('', (is_demo ? 'demo' : 'output') + (++window_count),'height=480,width=600');
   win.document.write(html);
   win.focus();
 })

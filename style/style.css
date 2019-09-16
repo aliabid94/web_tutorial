@@ -25,6 +25,7 @@ body {
 }
 .render_box {
   margin-left: 20px !important;
+  min-height: 300px !important;
 }
 .output_box {
   display: none;

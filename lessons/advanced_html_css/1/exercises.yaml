@@ -1,0 +1,565 @@
+2:
+  questions:
+    - question: "Use the inspector on the demo shown to answer the following question: <br>
+      What is the class name of the divs that contain the name and text details of each pet?"
+      type: multiple_choice
+      choices:
+        - "info"
+        - "detail"
+        - "text"
+        - "pet"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          .pet {
+            display: inline-block;
+            margin-bottom: 16px;
+          }
+          .pet img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            vertical-align: middle;
+          }
+          .info {
+            display: inline-block;
+            vertical-align: middle;
+            width: 150px;
+            margin-left: 10px;
+          }
+          h3 {
+            margin-top: 0;
+          }
+          p {
+            font-size: 12px;
+          }
+        </style>
+        <body>
+          <h1>My Pets</h1>
+          <div class='pet'>
+            <img src='images/cat.jpg'>
+            <div class='info'>
+              <h3>Doodle</h3>
+              <p>What a darling cat doodle is!</p>
+            </div>
+          </div>
+          <div class='pet'>
+            <img src='images/dog.jpg'>
+            <div class='info'>
+              <h3>Spot</h3>
+              <p>Spot is such a good boy!</p>
+            </div>
+          </div>
+          <div class='pet'>
+            <img src='images/elephant.jpg'>
+            <div class='info'>
+              <h3>Elephant</h3>
+              <p>Elephant is such a good elephant!</p>
+            </div>
+          </div>
+          <div class='pet'>
+            <img src='images/squid.jpg'>
+            <div class='info'>
+              <h3>Squidward</h3>
+              <p>Squidward gives the best hugs!</p>
+            </div>
+          </div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Use the inspector on the demo shown to answer the following question: <br>
+      Which element below is not present in the demo?"
+      type: multiple_choice
+      choices:
+        - "h3"
+        - "h2"
+        - "h4"
+        - "button"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Arial;
+          }
+          .plan {
+            width: 200px;
+            margin: 0px 10px;
+            background-color: #EEEEEE;
+            text-align: center;
+            padding: 12px 8px;
+            display: inline-block;
+            vertical-align: top;
+          }
+          .full {
+            width: 100%;
+          }
+          button {
+            background-color: gold;
+            border: none;
+            font-size: 16px;
+            padding: 8px;
+          }
+          li {
+            margin-bottom: 30px;
+            margin-right: 6px;
+          }
+          h4 {
+            margin-top: 0px;
+          }
+          h2 {
+            margin: 5px 0;
+          }
+        </style>
+        <body>
+          <div class='plan'>
+            <h4>Free</h4>
+            <h2>Trial</h2>
+            <ul>
+              <li>Try out our product for 10 days - free of charge!</li>
+              <li>Cannot use premium features - like printing or sharing files.</li>
+              <li>Limited to a single user.</li>
+            </ul>
+            <button class='full'>Try Now!</button>
+          </div>
+          <div class='plan'>
+            <h4>$20 / month</h4>
+            <h2>Premium</h2>
+            <ul>
+              <li>Get all the premium features for a single user.</li>
+              <li>Customer service, downloads, and printing enabled.</li>
+              <li>Limited to a single user.</li>
+              <li>Renews automatically.</li>
+            </ul>
+            <button class='full'>Buy!</button>
+          </div>
+        </body>
+      </head>
+      </html>
+      "        
+
+3:
+  questions:
+    - question: "Use the inspector on the demo shown to perform the following task: <br>
+      Edit Doodle's name to be Scribble."
+      type: todo
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          .pet {
+            display: inline-block;
+            margin-bottom: 16px;
+          }
+          .pet img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            vertical-align: middle;
+          }
+          .info {
+            display: inline-block;
+            vertical-align: middle;
+            width: 150px;
+            margin-left: 10px;
+          }
+          h3 {
+            margin-top: 0;
+          }
+          p {
+            font-size: 12px;
+          }
+        </style>
+        <body>
+          <h1>My Pets</h1>
+          <div class='pet'>
+            <img src='images/cat.jpg'>
+            <div class='info'>
+              <h3>Doodle</h3>
+              <p>What a darling cat doodle is!</p>
+            </div>
+          </div>
+          <div class='pet'>
+            <img src='images/dog.jpg'>
+            <div class='info'>
+              <h3>Spot</h3>
+              <p>Spot is such a good boy!</p>
+            </div>
+          </div>
+          <div class='pet'>
+            <img src='images/elephant.jpg'>
+            <div class='info'>
+              <h3>Elephant</h3>
+              <p>Elephant is such a good elephant!</p>
+            </div>
+          </div>
+          <div class='pet'>
+            <img src='images/squid.jpg'>
+            <div class='info'>
+              <h3>Squidward</h3>
+              <p>Squidward gives the best hugs!</p>
+            </div>
+          </div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Use the inspector on the demo shown to perform the following task: <br>
+      Change all <strong>h4</strong> elements to <strong>h3</strong> elements."
+      type: todo
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Arial;
+          }
+          .plan {
+            width: 200px;
+            margin: 0px 10px;
+            background-color: #EEEEEE;
+            text-align: center;
+            padding: 12px 8px;
+            display: inline-block;
+            vertical-align: top;
+          }
+          .full {
+            width: 100%;
+          }
+          button {
+            background-color: gold;
+            border: none;
+            font-size: 16px;
+            padding: 8px;
+          }
+          li {
+            margin-bottom: 30px;
+            margin-right: 6px;
+          }
+          h4 {
+            margin-top: 0px;
+          }
+          h2 {
+            margin: 5px 0;
+          }
+        </style>
+        <body>
+          <div class='plan'>
+            <h4>Free</h4>
+            <h2>Trial</h2>
+            <ul>
+              <li>Try out our product for 10 days - free of charge!</li>
+              <li>Cannot use premium features - like printing or sharing files.</li>
+              <li>Limited to a single user.</li>
+            </ul>
+            <button class='full'>Try Now!</button>
+          </div>
+          <div class='plan'>
+            <h4>$20 / month</h4>
+            <h2>Premium</h2>
+            <ul>
+              <li>Get all the premium features for a single user.</li>
+              <li>Customer service, downloads, and printing enabled.</li>
+              <li>Limited to a single user.</li>
+              <li>Renews automatically.</li>
+            </ul>
+            <button class='full'>Buy!</button>
+          </div>
+        </body>
+      </head>
+      </html>
+      "        
+
+4:
+  questions:
+    - question: "Use the inspector on the demo shown to answer the following question: <br>
+      What is the size of each pet image?"
+      type: multiple_choice
+      choices:
+        - "50px"
+        - "60px"
+        - "40px"
+        - "30px"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          .pet {
+            display: inline-block;
+            margin-bottom: 16px;
+          }
+          .pet img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            vertical-align: middle;
+          }
+          .info {
+            display: inline-block;
+            vertical-align: middle;
+            width: 150px;
+            margin-left: 10px;
+          }
+          h3 {
+            margin-top: 0;
+          }
+          p {
+            font-size: 12px;
+          }
+        </style>
+        <body>
+          <h1>My Pets</h1>
+          <div class='pet'>
+            <img src='images/cat.jpg'>
+            <div class='info'>
+              <h3>Doodle</h3>
+              <p>What a darling cat doodle is!</p>
+            </div>
+          </div>
+          <div class='pet'>
+            <img src='images/dog.jpg'>
+            <div class='info'>
+              <h3>Spot</h3>
+              <p>Spot is such a good boy!</p>
+            </div>
+          </div>
+          <div class='pet'>
+            <img src='images/elephant.jpg'>
+            <div class='info'>
+              <h3>Elephant</h3>
+              <p>Elephant is such a good elephant!</p>
+            </div>
+          </div>
+          <div class='pet'>
+            <img src='images/squid.jpg'>
+            <div class='info'>
+              <h3>Squidward</h3>
+              <p>Squidward gives the best hugs!</p>
+            </div>
+          </div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Use the inspector on the demo shown to answer the following question: <br>
+      What is the color of the action buttons of each plan?"
+      type: multiple_choice
+      choices:
+        - "gold"
+        - "yellow"
+        - "#00fe55"
+        - "#66449e"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Arial;
+          }
+          .plan {
+            width: 200px;
+            margin: 0px 10px;
+            background-color: #EEEEEE;
+            text-align: center;
+            padding: 12px 8px;
+            display: inline-block;
+            vertical-align: top;
+          }
+          .full {
+            width: 100%;
+          }
+          button {
+            background-color: gold;
+            border: none;
+            font-size: 16px;
+            padding: 8px;
+          }
+          li {
+            margin-bottom: 30px;
+            margin-right: 6px;
+          }
+          h4 {
+            margin-top: 0px;
+          }
+          h2 {
+            margin: 5px 0;
+          }
+        </style>
+        <body>
+          <div class='plan'>
+            <h4>Free</h4>
+            <h2>Trial</h2>
+            <ul>
+              <li>Try out our product for 10 days - free of charge!</li>
+              <li>Cannot use premium features - like printing or sharing files.</li>
+              <li>Limited to a single user.</li>
+            </ul>
+            <button class='full'>Try Now!</button>
+          </div>
+          <div class='plan'>
+            <h4>$20 / month</h4>
+            <h2>Premium</h2>
+            <ul>
+              <li>Get all the premium features for a single user.</li>
+              <li>Customer service, downloads, and printing enabled.</li>
+              <li>Limited to a single user.</li>
+              <li>Renews automatically.</li>
+            </ul>
+            <button class='full'>Buy!</button>
+          </div>
+        </body>
+      </head>
+      </html>
+      "        
+
+
+5:
+  questions:
+    - question: "Use the inspector on the demo shown to perform the following task: <br>
+      Change the font applied to the body element to Arial."
+      type: todo
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          .pet {
+            display: inline-block;
+            margin-bottom: 16px;
+          }
+          .pet img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            vertical-align: middle;
+          }
+          .info {
+            display: inline-block;
+            vertical-align: middle;
+            width: 150px;
+            margin-left: 10px;
+          }
+          h3 {
+            margin-top: 0;
+          }
+          p {
+            font-size: 12px;
+          }
+        </style>
+        <body>
+          <h1>My Pets</h1>
+          <div class='pet'>
+            <img src='images/cat.jpg'>
+            <div class='info'>
+              <h3>Doodle</h3>
+              <p>What a darling cat doodle is!</p>
+            </div>
+          </div>
+          <div class='pet'>
+            <img src='images/dog.jpg'>
+            <div class='info'>
+              <h3>Spot</h3>
+              <p>Spot is such a good boy!</p>
+            </div>
+          </div>
+          <div class='pet'>
+            <img src='images/elephant.jpg'>
+            <div class='info'>
+              <h3>Elephant</h3>
+              <p>Elephant is such a good elephant!</p>
+            </div>
+          </div>
+          <div class='pet'>
+            <img src='images/squid.jpg'>
+            <div class='info'>
+              <h3>Squidward</h3>
+              <p>Squidward gives the best hugs!</p>
+            </div>
+          </div>
+        </body>
+      </head>
+      </html>
+      "
+      type: code
+    - question: "Use the inspector on the demo shown to perform the following task: <br>
+      Set the color of the action buttons to be orange."
+      type: todo
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Arial;
+          }
+          .plan {
+            width: 200px;
+            margin: 0px 10px;
+            background-color: #EEEEEE;
+            text-align: center;
+            padding: 12px 8px;
+            display: inline-block;
+            vertical-align: top;
+          }
+          .full {
+            width: 100%;
+          }
+          button {
+            background-color: gold;
+            border: none;
+            font-size: 16px;
+            padding: 8px;
+          }
+          li {
+            margin-bottom: 30px;
+            margin-right: 6px;
+          }
+          h4 {
+            margin-top: 0px;
+          }
+          h2 {
+            margin: 5px 0;
+          }
+        </style>
+        <body>
+          <div class='plan'>
+            <h4>Free</h4>
+            <h2>Trial</h2>
+            <ul>
+              <li>Try out our product for 10 days - free of charge!</li>
+              <li>Cannot use premium features - like printing or sharing files.</li>
+              <li>Limited to a single user.</li>
+            </ul>
+            <button class='full'>Try Now!</button>
+          </div>
+          <div class='plan'>
+            <h4>$20 / month</h4>
+            <h2>Premium</h2>
+            <ul>
+              <li>Get all the premium features for a single user.</li>
+              <li>Customer service, downloads, and printing enabled.</li>
+              <li>Limited to a single user.</li>
+              <li>Renews automatically.</li>
+            </ul>
+            <button class='full'>Buy!</button>
+          </div>
+        </body>
+      </head>
+      </html>
+      "        
+
+6:
+  questions:
+    - question: "Use the inspector to perform the following task: <br>
+      Open the Wikipedia homepage in a separate tab. See what the site would look like on an Pixel 2."
+      type: todo
+    - question: "Use the inspector to perform the following task: <br>
+      Open the BBC homepage in a separate tab. See what the site would look like on an iPad."
+      type: todo      

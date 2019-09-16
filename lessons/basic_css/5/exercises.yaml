@@ -170,7 +170,6 @@
           }
           .plan {
             width: 200px;
-            height: 100%;
             margin: 0px 10px;
             background-color: #EEEEEE;
             text-align: center;
