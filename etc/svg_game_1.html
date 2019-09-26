@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Tutorial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <style>
+      body {
+        padding: 20px 8%;
+      }
+      button {
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+      }
+      .label {
+        font-weight: bold;
+        font-size: 1.4em;
+        display: inline-block;
+        margin: 10px 10px 10px 0;
+        color: gray;
+      }
+      #mode-buttons {
+        display: inline-block;
+      }
+      #mode-buttons > * {
+        vertical-align: middle;
+      }
+      .vr {
+        display: inline-block;
+        height: 24px;
+        border-right: solid 1px gray;
+        margin: 0 8px;
+      }
+      code {
+        display: block;
+        background-color: #EEE;
+        padding: 8px;
+        margin: 6px 0;
+        width: auto;
+        font-size: 1.6em;
+        font-weight: bold;
+        line-height: 1.2em;
+      }
+      #graph {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        margin: 10px auto;
+      }
+      #graph > * {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      circle {
+        fill: #00b5ad;
+        opacity: 0.6;
+      }
+      line {
+        stroke-width: 0.4;
+        stroke: #00b5ad;
+        opacity: 0.6;
+        stroke-linecap: round;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="ui header teal">SVG Game 1</h2>
+    <p>Predict what the code below will generate!</p>
+    <div id="mode-buttons">
+      <div class="label">Mode: </div>
+      <button class="mode-button ui button small basic teal" mode="1c">One Circle</button>
+      <button class="mode-button ui button small basic" mode="2c">Two Circles</button>
+      <button class="mode-button ui button small basic" mode="1l">One Line</button>
+      <button class="mode-button ui button small basic" mode="1l1c">One Line + One Circle</button>
+      <button class="mode-button ui button small basic" mode="combo">Combo</button>
+      <div class="vr"></div>
+      <button id="generate" class="ui button small teal">Generate Code</button>
+    </div>
+    <div>
+      <code>
+      </code>
+      <button id="run" class="ui button small teal">Run Code</button>
+    </div>
+    <div id="graph">
+      <img id="grid" src="graph.svg">
+      <svg id="drawing" viewBox="-6 -6 12 12">
+      </svg>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+    <script>
+      var mode = "1c";
+      var s = Snap("#drawing");
+      var elements = [];
+      $(".mode-button").click(function() {
+        $(".mode-button").removeClass("teal");
+        $(this).addClass("teal");
+        mode = $(this).attr("mode");
+      })
+      function randomPoint() {
+        RANGE = 5;
+        return Math.floor(Math.random() * 2 * RANGE + 1) - RANGE;
+      }
+      function shuffle(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+      }
+      $("#generate").click(function() {
+        s.clear();
+        $("code").empty();
+        elements = [];
+        let c_count = 0;
+        let l_count = 0;
+        switch (mode) {
+          case "1c":
+            c_count = 1;
+            break;
+          case "2c":
+            c_count = 2;
+            break;
+          case "1l":
+            l_count = 1;
+            break;
+          case "1l1c":
+            c_count = 1;
+            l_count = 1;
+            break;
+          case "combo":
+            l_count = Math.floor(Math.random() * 2) + 1;
+            c_count = Math.floor(Math.random() * 2) + 2;
+            break;
+        }
+        for (let i=0; i<c_count; i++) {
+          elements.push({
+            type: "circle",
+            cx: randomPoint(),
+            cy: randomPoint()
+          })
+        }
+        for (let i=0; i<l_count; i++) {
+          elements.push({
+            type: "line",
+            x1: randomPoint(),
+            y1: randomPoint(),
+            x2: randomPoint(),
+            y2: randomPoint()
+          })
+        }
+        elements = shuffle(elements);
+        elements.forEach(function(element, index) {
+          if (element.type == "circle") {
+            $("code").append(`
+              &lt;circle cx=${element.cx} cy=${element.cy} r=0.5&gt;&lt;/circle&gt;
+              ${index == elements.length - 1 ? "" : "<br>"}
+            `);
+          } else if (element.type == "line") {
+            $("code").append(`
+              &lt;line x1=${element.x1} y1=${element.y1} x2=${element.x2} y2=${element.y2}&gt;&lt;/line&gt;
+              ${index == elements.length - 1 ? "" : "<br>"}
+            `);
+          }
+        });
+      })
+      $("#run").click(function() {
+        s.clear();
+        elements.forEach(function(element, index) {
+          if (element.type == "circle") {
+            s.circle(element.cx, -element.cy, 0.5);
+          } else if (element.type == "line") {
+            s.line(element.x1, -element.y1, element.x2, -element.y2);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
