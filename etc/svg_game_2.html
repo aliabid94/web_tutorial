@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SVG Game 1</title>
+    <title>SVG Game 2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <style>
@@ -43,6 +43,10 @@
         font-family: monospace;
         resize: vertical;
       }
+      #graphs {
+        display: flex;
+        justify-content: space-between;
+      }
       .graph {
         width: 400px;
         height: 400px;
@@ -70,8 +74,8 @@
     </style>
   </head>
   <body>
-    <h2 class="ui header teal">SVG Game 1</h2>
-    <p>Predict what the code below will generate!</p>
+    <h2 class="ui header teal">SVG Game 2</h2>
+    <p>Write code to replicate te image on the left!</p>
     <div id="mode-buttons">
       <button class="mode-button ui button small basic teal" mode="1c_bw">One Circle</button>
       <button class="mode-button ui button small basic" mode="2c_bw">Two Circles</button>
@@ -82,16 +86,23 @@
       <button class="mode-button ui button small basic" mode="1l_color">Colored Line</button>
       <button class="mode-button ui button small basic" mode="combo_color">Colored Combo</button>
       <div class="vr"></div>
-      <button id="generate" class="ui button small teal">Generate Code</button>
+      <button id="generate" class="ui button small teal">Generate Image</button>
     </div>
     <div>
       <textarea id="code" rows="5"></textarea>
       <button id="run" class="ui button small teal">Run Code</button>
     </div>
-    <div class="graph">
-      <img id="grid" src="graph.svg">
-      <svg id="drawing" viewBox="-6 -6 12 12">
-      </svg>
+    <div id="graphs">
+      <div id="graph" class="graph">
+        <img id="grid" src="graph.svg">
+        <svg id="drawing" viewBox="-6 -6 12 12">
+        </svg>
+      </div>
+      <div id="graph2" class="graph">
+        <img id="grid2" src="graph.svg">
+        <svg id="drawing2" viewBox="-6 -6 12 12">
+        </svg>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script>
@@ -125,7 +136,7 @@
         let l_count = 0;
         mode_data = mode.split("_");
         shapes = mode_data[0];
-        color = mode_data[1] == "color";
+        var color = mode_data[1] == "color";
         switch (shapes) {
           case "1c":
             c_count = 1;
@@ -162,21 +173,24 @@
           })
         }
         elements = shuffle(elements);
+        let svg_code = "";
         elements.forEach(function(element, index) {
-          let newline = index == elements.length - 1 ? "" : "&#13;&#10;";
           if (element.type == "circle") {
             let colorattr = color ? " fill=" + randomColor() : "";
-            $("#code")
-            .append(`&lt;circle cx=${element.cx} cy=${element.cy} r=0.5${colorattr}&gt;&lt;/circle&gt;${newline}`);
+            svg_code += `<circle cx=${element.cx} cy=${element.cy} r=0.5${colorattr}></circle>`;
           } else if (element.type == "line") {
             let colorattr = color ? " stroke=" + randomColor() : "";
-            $("#code")
-            .append(`&lt;line x1=${element.x1} y1=${element.y1} x2=${element.x2} y2=${element.y2}${colorattr}&gt;&lt;/line&gt;${newline}`);
+            svg_code += `<line x1=${element.x1} y1=${element.y1} x2=${element.x2} y2=${element.y2}${colorattr}></line>`;
           }
         });
+        $("#drawing").html(`
+          <g transform="scale(1,-1)" class="${color ? "color" : "bw"}">
+            ${svg_code}
+          </g>
+        `);
       })
       $("#run").click(function() {
-        $("#drawing").html(`
+        $("#drawing2").html(`
           <g transform="scale(1,-1)" class="${color ? "color" : "bw"}">
             ${$("#code").val()}
           </g>
