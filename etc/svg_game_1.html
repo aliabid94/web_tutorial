@@ -120,6 +120,7 @@
       $("#generate").click(function() {
         $("#drawing").empty();
         $("#code").empty();
+        $("#code").removeAttr("val");
         elements = [];
         let c_count = 0;
         let l_count = 0;
@@ -162,18 +163,18 @@
           })
         }
         elements = shuffle(elements);
+        let svg_code = "";
         elements.forEach(function(element, index) {
-          let newline = index == elements.length - 1 ? "" : "&#13;&#10;";
+          let newline = index == elements.length - 1 ? "" : "\n";
           if (element.type == "circle") {
             let colorattr = color ? " fill=" + randomColor() : "";
-            $("#code")
-            .append(`&lt;circle cx=${element.cx} cy=${element.cy} r=0.5${colorattr}&gt;&lt;/circle&gt;${newline}`);
+            svg_code += `<circle cx=${element.cx} cy=${element.cy} r=0.5${colorattr}></circle>${newline}`;
           } else if (element.type == "line") {
             let colorattr = color ? " stroke=" + randomColor() : "";
-            $("#code")
-            .append(`&lt;line x1=${element.x1} y1=${element.y1} x2=${element.x2} y2=${element.y2}${colorattr}&gt;&lt;/line&gt;${newline}`);
+            svg_code += `<line x1=${element.x1} y1=${element.y1} x2=${element.x2} y2=${element.y2}${colorattr}></line>${newline}`;
           }
         });
+        $("#code").val(svg_code);
       })
       $("#run").click(function() {
         $("#drawing").html(`
