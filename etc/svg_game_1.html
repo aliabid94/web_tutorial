@@ -56,31 +56,37 @@
         top: 0;
         left: 0;
       }
-      circle {
-        opacity: 0.85;
+      circle, rect, polygon {
+        opacity: 0.75;
+        stroke-width: 0.2;
       }
       line {
         stroke-width: 0.4;
         opacity: 0.8;
         stroke-linecap: round;
       }
-      .bw line {
+      line:not([stroke]) {
         stroke: black;
       }
     </style>
   </head>
   <body>
     <h2 class="ui header teal">SVG Game 1</h2>
-    <p>Predict what the code below will generate!</p>
+    <p>Predict what the code below will generate! Use the <a href="svg_glossary.html" target="_blank">SVG Glossary</a> for help.</p>
     <div id="mode-buttons">
-      <button class="mode-button ui button small basic teal" mode="1c_bw">One Circle</button>
-      <button class="mode-button ui button small basic" mode="2c_bw">Two Circles</button>
-      <button class="mode-button ui button small basic" mode="1l_bw">One Line</button>
-      <button class="mode-button ui button small basic" mode="1l1c_bw">One Line + One Circle</button>
-      <button class="mode-button ui button small basic" mode="combo_bw">Combo</button>
-      <button class="mode-button ui button small basic" mode="1c_color">Colored Circle</button>
-      <button class="mode-button ui button small basic" mode="1l_color">Colored Line</button>
-      <button class="mode-button ui button small basic" mode="combo_color">Colored Combo</button>
+      <button class="mode-button ui button small basic teal" mode="1c:bw">One Circle</button>
+      <button class="mode-button ui button small basic" mode="2c:bw">Two Circles</button>
+      <button class="mode-button ui button small basic" mode="1l:bw">One Line</button>
+      <button class="mode-button ui button small basic" mode="1l,1c:bw">One Line + One Circle</button>
+      <button class="mode-button ui button small basic" mode="1-2l,2-3c:bw">Lines + Circles</button>
+      <button class="mode-button ui button small basic" mode="1c:color">Colored Circle</button>
+      <button class="mode-button ui button small basic" mode="1l:color">Colored Line</button>
+      <button class="mode-button ui button small basic" mode="1-2l,2-3c:color">Colored Lines + Circles</button>
+      <button class="mode-button ui button small basic" mode="1r:bw">Rectangle</button>
+      <button class="mode-button ui button small basic" mode="1-2r:color">Colored Rectangles</button>
+      <button class="mode-button ui button small basic" mode="1t:bw">Triangle</button>
+      <button class="mode-button ui button small basic" mode="1-2t:color">Colored Triangles</button>
+      <button class="mode-button ui button small basic" mode="1-2c,0-2l,1r,0-1t:color">Everything</button>
       <div class="vr"></div>
       <button id="generate" class="ui button small teal">Generate Code</button>
     </div>
@@ -95,19 +101,47 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script>
-      var mode = "1c";
+      var mode = "1c:bw";
       var elements = [];
       $(".mode-button").click(function() {
         $(".mode-button").removeClass("teal");
         $(this).addClass("teal");
         mode = $(this).attr("mode");
       })
-      function randomPoint() {
+      function randomDim() {
         RANGE = 5;
         return Math.floor(Math.random() * 2 * RANGE + 1) - RANGE;
       }
-      function randomColor() {
-        colors = ["red", "orange", "green", "blue", "purple", "gray", "pink", "brown"];
+      function randomPoint() {
+        return [randomDim(), randomDim()]
+      }
+      function uniquePoints(count, x_and_y_unique) {
+        let points = []
+        while (points.length < count) {
+          let point = randomPoint();
+          is_unique = true;
+          points.forEach((old_point) => {
+            if (x_and_y_unique) {
+              if (point[0] == old_point[0] || point[1] == old_point[1]) {
+                is_unique = false;
+              }
+            } else {
+              if (point[0] == old_point[0] && point[1] == old_point[1]) {
+                is_unique = false;
+              }
+            }
+          })
+          if (is_unique) {
+            points.push(point);
+          }
+        }
+        return points;
+      }
+      function randomColor(allow_none) {
+        let colors = ["red", "orange", "green", "blue", "purple", "pink"];
+        if (allow_none) {
+          colors.push("none");
+        }
         return colors[Math.floor(colors.length * Math.random())];
       }
       function shuffle(a) {
@@ -117,68 +151,96 @@
         }
         return a;
       }
+      function randomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+      }
+      color = "bw";
       $("#generate").click(function() {
         $("#drawing").empty();
         $("#code").empty();
         $("#code").removeAttr("val");
-        elements = [];
-        let c_count = 0;
-        let l_count = 0;
-        mode_data = mode.split("_");
-        shapes = mode_data[0];
-        color = mode_data[1] == "color";
-        switch (shapes) {
-          case "1c":
-            c_count = 1;
-            break;
-          case "2c":
-            c_count = 2;
-            break;
-          case "1l":
-            l_count = 1;
-            break;
-          case "1l1c":
-            c_count = 1;
-            l_count = 1;
-            break;
-          case "combo":
-            l_count = Math.floor(Math.random() * 2) + 1;
-            c_count = Math.floor(Math.random() * 2) + 2;
-            break;
-        }
-        for (let i=0; i<c_count; i++) {
+        let elements = [];
+        let shape_counts = {};
+        let mode_data = mode.split(":");
+        let shapes = mode_data[0].split(",");
+        let color = mode_data[1] == "color";
+        shapes.forEach((shape_info) => {
+          let shape = shape_info.charAt(shape_info.length-1);
+          let shape_range = shape_info.substring(0,shape_info.length-1);
+          let shape_count;
+          if (shape_range.includes("-")) {
+            let range = shape_range.split("-");
+            shape_count = randomInt(parseInt(range[0]), parseInt(range[1])+1);
+          } else {
+            shape_count = parseInt(shape_range);
+          }
+          shape_counts[shape] = shape_count;
+        })
+        for (let i=0; shape_counts["c"] && i<shape_counts["c"]; i++) {
+          let point = randomPoint();
           elements.push({
             type: "circle",
-            cx: randomPoint(),
-            cy: randomPoint()
+            cx: point[0],
+            cy: point[1]
           })
         }
-        for (let i=0; i<l_count; i++) {
+        for (let i=0; shape_counts["l"] && i<shape_counts["l"]; i++) {
+          let two_points = uniquePoints(2);
           elements.push({
             type: "line",
-            x1: randomPoint(),
-            y1: randomPoint(),
-            x2: randomPoint(),
-            y2: randomPoint()
+            x1: two_points[0][0],
+            y1: two_points[0][1],
+            x2: two_points[1][0],
+            y2: two_points[1][1],
+          })
+        }
+        for (let i=0; shape_counts["r"] && i<shape_counts["r"]; i++) {
+          let two_points = uniquePoints(2, true);
+          let min_point = [Math.min(two_points[0][0], two_points[1][0]), Math.min(two_points[0][1], two_points[1][1])];
+          let max_point = [Math.max(two_points[0][0], two_points[1][0]), Math.max(two_points[0][1], two_points[1][1])];
+          elements.push({
+            type: "rectangle",
+            x: min_point[0],
+            y: min_point[1],
+            width: max_point[0] - min_point[0],
+            height: max_point[1] - min_point[1]
+          })
+        }
+        for (let i=0; shape_counts["t"] && i<shape_counts["t"]; i++) {
+          let three_points = uniquePoints(3, true);
+          elements.push({
+            type: "triangle",
+            x1: three_points[0][0],
+            y1: three_points[0][1],
+            x2: three_points[1][0],
+            y2: three_points[1][1],
+            x3: three_points[2][0],
+            y3: three_points[2][1],
           })
         }
         elements = shuffle(elements);
         let svg_code = "";
         elements.forEach(function(element, index) {
           let newline = index == elements.length - 1 ? "" : "\n";
+          let colorattr = color ? " fill=" + randomColor(true) + " stroke=" + randomColor() : "";
           if (element.type == "circle") {
-            let colorattr = color ? " fill=" + randomColor() : "";
             svg_code += `<circle cx=${element.cx} cy=${element.cy} r=0.5${colorattr}></circle>${newline}`;
           } else if (element.type == "line") {
             let colorattr = color ? " stroke=" + randomColor() : "";
             svg_code += `<line x1=${element.x1} y1=${element.y1} x2=${element.x2} y2=${element.y2}${colorattr}></line>${newline}`;
+          } else if (element.type == "rectangle") {
+            svg_code += `<rect x=${element.x} y=${element.y} width=${element.width} height=${element.height}${colorattr}></rect>${newline}`;
+          } else if (element.type == "triangle") {
+            svg_code += `<polygon points="${element.x1},${element.y1} ${element.x2},${element.y2} ${element.x3},${element.y3}"${colorattr}></polygon>${newline}`;
           }
         });
         $("#code").val(svg_code);
       })
       $("#run").click(function() {
         $("#drawing").html(`
-          <g transform="scale(1,-1)" class="${color ? "color" : "bw"}">
+          <g transform="scale(1,-1)">
             ${$("#code").val()}
           </g>
         `);

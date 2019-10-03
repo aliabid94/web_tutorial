@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SVG Game 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <style>
+      body {
+        padding: 20px 8%;
+      }
+      h3 {
+        margin-bottom: 2px !important;
+      }
+      button {
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+      }
+      .code {
+        width: 100% !important;
+        display: block;
+        background-color: #EEE;
+        padding: 8px;
+        margin: 6px 0;
+        font-size: 1.6em;
+        font-weight: bold;
+        line-height: 1.2em;
+        font-family: monospace;
+        resize: vertical;
+      }
+      .graph {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        margin: 10px auto;
+      }
+      .graph > * {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      circle, rect, polygon {
+        opacity: 0.75;
+        stroke-width: 0.2;
+      }
+      line {
+        stroke-width: 0.4;
+        opacity: 0.8;
+        stroke-linecap: round;
+      }
+      line:not([stroke]) {
+        stroke: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="ui header teal">SVG Glossary</h2>
+    <p>This is a reference of examples for the shapes you can draw with SVG.</p>
+    <h3 class="ui header teal">Circle</h3>
+    <div>
+      <textarea readonly class="code" rows="1"><circle cx=3 cy=2 r=0.5></circle></textarea>
+      <div class="graph">
+        <img id="grid" src="graph.svg">
+        <svg id="drawing" viewBox="-6 -6 12 12">
+            <g transform="scale(1,-1)">
+              <circle cx=3 cy=2 r=0.5></circle>
+            </g>
+        </svg>
+      </div>  
+    </div>
+    <h3 class="ui header teal">Line</h3>
+    <div>
+      <textarea readonly class="code" rows="1"><line x1=-1 y1=2 x2=4 y2=4></line></textarea>
+      <div class="graph">
+        <img id="grid" src="graph.svg">
+        <svg id="drawing" viewBox="-6 -6 12 12">
+            <g transform="scale(1,-1)">
+              <line x1=-1 y1=2 x2=4 y2=4></line>
+            </g>
+        </svg>
+      </div>  
+    </div>
+    <h3 class="ui header teal">Colored Circle</h3>
+    <div>
+      <textarea readonly class="code" rows="1"><circle cx=3 cy=2 r=0.5 fill=red stroke=black></circle></textarea>
+      <div class="graph">
+        <img id="grid" src="graph.svg">
+        <svg id="drawing" viewBox="-6 -6 12 12">
+            <g transform="scale(1,-1)">
+              <circle cx=3 cy=2 r=0.5 fill=red stroke=black></circle>
+            </g>
+        </svg>
+      </div>  
+    </div>
+    <h3 class="ui header teal">Colored Line</h3>
+    <div>
+      <textarea readonly class="code" rows="1"><line x1=-1 y1=2 x2=4 y2=4 stroke=green></line></textarea>
+      <div class="graph">
+        <img id="grid" src="graph.svg">
+        <svg id="drawing" viewBox="-6 -6 12 12">
+            <g transform="scale(1,-1)">
+              <line x1=-1 y1=2 x2=4 y2=4 stroke=green></line>
+            </g>
+        </svg>
+      </div>  
+    </div>
+    <h3 class="ui header teal">Rectangle</h3>
+    <div>
+      <textarea readonly class="code" rows="1"><rect x=-2 y=2 width=5 height=3></rect></textarea>
+      <div class="graph">
+        <img id="grid" src="graph.svg">
+        <svg id="drawing" viewBox="-6 -6 12 12">
+            <g transform="scale(1,-1)">
+              <rect x=-2 y=2 width=5 height=3></rect>
+            </g>
+        </svg>
+      </div>  
+    </div>
+    <h3 class="ui header teal">Colored Rectangle</h3>
+    <div>
+      <textarea readonly class="code" rows="1"><rect x=-2 y=2 width=5 height=3 stroke=orange fill=none></rect></textarea>
+      <div class="graph">
+        <img id="grid" src="graph.svg">
+        <svg id="drawing" viewBox="-6 -6 12 12">
+            <g transform="scale(1,-1)">
+              <rect x=-2 y=2 width=5 height=3 stroke=orange fill=none></rect>
+            </g>
+        </svg>
+      </div>  
+    </div>
+    <h3 class="ui header teal">Triangle</h3>
+    <div>
+      <textarea readonly class="code" rows="1"><polygon points="0,1 4,4 4,-3"></polygon></textarea>
+      <div class="graph">
+        <img id="grid" src="graph.svg">
+        <svg id="drawing" viewBox="-6 -6 12 12">
+            <g transform="scale(1,-1)">
+              <polygon points="0,1 4,4 4,-3"></polygon>
+            </g>
+        </svg>
+      </div>  
+    </div>
+    <h3 class="ui header teal">Colored Triangle</h3>
+    <div>
+      <textarea readonly class="code" rows="1"><polygon points="0,1 4,4 4,-3" fill="blue"></polygon></textarea>
+      <div class="graph">
+        <img id="grid" src="graph.svg">
+        <svg id="drawing" viewBox="-6 -6 12 12">
+            <g transform="scale(1,-1)">
+              <polygon points="0,1 4,4 4,-3" fill="blue"></polygon>
+            </g>
+        </svg>
+      </div>  
+    </div>
+  </body>
+</html>
+
