@@ -92,9 +92,11 @@ $.get(lesson_url + "config.yaml", function(data) {
   })
 })
 
-var name;
+var name = "";
 $("body").on('click', '.exercise_link', function() {
+  console.log("name")
   if (!name) {
+    console.log("setting")
     if (isLoggedIn) {
       name = profile.getName();
       api.init();
