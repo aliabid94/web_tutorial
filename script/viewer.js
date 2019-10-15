@@ -94,13 +94,12 @@ $.get(lesson_url + "config.yaml", function(data) {
 
 var name;
 $("body").on('click', '.exercise_link', function() {
-  if (!hasSetName) {
-    if ($("#name").val()) {
-      name = $("#name").val();
-      $("#name").attr("disabled", "true");
+  if (!name) {
+    if (isLoggedIn) {
+      name = profile.getName();
       api.init();
     } else {
-      alert("Please enter your name in the top right corner.")
+      alert("Please log in.")
       return
     }
   }
