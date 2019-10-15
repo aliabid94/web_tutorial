@@ -2,19 +2,19 @@ var auth2, isLoggedIn, profile;
 
 function onLoadCallback() {
   auth2 = gapi.auth2.getAuthInstance();
-  $("#login > *").hide();
-  $("#login").show();
-  if (auth2.isSignedIn.get()) {
-    onSignIn();
-  } else {
-    console.log("out")
-    $(".out").show();  
-    $(".in").hide();  
-  }
 }
 
+window.setTimeout(function() {
+  if (isLoggedIn) {
+    return;
+  }
+  $("#login").show();
+  $(".out").show();  
+  $(".in").hide();  
+}, 2000)
+
 function onSignIn() {
-  console.log("in")
+  $("#login").show();
   $(".out").hide();
   $(".in").show();
   isLoggedIn = true;
