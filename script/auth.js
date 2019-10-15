@@ -1,12 +1,17 @@
 function onLoadCallback() {
-  auth2 = gapi.auth2.getAuthInstance();
+  var auth2 = gapi.auth2.getAuthInstance();
   if (auth2.isSignedIn.get()) {
-    var profile = auth2.currentUser.get().getBasicProfile();
-    $("#fullname").text(profile.getName())
-    $(".in").show();
+    onSignIn();
   } else {
     $(".out").show();  
   }
+}
+
+function onSignIn() {
+  $(".out").hide();
+  var profile = auth2.currentUser.get().getBasicProfile();
+  $("#fullname").text(profile.getName())
+  $(".in").show();
 }
 
 function signOut() {
