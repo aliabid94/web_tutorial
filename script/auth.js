@@ -1,6 +1,7 @@
 var auth2, isLoggedIn, profile;
 
 function onLoadCallback() {
+  console.log("call")
   auth2 = gapi.auth2.getAuthInstance();
   $("#login").show();
   if (auth2.isSignedIn.get()) {
