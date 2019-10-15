@@ -2,10 +2,11 @@ var auth2;
 
 function onLoadCallback() {
   auth2 = gapi.auth2.getAuthInstance();
+  $("#login").show();
   if (auth2.isSignedIn.get()) {
     onSignIn();
   } else {
-    $(".out").show();  
+    $(".in").hide();  
   }
 }
 
@@ -13,7 +14,6 @@ function onSignIn() {
   $(".out").hide();
   var profile = auth2.currentUser.get().getBasicProfile();
   $("#fullname").text(profile.getName())
-  $(".in").show();
 }
 
 function signOut() {
