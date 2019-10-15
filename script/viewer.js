@@ -93,10 +93,7 @@ $.get(lesson_url + "config.yaml", function(data) {
 })
 
 var name;
-print(name)
-print(profile)
 $("body").on('click', '.exercise_link', function() {
-  print(name)
   if (!name) {
     if (isLoggedIn) {
       name = profile.getName();
@@ -318,12 +315,3 @@ $('#current_slide').on('input', function() {
     resetSlide(/*set_text=*/false);
   }
 });
-
-if (localStorage) {
-  if ("name" in localStorage) {
-    $("#name").val(localStorage["name"])
-  }
-  $('#name').on('change', function() {
-    localStorage["name"] = $(this).val();
-  })
-}

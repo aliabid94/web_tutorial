@@ -14,7 +14,7 @@ window.setTimeout(function() {
 }, 1000)
 
 function onSignIn() {
-  print("sign in! ")
+  console.log("sign in! ")
   $("#login").show();
   $(".out").hide();
   $(".in").show();
