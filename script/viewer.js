@@ -93,14 +93,12 @@ $.get(lesson_url + "config.yaml", function(data) {
 })
 
 var name;
-var hasSetName = false;
 $("body").on('click', '.exercise_link', function() {
   if (!hasSetName) {
     if ($("#name").val()) {
       name = $("#name").val();
       $("#name").attr("disabled", "true");
       api.init();
-      hasSetName = true;
     } else {
       alert("Please enter your name in the top right corner.")
       return

@@ -1,4 +1,4 @@
-var auth2;
+var auth2, isLoggedIn;
 
 function onLoadCallback() {
   auth2 = gapi.auth2.getAuthInstance();
@@ -6,12 +6,15 @@ function onLoadCallback() {
   if (auth2.isSignedIn.get()) {
     onSignIn();
   } else {
+    $(".out").show();  
     $(".in").hide();  
   }
 }
 
 function onSignIn() {
   $(".out").hide();
+  $(".in").show();
+  isLoggedIn = true;
   var profile = auth2.currentUser.get().getBasicProfile();
   $("#fullname").text(profile.getName())
 }
