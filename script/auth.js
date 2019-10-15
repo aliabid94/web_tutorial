@@ -1,5 +1,7 @@
+var auth2;
+
 function onLoadCallback() {
-  var auth2 = gapi.auth2.getAuthInstance();
+  auth2 = gapi.auth2.getAuthInstance();
   if (auth2.isSignedIn.get()) {
     onSignIn();
   } else {
