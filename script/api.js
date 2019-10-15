@@ -14,7 +14,7 @@ function parseSnapshot(snapshot, action) {
 
 var api = {
   init: function() {
-    let dbRef = firebase.database().ref('responses/' + course_tag + '/' + name);
+    let dbRef = firebase.database().ref('responses/' + course_tag + '/' + username);
     dbRef.on('child_added', function(snapshot) {
       parseSnapshot(snapshot, "add");
     })
@@ -35,7 +35,7 @@ var api = {
     }
     firebase
       .database()
-      .ref('responses/' + course_tag + '/' + name + '/' + exercise + '_' +
+      .ref('responses/' + course_tag + '/' + username + '/' + exercise + '_' +
           question)
       .update(question_data);
   },
@@ -47,14 +47,14 @@ var api = {
     }
     firebase
       .database()
-      .ref('responses/' + course_tag + '/' + name + '/' + exercise + '_' +
+      .ref('responses/' + course_tag + '/' + username + '/' + exercise + '_' +
           question)
       .update(question_data);
   },
   uploadTodo: function(exercise, question) {
     firebase
       .database()
-      .ref('responses/' + course_tag + '/' + name + '/' + exercise + '_' +
+      .ref('responses/' + course_tag + '/' + username + '/' + exercise + '_' +
           question)
       .update({isCorrect : 1});
   }

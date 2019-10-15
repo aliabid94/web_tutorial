@@ -14,7 +14,6 @@ window.setTimeout(function() {
 }, 1000)
 
 function onSignIn() {
-  console.log("sign in! ")
   $("#login").show();
   $(".out").hide();
   $(".in").show();
@@ -26,6 +25,7 @@ function onSignIn() {
 function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {
+    username = "";
     location.reload(); 
   });
 }
