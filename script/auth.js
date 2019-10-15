@@ -7,12 +7,14 @@ function onLoadCallback() {
   if (auth2.isSignedIn.get()) {
     onSignIn();
   } else {
+    console.log("out")
     $(".out").show();  
     $(".in").hide();  
   }
 }
 
 function onSignIn() {
+  console.log("in")
   $(".out").hide();
   $(".in").show();
   isLoggedIn = true;
