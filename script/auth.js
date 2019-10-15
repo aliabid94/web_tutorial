@@ -11,9 +11,10 @@ window.setTimeout(function() {
   $("#login").show();
   $(".out").show();  
   $(".in").hide();  
-}, 2000)
+}, 1000)
 
 function onSignIn() {
+  print("sign in! ")
   $("#login").show();
   $(".out").hide();
   $(".in").show();

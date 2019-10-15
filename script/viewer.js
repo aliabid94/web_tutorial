@@ -93,7 +93,10 @@ $.get(lesson_url + "config.yaml", function(data) {
 })
 
 var name;
+print(name)
+print(profile)
 $("body").on('click', '.exercise_link', function() {
+  print(name)
   if (!name) {
     if (isLoggedIn) {
       name = profile.getName();
