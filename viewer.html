@@ -3,6 +3,8 @@
   <head>
     <title>HTML Tutorial</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content=" 64779547743-pr0sphmso99ua16otnsj7kvejlqlg7eb.apps.googleusercontent.com">
+    <link rel="stylesheet" type="text/css" href="style/auth.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/codemirror.min.css">
@@ -12,8 +14,11 @@
       <a href="course.html">
         <button class="ui icon button teal"><i class="angle left icon"></i> Home</button>
       </a>
-      <div class="ui input">
-        <input id="name" type="text" placeholder="Enter Name Here">
+      <div id="login">
+        <div class="in g-signin2" data-onsuccess="onSignIn"></div>
+        <div class="out">
+          Welcome <span id="fullname"></span>. 
+          <a href="#"  onclick="signOut();">Signout</a></div>
       </div>
     </div>
     <div id="slides"></div>
@@ -45,6 +50,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback"></script>
+    <script src="script/auth.js"></script>
     <script src="script/util.js"></script>
     <script src="script/helpers.js"></script>
     <script src="script/render.js"></script>
