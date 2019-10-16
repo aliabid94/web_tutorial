@@ -14,10 +14,12 @@ function parseSnapshot(snapshot, action) {
 
 var api = {
   init: function() {
+    let checkin = {};
+    checkin[username] = Date.now();
     firebase
       .database()
       .ref('checkin/' + course_tag)
-      .update({username : Date.now()});
+      .update(checkin);
     let dbRef = firebase.database().ref('responses/' + course_tag + '/' + username);
     dbRef.on('child_added', function(snapshot) {
       parseSnapshot(snapshot, "add");

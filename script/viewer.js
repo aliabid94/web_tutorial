@@ -3,6 +3,7 @@ var query = window.location.search.substring(1);
 var qs = parseQueryString(query);
 var course = qs["course"] || "basic_html";
 var lesson = qs["lesson"] || 1;
+var adminview = qs["adminview"] || "";
 var lesson_url = `lessons/${course}/${lesson}/`;
 var course_tag = course + "_" + lesson;
 var exercises_loaded = false;
@@ -12,6 +13,10 @@ var exercise_data, config_data, slide_count, current_exercise;
 var responses = {}
 var code_mirrors = {}
 var pending_review = []
+
+if (adminview) {
+  $("#top, #slides, #slide_control").hide();
+}
 
 $.get(lesson_url + "config.yaml", function(data) {
   config_data = YAML.parse(data);
@@ -95,7 +100,10 @@ $.get(lesson_url + "config.yaml", function(data) {
 var username = "";
 $("body").on('click', '.exercise_link', function() {
   if (!username) {
-    if (isLoggedIn) {
+    if (adminview) {
+      username = adminview;
+      api.init();
+    } else if (isLoggedIn) {
       username = encode(profile.getEmail());
       api.init();
     } else {
@@ -120,19 +128,51 @@ $("body").on('click', '.exercise_link', function() {
   }
 })
 
-$("body").on('click', '.answers.multiple_choice button', function() {
-  let problem_box = $(this).closest(".problem");
-  let question_num = problem_box.attr("num");
-  let choice = $(this).attr("choice")
-  let isCorrect = $(this).hasClass("correct");
-  api.uploadMultipleChoice(current_exercise, question_num, choice, isCorrect);
-})
+if (!adminview) {
+  $("body").on('click', '.answers.multiple_choice button', function() {
+    let problem_box = $(this).closest(".problem");
+    let question_num = problem_box.attr("num");
+    let choice = $(this).attr("choice")
+    let isCorrect = $(this).hasClass("correct");
+    api.uploadMultipleChoice(current_exercise, question_num, choice, isCorrect);
+  })
 
-$("body").on('click', '.mark_complete', function() {
-  let problem_box = $(this).closest(".problem");
-  let question_num = problem_box.attr("num");
-  api.uploadTodo(current_exercise, question_num);
-})
+  $("body").on('click', '.mark_complete', function() {
+    let problem_box = $(this).closest(".problem");
+    let question_num = problem_box.attr("num");
+    api.uploadTodo(current_exercise, question_num);
+  })
+
+  $("body").on('click', '.submit_code', function() {
+    let problem_box = $(this).closest(".problem");
+    let question_num = problem_box.attr("num");
+    let this_problem = getProblemOfElement(this);
+    let cm_set = code_mirrors[this_problem.exercise][this_problem.problem];
+    let code_set = getCodeSet(cm_set);
+    if ($(this).attr("autograder") == 'copy') {
+      let passed = "true";
+      problem_box.find("code").each(function(i, element) {
+        let encoded = $(element).html();
+        let decoded = $("<div/>").html(encoded).text();
+        let lang = $(element).attr("lang");
+        if (decoded.trim() != code_set[lang].trim()) {
+          passed = false;
+          console.log("failed!")
+          return false;
+        }
+      })
+      if (passed) {
+        api.uploadCode(current_exercise, question_num, code_set,
+          /*isCorrect=*/1);
+        return;
+      }
+    }
+    pending_review.push([current_exercise, question_num]);
+    problem_box.find(".submit_code").addClass("invisible");
+    problem_box.find(".submitting_code").removeClass("invisible");
+    api.uploadCode(current_exercise, question_num, code_set);
+  })
+}
 
 function update_problem(exercise, question, choice, code, isCorrect, action) {
   let problem_box = $(`.exercise_set[exercise=${exercise}]`)
@@ -164,7 +204,7 @@ function update_problem(exercise, question, choice, code, isCorrect, action) {
       problem_box.find(".submit_code, .submitting_code").addClass("invisible");
       break;
   }
-  if (code_mirrors[exercise][question]) {
+  if (code_mirrors[exercise] && code_mirrors[exercise][question]) {
     for (let lang in code) {
       if (lang in code_mirrors[exercise][question]) {
         code_mirrors[exercise][question][lang].setValue(code[lang]);
@@ -247,36 +287,6 @@ $("body").on('click', '.show_demo', function() {
   let demo = $(this).closest(".problem").find(".demo_box");
   output.hide();
   demo.show();
-})
-
-$("body").on('click', '.submit_code', function() {
-  let problem_box = $(this).closest(".problem");
-  let question_num = problem_box.attr("num");
-  let this_problem = getProblemOfElement(this);
-  let cm_set = code_mirrors[this_problem.exercise][this_problem.problem];
-  let code_set = getCodeSet(cm_set);
-  if ($(this).attr("autograder") == 'copy') {
-    let passed = "true";
-    problem_box.find("code").each(function(i, element) {
-      let encoded = $(element).html();
-      let decoded = $("<div/>").html(encoded).text();
-      let lang = $(element).attr("lang");
-      if (decoded.trim() != code_set[lang].trim()) {
-        passed = false;
-        console.log("failed!")
-        return false;
-      }
-    })
-    if (passed) {
-      api.uploadCode(current_exercise, question_num, code_set,
-        /*isCorrect=*/1);
-      return;
-    }
-  }
-  pending_review.push([current_exercise, question_num]);
-  problem_box.find(".submit_code").addClass("invisible");
-  problem_box.find(".submitting_code").removeClass("invisible");
-  api.uploadCode(current_exercise, question_num, code_set);
 })
 
 function resetSlide(resetText) {
