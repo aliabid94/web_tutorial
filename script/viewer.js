@@ -95,9 +95,8 @@ $.get(lesson_url + "config.yaml", function(data) {
 var username = "";
 $("body").on('click', '.exercise_link', function() {
   if (!username) {
-    console.log("setting")
     if (isLoggedIn) {
-      username = profile.getName();
+      username = encode(profile.getName());
       api.init();
     } else {
       alert("Please log in.")
