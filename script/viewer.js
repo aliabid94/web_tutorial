@@ -101,7 +101,7 @@ var username = "";
 $("body").on('click', '.exercise_link', function() {
   if (!username) {
     if (adminview) {
-      username = adminview;
+      username = encode(adminview);
       api.init();
     } else if (isLoggedIn) {
       username = encode(profile.getEmail());
