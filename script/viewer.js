@@ -96,10 +96,10 @@ var username = "";
 $("body").on('click', '.exercise_link', function() {
   if (!username) {
     if (isLoggedIn) {
-      username = encode(profile.getName());
+      username = encode(profile.getEmail());
       api.init();
     } else {
-      alert("Please log in.")
+      alert("Please sign in.")
       return
     }
   }
