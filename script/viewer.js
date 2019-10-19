@@ -114,7 +114,7 @@ $("body").on('click', '.exercise_link', function() {
     } else if (isLoggedIn) {
       username = encode(profile.getEmail());
       api.init();
-      window.setInterval(autoupload, 3000)
+      // window.setInterval(autoupload, 3000)
     } else {
       alert("Please sign in.")
       return
