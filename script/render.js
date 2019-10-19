@@ -64,7 +64,6 @@ function renderToString(i, question, variables, false_variables) {
         <button class="ui button blue submit_code invisible"
         ${question.autograder ? `autograder=${question.autograder}` : ""}
         >Submit Code</button>
-        <button class="ui loading blue button submitting_code invisible">Loading</button>
       `
       break;
     case "todo":

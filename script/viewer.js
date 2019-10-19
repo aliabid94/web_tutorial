@@ -97,15 +97,24 @@ $.get(lesson_url + "config.yaml", function(data) {
   })
 })
 
+function autoupload() {
+  for (question_num in code_mirrors[current_exercise]) {
+    let cm_set = code_mirrors[current_exercise][question_num];
+    let code_set = getCodeSet(cm_set);
+    api.uploadCode(current_exercise, question_num, code_set);
+  }
+}
+
 var username = "";
 $("body").on('click', '.exercise_link', function() {
   if (!username) {
     if (adminview) {
       username = encode(adminview);
-      api.init();
+      api.init();      
     } else if (isLoggedIn) {
       username = encode(profile.getEmail());
       api.init();
+      window.setTimeout(auto_upload, 3000)
     } else {
       alert("Please sign in.")
       return
@@ -115,6 +124,9 @@ $("body").on('click', '.exercise_link', function() {
   $(".exercise_link").removeClass("active_exercise").removeClass("blue");
   if (!$(this).hasClass("complete_exercise")) {
     $(this).addClass("active_exercise").removeClass("yellow").addClass("blue");
+  }
+  if (current_exercise) {
+    autoupload();
   }
   current_exercise = $(this).attr("exercise");
   $(`.exercise_set[exercise=${current_exercise}]`).show();
@@ -146,8 +158,7 @@ if (!adminview) {
   $("body").on('click', '.submit_code', function() {
     let problem_box = $(this).closest(".problem");
     let question_num = problem_box.attr("num");
-    let this_problem = getProblemOfElement(this);
-    let cm_set = code_mirrors[this_problem.exercise][this_problem.problem];
+    let cm_set = code_mirrors[this_problem.exercise][question_num];
     let code_set = getCodeSet(cm_set);
     if ($(this).attr("autograder") == 'copy') {
       let passed = "true";
@@ -157,7 +168,6 @@ if (!adminview) {
         let lang = $(element).attr("lang");
         if (decoded.trim() != code_set[lang].trim()) {
           passed = false;
-          console.log("failed!")
           return false;
         }
       })
@@ -168,9 +178,8 @@ if (!adminview) {
       }
     }
     pending_review.push([current_exercise, question_num]);
-    problem_box.find(".submit_code").addClass("invisible");
-    problem_box.find(".submitting_code").removeClass("invisible");
-    api.uploadCode(current_exercise, question_num, code_set);
+    problem_box.find(".submit_code").text("Resubmit Code");
+    api.uploadCode(current_exercise, question_num, code_set, /*isCorrect=*/0.5);
   })
 }
 
@@ -187,7 +196,7 @@ function update_problem(exercise, question, choice, code, isCorrect, action) {
       choice_button.addClass("red");
       problem_box.find(".no_message").show();
       problem_box.find(".yes_message").hide();
-      problem_box.find(".submit_code, .submitting_code").addClass("invisible");
+      problem_box.find(".submit_code").addClass("invisible");
       responses[exercise][question] = false;
       break;
     case 0:
@@ -201,7 +210,7 @@ function update_problem(exercise, question, choice, code, isCorrect, action) {
       problem_box.find(".no_message").hide();
       problem_box.find(".yes_message").show();
       responses[exercise][question] = true;
-      problem_box.find(".submit_code, .submitting_code").addClass("invisible");
+      problem_box.find(".submit_code").addClass("invisible");
       break;
   }
   if (code_mirrors[exercise] && code_mirrors[exercise][question]) {
@@ -254,9 +263,6 @@ function getCodeSet(cm_set) {
 
 $("body").on('click', '.run_code', function() {
   let problem_box = $(this).closest(".problem");
-  if (problem_box.find(".submitting_code").hasClass("invisible")) {
-    problem_box.find(".submit_code").removeClass("invisible");
-  }
   let output = $(this).closest(".problem").find(".output_box");
   let demo = $(this).closest(".problem").find(".demo_box");
   output.show();
