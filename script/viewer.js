@@ -16,6 +16,8 @@ var pending_review = []
 
 if (adminview) {
   $("#top, #slides, #slide_control").hide();
+} else if (lesson == "test") {
+  $("#slides, #slide_control").hide();
 }
 
 $.get(lesson_url + "config.yaml", function(data) {
@@ -114,7 +116,7 @@ $("body").on('click', '.exercise_link', function() {
     } else if (isLoggedIn) {
       username = encode(profile.getEmail());
       api.init();
-      // window.setInterval(autoupload, 3000)
+      window.setInterval(autoupload, 3000)
     } else {
       alert("Please sign in.")
       return
@@ -213,7 +215,7 @@ function update_problem(exercise, question, choice, code, isCorrect, action) {
       problem_box.find(".submit_code").addClass("invisible");
       break;
   }
-  if (code_mirrors[exercise] && code_mirrors[exercise][question]) {
+  if ((action == "add" || adminview) && code_mirrors[exercise] && code_mirrors[exercise][question]) {
     for (let lang in code) {
       if (lang in code_mirrors[exercise][question]) {
         code_mirrors[exercise][question][lang].setValue(code[lang]);
