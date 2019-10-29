@@ -103,6 +103,7 @@
            </div>
            <button>Purchase</button>
          </div>
+        <script>document.addEventListener('contextmenu', function(e){e.preventDefault(); alert('Right-click has been disabled.');}, false);</script>
         </body>
       </head>
       </html>
@@ -178,6 +179,7 @@
           <button>$1500 to $5000</button>
           <button>Over $5000</button>
          </div>
+        <script>document.addEventListener('contextmenu', function(e){e.preventDefault(); alert('Right-click has been disabled.');}, false);</script>
         </body>
       </head>
       </html>
@@ -307,6 +309,7 @@
           <p>Temperature: <br><em>70 / 58 F</em></p>
           <p>Rain: <em>80%</em></p>
         </div>
+        <script>document.addEventListener('contextmenu', function(e){e.preventDefault(); alert('Right-click has been disabled.');}, false);</script>
       </body>
       </html>
       "

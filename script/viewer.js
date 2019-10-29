@@ -17,6 +17,7 @@ var pending_review = []
 if (adminview) {
   $("#top, #slides, #slide_control").hide();
 } else if (lesson == "test") {
+  document.addEventListener('contextmenu', function(e){e.preventDefault(); alert('Right-click has been disabled.');}, false);
   $("#slides, #slide_control").hide();
 }
 
