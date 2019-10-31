@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Final Clue</title>
+  <style>
+      body {
+          padding: 10px 50px;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+
+<h1>Sibs Game - Final Clue</h1>   
+<p>
+    Last Clue! The items below have something in common, something to do with us. <br>
+    But some of the letters are missing! Figure out the missing letters. <br>
+    The final lock digit is the number of times the letter "A" appears in the completed crossword!
+</p>
+<div style="position: relative">
+    <div class="FreeSection" style="height:128px; ">
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B5x0y" style="position:absolute; width:17px; height:17px; left:126px; top:0px; z-index:105" alt=" " title="Common P in PERFUME &amp; POLAROID">
+        <span style="position:absolute; left:127px; top:1px; font-size:5px; z-index:106; line-height:110%; text-align:left; vertical-align:top; font-family:Helvetica,sans-serif; ">1</span>
+        <span class="CellLettering" id="L5x0y" style="position: absolute; left: 127px; top: 5px; width: 16px; font-size: 11px; z-index: 107; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">P</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B6x0y" style="position:absolute; width:17px; height:17px; left:142px; top:0px; z-index:106" alt=" " title="E in PERFUME">
+        <span class="CellLettering" id="L6x0y" style="position: absolute; left: 143px; top: 5px; width: 16px; font-size: 11px; z-index: 108; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">E</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B7x0y" style="position:absolute; width:17px; height:17px; left:158px; top:0px; z-index:107" alt=" " title="R in PERFUME">
+        <span class="CellLettering" id="L7x0y" style="position: absolute; left: 159px; top: 5px; width: 16px; font-size: 11px; z-index: 109; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">R</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B8x0y" style="position:absolute; width:17px; height:17px; left:174px; top:0px; z-index:108" alt=" " title="F in PERFUME">
+        <span class="CellLettering" id="L8x0y" style="position: absolute; left: 175px; top: 5px; width: 16px; font-size: 11px; z-index: 110; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">F</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B9x0y" style="position:absolute; width:17px; height:17px; left:190px; top:0px; z-index:109" alt=" " title="U in PERFUME">
+        <span class="CellLettering" id="L9x0y" style="position: absolute; left: 191px; top: 5px; width: 16px; font-size: 11px; z-index: 111; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">U</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B10x0y" style="position:absolute; width:17px; height:17px; left:206px; top:0px; z-index:110" alt=" " title="M in PERFUME">
+        <span class="CellLettering" id="L10x0y" style="position: absolute; left: 207px; top: 5px; width: 16px; font-size: 11px; z-index: 112; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">M</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B11x0y" style="position:absolute; width:17px; height:17px; left:222px; top:0px; z-index:111" alt=" " title="Common E in PERFUME &amp; EARRINGS">
+        <span style="position:absolute; left:223px; top:1px; font-size:5px; z-index:112; line-height:110%; text-align:left; vertical-align:top; font-family:Helvetica,sans-serif; ">2</span>
+        <span class="CellLettering" id="L11x0y" style="position: absolute; left: 223px; top: 5px; width: 16px; font-size: 11px; z-index: 113; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">E</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B5x1y" style="position:absolute; width:17px; height:17px; left:126px; top:16px; z-index:205" alt=" " title="O in POLAROID">
+        <span class="CellLettering" id="L5x1y" style="position: absolute; left: 127px; top: 21px; width: 16px; font-size: 11px; z-index: 207; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif;">O</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B11x1y" style="position:absolute; width:17px; height:17px; left:222px; top:16px; z-index:211" alt=" " title="A in EARRINGS">
+        <span class="CellLettering" id="L11x1y" style="position: absolute; left: 223px; top: 21px; width: 16px; font-size: 11px; z-index: 213; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">A</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B3x2y" style="position:absolute; width:17px; height:17px; left:94px; top:32px; z-index:303" alt=" " title="W in WALLET">
+        <span style="position:absolute; left:95px; top:33px; font-size:5px; z-index:304; line-height:110%; text-align:left; vertical-align:top; font-family:Helvetica,sans-serif; ">3</span>
+        <span class="CellLettering" id="L3x2y" style="position: absolute; left: 95px; top: 37px; width: 16px; font-size: 11px; z-index: 305; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">W</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B4x2y" style="position:absolute; width:17px; height:17px; left:110px; top:32px; z-index:304" alt=" " title="A in WALLET">
+        <span class="CellLettering" id="L4x2y" style="position: absolute; left: 111px; top: 37px; width: 16px; font-size: 11px; z-index: 306; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">A</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B5x2y" style="position:absolute; width:17px; height:17px; left:126px; top:32px; z-index:305" alt=" " title="Common L in WALLET &amp; POLAROID">
+        <span class="CellLettering" id="L5x2y" style="position: absolute; left: 127px; top: 37px; width: 16px; font-size: 11px; z-index: 307; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">L</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B6x2y" style="position:absolute; width:17px; height:17px; left:142px; top:32px; z-index:306" alt=" " title="L in WALLET">
+        <span class="CellLettering" id="L6x2y" style="position: absolute; left: 143px; top: 37px; width: 16px; font-size: 11px; z-index: 308; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">L</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B7x2y" style="position:absolute; width:17px; height:17px; left:158px; top:32px; z-index:307" alt=" " title="E in WALLET">
+        <span class="CellLettering" id="L7x2y" style="position: absolute; left: 159px; top: 37px; width: 16px; font-size: 11px; z-index: 309; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">E</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B8x2y" style="position:absolute; width:17px; height:17px; left:174px; top:32px; z-index:308" alt=" " title="T in WALLET">
+        <span class="CellLettering" id="L8x2y" style="position: absolute; left: 175px; top: 37px; width: 16px; font-size: 11px; z-index: 310; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">T</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B11x2y" style="position:absolute; width:17px; height:17px; left:222px; top:32px; z-index:311" alt=" " title="R in EARRINGS">
+        <span class="CellLettering" id="L11x2y" style="position: absolute; left: 223px; top: 37px; width: 16px; font-size: 11px; z-index: 313; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">R</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B14x2y" style="position:absolute; width:17px; height:17px; left:270px; top:32px; z-index:314" alt=" " title="D in DIARY">
+        <span style="position:absolute; left:271px; top:33px; font-size:5px; z-index:315; line-height:110%; text-align:left; vertical-align:top; font-family:Helvetica,sans-serif; ">4</span>
+        <span class="CellLettering" id="L14x2y" style="position: absolute; left: 271px; top: 37px; width: 16px; font-size: 11px; z-index: 316; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">D</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B2x3y" style="position:absolute; width:17px; height:17px; left:78px; top:48px; z-index:402" alt=" " title="W in WATCH">
+        <span style="position:absolute; left:79px; top:49px; font-size:5px; z-index:403; line-height:110%; text-align:left; vertical-align:top; font-family:Helvetica,sans-serif; ">5</span>
+        <span class="CellLettering" id="L2x3y" style="position: absolute; left: 79px; top: 53px; width: 16px; font-size: 11px; z-index: 404; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">W</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B5x3y" style="position:absolute; width:17px; height:17px; left:126px; top:48px; z-index:405" alt=" " title="A in POLAROID">
+        <span class="CellLettering" id="L5x3y" style="position: absolute; left: 127px; top: 53px; width: 16px; font-size: 11px; z-index: 407; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">A</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B11x3y" style="position:absolute; width:17px; height:17px; left:222px; top:48px; z-index:411" alt=" " title="R in EARRINGS">
+        <span class="CellLettering" id="L11x3y" style="position: absolute; left: 223px; top: 53px; width: 16px; font-size: 11px; z-index: 413; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">R</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B14x3y" style="position:absolute; width:17px; height:17px; left:270px; top:48px; z-index:414" alt=" " title="I in DIARY">
+        <span class="CellLettering" id="L14x3y" style="position: absolute; left: 271px; top: 53px; width: 16px; font-size: 11px; z-index: 416; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">I</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B0x4y" style="position:absolute; width:17px; height:17px; left:46px; top:64px; z-index:500" alt=" " title="S in SPA">
+        <span style="position:absolute; left:47px; top:65px; font-size:5px; z-index:501; line-height:110%; text-align:left; vertical-align:top; font-family:Helvetica,sans-serif; ">6</span>
+        <span class="CellLettering" id="L0x4y" style="position: absolute; left: 47px; top: 69px; width: 16px; font-size: 11px; z-index: 502; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif;">S</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B1x4y" style="position:absolute; width:17px; height:17px; left:62px; top:64px; z-index:501" alt=" " title="P in SPA">
+        <span class="CellLettering" id="L1x4y" style="position: absolute; left: 63px; top: 69px; width: 16px; font-size: 11px; z-index: 503; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif;">P</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B2x4y" style="position:absolute; width:17px; height:17px; left:78px; top:64px; z-index:502" alt=" " title="Common A in SPA &amp; WATCH">
+        <span class="CellLettering" id="L2x4y" style="position: absolute; left: 79px; top: 69px; width: 16px; font-size: 11px; z-index: 504; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">A</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B5x4y" style="position:absolute; width:17px; height:17px; left:126px; top:64px; z-index:505" alt=" " title="R in POLAROID">
+        <span class="CellLettering" id="L5x4y" style="position: absolute; left: 127px; top: 69px; width: 16px; font-size: 11px; z-index: 507; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">R</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B10x4y" style="position:absolute; width:17px; height:17px; left:206px; top:64px; z-index:510" alt=" " title="J in JIGSAW">
+        <span style="position:absolute; left:207px; top:65px; font-size:5px; z-index:511; line-height:110%; text-align:left; vertical-align:top; font-family:Helvetica,sans-serif; ">7</span>
+        <span class="CellLettering" id="L10x4y" style="position: absolute; left: 207px; top: 69px; width: 16px; font-size: 11px; z-index: 512; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">J</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B11x4y" style="position:absolute; width:17px; height:17px; left:222px; top:64px; z-index:511" alt=" " title="Common I in JIGSAW &amp; EARRINGS">
+        <span class="CellLettering" id="L11x4y" style="position: absolute; left: 223px; top: 69px; width: 16px; font-size: 11px; z-index: 513; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">I</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B12x4y" style="position:absolute; width:17px; height:17px; left:238px; top:64px; z-index:512" alt=" " title="G in JIGSAW">
+        <span class="CellLettering" id="L12x4y" style="position: absolute; left: 239px; top: 69px; width: 16px; font-size: 11px; z-index: 514; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">G</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B13x4y" style="position:absolute; width:17px; height:17px; left:254px; top:64px; z-index:513" alt=" " title="S in JIGSAW">
+        <span class="CellLettering" id="L13x4y" style="position: absolute; left: 255px; top: 69px; width: 16px; font-size: 11px; z-index: 515; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">S</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B14x4y" style="position:absolute; width:17px; height:17px; left:270px; top:64px; z-index:514" alt=" " title="Common A in JIGSAW &amp; DIARY">
+        <span class="CellLettering" id="L14x4y" style="position: absolute; left: 271px; top: 69px; width: 16px; font-size: 11px; z-index: 516; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">A</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B15x4y" style="position:absolute; width:17px; height:17px; left:286px; top:64px; z-index:515" alt=" " title="W in JIGSAW">
+        <span class="CellLettering" id="L15x4y" style="position: absolute; left: 287px; top: 69px; width: 16px; font-size: 11px; z-index: 517; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">W</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B2x5y" style="position:absolute; width:17px; height:17px; left:78px; top:80px; z-index:602" alt=" " title="T in WATCH">
+        <span class="CellLettering" id="L2x5y" style="position: absolute; left: 79px; top: 85px; width: 16px; font-size: 11px; z-index: 604; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">T</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B5x5y" style="position:absolute; width:17px; height:17px; left:126px; top:80px; z-index:605" alt=" " title="O in POLAROID">
+        <span class="CellLettering" id="L5x5y" style="position: absolute; left: 127px; top: 85px; width: 16px; font-size: 11px; z-index: 607; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">O</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B11x5y" style="position:absolute; width:17px; height:17px; left:222px; top:80px; z-index:611" alt=" " title="N in EARRINGS">
+        <span class="CellLettering" id="L11x5y" style="position: absolute; left: 223px; top: 85px; width: 16px; font-size: 11px; z-index: 613; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">N</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B14x5y" style="position:absolute; width:17px; height:17px; left:270px; top:80px; z-index:614" alt=" " title="R in DIARY">
+        <span class="CellLettering" id="L14x5y" style="position: absolute; left: 271px; top: 85px; width: 16px; font-size: 11px; z-index: 616; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">R</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B2x6y" style="position:absolute; width:17px; height:17px; left:78px; top:96px; z-index:702" alt=" " title="C in WATCH">
+        <span class="CellLettering" id="L2x6y" style="position: absolute; left: 79px; top: 101px; width: 16px; font-size: 11px; z-index: 704; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">C</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B5x6y" style="position:absolute; width:17px; height:17px; left:126px; top:96px; z-index:705" alt=" " title="I in POLAROID">
+        <span class="CellLettering" id="L5x6y" style="position: absolute; left: 127px; top: 101px; width: 16px; font-size: 11px; z-index: 707; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">I</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B11x6y" style="position:absolute; width:17px; height:17px; left:222px; top:96px; z-index:711" alt=" " title="G in EARRINGS">
+        <span class="CellLettering" id="L11x6y" style="position: absolute; left: 223px; top: 101px; width: 16px; font-size: 11px; z-index: 713; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">G</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B14x6y" style="position:absolute; width:17px; height:17px; left:270px; top:96px; z-index:714" alt=" " title="Y in DIARY">
+        <span class="CellLettering" id="L14x6y" style="position: absolute; left: 271px; top: 101px; width: 16px; font-size: 11px; z-index: 716; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">Y</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B2x7y" style="position:absolute; width:17px; height:17px; left:78px; top:112px; z-index:802" alt=" " title="Common H in HEADPHONES &amp; WATCH">
+        <span style="position:absolute; left:79px; top:113px; font-size:5px; z-index:803; line-height:110%; text-align:left; vertical-align:top; font-family:Helvetica,sans-serif; ">8</span>
+        <span class="CellLettering" id="L2x7y" style="position: absolute; left: 79px; top: 117px; width: 16px; font-size: 11px; z-index: 804; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">H</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B3x7y" style="position:absolute; width:17px; height:17px; left:94px; top:112px; z-index:803" alt=" " title="E in HEADPHONES">
+        <span class="CellLettering" id="L3x7y" style="position: absolute; left: 95px; top: 117px; width: 16px; font-size: 11px; z-index: 805; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">E</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B4x7y" style="position:absolute; width:17px; height:17px; left:110px; top:112px; z-index:804" alt=" " title="A in HEADPHONES">
+        <span class="CellLettering" id="L4x7y" style="position: absolute; left: 111px; top: 117px; width: 16px; font-size: 11px; z-index: 806; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif;opacity: 0; ">A</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B5x7y" style="position:absolute; width:17px; height:17px; left:126px; top:112px; z-index:805" alt=" " title="Common D in HEADPHONES &amp; POLAROID">
+        <span class="CellLettering" id="L5x7y" style="position: absolute; left: 127px; top: 117px; width: 16px; font-size: 11px; z-index: 807; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">D</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B6x7y" style="position:absolute; width:17px; height:17px; left:142px; top:112px; z-index:806" alt=" " title="P in HEADPHONES">
+        <span class="CellLettering" id="L6x7y" style="position: absolute; left: 143px; top: 117px; width: 16px; font-size: 11px; z-index: 808; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">P</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B7x7y" style="position:absolute; width:17px; height:17px; left:158px; top:112px; z-index:807" alt=" " title="H in HEADPHONES">
+        <span class="CellLettering" id="L7x7y" style="position: absolute; left: 159px; top: 117px; width: 16px; font-size: 11px; z-index: 809; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">H</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B8x7y" style="position:absolute; width:17px; height:17px; left:174px; top:112px; z-index:808" alt=" " title="O in HEADPHONES">
+        <span class="CellLettering" id="L8x7y" style="position: absolute; left: 175px; top: 117px; width: 16px; font-size: 11px; z-index: 810; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">O</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B9x7y" style="position:absolute; width:17px; height:17px; left:190px; top:112px; z-index:809" alt=" " title="N in HEADPHONES">
+        <span class="CellLettering" id="L9x7y" style="position: absolute; left: 191px; top: 117px; width: 16px; font-size: 11px; z-index: 811; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; ">N</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B10x7y" style="position:absolute; width:17px; height:17px; left:206px; top:112px; z-index:810" alt=" " title="E in HEADPHONES">
+        <span class="CellLettering" id="L10x7y" style="position: absolute; left: 207px; top: 117px; width: 16px; font-size: 11px; z-index: 812; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">E</span>
+        <img src="https://crosswordweaver.cachefly.net/PNG/16F255.png" id="B11x7y" style="position:absolute; width:17px; height:17px; left:222px; top:112px; z-index:811" alt=" " title="Common S in HEADPHONES &amp; EARRINGS">
+        <span class="CellLettering" id="L11x7y" style="position: absolute; left: 223px; top: 117px; width: 16px; font-size: 11px; z-index: 813; line-height: 110%; text-align: center; font-family: Helvetica, sans-serif; opacity: 0;">S</span>
+        </div>
+</div>
+
+</body>
+
+</html>

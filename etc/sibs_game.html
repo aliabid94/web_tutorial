@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clue 2</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+      body {
+          padding: 10px 50px;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#sortable" ).sortable({
+        stop: function( event, ui ) {
+            var order = $( "#sortable" ).sortable( "toArray" )
+            var answer = ["fl", "pe", "ca", "pr", "cr", "bo", "pu", "al", "sn"]
+            if (JSON.stringify(order)==JSON.stringify(answer)) {
+                alert("You got it! The second value is 1! Click Okay to be taken to the final clue.")
+                window.location.href = "/etc/sibs_game_final.html";
+            }
+        }
+      });
+    $( "#sortable" ).disableSelection();
+  } );
+  </script>
+</head>
+<body>
+
+<h1>Sibs Game - Clue 2</h1>   
+<h3>
+    Good Morning! Drag to rearrange the pieces below in the correct order! When you have the items in the correct order, you will recieve the second lock number!
+</h3>
+
+<ul id="sortable">
+  <li id="cr" class="ui-state-default">Cricket Bat</li>
+  <li id="ca" class="ui-state-default">Camel</li>
+  <li id="fl" class="ui-state-default">Flowers</li>
+  <li id="sn" class="ui-state-default">Sneakers</li>
+  <li id="al" class="ui-state-default">Alligator</li>
+  <li id="pu" class="ui-state-default">Puppy</li>
+  <li id="pe" class="ui-state-default">Petri Dish</li>
+  <li id="pr" class="ui-state-default">Pretzel</li>
+  <li id="bo" class="ui-state-default">Bowling</li>
+</ul>
+ 
+ 
+</body>
+
+</html>
