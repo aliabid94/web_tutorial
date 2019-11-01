@@ -21,7 +21,7 @@
     $( "#sortable" ).sortable({
         stop: function( event, ui ) {
             var order = $( "#sortable" ).sortable( "toArray" )
-            var answer = ["fl", "pe", "ca", "pr", "cr", "bo", "pu", "al", "sn"]
+            var answer = ["pe", "ca", "pr", "cr", "bo", "pu", "al", "sn", "te"]
             if (JSON.stringify(order)==JSON.stringify(answer)) {
                 alert("You got it! The second value is 1! Click Okay to be taken to the final clue.")
                 window.location.href = "/etc/sibs_game_final.html";
@@ -42,7 +42,7 @@
 <ul id="sortable">
   <li id="cr" class="ui-state-default">Cricket Bat</li>
   <li id="ca" class="ui-state-default">Camel</li>
-  <li id="fl" class="ui-state-default">Flowers</li>
+  <li id="te" class="ui-state-default">Teddy Bear</li>
   <li id="sn" class="ui-state-default">Sneakers</li>
   <li id="al" class="ui-state-default">Alligator</li>
   <li id="pu" class="ui-state-default">Puppy</li>
