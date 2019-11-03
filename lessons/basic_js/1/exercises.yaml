@@ -357,26 +357,26 @@
     - question: |*
         Type the following elements into the editor below:
         <code lang='js'>
-        favorite_color = "red";
+        favorite_color = 'red';
         log(favorite_color);
         </code>
       type: code
     - question: |*
         Type the following elements into the editor below:
         <code lang='js'>
-        pet_type = "dog";
-        pet_name = "Spot";
-        sentence = "This is my " + pet_type + " " + pet_name;
+        pet_type = 'dog';
+        pet_name = 'Spot';
+        sentence = 'This is my ' + pet_type + ' ' + pet_name;
         log(sentence);
         </code>
       type: code
     - question: |*
         Type the following elements into the editor below:
         <code lang='js'>
-        item = "brush";
+        item = 'brush';
         cost = 5;
         cost *= 2;
-        sentence = "This " + item + " is worth $" + cost;
+        sentence = 'This ' + item + ' is worth $' + cost;
         log(sentence);
         </code>
       type: code
@@ -395,7 +395,7 @@
     - question: |*
         Type the following elements into the editor below:
         <code lang='js'>
-        fruit = "banana";
+        fruit = 'banana';
         log(fruit);
         log(fruit.length);        
         </code>
@@ -403,20 +403,20 @@
     - question: |*
         Type the following elements into the editor below:
         <code lang='js'>
-        company1 = "Google";
-        company2 = "Apple";
+        company1 = 'Google';
+        company2 = 'Apple';
         log(company1.length + company2.length);
         </code>
       type: code
     - question: |*
         What would be logged by the following code?
         <code lang='js'>
-        x = "a";
-        y = "b";
-        x = x + "c";
+        x = 'a';
+        y = 'b';
+        x = x + 'c';
         y = y + x;
         y = y + y;
-        log(y + " " + y.length);
+        log(y + ' ' + y.length);
         </code>
       type: multiple_choice
       choices:
