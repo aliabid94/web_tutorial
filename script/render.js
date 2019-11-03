@@ -19,7 +19,6 @@ function renderRepeat(i, question, repeat) {
         }
         if (run_count++ > 100) {
           break
-          throw "Unable to make unique: " + variable_expression["name"]
         }
       } while (hasMatch(used_variable_sets, variable_set))
       used_variable_sets.push(variable_set);
@@ -35,7 +34,7 @@ function renderRepeat(i, question, repeat) {
 function renderToString(i, question, variables, false_variables) {
   question = JSON.parse(eval(("`" + JSON.stringify(question) + "`").replace(/\\n/g,'\\\\n')))
   let choices = question.choices || []
-  let answers, answers_input;
+  let answers_input;
   switch (question.type) {
     case "multiple_choice":
       answers_input = `

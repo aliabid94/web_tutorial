@@ -7,7 +7,6 @@ var adminview = qs["adminview"] || "";
 var lesson_url = `lessons/${course}/${lesson}/`;
 var course_tag = course + "_" + lesson;
 var exercises_loaded = false;
-var config_loaded = false;
 var current_slide = 1;
 var exercise_data, config_data, slide_count, current_exercise;
 var responses = {}
@@ -264,6 +263,11 @@ function getCodeSet(cm_set) {
   return code_set;
 }
 
+var jquery_code = "";
+$.get("script/vendor/jquery-3.1.1.min.js", function(content) {
+  jquery_code = content;
+})
+
 $("body").on('click', '.run_code', function() {
   let problem_box = $(this).closest(".problem");
   let output = $(this).closest(".problem").find(".output_box");
@@ -279,6 +283,26 @@ $("body").on('click', '.run_code', function() {
   $iframe.ready(function() {
     $iframe.contents().find("body").html(code_set.html);
     $iframe.contents().find("head").html("<style>" + code_set.css + "</style>");
+    if (config_data.lang.length == 1 && config_data.lang[0] == "js") {
+      $iframe.contents().find("head").html(`
+        <style>
+        #log {
+          font-family: monospace;
+          font-size: 18px;
+        }
+        </style>
+      `);
+      $iframe.contents().find("body").html(`
+        <div id="log"></div>
+      `);
+    }
+    $iframe.contents().find("body").append(`
+      <script>${jquery_code}</script>
+    `);
+    $iframe.contents().find("body").append(`
+      <script>var log = (expr) => $("#log").append(expr + "<br>");</script>
+      <script>${code_set.js}</script>
+    `);
   });
 })
 
