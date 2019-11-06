@@ -68,6 +68,14 @@ function renderToString(i, question, variables, false_variables) {
     case "todo":
       answers_input = `<button class='ui button mark_complete'><i class="check circle icon"></i>Complete</button>`;
       break;
+    case "text":
+      answers_input = `
+        <div class="ui action input">
+          <input class="response" type="text">
+          <button class="ui button" answer="${question.answer}">Submit</button>
+        </div>
+      `;
+      break;
     default:
       answers_input = "";
   }
@@ -79,7 +87,7 @@ function renderToString(i, question, variables, false_variables) {
     <div class="white_canvas">
       <div class='question ui segment fluid'>
         ${question["question"]}
-        <div class='answers ${question.type}'>
+        <div class='answers' type='${question.type}'>
           ${answers_input}
         </div>
       </div>

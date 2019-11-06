@@ -143,12 +143,21 @@ $("body").on('click', '.exercise_link', function() {
 })
 
 if (!adminview) {
-  $("body").on('click', '.answers.multiple_choice button', function() {
+  $("body").on('click', '.answers[type=multiple_choice] button', function() {
     let problem_box = $(this).closest(".problem");
     let question_num = problem_box.attr("num");
     let choice = $(this).attr("choice")
     let isCorrect = $(this).hasClass("correct");
     api.uploadMultipleChoice(current_exercise, question_num, choice, isCorrect);
+  })
+
+  $("body").on('click', '.answers[type=text] button', function() {
+    let problem_box = $(this).closest(".problem");
+    let question_num = problem_box.attr("num");
+    let response = problem_box.find(".response").val();
+    console.log(response, $(this).attr("answer"))
+    let isCorrect = response == $(this).attr("answer");
+    api.uploadMultipleChoice(current_exercise, question_num, response, isCorrect);
   })
 
   $("body").on('click', '.mark_complete', function() {
@@ -188,14 +197,23 @@ if (!adminview) {
 function update_problem(exercise, question, choice, code, isCorrect, action) {
   let problem_box = $(`.exercise_set[exercise=${exercise}]`)
     .find(`.problem[num=${question}]`).find(".problem_box");
-  let choice_button = problem_box
-    .find(`.choice[choice=${choice}], .mark_complete`);
-  problem_box.removeClass("red").removeClass("green");
-  problem_box.find(".choice").removeClass("red").removeClass("green");
+  let type = problem_box.find(".answers").attr("type");
+  problem_box.removeClass("red").removeClass("green"); 
+  if (type == "multiple_choice" || type == "todo") {
+    var choice_button = problem_box.find(`.choice[choice=${choice}], .mark_complete`);
+  }
+  if (type == "multiple_choice") {
+    problem_box.find(".choice").removeClass("red").removeClass("green");
+  } else if (type == "text") {
+    problem_box.find(".response").val(choice);
+  }
+
   switch(isCorrect) {
     case -1:
       problem_box.addClass("red");
-      choice_button.addClass("red");
+      if (type == "multiple_choice" || type == "todo") {
+        choice_button.addClass("red");
+      }
       problem_box.find(".no_message").show();
       problem_box.find(".yes_message").hide();
       problem_box.find(".submit_code").addClass("invisible");
@@ -208,7 +226,9 @@ function update_problem(exercise, question, choice, code, isCorrect, action) {
       break;
     case 1:
       problem_box.addClass("green");
-      choice_button.addClass("green");
+      if (type == "multiple_choice" || type == "todo") {
+        choice_button.addClass("green");
+      }
       problem_box.find(".no_message").hide();
       problem_box.find(".yes_message").show();
       responses[exercise][question] = true;
@@ -301,7 +321,13 @@ $("body").on('click', '.run_code', function() {
     `);
     $iframe.contents().find("body").append(`
       <script>var log = (expr) => $("#log").append(expr + "<br>");</script>
-      <script>${code_set.js}</script>
+      <script>
+        try {
+          ${code_set.js}
+        } catch (error) {
+          log(error);
+        }
+      </script>
     `);
   });
 })
