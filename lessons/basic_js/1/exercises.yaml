@@ -369,9 +369,9 @@
         </code>
       type: multiple_choice
       choices:
-        - "David letters"
+        - "5 letters"
         - "David 6"
-        - "6 letters"
+        - "David letters"
         - "Anne 4"
     - question: |*
         What would be logged by the following code?
@@ -412,7 +412,7 @@
         <code lang='js'>
         is_it_raining = false;
         is_it_sunny = !is_it_raining;
-        log(is_is_raining);
+        log(is_it_sunny);
         </code>
       type: code
     - question: |*

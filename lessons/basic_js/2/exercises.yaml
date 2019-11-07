@@ -37,12 +37,8 @@
           z *= 5;
         }
         </code>
-      type: multiple_choice
-      choices:
-        - "5"
-        - "15"
-        - "3"
-        - "1"
+      type: text
+      answer: "5"
     - question: |*
         What is the final value of variable price?
         <code lang='js'>
@@ -56,12 +52,8 @@
           price -= 5;
         }
         </code>
-      type: multiple_choice
-      choices:
-        - "20"
-        - "15"
-        - "25"
-        - "10"
+      type: text
+      answer: "20"
     - question: |*
         What would be logged by the following code?
         <code lang='js'>
@@ -73,76 +65,63 @@
         log(speed);
         </code>
       type: multiple_choice
-      choices:
-        - "5"
-        - "2"
-        - "3"
-        - "1"
+      answer: "5"
 
-3:
+5:
   questions:
     - question: |*
         Type the following elements into the editor below:
         <code lang='js'>
-        x = true;
-        if (x) {
-          log('Hello World!');
+        x = 5;
+        if (x == 5) {
+          log('Nice number!');
         }
         </code>
       type: code
     - question: |*
         Type the following elements into the editor below:
         <code lang='js'>
-        a = true;
-        b = false;
-        y = 4;
-        if (a) {
-          y += 3;
+        a = 5;
+        b = 8;
+        if (a == 5) {
+          a += 3;
         }
-        if (b) {
-          y += 2;
+        if (a == b) {
+          b += 2;
         }
-        log(y);
+        log(a + b);
         </code>
       type: code
     - question: |*
-        What is the final value of variable z?
+        What is the final value of variable b?
         <code lang='js'>
-        a = false;
-        b = !a;
-        z = 1;
-        if (a) {
-          z *= 3;
+        a = 5;
+        b = 2 * a;
+        if (b == a + 5) {
+          b *= 2;
         }
-        if (b) {
-          z *= 5;
+        if (b == a + 10) {
+          b *= 1.5;
         }
         </code>
-      type: multiple_choice
-      choices:
-        - "5"
-        - "15"
-        - "3"
-        - "1"
+      type: text
+      answer: "20"
     - question: |*
-        What is the final value of variable price?
+        What is the final value of variable stock2?
         <code lang='js'>
-        price = 25;
-        sale_today = true;
-        extra_discount = false;
-        if (sale_today) {
-          price = 20;
+        stock1 = 12;
+        stock2 = 16;
+        stock_drop = true;
+        if (stock_drop) {
+          stock1 /= 2;
+          stock2 /= 2;
         }
-        if (extra_discount) {
-          price -= 5;
+        if (stock2 == 6) {
+          stock2 -= 3;
         }
         </code>
-      type: multiple_choice
-      choices:
-        - "20"
-        - "15"
-        - "25"
-        - "10"
+      type: text
+      answer: "8"
     - question: |*
         What would be logged by the following code?
         <code lang='js'>
@@ -154,8 +133,5 @@
         log(speed);
         </code>
       type: multiple_choice
-      choices:
-        - "5"
-        - "2"
-        - "3"
-        - "1"
+      answer: "5"
+
