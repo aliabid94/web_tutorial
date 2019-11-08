@@ -18,6 +18,7 @@
         log(c);
         </code>
       type: code
+      quiz: true
     - question: |*
         Type the following elements into the editor below:
         <code lang='js'>
@@ -35,6 +36,7 @@
         z = x + y;
         </code>
       type: multiple_choice
+      quiz: true
       choices:
         - "20"
         - "15"
@@ -148,6 +150,7 @@
         - "25"
         - "24"
         - "16"
+      quiz: true
     - question: |*
         What is the final value of variable stock_price?
         <code lang='js'>
@@ -190,6 +193,7 @@
         </code>
       type: text
       answer: "21"
+      quiz: true
     - question: |*
         Create variables <strong>mothers_age</strong> and <strong>fathers_age</strong>. Set their values to be your parents actual ages.
         Log the combined total age of your parents. <br> Then increase each of their ages by 5. Log the combined total age of your parents in 5 years.
@@ -243,6 +247,7 @@
         </code>
       type: text
       answer: "10"
+      quiz: true
     - question: |*
         What would be logged by the following code?
         <code lang='js'>
@@ -341,6 +346,7 @@
         Store your home address information in these variables. <br>
         Create a variable <strong>address</strong> that combines these variables into one string. Log <strong>address</strong>.
       type: code
+      quiz: true
 
 15:
   questions:
@@ -385,6 +391,7 @@
         </code>
       type: text
       answer: "bacbac 6"
+      quiz: true
 
 16:
   questions:
@@ -415,6 +422,7 @@
         log(is_it_sunny);
         </code>
       type: code
+      quiz: true
     - question: |*
         Type the following elements into the editor below:
         <code lang='js'>
@@ -439,4 +447,5 @@
       choices:
         - "true"
         - "false"
+      quiz: true
 

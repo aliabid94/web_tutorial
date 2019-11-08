@@ -67,7 +67,7 @@
       type: multiple_choice
       answer: "5"
 
-5:
+6:
   questions:
     - question: |*
         Type the following elements into the editor below:
@@ -75,6 +75,15 @@
         x = 5;
         if (x == 5) {
           log('Nice number!');
+        }
+        </code>
+      type: code
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        password = 'letmein';
+        if (password == 'hello123') {
+          log('Correct password!');
         }
         </code>
       type: code
@@ -107,6 +116,25 @@
       type: text
       answer: "20"
     - question: |*
+        What is the final value of variable letters?
+        <code lang='js'>
+        letters = ''
+        first = 'a'
+        second = 't'
+        third = 'e'
+        if (first == 'a') {
+          letters += first;
+        }
+        if (letters.length == 1) {
+          letters += second;
+        }
+        if (letters == 'ab') {
+          letters += third;
+        }
+        </code>
+      type: text
+      answer: "at"
+    - question: |*
         What is the final value of variable stock2?
         <code lang='js'>
         stock1 = 12;
@@ -122,16 +150,300 @@
         </code>
       type: text
       answer: "8"
+
+8:
+  questions:
     - question: |*
-        What would be logged by the following code?
+        Type the following elements into the editor below:
         <code lang='js'>
-        speed = 5;
-        stop_sign = false;
-        if (stop_sign) {
-          speed = 2;
+        age = 8;
+        if (age < 10) {
+          log('You are a child!');
         }
-        log(speed);
+        </code>
+      type: code
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        password = 'letmein';
+        if (password.length >= 8) {
+          log('Valid password.');
+        }
+        </code>
+      type: code
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        name = 'Charlie'
+        if (name != 'Tim') {
+          log('You are not Charlie!')
+        }
+        </code>
+      type: code
+    - question: |*
+        What is the final value of variable b?
+        <code lang='js'>
+        a = 15;
+        if (a >= 10) {
+          a -= 10;
+        }
+        if (a > 5) {
+          a -= 10;
+        }
+        </code>
+      type: text
+      answer: "5"
+    - question: |*
+        What is the final value of variable color?
+        <code lang='js'>
+        color = 'red'
+        if (color.length > 5) {
+          color = 'yellow';
+        }
+        if (color.length < 5) {
+          color = 'green';
+        }
+        if (color.length > 5) {
+          color = 'blue';
+        }
+        if (color.length != 5) {
+          color = 'purple';
+        }
         </code>
       type: multiple_choice
-      answer: "5"
+      choices:
+        - "green"
+        - "blue"
+        - "purple"
+        - "red"
+    - question: |*
+        Create a variable temperature with todays temperature. 
+        Write if statements such that if the temperature is more than 80, log 'Too warm!'.
+        If the temperature is temperature is less than 40, log 'Too cold!'.
+      type: code
+      quiz: true
 
+10:
+  questions:
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        height = 20;
+        if (height < 50) {
+          log('Too short to enter!');
+        } else {
+          log('Come on in!');
+        }
+        </code>
+      type: code
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        password = 'asdf123';
+        if (password == 'asdf123') {
+          log('Correct password!');
+        } else {
+          log('Incorrect password!');
+        }
+        </code>
+      type: code
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        name = 'Ayah'
+        if (name == 'Dawood') {
+          log('You are my dad!');
+        } else if (name == 'Ayah') {
+          log('You are my mom!');
+        } else {
+          log('Who are you?');
+        }
+        </code>
+      type: code
+    - question: |*
+        What is the final value of variable b?
+        <code lang='js'>
+        a = 8;
+        if (a >= 10) {
+          a -= 10;
+        } else if (a <= 5) {
+          a += 20;
+        }
+        </code>
+      type: text
+      answer: "8"
+    - question: |*
+        What is the final value of variable greeting?
+        <code lang='js'>
+        is_morning = false;
+        is_weekend = false;
+        greeting = 'hello';
+        if (is_morning) {
+          greeting = 'good morning';
+        } else if (!is_weekend) {
+          greeting = 'how is work?';
+        } else {
+          greeting = 'hey there!'
+        }
+        </code>
+      type: multiple_choice
+      choices:
+        - "how is work?"
+        - "good morning"
+        - "hello"
+        - "hey there!"
+    - question: |*
+        Create a variable price_of_shirt with the price of the shirt that you are wearing. 
+        Write if statements such that if your shirt price is more than 50, log 'Fancy!'.
+        If the price is less than 20, log 'Frugal!'. Otherwise log 'Good find!'.
+      type: code
+      quiz: true
+
+12:
+  questions:
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        has_coupon = true;
+        total_cost = 25;
+        if (has_coupon && total_cost >= 30) {
+          log('Valid coupon!');
+          cost -= 5;
+        } else if (has_coupon && total_cost < 30) {
+          log('Must spend $30 to apply coupon.');
+        }
+        log('Final cost is $' + total_cost);
+        </code>
+      type: code
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        is_attractive = true;
+        is_rich = false;        
+        if (is_attractive && is_rich) {
+          log('Marry him!');
+        } else if (is_attractive || is_rich) {
+          log('Maybe?');
+        } else {
+          log('Pass')
+        }
+        </code>
+      type: code
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        name = 'Areeba';
+        if (name == 'Safa' || name == 'Hafeel' || name == 'Mati') {
+          log('Hi student!');
+        }
+        </code>
+      type: code
+    - question: |*
+        What is the final value of variable total_cost?
+        <code lang='js'>
+        flowers_bought = 12;
+        type_of_flower = 'rose';
+        if (flowers_bought > 10) {
+          discount = true;
+        } else {
+          discount = false;
+        }
+        if (discount && type_of_flower == 'tulip') {
+          flower_price = 3;
+        } else if (discount && type_of_flower == 'rose') {
+          flower_price = 4;
+        } else {
+          flower_price = 5;
+        }
+        total_cost = flower_price * flowers_bought;
+        </code>
+      type: text
+      answer: "48"
+    - question: |*
+        What is the final value of variable will_go_out?
+        <code lang='js'>
+        is_tired = false;
+        is_sick = false;
+        if (is_tired || is_sick) {
+          will_go_out = false;
+        } else {
+          will_go_out = true;
+        }
+        </code>
+      type: multiple_choice
+      choices:
+        - "true"
+        - "false"
+    - question: |*
+        What is the final value of variable z?
+        <code lang='js'>
+        x = 15;
+        y = 10 + x;
+        z = x - 10;
+        if (x > y || z > y) {
+          x += 10
+        } else {
+          y += z;
+          x += 5;
+        }
+        if (z < x && z < y) {
+          z += x;
+        } else {
+          y += z;
+          z += x;
+        }
+        </code>
+      type: text
+      answer: "25"
+    - question: |*
+        Create a variable time that lists the current military time in hours, between 0 and 23. 
+        Create a boolean variable has_eaten that is true if you have eaten recently. <br>
+        If the time is less than 12 and you haven't eaten, log 'Go have breakfast!'. 
+        If the time is more than 18 and you haven't eaten, log 'Go have dinner!'.
+      type: code
+      quiz: true
+
+13:
+  questions:
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        is_vegetarian = true;
+        dinner_budget = 15;
+        if (is_vegetarian) {
+          if (dinner_budget > 20) {
+            recommendation = 'truffle'; 
+          } else {
+            recommendation = 'salad';
+          }
+        } else {
+          if (dinner_budget > 20) {
+            recommendation = 'steak'; 
+          } else {
+            recommendation = 'baked chicken';
+          }
+        }
+        log('I recommend ' + recommendation);
+        </code>
+      type: code
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        money = 25;
+        ticket_cost = 20;
+        popcorn_cost = 10;
+        if (money > ticket_cost) {
+          money -= ticket_cost;
+          if (money > popcorn_cost) {
+            money -= popcorn_cost;
+            log('Bought movie tickets and popcorn!');
+          } else {
+            log('Bought movie tickets only!');
+          }
+        } else {
+          log('Cannot watch movie.')
+        }
+        log('Money left is $' + money);
+        </code>
+      type: code
+      
