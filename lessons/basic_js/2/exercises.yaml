@@ -446,4 +446,22 @@
         log('Money left is $' + money);
         </code>
       type: code
-      
+    - question: |*
+        What is the final value of variable y?
+        <code lang='js'>
+        x = 15;
+        y = 10 + x;
+        if (x > y || x > 20) {
+          if (x == 15) {
+            y = 10;
+          }
+        } else {
+          if (x == 20 || y == 20) {
+            y = 30;
+          } else if (y > 20) {
+            y *= 2;
+          }
+        }
+        </code>
+      type: text
+      answer: "50"
