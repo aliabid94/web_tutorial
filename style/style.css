@@ -106,6 +106,10 @@ body {
 .no_message, .yes_message {
   display: none;
 }
+.test_header {
+  margin: 10px 0;
+  font-weight: bold;
+}
 /* PROBLEMS */
 .problem code {
   display: block;
@@ -117,6 +121,9 @@ body {
   user-select: none;
   white-space: pre;
   overflow-x: auto;
+}
+.test_code {
+  user-select: auto !important;
 }
 .problem textarea {
   width: 100%;

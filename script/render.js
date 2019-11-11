@@ -35,6 +35,13 @@ function renderToString(i, question, variables, false_variables) {
   question = JSON.parse(eval(("`" + JSON.stringify(question) + "`").replace(/\\n/g,'\\\\n')))
   let choices = question.choices || []
   let answers_input;
+  let question_text = question["question"];
+  if (question["tests"]) {
+    question_text += "<div class='test_header'>Tests</div>";
+    question["tests"].forEach(function(test) {
+      question_text += "<code class='test_code'>" + test + "</code>"
+    })
+  } 
   switch (question.type) {
     case "multiple_choice":
       answers_input = `
@@ -86,7 +93,7 @@ function renderToString(i, question, variables, false_variables) {
     </div>
     <div class="white_canvas">
       <div class='question ui segment fluid'>
-        ${question["question"]}
+        ${question_text}
         <div class='answers' type='${question.type}'>
           ${answers_input}
         </div>

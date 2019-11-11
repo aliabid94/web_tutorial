@@ -64,7 +64,7 @@
         }
         log(speed);
         </code>
-      type: multiple_choice
+      type: text
       answer: "5"
 
 6:
