@@ -70,24 +70,24 @@
     - question: |*
         Type the following element into the editor below:
         <code lang='html'>
-        <table>
-          <thead>
-            <th>Animal</th>
-            <th>Weight (tons)</th>
-          </thead>
-          <tr>
-            <td>Blue Whale</td>
-            <td>200</td>
-          </tr>
-          <tr>
-            <td>Squid</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>Elephant</td>
-            <td>7</td>
-          </tr>
-        </table>
+        <<table>>
+          <<thead>>
+            <<th>>Animal<</th>>
+            <<th>>Weight (tons)<</th>>
+          <</thead>>
+          <<tr>>
+            <<td>>Blue Whale<</td>>
+            <<td>>200<</td>>
+          <</tr>>
+          <<tr>>
+            <<td>>Squid<</td>>
+            <<td>>1<</td>>
+          <</tr>>
+          <<tr>>
+            <<td>>Elephant<</td>>
+            <<td>>7<</td>>
+          <</tr>>
+        <</table>>
         </code>
       type: code
       autograder: copy
