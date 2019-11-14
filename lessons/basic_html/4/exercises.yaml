@@ -9,12 +9,12 @@
       </ul>"
       demo_code: "<h1>Tallest Towers in the World</h1>
       <img src='images/tower.jpg' width='80' height='135'>
-      <a href='https://en.wikipedia.org/wiki/Burj_Khalifa'>
+      <a target='_blank' href='https://en.wikipedia.org/wiki/Burj_Khalifa'>
         <h2>Burj Khalifa</h2>
       </a>
       <p>The Burj is the tallest tower in the world, at 828 meters tall!</p>
       <p>It cost $1.5 billion to build!</p>
-      <a href='https://en.wikipedia.org/wiki/Shanghai_Tower'>
+      <a target='_blank' href='https://en.wikipedia.org/wiki/Shanghai_Tower'>
         <h2>Shanghai Tower</h2>
       </a>
       <p>It is the tallest building in China and in East Asia</p>
