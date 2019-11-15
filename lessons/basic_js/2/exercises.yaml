@@ -24,6 +24,7 @@
         log(y);
         </code>
       type: code
+      quiz: true
     - question: |*
         What is the final value of variable z?
         <code lang='js'>
@@ -115,6 +116,7 @@
         </code>
       type: text
       answer: "20"
+      quiz: true
     - question: |*
         What is the final value of variable letters?
         <code lang='js'>
@@ -134,6 +136,7 @@
         </code>
       type: text
       answer: "at"
+      quiz: true
     - question: |*
         What is the final value of variable stock2?
         <code lang='js'>
@@ -216,12 +219,12 @@
         - "blue"
         - "purple"
         - "red"
+      quiz: true
     - question: |*
         Create a variable temperature with todays temperature. 
         Write if statements such that if the temperature is more than 80, log 'Too warm!'.
         If the temperature is temperature is less than 40, log 'Too cold!'.
       type: code
-      quiz: true
 
 10:
   questions:
@@ -272,6 +275,7 @@
         </code>
       type: text
       answer: "8"
+      quiz: true
     - question: |*
         What is the final value of variable greeting?
         <code lang='js'>
@@ -359,6 +363,7 @@
         </code>
       type: text
       answer: "48"
+      quiz: true
     - question: |*
         What is the final value of variable will_go_out?
         <code lang='js'>
@@ -401,7 +406,6 @@
         If the time is less than 12 and you haven't eaten, log 'Go have breakfast!'. 
         If the time is more than 18 and you haven't eaten, log 'Go have dinner!'.
       type: code
-      quiz: true
 
 13:
   questions:
@@ -465,3 +469,4 @@
         </code>
       type: text
       answer: "50"
+      quiz: true
