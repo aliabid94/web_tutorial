@@ -207,12 +207,10 @@
         If the boolean is false, log one less than the input number. <br>
       type: code
       tests:
-        - |*sayItTwice('turtle');
-          >> turtle
-          >> turtle
-        - |*sayItTwice('ooo');
-          >> ooo
-          >> ooo
+        - |*changeNumber(3, true);
+          >> 4
+        - |*changeNumber(10, false);
+          >> 9
 
 7:
   questions:
