@@ -70,6 +70,11 @@
     - question: |*
         Write a function called <strong>sayMyName</strong> that logs your name. Call it twice.
       type: code
+    - question: |*
+        Write a two separates function called <strong>beHappy</strong> and <strong>beSad</strong>.
+        Function beHappy logs 'I am happy', and beSad logs 'I am sad'. <br>
+        Call each of these functions several times. 
+      type: code
 
 5:
   questions:
@@ -164,6 +169,50 @@
         Write a function called <strong>getFullNameLength</strong> that takes two string arguments, first and last, that
         logs the length of the full name. Call this function with your own name.
       type: code
+      tests:
+        - |*getFullNameLength('Sara', 'Anjum');
+          >> 9
+        - |*getFullNameLength('David', 'Brown');
+          >> 10
+        - |*getFullNameLength('tina', 'finkelstein');
+          >> 15
+    - question: |*
+        Write a function called <strong>polygon</strong> that takes a number. 
+        If the number is 3, log 'triangle'. <br>
+        If the number is 4, log 'rectangle'. <br>
+        If the number is 5, log 'pentagon'. <br>
+        If the number is 6, log 'hexagon'. <br>
+        For any other input, do not log anything. Call this function with several different values.
+      type: code
+      tests:
+        - |*polygon(3);
+          >> triangle
+        - |*polygon(5);
+          >> pentagon
+        - |*polygon(1);
+    - question: |*
+        Write a function called <strong>sayItTwice</strong> that takes a string argument and logs it twice. <br>
+        Call it with several different inputs.
+      type: code
+      tests:
+        - |*sayItTwice('turtle');
+          >> turtle
+          >> turtle
+        - |*sayItTwice('ooo');
+          >> ooo
+          >> ooo
+    - question: |*
+        Write a function called <strong>changeNumber</strong> that takes a number and a boolean. <br>
+        If the boolean is true, log one more than the input number. <br>
+        If the boolean is false, log one less than the input number. <br>
+      type: code
+      tests:
+        - |*sayItTwice('turtle');
+          >> turtle
+          >> turtle
+        - |*sayItTwice('ooo');
+          >> ooo
+          >> ooo
 
 7:
   questions:
