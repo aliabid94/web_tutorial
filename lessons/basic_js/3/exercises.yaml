@@ -39,7 +39,7 @@
         three_pointer();
         </code>
       type: text
-      answer: "5"
+      answer: "8"
     - question: |*
         What would be logged by the following code?
         <code lang='js'>
