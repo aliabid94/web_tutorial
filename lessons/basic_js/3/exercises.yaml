@@ -229,8 +229,8 @@
         }
         trip1_stars = recommendHotel(500, 4);
         trip2_stars = recommendHotel(400, 8);
-        log('Trip 1: ' + trip1_stars + 'stars');
-        log('Trip 2: ' + trip2_stars + 'stars');
+        log('Trip 1: ' + trip1_stars + ' stars');
+        log('Trip 2: ' + trip2_stars + ' stars');
         </code>
       type: code
     - question: |*

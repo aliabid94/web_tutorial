@@ -1,0 +1,141 @@
+3:
+  questions:
+    - question: |*
+        Where can I use variable <strong>eggs</strong>?
+        <code lang='js'>
+        bread_slices = 10;
+        eggs = 12;
+        function breakEggs() {
+          eggs -= 2;
+        }
+
+        breakEggs();
+        breakEggs();
+        log(eggs);
+        </code>
+      type: multiple_choice
+      choices:
+        - "Anywhere after line 2"
+        - "Anywhere"
+        - "Only within function breakEggs"
+        - "Only outside function breakEggs"
+8:
+  questions:
+    - question: |*
+        Which log statement would cause an error?
+        <code lang='js'>
+        function recommendHotel(budget, duration) {
+          budget_per_day = budget / duration;
+          log(duration);
+          if (budget_per_day < 80) {
+            return 3;
+          } else if (budget_per_day < 150) {
+            return 4;
+          } else {
+            return 5;
+          }
+        }
+        trip_stars = recommendHotel(500, 4);
+        log(budget);
+        log(trip_stars + ' stars');
+        </code>
+      type: multiple_choice
+      choices:
+        - "log(budget);"
+        - "log(duration);"
+        - "log(trip_stars + ' stars');"
+
+20:
+  questions:
+    - question: |*
+        How many variables are stored in memory after the last line of this code:
+        <code lang='js'>
+        function getCapital(country) {
+          if (country == 'USA') {
+            return 'Washington';
+          } else if (country == 'Pakistan') {
+            return 'Islamabad';
+          } else {
+            return 'Unknown';
+          }
+        }
+        capital1 = getCapital('China');
+        capital2 = getCapital('Pakistan');
+        </code>
+      type: text
+      answer: "2"
+    - question: |*
+        How many variables are stored in memory after the last line of this code:
+        <code lang='js'>
+        function doSomething(a, b, c) {
+          a += b * c;
+          c = 2 + b - 1;
+          b = a + b;
+          return a + b;
+        }
+        x = doSomething(4, 6, 8);
+        </code>
+      type: text
+      answer: "1"
+
+32:
+  questions:
+    - question: |*
+        Rewrite and change the code below to use less memory:
+        <code lang='js'>
+        function almostSame(a, b) {
+          difference = a - b;
+          if (difference > -5 && difference < 5) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+        ans1 = almostSame(10, 12);
+        ans2 = almostSame(10, 20);
+        </code>
+      type: code
+    - question: |*
+        How many variables are stored in memory after the last line of this code:
+        <code lang='js'>
+        function doSomething(a, b, c) {
+          a += b * c;
+          c = 2 + b - 1;
+          d = a + c;
+          b = a + b;
+          var e = a + b + c;
+          return a + e;
+        }
+        x = doSomething(4, 6, 8);
+        </code>
+      type: text
+      answer: "2"
+
+34:
+  questions:
+    - question: |*
+        Which line would cause an error?
+        <code lang='js'>
+        function recommendHotel(budget, duration) {
+          let budget_per_day = budget / duration;
+          log(duration);
+          let stars = 3;
+          if (budget_per_day > 80) {
+            let message = "Not bad.";
+            stars = 4;
+          if (budget_per_day > 150) {
+            let message = "Wow!";
+            stars = 5;
+          }
+          log(message);
+          log(stars);
+        }
+        trip_stars = recommendHotel(500, 4);
+        log(trip_stars + ' stars');
+        </code>
+      type: multiple_choice
+      choices:
+        - "log(message);"
+        - "if (budget_per_day > 80) {"
+        - "stars = 4"
+        - "log(stars);"
