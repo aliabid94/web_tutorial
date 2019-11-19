@@ -121,10 +121,10 @@
           log(duration);
           let stars = 3;
           if (budget_per_day > 80) {
-            let message = "Not bad.";
+            let message = 'Not bad.';
             stars = 4;
           if (budget_per_day > 150) {
-            let message = "Wow!";
+            let message = 'Wow!';
             stars = 5;
           }
           log(message);
