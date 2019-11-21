@@ -319,11 +319,12 @@ $("body").on('click', '.run_code', function() {
     $iframe.contents().find("body").append(`
       <script>${jquery_code}</script>
     `);
+    let js = "`" + code_set.js + "`";
     $iframe.contents().find("body").append(`
       <script>var log = (expr) => $("#log").append(expr + "<br>");</script>
       <script>
         try {
-          ${code_set.js}
+          eval(${js});
         } catch (error) {
           log(error);
         }
