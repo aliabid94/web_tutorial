@@ -194,7 +194,7 @@ if (!adminview) {
   })
 }
 
-function update_problem(exercise, question, choice, code, isCorrect, action) {
+function update_problem(exercise, question, choice, code, isCorrect, hint, action) {
   let problem_box = $(`.exercise_set[exercise=${exercise}]`)
     .find(`.problem[num=${question}]`).find(".problem_box");
   let type = problem_box.find(".answers").attr("type");
@@ -234,6 +234,11 @@ function update_problem(exercise, question, choice, code, isCorrect, action) {
       responses[exercise][question] = true;
       problem_box.find(".submit_code").addClass("invisible");
       break;
+  }
+  if (hint) {
+    console.log(hint)
+    problem_box.find(".hint").show();
+    problem_box.find(".hint_text").text(hint);
   }
   if ((action == "add" || adminview) && code_mirrors[exercise] && code_mirrors[exercise][question]) {
     for (let lang in code) {

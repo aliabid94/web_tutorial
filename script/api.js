@@ -6,10 +6,11 @@ function parseSnapshot(snapshot, action) {
     question: key_split[1],
     choice: child.choice,
     code: child.code,
-    isCorrect: action == "remove" ? 0 : child.isCorrect
+    isCorrect: action == "remove" ? 0 : child.isCorrect,
+    hint: child.hint
   }
   update_problem(values.exercise, values.question, values.choice,
-      values.code, values.isCorrect, action);
+      values.code, values.isCorrect, values.hint, action);
 }
 
 var api = {

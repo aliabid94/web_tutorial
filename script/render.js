@@ -100,8 +100,9 @@ function renderToString(i, question, variables, false_variables) {
       </div>
     </div>
     <span class="no_message"><span class="header ui red">${noMessage()}</span>${
-        question.hint ? "<strong>Hint:</strong> " + question.hint : ""}</span>
+        question.hint ? "<strong>Hint: </strong>" + question.hint : ""}</span>
     <span class="yes_message"><span class="header ui green">${yesMessage()}</span></span>
+    <span class="hint"><strong>Hint: </strong><span class="hint_text"></span></span>
   </div>
   <div class='output_box render_box ui message fluid'>
     <div class='open_max'>

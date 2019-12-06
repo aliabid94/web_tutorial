@@ -40,6 +40,7 @@
         </code>
       type: text
       answer: "8"
+      quiz: true
     - question: |*
         What would be logged by the following code?
         <code lang='js'>
@@ -145,6 +146,7 @@
         </code>
       type: text
       answer: "5 vs 6"
+      quiz: true
     - question: |*
         What would be logged by the following code?
         <code lang='js'>
@@ -176,6 +178,7 @@
           >> 10
         - |*getFullNameLength('tina', 'finkelstein');
           >> 15
+      quiz: true
     - question: |*
         Write a function called <strong>polygon</strong> that takes a number. 
         If the number is 3, log 'triangle'. <br>
@@ -293,6 +296,7 @@
         - "ans1, ans5"
         - "ans1, ans2, ans3"
         - "ans2, ans4"
+      quiz: true
     - question: |*
         What is the final value of variable stock2?
         <code lang='js'>
@@ -344,6 +348,7 @@
         - "average(3, 9) == 6"
         - "average(-5, 5) == 0"
         - "average(2, 2) == 2"
+      quiz: true
     - question: |*
         A red hat costs 5 dollars, a white hat costs 10 dollars, and a black hat costs 20 dollars. <br>
         Write function <strong>costOfHats</strong> that takes in a color and a number of hats, and returns the total cost.
@@ -375,6 +380,7 @@
         - "unitConvert(5, 8) == 170"
         - "unitConvert(6, 1) == 182.5"
         - "unitConvert(5, 0) == 150"
+      quiz: true
     - question: |*
         You can read a textbook 1 page a minute, a novel at 2 pages a minute, and comics at 5 pages a minute. <br>
         Write function <strong>readingTime</strong> that takes in a book type and number of pages, and returns the time in minute needed to read it.
@@ -449,6 +455,7 @@
         </code>
       type: text
       answer: "80"
+      quiz: true
     - question: |*
         Write function <strong>checkLength</strong> that takes a string and checks to see if it is longer than 8 characters. <br>
         Write function <strong>validUserPassword</strong> that takes a username and password. Return true if both username and password are longer than 8 characters, and are not the same as each other. 
@@ -474,4 +481,42 @@
         - "canEatAtShop('Thursday', 1900, 44, 16) == false"
         - "canEatAtShop('Friday', 2200, 80, 20) == false"
         - "canEatAtShop('Friday', 1200, 80, 12) == true"
-
+    - question: |*
+        Copy the function below. 
+        <code lang='js'>
+        function isEven(number) {
+          if (number % 2 == 0) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+        </code>
+        An ugly number is any number larger than 100 that is also odd.  
+        Write function <strong>uglyNumber</strong> that takes a number as input and return true if the input is ugly, false otherwise.
+        Use function <strong>isEven</strong> in the function declaration.
+      tests:
+        - "uglyNumber(33) == false"
+        - "uglyNumber(120) == false"
+        - "uglyNumber(131) == true"
+      type: code
+    - question: |*
+        Copy the function below. 
+        <code lang='js'>
+        function isLeapYear(year) {
+          if (year % 4 == 0 && year % 100 != 0) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+        </code>
+        Write function <strong>numberOfDays</strong> that takes a month and year, and returns the number of days in the given month.
+        Use function <strong>isLeapYear</strong> in the function declaration.
+      tests:
+        - "numberOfDays('December', 2000) == 31"
+        - "numberOfDays('February', 2003) == 28"
+        - "numberOfDays('February', 2004) == 29"
+      type: code
+      quiz: true
+       
