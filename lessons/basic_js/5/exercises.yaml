@@ -1,0 +1,463 @@
+3:
+  questions:
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        prices = [12.99, 8.99, 10.99, 6.50];
+        log(prices);
+        log(prices.length);
+        </code>
+      type: code
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        items = [
+          'charger',
+          'case',
+          'bag'
+        ];
+        log(items);
+        log(items.length);
+        </code>
+      type: code
+
+4:
+  questions:
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        cities = [
+          'Tokyo',
+          'Islamabad',
+          'New York',
+          'Beijing',
+        ];
+        log(cities);
+        log(cities[2]);
+        </code>
+      type: code
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        countdown = [5, 4, 3, 2, 1];
+        log(countdown);
+        log(countdown[0]);
+        log(countdown[1]);
+        log(countdown[2]);
+        </code>
+      type: code
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        countries = ['USA', 'Pakistan', 'China', 'Japan'];
+        log(countries[1]);
+        </code>
+      type: text
+      answer: "Pakistan"
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        function mid(list) {
+          let m = list.length / 2;
+          return list[m];
+        }
+        list1 = [4, 6, 7, 3];
+        list2 = [8, 2, 3, 5, 6, 9, 1, 0];
+        log(mid(list1) + mid(list2))
+        </code>
+      type: text
+      answer: "13"
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        function longer(list) {
+          let first = list[0];
+          let second = list[1];
+          if (first.length > second.length) {
+            return first;
+          } else {
+            return second;
+          }
+        }
+        boys = ['sam', 'greg'];
+        girls = ['tina', 'rebecca', 'jacqueline'];
+        log(longer(girls));
+        </code>
+      type: text
+      answer: "rebecca"
+    - question: |*
+        Write function <strong>averageTriple</strong> that takes an array with three values and returns the average of the element values. 
+      type: code
+      tests:
+        - "averageTriple([1, 3, 10]) == 7"
+        - "averageTriple([-2, 0, 2]) == 0"
+        - "averageTriple([1, 1, 4]) == 2"
+    - question: |*
+        Write function <strong>firstOfLonger</strong> that takes two arrays, and returns the first element of the longer array. 
+      type: code
+      tests:
+        - "firstOfLonger([1, 3, 10], [2, 20]) == 1"
+        - "firstOfLonger([1, 10], [2, 20, 100]) == 2"
+        - "firstOfLonger([1000], [100, 10, 1]) == 100"
+
+5:
+  questions:
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        trees = ['oak', 'elm', 'bonsai', 'maple'];
+        trees[2] = 'palm';
+        log(trees);
+        </code>
+      type: code
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        lucky_numbers = [3, 5, 10, 13];
+        lucky_numbers[3] = 100;
+        log(lucky_numbers);
+        </code>
+      type: code
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        stock_values = [14, 7.5, 12];
+        stock_values[0] = 12;
+        stock_values[1] = stock_values[2] - 2;
+        log(stock_values[0] + stock_values[1])
+        </code>
+      type: text
+      answer: "22"
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        function sum(list) {
+          return list[0] + list[1];
+        }
+        list1 = [1, 3, 5];
+        list2 = [2, 4, 6];
+        a = list1[1];
+        b = list2[2];
+        c = a + b;
+        list1[0] = b;
+        list2[1] = c;
+        log(sum(list1) + sum(list2));
+        </code>
+      type: text
+      answer: "20"
+    - question: |*
+        Write function <strong>swapFirst</strong> that takes an array and returns that array with the first and second elements swapped. 
+      type: code
+      tests:
+        - "swapFirst([1, 3, 10]) == [3, 1, 10]"
+        - "swapFirst([-2, 0]) == [0, -2]"
+        - "swapFirst([1, 2, 4, 5]) == [2, 1, 4, 5]"
+
+6:
+  questions:
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        function lastCouple(list) {
+          let last = list[list.length - 1];
+          let secondLast = list[list.length - 2];
+          return last + secondLast;
+        }
+        list1 = [1, 3, 5];
+        log(lastCouple(list1));
+        </code>
+      type: text
+      answer: "8"
+    - question: |*
+        Write function <strong>largerEnd</strong> that takes an array and returns the larger of the first and last elements. 
+      type: code
+      tests:
+        - "largerEnd([1, 3, 10]) == 10"
+        - "largerEnd([-2, 0]) == 0"
+        - "largerEnd([3, 2, 4, 1]) == 3"
+    - question: |*
+        Write function <strong>swapEnds</strong> that takes an array and returns that array with the first and last elements swapped. 
+      type: code
+      tests:
+        - "swapFirst([1, 3, 10]) == [10, 3, 1]"
+        - "swapFirst([-2, 0]) == [0, -2]"
+        - "swapFirst([1, 2, 4, 5]) == [5, 2, 4, 1]"
+
+7:
+  questions:
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        trees = ['oak', 'elm', 'bonsai'];
+        trees.push('palm');
+        log(trees);
+        </code>
+      type: code
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        x = [1, 2, 3];
+        if (x[0] < 5) {
+          x.push(4);
+        }
+        if (x[2] < 5) {
+          x.push(5);
+        }
+        if (x[4] < 5) {
+          x.push(6);
+        }
+        log(x[x.length - 1]);
+        </code>
+      type: multiple_choice
+      choices:
+        - "5"
+        - "6"
+        - "4"
+        - "3"
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        function addLength(list) {
+          if (list.length < 3) {
+            list.push(list.length);
+          }
+          return list;
+        }
+        numbers = [0];
+        numbers = addLength(numbers);
+        numbers = addLength(numbers);
+        numbers = addLength(numbers);
+        numbers = addLength(numbers);
+        first = numbers[0];
+        last = numbers[numbers.length - 1];
+        log(first + last);
+      type: text
+      answer: "2"
+
+8:
+  questions:
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        fruit = ['apple', 'cherry', 'lime', 'grape'];
+        log(fruit.includes('pineapple'));
+        log(fruit.indexOf('lime'));
+        </code>
+      type: code
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        pets = ['snake'];
+        if (!pets.includes('dog')) {
+          pets.push('cat');
+        }
+        if (!pets.includes('cat')) {
+          pets.push('mouse');
+        }
+        if (!pets.includes('snake')) {
+          pets.push('rabbit');
+        }
+        log(pets.length);
+        </code>
+      type: text
+      answer: "2"
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        pets = ['snake'];
+        if (!pets.includes('dog')) {
+          pets.push('cat');
+        }
+        if (!pets.includes('cat')) {
+          pets.push('mouse');
+        }
+        if (!pets.includes('snake')) {
+          pets.push('rabbit');
+        }
+        log(pets.length);
+        </code>
+      type: text
+      answer: "2"
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        nums = [4, 7, 2, 1];
+        a = nums.indexOf(2);
+        b = nums.indexOf(a);
+        c = nums.indexOf(a + b);
+        log(a * b * c);       
+        </code>
+      type: text
+      answer: "0"
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        function ordinal(num) {
+          if (num == 1) {
+            return num + 'st';
+          } else if (num == 2) {
+            return num + 'nd';
+          } else if (num == 3) {
+            return num + 'rd';
+          } else {
+            return num + 'th';
+          }
+        }
+        function getPlace(winners, name) {
+          return ordinal(winners.indexOf(name) + 1);
+        }
+        winner_order = ['Ali', 'Mac', 'Tim', 'Mike', 'Sara'];
+        log(getPlace(winner_order, 'Tim'))
+        </code>
+      type: text
+      answer: "3rd"
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        shop_cart = [];
+        maximum_items = 4;
+        function addToCart(cart, item) {
+          if (cart.length < maximum_items) {
+            cart.push(item);
+          }
+          return cart;
+        }
+        addToCart(cart, 'eggs');
+        addToCart(cart, 'mushrooms');
+        addToCart(cart, 'spinach');
+        addToCart(cart, 'ketchup');
+        addToCart(cart, 'bread');
+        if (cart.includes('eggs') && cart.includes('bread')) {
+          can_make_sandwich = true;
+        } else {
+          can_make_sandwich = false;
+        }
+        if (cart.includes('eggs') && cart.includes('mushrooms')) {
+          can_make_omelette = true;
+        } else {
+          can_make_omelette = false;
+        }
+        log(can_make_sandwich);
+        log(can_make_omelette);
+        </code>
+      type: multiple_choice
+      choices:
+        - "<<br>>false<<br>>true"
+        - "<<br>>true<<br>>true"
+        - "<<br>>false<<br>>false"
+        - "<<br>>true<<br>>false"
+    - question: |*
+        Write function <strong>addYellow</strong> that takes an array of colors and adds 'yellow' to the array if it is not already present. 
+      type: code
+      tests:
+        - "addYellow(['red', 'blue']) == ['red', 'blue', 'yellow']"
+        - "addYellow(['yellow', 'green']) == ['yellow', 'green']"
+        - "addYellow(['white']) == ['white', 'yellow']"
+    - question: |*
+        Write function <strong>smallEvens</strong> that takes an array and returns returns true if the array has any positive even numbers smaller than 10, false otherwise. 
+      type: code
+      tests:
+        - "smallEvens([1, 3, 10]) == false"
+        - "smallEvens([4, 11]) == true"
+        - "smallEvens([1, 2, 4, 5]) == true"
+    - question: |*
+        Write function <strong>turtleBeatRabbit</strong> that takes an array of animals, and returns true if 'turtle' comes before 'rabbit'. 
+      type: code
+      tests:
+        - "turtleBeatRabbit(['bear, 'turtle', 'cat', 'rabbit']) == true"
+        - "turtleBeatRabbit(['rabbit, 'turtle', 'cat', 'bear']) == false"
+        - "turtleBeatRabbit(['bear, 'cat', 'turtle', 'rabbit']) == true"
+
+11:
+  questions:
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        location = 'Chicago, USA';
+        log(location.charAt(5));
+        log(location.substring(0, 7));
+        </code>
+      type: code
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        colors = ['red', 'green', 'blue'];
+        mini = colors[0].charAt(0) + colors[1].charAt(0);
+        </code>
+      type: text
+      answer: "rg"
+    - question: |*
+        Write function <strong>alphaStart</strong> that takes a string and returns true if the first 3 letters are 'abc'. 
+      type: code
+      tests:
+        - "alphaStart('abcxyz') == true"
+        - "alphaStart('abdef') == false"
+        - "alphaStart('catabc') == false"
+    - question: |*
+        Write function <strong>sameEnds</strong> that takes a string and returns true if the first and last letter are the same, false otherwise. 
+      type: code
+      tests:
+        - "sameEnds('abc') == false"
+        - "sameEnds('fluff') == true"
+        - "sameEnds('axyza') == true"
+
+
+12:
+  questions:
+    - question: |*
+        Type the following elements into the editor below:
+        <code lang='js'>
+        function firstPart(text) {
+          if (text.includes(',')) {
+            let commaIndex = text.indexOf(',');
+            return text.substring(0, commaIndex);
+          } else {
+            return text;
+          }
+        }
+        log(firstPart('Chicago, USA'));
+        log(firstPart('Islamabad, Pakistan'));
+        log(firstPart('China'));
+        </code>
+      type: code
+    - question: |*
+        Write function <strong>hasVowels</strong> that takes a string and returns true if it has any vowels, false otherwise. 
+      type: code
+      tests:
+        - "hasVowels('abc') == true"
+        - "hasVowels('fluff') == true"
+        - "hasVowels('wht') == false"
+    - question: |*
+        Write function <strong>insideArrows</strong> that takes a string and returns the part of the string between the arrows. 
+      type: code
+      tests:
+        - "insideArrows('I like <<cats>> and dogs.') == 'cats'"
+        - "insideArrows('Mr. Smith was <<sad>>.') == 'sad'"
+        - "insideArrows('Mr. <<Smith>> was sad.') == 'Smith'"
+
+13:
+  questions:
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        matrix = [
+          [5, 4, 3, 2],
+          [6, 7, 8, 9],
+          [1, 2, 3, 4]
+        ]
+        log(matrix[1][3])
+        </code>
+      type: text
+      answer: "9"
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        tictactoe = [
+          ['X', 'O', 'X'],
+          ['O', 'O', 'O'],
+          ['X', 'X', ' ']
+        ]
+        log(tictactoe[1][1])
+        </code>
+      type: text
+      answer: "O"
