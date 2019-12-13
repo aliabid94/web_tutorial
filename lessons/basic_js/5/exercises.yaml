@@ -231,6 +231,7 @@
         first = numbers[0];
         last = numbers[numbers.length - 1];
         log(first + last);
+        </code>
       type: text
       answer: "2"
 
@@ -342,10 +343,10 @@
         </code>
       type: multiple_choice
       choices:
-        - "<<br>>false<<br>>true"
-        - "<<br>>true<<br>>true"
-        - "<<br>>false<<br>>false"
-        - "<<br>>true<<br>>false"
+        - "<br>false<br>true"
+        - "<br>true<br>true"
+        - "<br>false<br>false"
+        - "<br>true<br>false"
     - question: |*
         Write function <strong>addYellow</strong> that takes an array of colors and adds 'yellow' to the array if it is not already present. 
       type: code
@@ -383,9 +384,18 @@
         <code lang='js'>
         colors = ['red', 'green', 'blue'];
         mini = colors[0].charAt(0) + colors[1].charAt(0);
+        log(mini);
         </code>
       type: text
       answer: "rg"
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        words = 'car cat apple banana';
+        log(words.substring(8, 13));
+        </code>
+      type: text
+      answer: "apple"
     - question: |*
         Write function <strong>alphaStart</strong> that takes a string and returns true if the first 3 letters are 'abc'. 
       type: code
@@ -409,8 +419,8 @@
         <code lang='js'>
         function firstPart(text) {
           if (text.includes(',')) {
-            let commaIndex = text.indexOf(',');
-            return text.substring(0, commaIndex);
+            let comma_index = text.indexOf(',');
+            return text.substring(0, comma_index);
           } else {
             return text;
           }
