@@ -265,23 +265,6 @@
     - question: |*
         What would be logged by the code below?
         <code lang='js'>
-        pets = ['snake'];
-        if (!pets.includes('dog')) {
-          pets.push('cat');
-        }
-        if (!pets.includes('cat')) {
-          pets.push('mouse');
-        }
-        if (!pets.includes('snake')) {
-          pets.push('rabbit');
-        }
-        log(pets.length);
-        </code>
-      type: text
-      answer: "2"
-    - question: |*
-        What would be logged by the code below?
-        <code lang='js'>
         nums = [4, 7, 2, 1];
         a = nums.indexOf(2);
         b = nums.indexOf(a);
@@ -374,9 +357,9 @@
     - question: |*
         Type the following elements into the editor below:
         <code lang='js'>
-        location = 'Chicago, USA';
-        log(location.charAt(5));
-        log(location.substring(0, 7));
+        city = 'Chicago, USA';
+        log(city.charAt(5));
+        log(city.substring(0, 7));
         </code>
       type: code
     - question: |*
@@ -438,12 +421,12 @@
         - "hasVowels('fluff') == true"
         - "hasVowels('wht') == false"
     - question: |*
-        Write function <strong>insideArrows</strong> that takes a string and returns the part of the string between the arrows. 
+        Write function <strong>insideParentheses</strong> that takes a string and returns the part of the string between the parentheses. 
       type: code
       tests:
-        - "insideArrows('I like <<cats>> and dogs.') == 'cats'"
-        - "insideArrows('Mr. Smith was <<sad>>.') == 'sad'"
-        - "insideArrows('Mr. <<Smith>> was sad.') == 'Smith'"
+        - "insideParentheses('I like (cats) and dogs.') == 'cats'"
+        - "insideParentheses('Mr. Smith was (sad).') == 'sad'"
+        - "insideParentheses('Mr. (Smith) was sad.') == 'Smith'"
 
 13:
   questions:
