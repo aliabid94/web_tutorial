@@ -1,7 +1,7 @@
 3:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         function sayHowdy() {
           log('Howdy!');
@@ -12,7 +12,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         eggs = 12;
         function breakEggs() {
@@ -80,7 +80,7 @@
 5:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         apples_in_basket = 0;
         basket_capacity = 20;
@@ -99,7 +99,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         function greet(is_morning, is_male) {
           greeting = 'Good ';
@@ -218,7 +218,7 @@
 7:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         function recommendHotel(budget, duration) {
           budget_per_day = budget / duration;
@@ -237,7 +237,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         function getCapital(country) {
           if (country == 'USA') {
@@ -255,7 +255,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         function validLength(text) {
           if (text.length < 26 && text.length > 6) {
@@ -393,7 +393,7 @@
 8:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         current_year = 2020;
         function getBirthYearFromAge(age) {

@@ -1,7 +1,7 @@
 3:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         x = true;
         if (x) {
@@ -10,7 +10,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         a = true;
         b = false;
@@ -71,7 +71,7 @@
 6:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         x = 5;
         if (x == 5) {
@@ -80,7 +80,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         password = 'letmein';
         if (password == 'hello123') {
@@ -89,7 +89,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         a = 5;
         b = 8;
@@ -157,7 +157,7 @@
 8:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         age = 8;
         if (age < 10) {
@@ -166,7 +166,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         password = 'letmein';
         if (password.length >= 8) {
@@ -175,7 +175,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         name = 'Charlie'
         if (name != 'Tim') {
@@ -229,7 +229,7 @@
 10:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         height = 20;
         if (height < 50) {
@@ -240,7 +240,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         password = 'asdf123';
         if (password == 'asdf123') {
@@ -251,7 +251,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         name = 'Ayah'
         if (name == 'Dawood') {
@@ -306,7 +306,7 @@
 12:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         has_coupon = true;
         total_cost = 25;
@@ -320,7 +320,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         is_attractive = true;
         is_rich = false;        
@@ -334,7 +334,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         name = 'Areeba';
         if (name == 'Safa' || name == 'Hafeel' || name == 'Mati') {
@@ -410,7 +410,7 @@
 13:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         is_vegetarian = true;
         dinner_budget = 15;
@@ -431,7 +431,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         money = 25;
         ticket_cost = 20;

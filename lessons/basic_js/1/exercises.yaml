@@ -1,7 +1,7 @@
 3:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         x = 5;
         y = 3.3;
@@ -9,7 +9,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         a = 12;
         b = 10;
@@ -20,7 +20,7 @@
       type: code
       quiz: true
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         apples = 15;
         rotten_apples = 8;
@@ -110,7 +110,7 @@
 5:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         x = 5;
         y = 3.3;
@@ -119,7 +119,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         a = 12;
         b = 10;
@@ -129,7 +129,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         tomatoes = 15;
         rotten_tomatoes = 8;
@@ -263,7 +263,7 @@
 12:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         x = 5;
         x += 3;
@@ -312,14 +312,14 @@
 14:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         favorite_color = 'red';
         log(favorite_color);
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         pet_type = 'dog';
         pet_name = 'Spot';
@@ -328,7 +328,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         item = 'brush';
         cost = 5;
@@ -351,7 +351,7 @@
 15:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         fruit = 'banana';
         log(fruit);
@@ -359,7 +359,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         company1 = 'Google';
         company2 = 'Apple';
@@ -396,7 +396,7 @@
 16:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         is_it_raining = false;
         is_it_warm = true;
@@ -404,7 +404,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         is_female = true;
         is_tall = true;
@@ -415,7 +415,7 @@
 17:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         is_it_raining = false;
         is_it_sunny = !is_it_raining;
@@ -424,7 +424,7 @@
       type: code
       quiz: true
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         is_female = true;
         is_male = !is_female;

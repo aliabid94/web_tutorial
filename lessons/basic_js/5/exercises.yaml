@@ -1,7 +1,7 @@
 3:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         prices = [12.99, 8.99, 10.99, 6.50];
         log(prices);
@@ -9,7 +9,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         items = [
           'charger',
@@ -24,7 +24,7 @@
 4:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         cities = [
           'Tokyo',
@@ -37,7 +37,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         countdown = [5, 4, 3, 2, 1];
         log(countdown);
@@ -103,7 +103,7 @@
 5:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         trees = ['oak', 'elm', 'bonsai', 'maple'];
         trees[2] = 'palm';
@@ -111,7 +111,7 @@
         </code>
       type: code
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         lucky_numbers = [3, 5, 10, 13];
         lucky_numbers[3] = 100;
@@ -186,7 +186,7 @@
 7:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         trees = ['oak', 'elm', 'bonsai'];
         trees.push('palm');
@@ -238,7 +238,7 @@
 8:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         fruit = ['apple', 'cherry', 'lime', 'grape'];
         log(fruit.includes('pineapple'));
@@ -355,7 +355,7 @@
 11:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         city = 'Chicago, USA';
         log(city.charAt(5));
@@ -398,7 +398,7 @@
 12:
   questions:
     - question: |*
-        Type the following elements into the editor below:
+        Type the code into the editor below:
         <code lang='js'>
         function firstPart(text) {
           if (text.includes(',')) {

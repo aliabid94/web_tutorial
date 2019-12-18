@@ -1,0 +1,248 @@
+2:
+  questions:
+    - question: |*
+        Type the code into the editor below:
+        <code lang='js'>
+        x = 1;
+        while (x < 50) {
+          x *= 2;
+          log(x);
+        }
+        </code>
+      type: code
+    - question: |*
+        Type the code into the editor below:
+        <code lang='js'>
+        function makeCopies(value, num_copies) {
+          let result = [];
+          while (result.length < num_copies) {
+            result.push(value);
+          }
+          return result;
+        }
+        log(makeCopies('A', 4))
+        </code>
+      type: code
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        stock1 = 50;
+        stock2 = 64;
+        while (stock1 < stock2) {
+          stock1 += 2;
+          stock2 -= 4;
+        }
+        log(stock2);
+        </code>
+      type: text
+      answer: "52"
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        nums = [4, 8, 3, 6, 7, 2, 1];
+        value = 1;
+        while (nums.includes(value)) {
+          value++;
+        }
+        log(value);
+        </code>
+      type: text
+      answer: "5"
+    - question: |*
+        Write function <strong>range</strong> that takes a start and end value, and returns an array with all the numbers in between. 
+      type: code
+      tests:
+        - "range(1, 4) == [1, 2, 3, 4]"
+        - "range(5, 7) == [5, 6, 7]"
+        - "range(-1, 1) == [-1, 0, 1]"
+    - question: |*
+        Write function <strong>pseudoPrime</strong> that takes a value, and returns the largest number less than the given value not divisible by 2, 3, or 5.
+      type: code
+      tests:
+        - "pseudoPrime(40) == 37"
+        - "pseudoPrime(15) == 13"
+        - "pseudoPrime(50) == 49"
+
+3:
+  questions:
+    - question: |*
+        Type the code into the editor below:
+        <code lang='js'>
+        for (let i = 10; i > 0; i--) {
+          log(i + '...');
+        }
+        log('Blastoff!');
+        </code>
+      type: code
+    - question: |*
+        Rewrite the while loop below as a for loop:
+        <code lang='js'>
+        function makeEvens(count) {
+          let result = [];
+          value = 0;
+          while (result.size < count) {
+            result.push(value);
+            value += 2;
+          }
+        }
+        log(makeEvens(4));
+        </code>
+      type: code
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        sum = 0;
+        for (let i = 0; i < 5; i++) {
+          sum += i;
+        }
+        log(sum);
+        </code>
+      type: text
+      answer: "10"
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        squares = [];
+        for (let i = 0; i <= 5; i++) {
+          let square = i * i;
+          squares.push(square);         
+        }
+        log(squares[squares.length - 2]);
+        </code>
+      type: text
+      answer: "16"
+    - question: |*
+        Write function <strong>triples</strong> that takes a value, and returns an array with all the positive numbers divisible by 3 less than the value. 
+      type: code
+      tests:
+        - "triples(11) == [3, 6, 9]"
+        - "triples(20) == [3, 6, 9, 12, 15, 18]"
+        - "triples(4) == [3]"
+    - question: |*
+        Write function <strong>multiply</strong> that takes two positive integers and multiplies them without using the <strong>*</strong> operator.
+      type: code
+      tests:
+        - "multiply(5, 4) == 20"
+        - "multiply(3, 3) == 9"
+        - "multiply(1, 100) == 100"
+
+5:
+  questions:
+    - question: |*
+        Type the code into the editor below:
+        <code lang='js'>
+        function min(array) {
+          let smallest = array[0];
+          for (let val of array) {
+            if (val < smallest) {
+              smallest = val;
+            }
+          }
+          return smallest;
+        }
+        log(min([7, 3, 5, 9]))
+        log(min([2, 20, 0, 4]))
+        </code>
+      type: code
+    - question: |*
+        Type the code into the editor below:
+        <code lang='js'>
+        vowels = 'aeiou';
+        vowel_count = 0;
+        word = 'watermelon';
+        for (let letter of word) {
+          if (vowels.includes(letter)) {
+            vowel_count += 1;
+          }
+        }
+        log(vowel_count);
+        </code>
+      type: code
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        array = [3, 7, 5, 1, 5, 5];
+        first_half = 0;
+        last_half = 0;
+        for (let i = 0; i < array.length; i++) {
+          if (i < array.length / 2) {
+            first_half += array[i];
+          } else {
+            last_half += array[i];
+          }
+        }
+        log(first_half - last_half);
+        </code>
+      type: text
+      answer: "10"
+    - question: |*
+        Write function <strong>lessThanFive</strong> that takes an array, and returns the number of elements less than 5. 
+      type: code
+      tests:
+        - "lessThanFive([1, 6, 4, 10]) == 2"
+        - "lessThanFive([2, 3, 4, 5, 6]) == 3"
+        - "lessThanFive([5, 6, 5, 10]) == 0"
+    - question: |*
+        Write function <strong>countA</strong> that takes a string, and returns the number of times the letter 'a' appears in the string.
+      type: code
+      tests:
+        - "countA('alpaca') == 3"
+        - "countA('toodle') == 0"
+        - "countA('aaaaaaah!') == 7"
+    - question: |*
+        Write function <strong>sameParity</strong> that takes an array of integers, and returns true if they are either all odd or all even.
+      type: code
+      tests:
+        - "sameParity([1, 3, 5]) == true"
+        - "sameParity([100, 20, 80]) == true"
+        - "sameParity([1, 2, 3]) == false"
+    - question: |*
+        Write function <strong>average</strong> that takes an array, and returns the average of all the numbers in the array. 
+      type: code
+      tests:
+        - "average([2, 6, 4, 12]) == 12"
+        - "average([2, 3, 4, 5, 6]) == 4"
+        - "average([5, 7]) == 6"
+    - question: |*
+        Write function <strong>common</strong> that takes two arrays, and returns an array of the elements that are in both inputs.
+      type: code
+      tests:
+        - "common([1, 3, 5], [3, 4, 5]) == [3, 5]"
+        - "common(['dog', 'cat', 'bat'], ['bat', 'ball']) == ['bat']"
+        - "common([1, 2, 3], [1, 2, 4]) == [1, 2]"
+
+6:
+  questions:
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        prices = [100, 200, 50, 60, 120];
+        total = 0;
+        for (let price of prices) {
+          if (price > 100) {
+            continue;
+          }
+          total += price;
+        }
+        log(total);
+        </code>
+      type: text
+      answer: "210"
+
+7:
+  questions:
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        prices = [100, 200, 50, 60, 120];
+        total = 0;
+        for (let price of prices) {
+          total += price;
+          if (total > 320) {
+            break;
+          }
+        }
+        log(total);
+        </code>
+      type: text
+      answer: "350"
