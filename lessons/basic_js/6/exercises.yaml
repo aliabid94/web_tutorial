@@ -49,6 +49,12 @@
       type: text
       answer: "5"
     - question: |*
+        Write a while loop that prints all the numbers between 1 and 50. 
+      type: code
+    - question: |*
+        Write a while loop that creates an array with all the even numbers between 1 and 100. Print this array.
+      type: code
+    - question: |*
         Write function <strong>range</strong> that takes a start and end value, and returns an array with all the numbers in between. 
       type: code
       tests:
@@ -111,6 +117,12 @@
         </code>
       type: text
       answer: "16"
+    - question: |*
+        Write a for loop that prints all the numbers between 1 and 50. 
+      type: code
+    - question: |*
+        Write a for loop that creates an array with all the even numbers between 1 and 100. Print this array.
+      type: code
     - question: |*
         Write function <strong>triples</strong> that takes a value, and returns an array with all the positive numbers divisible by 3 less than the value. 
       type: code
