@@ -338,6 +338,12 @@ $("body").on('click', '.run_code', function() {
   });
 })
 
+$("body").on('click', '.show_answer', function() {
+  let problem_box = $(this).closest(".problem");
+  $(this).hide();
+  problem_box.find(".code_answer").show();
+})
+
 window_count = 1;
 $("body").on('click', '.open_max img', function() {
   let html = $(this).closest('.render_box').find('iframe').contents().find("html").html();

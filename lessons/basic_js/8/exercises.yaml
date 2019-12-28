@@ -1,0 +1,405 @@
+0:
+  questions:
+    - question: |*
+        Write function <strong>countdown</strong> that takes a number, and returns an array starting with the input, and counting down to zero. 
+      type: code
+      tests:
+        - "countdown(6) == [6, 5, 4, 3, 2, 1, 0]"
+        - "countdown(3) == [3, 2, 1, 0]"
+        - "countdown(5) == [5, 4, 3, 2, 1, 0]"
+      answer: |*
+        <code lang='js'>
+        function countdown(num) {
+          let result = [];
+          for (let i = num; i >= 0; i--) {
+            result.push(i);
+          }
+          return result;
+        }
+        </code>
+    - question: |*
+        Write function <strong>squares</strong> that takes a number, and returns an array with all the squares up to the input squared. 
+      type: code
+      tests:
+        - "squares(3) == [1, 4, 9]"
+        - "squares(5) == [1, 4, 9, 16, 25]"
+        - "squares(2) == [1, 4]"
+      answer: |*
+        <code lang='js'>
+        function squares(max) {
+          let result = [];
+          for (let i = 0; i <= max; i++) {
+            result.push(i);
+          }
+          return result;
+        }
+        </code>
+    - question: |*
+        Write function <strong>product</strong> that takes an array, and returns the product of all the numbers in the array. 
+      type: code
+      tests:
+        - "product([1, 3, 4]) == 12"
+        - "product([5, 6, 2, 2]) == 120"
+        - "product([2, 5]) == 10"
+      answer: |*
+        <code lang='js'>
+        function product(array) {
+          let result = 1;
+          for (let num of array) {
+            result *= num;
+          }
+          return result;
+        }
+        </code>
+    - question: |*
+        Write function <strong>increase</strong> that takes an array, and returns an array with all the elements increased by one. 
+      type: code
+      tests:
+        - "increase([1, 3, 4]) == [2, 4, 5]"
+        - "increase([5, 6, 2, 2]) == [6, 7, 3, 3]"
+        - "increase([2, 5]) == [3, 6]"
+      answer: |*
+        <code lang='js'>
+        function increase(array) {
+          let result = [];
+          for (let num of array) {
+            result.push(i + 1);
+          }
+          return result;
+        }
+        </code>
+    - question: |*
+        Write function <strong>absolute</strong> that takes an array, and returns an array with all the negative numbers from the input turned positive. 
+      type: code
+      tests:
+        - "absolute([1, 4, -2]) == [1, 4, 2]"
+        - "absolute([-1, 0, 1, -3]) == [1, 0, 1, 3]"
+        - "absolute([-10, -20]) == [10, 20]"
+      answer: |*
+        <code lang='js'>
+        function increase(array) {
+          let result = [];
+          for (let num of array) {
+            if (num < 0) {
+              num = -num;
+            }
+            result.push(num);
+          }
+          return result;
+        }
+        </code>
+    - question: |*
+        Write function <strong>zeroCount</strong> that takes an array, and returns the number of times zero appears in the array. 
+      type: code
+      tests:
+        - "zeroCount([1, 0, -2]) == 1"
+        - "zeroCount([0, 0, 3, 0, 4]) == 3"
+        - "zeroCount([5, 6, 7]) == 0"
+      answer: |*
+        <code lang='js'>
+        function zeroCount(array) {
+          let count = 0;
+          for (let num of array) {
+            if (num == 0) {
+              count++;
+            }
+          }
+          return count;
+        }
+        </code>
+    - question: |*
+        Write function <strong>range</strong> that takes an array, and returns the difference between the largest and smallest elements in the array. 
+      type: code
+      tests:
+        - "range([1, 0, 3, 4]) == 4"
+        - "range([1, 0, -2]) == 3"
+        - "range([5, 6, 7]) == 2"
+      answer: |*
+        <code lang='js'>
+        function range(array) {
+          let max = array[0];
+          let min = array[0];
+          for (let num of array) {
+            if (max < num) {
+              max = num;
+            }
+            if (min > num) {
+              min = num;
+            }
+          }
+          return max - min;
+        }
+        </code>
+    - question: |*
+        Write function <strong>countAWords</strong> that takes an array, and returns the number of words that start with the letter 'a'. 
+      type: code
+      tests:
+        - "countAWords(['apple', 'ant', 'banana']) == 2"
+        - "countAWords(['crayon', 'cat', 'at', 'tall']) == 1"
+        - "countAWords(['barn', 'soft']) == 0"
+      answer: |*
+        <code lang='js'>
+        function range(words) {
+          let count = 0;
+          for (let word of words) {
+            if (word[0] == 'a') {
+              count++;
+            }
+          }
+          return count;
+        }
+        </code>
+    - question: |*
+        Write function <strong>evenSubset</strong> that takes an array, and returns an array without all the odd numbers from the input. 
+      type: code
+      tests:
+        - "evenSubset([2, 3, 4, 6]) == [2, 4, 6]"
+        - "evenSubset([1, 9, 10, 11]) == [10]"
+        - "evenSubset([8, 5, 8]) == [8, 8]"
+      answer: |*
+        <code lang='js'>
+        function range(array) {
+          let result = [];
+          for (let num of array) {
+            if (num % 2 == 0) {
+              result.push(num);
+            }
+          }
+          return result;
+        }
+        </code>
+    - question: |*
+        Write function <strong>shift</strong> that takes an array, and returns an array with all the elements moved forward one index - the last element will become the first element. 
+      type: code
+      tests:
+        - "shift([1, 3, 4]) == [4, 1, 3]"
+        - "shift([5, 6, 2, 1]) == [1, 5, 6, 2]"
+        - "shift([2, 5]) == [5, 2]"
+      answer: |*
+        <code lang='js'>
+        function shift(array) {
+          let result = [];
+          let last = array[array.length - 1];
+          result.push(last);
+          for (let i = 0; i < array.length - 2; i++) {
+            result.push(i);
+          }
+          return result;
+        }
+        </code>
+    - question: |*
+        Write function <strong>differences</strong> that takes an array, and returns an array of the differences between consecutive elements in the input. 
+      type: code
+      tests:
+        - "differences([2, 3, 4, 6]) == [1, 1, 2]"
+        - "differences([1, 9, 11, 10]) == [8, 2, -1]"
+        - "differences([8, 5, 8]) == [-3, 3]"
+      answer: |*
+        <code lang='js'>
+        function differences(array) {
+          let result = [];
+          for (let i = 1; i < array.length - 1; i++) {
+            result.push(array[i] - array[i - 1]);
+          }
+          return result;
+        }
+        </code>
+    - question: |*
+        Write function <strong>zip</strong> that takes two arrays, and merges the inputs into a single array by alternatively selecting elements from the inputs. 
+      type: code
+      tests:
+        - "zip([1, 2, 3], [5, 6, 7]) == [1, 5, 2, 6, 3, 7]"
+        - "zip([1, 10, 100], [2, 4, 6]) == [1, 2, 10, 4, 100, 6]"
+        - "zip(['a', 'b'], ['x', 'y']) == ['a', 'x', 'b', 'y']"
+      answer: |*
+        <code lang='js'>
+        function zap(array1, array2) {
+          let result = [];
+          for (let i = 1; i < array1.length - 1; i++) {
+            result.push(array1[i]);
+            result.push(array2[i]);
+          }
+          return result;
+        }
+        </code>
+    - question: |*
+        A vowel costs $2, a consonant costs $1, and the letter 'y' is worth $3.
+        Write function <strong>wordCost</strong> that returns the value of the input word. 
+      type: code
+      tests:
+        - "wordCost('apple') == 7"
+        - "wordCost('qwerty') == 9"
+        - "wordCost('hazy') == 7"
+      answer: |*
+        <code lang='js'>
+        function wordCost(word) {
+          let vowels = 'aeiou';
+          let cost = 0;
+          for (let letter of word) {
+            if (vowels.include(letter)) {
+              cost += 2;
+            } else if (letter == 'y') {
+              cost += 3;
+            } else {
+              cost++;
+            }
+          }
+          return cost;
+        }
+        </code>
+    - question: |*
+        Write function <strong>dips</strong> that takes in an array, and counts the number of times an element in the array is smaller than the one in the previous index. 
+      type: code
+      tests:
+        - "dips([1, 2, 3, 2, 5]) == 1"
+        - "dips([5, 2, 5, 2, 5, 2]) == 3"
+        - "dips([5, 4, 3, 10, 9]) == 3"
+      answer: |*
+        <code lang='js'>
+        function dips(array) {
+          let dip_count = 0;
+          for (let i = 1; i < array1.length - 1; i++) {
+            if (array[i] < array[i - 1]) {
+              dip_count++;
+            }
+          }
+          return dip_count;
+        }
+        </code>
+    - question: |*
+        Write function <strong>pyramid</strong> that takes in a number, and creates an array that counts up to that number starting from zero, then counts back down to zero. 
+      type: code
+      tests:
+        - "pyramid(3) == [0, 1, 2, 3, 2, 1, 0]"
+        - "pyramid(5) == [0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0]"
+        - "pyramid(2) == [0, 1, 2, 1, 0]"
+      answer: |*
+        <code lang='js'>
+        function pyramid(peak) {
+          let result = [];
+          for (let i = 0; i <= peak; i++) {
+            result.push(i);
+          }
+          for (let i = peak - 1; i >= 0; i--) {
+            result.push(i);
+          }
+          return result;
+        }
+        </code>
+    - question: |*
+        Shirts cost $5, pants cost $6, and hats cost $2. 
+        Write function <strong>getPrice</strong> that takes in an array of items, and returns their total price. 
+      type: code
+      tests:
+        - "getPrice(['shirt', 'hat', 'hat']) == 9"
+        - "getPrice(['hat', 'pants', 'hat', 'shirt']) == 15"
+        - "getPrice(['shirt', 'shirt']) == 10"
+      answer: |*
+        <code lang='js'>
+        function getItemPrice(item) {
+          if (item == 'shirt') {
+            return 5;
+          } else if (item == 'pants') {
+            return 6;
+          } else if (item == 'hat') {
+            return 2;
+          }
+        }
+        function getPrice(items) {
+          let total_cost = 0;
+          for (let item of items) {
+            total_cost += getItemPrice(item);
+          }
+          return total_cost;
+        }
+        </code>
+    - question: |*
+        Write function <strong>clip</strong> that takes in an array and two number inputs. 
+        It returns the input array, with any element smaller than the first input number increased to the first input.
+        Any element larger than the second number input is set to the second input. 
+      type: code
+      tests:
+        - "clip([1, 3, 5, 4, 7, 2], 3, 6) == [3, 3, 5, 4, 6, 3]"
+        - "clip([4, 1, 7, 1, 5], 2, 5) == [4, 2, 5, 2, 5]"
+        - "clip([1, 3, 5, 7, 9, 0], 5, 6) == [5, 5, 5, 6, 6, 5]"
+      answer: |*
+        <code lang='js'>
+        function clip(array, lower_bound, upper_bound) {
+          let result = [];
+          for (let num of array) {
+            if (num < lower_bound) {
+              result.push(lower_bound);
+            } else if (num > upper_bound) {
+              result.push(upper_bound);
+            } else {
+              result.push(num);
+            }
+            return result;
+          }
+        }
+        </code>
+    - question: |*
+        A one-way flight between Atlanta and Boston costs $400 in either direction. <br>
+        A one-way flight between Boston and Chicago costs $300 in either direction. <br>
+        A one-way flight between Atlanta and Chicago costs $500 in either direction. <br>
+        Write function <strong>tripCost</strong> that takes in an array that represents the order of cities visited. Return the total cost of the trip. 
+      type: code
+      tests:
+        - "tripCost(['Atlanta', 'Boston', 'Atlanta', 'Chicago']) == 1300"
+        - "tripCost(['Atlanta', 'Boston', 'Chicago']) == 700"
+        - "tripCost(['Chicago', 'Boston', 'Atlanta', 'Chicago']) == 1200"
+      answer: |*
+        <code lang='js'>
+        function oneWayCost(city1, city2) {
+          if ((city1 == 'Atlanta' && city2 == 'Boston')) || (city1 == 'Boston' && city2 == 'Atlanta')) {
+            return 400;
+          } else if ((city1 == 'Boston' && city2 == 'Chicago')) || (city1 == 'Chicago' && city2 == 'Boston')) {
+            return 300;
+          } else if ((city1 == 'Atlanta' && city2 == 'Chicago')) || (city1 == 'Chicago' && city2 == 'Atlanta')) {
+            return 500;
+          }
+        }
+        function tripCost(cities) {
+          total_cost = 0;
+          for (let i = 0; i < cities.length - 1; i++) {
+            total_cost += oneWayCost(cities[i], cities[i + 1])
+          }
+          return total_cost;
+        }
+        </code>
+    - question: |*
+        Write function <strong>isPalindrome</strong> that takes in a string, and returns true if the string is a palindrome (read same forward and backward), false otherwise. 
+      type: code
+      tests:
+        - "isPalindrome('noon') == true"
+        - "isPalindrome('racecar') == true"
+        - "isPalindrome('fall') == false"
+      answer: |*
+        <code lang='js'>
+        function isPalindrome(word) {
+          for (let i = 0; i < word.length / 2; i++) {
+            if (word[i] != word[word.length - 1 - i]) {
+              return false;
+            }
+          }
+          return true;
+        }
+        </code>
+    - question: |*
+        Write function <strong>isPrime</strong> that takes in a number, and returns true if the input is prime (only divisible by itself and one), false otherwise. 
+      type: code
+      tests:
+        - "isPrime(5) == true"
+        - "isPrime(20) == false"
+        - "isPrime(9) == false"
+      answer: |*
+        <code lang='js'>
+        function isPrime(num) {
+          for (let i = 2; i < num; i++) {
+            if (num % i == 0) {
+              return false;
+            }
+          }
+          return true;
+        }
+        </code>

@@ -183,6 +183,10 @@ textarea {
   cursor: pointer;
   height: 100%;
 }
+.code_answer {
+  display: none;
+  margin-top: 18px;
+}
 
 .visible {
   display: block !important;
