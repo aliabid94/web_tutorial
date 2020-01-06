@@ -29,7 +29,7 @@
         function squares(max) {
           let result = [];
           for (let i = 0; i <= max; i++) {
-            result.push(i);
+            result.push(i * i);
           }
           return result;
         }
@@ -258,7 +258,7 @@
         <code lang='js'>
         function dips(array) {
           let dip_count = 0;
-          for (let i = 1; i < array1.length - 1; i++) {
+          for (let i = 1; i < array1.length; i++) {
             if (array[i] < array[i - 1]) {
               dip_count++;
             }
@@ -373,7 +373,7 @@
       tests:
         - "isPalindrome('noon') == true"
         - "isPalindrome('racecar') == true"
-        - "isPalindrome('fall') == false"
+        - "isPalindrome('blob') == false"
       answer: |*
         <code lang='js'>
         function isPalindrome(word) {
@@ -401,5 +401,115 @@
             }
           }
           return true;
+        }
+        </code>
+    - question: |*
+        Write function <strong>daysLeft</strong> that takes in the current month and day, and counts the number of days left in the year.
+        Assume there is no leap year. 
+      type: code
+      tests:
+        - "daysLeft(1, 20) == 345"
+        - "daysLeft(4, 15) == 260"
+        - "daysLeft(12, 26) == 5"
+      answer: |*
+        <code lang='js'>
+        function daysLeft(current_month, current_day) {
+          current_month -= 1; // To make month range from 0 - 11
+          let days_per_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+          let days_left_in_current_month = days_per_month[current_month] - current_day;
+          let days_left_in_future_months = 0;
+          for (let month = current_month + 1; month < 12; month++) {
+            days_left_in_future_months += days_per_month[month];
+          }
+          return days_left_in_current_month + days_left_in_future_months;
+        }
+        </code>
+    - question: |*
+        Write function <strong>getFactors</strong> that takes in a number, and returns an array of all the getFactors of that number. 
+      type: code
+      tests:
+        - "getFactors(6) == [1, 2, 3, 6]"
+        - "getFactors(20) == [1, 2, 4, 5, 10, 20]"
+        - "getFactors(7) == [1, 7]"
+      answer: |*
+        <code lang='js'>
+        function getFactors(num) {
+          factors = [];
+          for (let i = 1; i <= num; i++) {
+            if (num % i == 0) {
+              factors.push(i);
+            }
+          }
+          return factors;
+        }
+        </code>
+    - question: |*
+        Write function <strong>isSorted</strong> that takes in an array of numbers, 
+        and returns true if the numbers are sorted from smallest to largest. 
+      type: code
+      tests:
+        - "isSorted([1, 2, 4, 6]) == true"
+        - "isSorted([1, 4, 2]) == false"
+        - "isSorted([1, 10, 100, 1000]) == true"
+      answer: |*
+        <code lang='js'>
+        function isSorted(array) {
+          for (let i = 1; i <= array.length; i++) {
+            if (array[i] < array[i-1]) {
+              return false;
+            }
+          }
+          return true;
+        }
+        </code>
+    - question: |*
+        Mary gets paid 10 dollars an hour normally, and 15 dollars an hour for overtime work. 
+        Overtime is any hour worked on the weekends, or any after the usual 8 hours of a workday. <br>
+        Write function <strong>calculateWage</strong> that takes in an 7 element array of hours worked for the week, from Sunday to Saturday,
+        and returns her total wage for the week. 
+      type: code
+      tests:
+        - "calculateWage([0, 5, 5, 10, 10, 5, 0]) == 370"
+        - "calculateWage([8, 0, 0, 8, 5, 8, 3]) == 360"
+        - "calculateWage([10, 0, 0, 2, 2, 9, 12]) == 425"
+      answer: |*
+        <code lang='js'>
+        function calculateWage(hours_per_day) {
+          let wage = 0;
+          for (let day = 0; day < 7; day++) {
+            let hours = hours_per_day[day];
+            if (day == 0 || day == 7) {
+              wage += hours * 15;
+            } else if (hours <= 8) {
+              wage += hours * 10;
+            } else {
+              wage += 10 * 8 + 15 * (hours - 8);
+            }
+          }
+          return wage;
+        }
+        </code>
+    - question: |*
+        Write function <strong>secondLargest</strong> that takes in an array of positive numbers, 
+        and returns the second largest number in the array. 
+      type: code
+      tests:
+        - "secondLargest([1, 2, 7, 3, 8, 5]) == 7"
+        - "secondLargest([3, 2, 1]) == 2"
+        - "secondLargest([6, 4, 2, 3, 5, 7]) == 6"
+      answer: |*
+        <code lang='js'>
+        function secondLargest(array) {
+          let first = 0;
+          let second = 0;
+          for (let num of array) {
+            if (num > first) {
+              second = first;
+              first = num;
+            } else if (num > second) {
+              second = num;
+            }
+          }
+          return second;
         }
         </code>
