@@ -155,7 +155,6 @@ if (!adminview) {
     let problem_box = $(this).closest(".problem");
     let question_num = problem_box.attr("num");
     let response = problem_box.find(".response").val();
-    console.log(response, $(this).attr("answer"))
     let isCorrect = response == $(this).attr("answer");
     api.uploadMultipleChoice(current_exercise, question_num, response, isCorrect);
   })
@@ -236,7 +235,6 @@ function update_problem(exercise, question, choice, code, isCorrect, hint, actio
       break;
   }
   if (hint) {
-    console.log(hint)
     problem_box.find(".hint").show();
     problem_box.find(".hint_text").text(hint);
   }
@@ -326,7 +324,14 @@ $("body").on('click', '.run_code', function() {
     `);
     let js = "`" + code_set.js + "`";
     $iframe.contents().find("body").append(`
-      <script>var log = (expr) => $("#log").append(expr + "<br>");</script>
+      <script>
+        function log(expr) {
+          if (expr instanceof Object) {
+            expr = JSON.stringify(expr);
+          }
+          $("#log").append(expr + "<br>");
+        }
+      </script>
       <script>
         try {
           eval(${js});

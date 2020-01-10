@@ -415,7 +415,7 @@
         <code lang='js'>
         function daysLeft(current_month, current_day) {
           current_month -= 1; // To make month range from 0 - 11
-          let days_per_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+          let days_per_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
           let days_left_in_current_month = days_per_month[current_month] - current_day;
           let days_left_in_future_months = 0;
           for (let month = current_month + 1; month < 12; month++) {

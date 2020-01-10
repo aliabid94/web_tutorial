@@ -1,0 +1,187 @@
+3:
+  questions:
+    - question: |*
+        Type the code into the editor below:
+        <code lang='js'>
+        let my_house = {
+          'floors': 2,
+          'bedrooms': 3,
+          'has_backyard': false,
+          'material': 'brick' 
+        };
+        let your_house = {
+          'floors': 1,
+          'bedrooms': 4,
+          'has_backyard': true,
+          'material': 'wood' 
+        };
+        log(my_house.material);
+        log(your_house.bedrooms);
+        </code>
+      type: code
+    - question: |*
+        Type the code into the editor below:
+        <code lang='js'>
+        let orange = {
+          'protein': 1,
+          'carb': 20,
+          'fat': 2
+        };
+        let egg = {
+          'protein': 12,
+          'carb': 3,
+          'fat': 6
+        };
+        log(orange.carb + egg.carb);
+        log(orange.protein + egg.protein);
+        </code>
+      type: code
+    - question: |*
+        Type the code into the editor below:
+        <code lang='js'>
+        let weather = [
+          {
+            'temperature': 62,
+            'humidity': 20,
+          }, {
+            'temperature': 64,
+            'humidity': 21,
+          }, {
+            'temperature': 63,
+            'humidity': 18,
+          }
+        ];
+        for (let day of weather) {
+          log(weather.temperature);
+        }
+        </code>
+      type: code
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        let employee1 = {
+          'role': 'intern',
+          'hourly_wage': 10
+        };
+        let employee2 = {
+          'role': 'manager',
+          'hourly_wage': 60
+        };
+        employee1.hourly_wage += 5;
+        log(employee1.hourly_wage + employee2.hourly_wage);
+        </code>
+      type: text
+      answer: "75"
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        let items = [
+          {
+            'name': 'candle',
+            'price': 20
+          }, {
+            'name': 'chair',
+            'price': 30
+          }, {
+            'name': 'plant',
+            'price': 15
+          }
+        ];
+        let budget = 40;
+        let cart = [];
+        for (let item of items) {
+          if (budget > item.price) {
+            cart.push(item.name);
+            budget -= item.price;
+          }
+        }
+        log(cart);
+        </code>
+      type: multiple_choice
+      choices:
+        - "[candle,plant]"
+        - "[candle,chair,plant]"
+        - "[chair]"
+        - "[chair,plant]"
+    - question: |*
+        Write two objects, one for each of your parents. 
+        Include the following properties: 'name', 'age', 'is_male'. 
+      type: code
+    - question: |*
+        Write an object that represents the shirt you are wearing. 
+        Include the following properties: 'color', 'price', 'fabric', 'has_sleeves'. 
+      type: code
+    - question: |*
+        A house costs $20000 per bedroom, $10000 per bathroom, and an extra $50000 for a backyard.
+        Write function <strong>canAfford</strong> that takes an input house object and a budget. 
+        Return true if the house is in budget.
+      type: code
+      tests:
+        - "canAfford({'bed': 5, 'bath': 3, 'has_backyard': false}, 120000) == false"
+        - "canAfford({'bed': 2, 'bath': 2, 'has_backyard': true}, 120000) == true"
+        - "canAfford({'bed': 1, 'bath': 1, 'has_backyard': false}, 60000) == true"
+    - question: |*
+        Write function <strong>getOlder</strong> that takes two input objects that represent people. 
+        Return the name of the older person.
+      type: code
+      tests:
+        - "getOlder({'name': 'Jon', 'age': 40}, {'name': 'Ali', 'age': 42}) == 'Ali'"
+        - "getOlder({'name': 'Nil', 'age': 15}, {'name': 'Mac', 'age': 12}) == 'Nil'"
+        - "getOlder({'name': 'Jan', 'age': 22}, {'name': 'Mar', 'age': 52}) == 'Mar'"
+
+4:
+  questions:
+    - question: |*
+        Type the code into the editor below:
+        <code lang='js'>
+        let menu_prices = {
+          'egg': 5,
+          'toast': 8,
+          'omelette': 11,
+          'coffee': 12
+        }
+        log(menu_prices['toast']);
+        </code>
+      type: code
+    - question: |*
+        What would be logged by the code below?
+        <code lang='js'>
+        let populations = {
+          'Beijing': 15000,
+          'Los Angeles': 8000,
+          'Tokyo': 18000,
+          'Karachi': 16000,
+        }
+        log(populations['Tokyo'] + populations['Karachi']);
+        </code>
+      type: code
+      answer: "34000"
+    - question: |*
+        Write an object dictionary with your family members as keys and their ages as values. 
+      type: code
+
+5:
+  questions:
+    - question: |*
+        Type the code into the editor below:
+        <code lang='js'>
+        let ages = [22, 23, 22, 24, 22, 25, 24];
+        let age_distribution = {};
+        for (let age of ages) {
+          if (age in age_distribution) {
+            age_distribution[age]++;
+          } else {
+            age_distribution[age] = 1;
+          }
+        }
+        log(age_distribution);
+        </code>
+      type: code
+    - question: |*
+        Write function <strong>countFirsts</strong> that takes a list of words as input. 
+        Return the count of how often each letter appears as the first letter of a word.
+      type: code
+      tests:
+        - "countFirsts(['arm', 'art', 'cat', 'air']) == {'a': 3, 'c': 1}"
+        - "countFirsts(['do', 'not', 'die', 'ok']) == {'d': 2, 'n': 1, 'o': 1}"
+        - "countFirsts(['apple', 'bat', 'cat']) == {'a': 1, 'b': 1, 'c' : 1}"
