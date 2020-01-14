@@ -1,0 +1,133 @@
+3:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <div id='story_row'>
+          <div class='story'>
+            <h1>Three Little Pigs</h1>
+            <p>There were three little pigs one day...</p>
+            <button>Read More</button>
+          </div>
+          <div class='story'>
+            <h1>Goldilocks</h1>
+            <p>Once upon a time there was a girl...</p>
+            <button>Read More</button>
+          </div>
+        </div>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        body {
+          font-family: Verdana;
+        }
+        #story_row {
+          display: flex;
+        }
+        .story {
+          padding: 4px;
+          border: solid 1px black;
+          margin: 4px;
+        }
+        </code>
+      type: code
+      autograder: copy
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <h1>Pizza Maker</h1>
+        <p>Select Your Toppings</p>
+        <div id='toppings'>
+          <div class='topping'>
+            <input type='checkbox' name='topping' value='olive'> Olives
+          </div>
+          <div class='topping'>
+            <input type='checkbox' name='topping' value='onion'> Onion
+          </div>
+          <div class='topping'>
+            <input type='checkbox' name='topping' value='pepperoni'> Pepperoni
+          </div>
+        </div>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        #toppings {
+          display: flex;
+        }
+        .topping {
+          padding: 8px;
+          border-radius: 3px;
+          margin: 4px;
+          background-color: gold;
+        }
+        </code>
+      type: code
+      autograder: copy
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>The font used is Verdana.</li>
+      <li>Use the flex property instead of display to arrange the rows.</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          .pet {
+            display: inline-block;
+            margin-bottom: 16px;
+          }
+          .pet img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            vertical-align: middle;
+          }
+          .info {
+            display: inline-block;
+            vertical-align: middle;
+            width: 150px;
+            margin-left: 10px;
+          }
+          h3 {
+            margin-top: 0;
+          }
+          p {
+            font-size: 12px;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>My Pets</h1>
+        <div class='pet'>
+          <img src='images/cat.jpg'>
+          <div class='info'>
+            <h3>Doodle</h3>
+            <p>What a darling cat doodle is!</p>
+          </div>
+        </div>
+        <div class='pet'>
+          <img src='images/dog.jpg'>
+          <div class='info'>
+            <h3>Spot</h3>
+            <p>Spot is such a good boy!</p>
+          </div>
+        </div>
+        <div class='pet'>
+          <img src='images/elephant.jpg'>
+          <div class='info'>
+            <h3>Elephant</h3>
+            <p>Elephant is such a good elephant!</p>
+          </div>
+        </div>
+        <div class='pet'>
+          <img src='images/squid.jpg'>
+          <div class='info'>
+            <h3>Squidward</h3>
+            <p>Squidward gives the best hugs!</p>
+          </div>
+        </div>
+      </body>
+      </html>
+      "
+      type: code
