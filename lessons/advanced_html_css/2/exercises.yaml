@@ -64,7 +64,83 @@
       type: code
       autograder: copy
     - question: "Write code to replicate the demo shown. <ul>
+      <li>The font used is Arial.</li>
+      <li>Use the flex property instead of display to arrange the rows.</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Arial;
+          }
+          h1 {
+            text-align: center;
+          }
+          #trips {
+            display: flex;
+          } 
+          h4 {
+            margin-top: 0;
+            text-align: center;
+            padding: 10px;
+            background-color: lightgray;
+          }
+          .trip {
+            border: dashed 1px black;
+            background-color: white;
+            margin-right: 6px;
+          }
+          #today {
+            border: solid 2px coral;
+            background-color: #ffc7ad;
+          }
+          #today h4 {
+            background-color: coral;
+            color: white;
+          }
+          ul {
+            margin-right: 22px;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Travel Itinerary</h1>
+        <div id='trips'>
+          <div class='trip'>
+            <h4>Day 1</h4>
+            <ul>
+              <li>Hotel</li>
+              <li>Kayak Trip</li>
+              <li>Rock Museum</li>
+              <li>Sushi</li>              
+            </ul>
+          </div>
+          <div class='trip' id='today'>
+            <h4>Day 2 (Today)</h4>
+            <ul>
+              <li>Train</li>
+              <li>Hike Mountain</li>
+              <li>Barbecue</li>
+              <li>Camp</li>              
+            </ul>
+          </div>
+          <div class='trip'>
+            <h4>Day 3</h4>
+            <ul>
+              <li>Train</li>
+              <li>Cafe</li>
+              <li>Airport</li>
+            </ul>
+          </div>
+        </div>
+      </body>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown. <ul>
       <li>The font used is Verdana.</li>
+      <li>The url for the first image is <strong>images/roses1.jpg</strong></li>
+      <li>The url for the second image is <strong>images/roses2.jpg</strong></li>
       <li>Use the flex property instead of display to arrange the rows.</li>
       </ul>"
       demo_code: "<html>
@@ -73,61 +149,359 @@
           body {
             font-family: Verdana;
           }
-          .pet {
-            display: inline-block;
-            margin-bottom: 16px;
+          h1 {
+            text-align: center;
           }
-          .pet img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            vertical-align: middle;
+          h4 {
+            margin-bottom: 4px;
           }
-          .info {
-            display: inline-block;
-            vertical-align: middle;
-            width: 150px;
-            margin-left: 10px;
+          #tags {
+            display: flex;
+            margin-bottom: 8px;
           }
-          h3 {
-            margin-top: 0;
+          .tag {
+            margin-right: 6px;
+            padding: 6px;
+            background-color: pink;
+            border-bottom: solid 2px red;
           }
-          p {
-            font-size: 12px;
+          #flower_row {
+            display: flex;
+          }
+          .flower_box {
+            padding: 10px;
+            margin-right: 20px;
+            border: solid 2px gray;
+            text-align: center;
+            background-color: white;
+            border-radius: 4px;
+          }
+          .flower_box img {
+            height: 100px;
+          }
+          .flower_box button {
+            font-weight: bold;
+            background-color: pink;
+            border: none;
+            padding: 9px;
+            margin: 6px;
           }
         </style>
       </head>
       <body>
-        <h1>My Pets</h1>
-        <div class='pet'>
-          <img src='images/cat.jpg'>
-          <div class='info'>
-            <h3>Doodle</h3>
-            <p>What a darling cat doodle is!</p>
-          </div>
+        <h1>Flower Shop</h1>
+        <h4>Search Tags</h4>
+        <div id='tags'>
+          <div class='tag'>rose</div>
+          <div class='tag'>affordable</div>
+          <div class='tag'>beautiful</div>
         </div>
-        <div class='pet'>
-          <img src='images/dog.jpg'>
-          <div class='info'>
-            <h3>Spot</h3>
-            <p>Spot is such a good boy!</p>
+        <div id='flower_row'>
+          <div class='flower_box'>
+            <h3>Bouquet</h3>
+            <img src='images/roses1.jpg'>
+            <p>Buy a full bouquet!</p>
+            <button>Purchase for $12</button>
           </div>
-        </div>
-        <div class='pet'>
-          <img src='images/elephant.jpg'>
-          <div class='info'>
-            <h3>Elephant</h3>
-            <p>Elephant is such a good elephant!</p>
-          </div>
-        </div>
-        <div class='pet'>
-          <img src='images/squid.jpg'>
-          <div class='info'>
-            <h3>Squidward</h3>
-            <p>Squidward gives the best hugs!</p>
+          <div class='flower_box'>
+            <h3>Single Rose</h3>
+            <img src='images/roses2.jpg'>
+            <p>Buy a single rose!</p>
+            <button>Purchase for $3</button>
           </div>
         </div>
       </body>
       </html>
       "
       type: code
+4:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <nav>
+          <button>Prev. Page</button>
+          <h3>Apple Album</h3>
+          <button>Next Page</button>
+        </nav>
+        <div id='apple_row'>
+          <img src='images/apples/1.jpg'>
+          <img src='images/apples/2.jpg'>
+          <img src='images/apples/3.jpg'>
+        </div>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        nav {
+          display: flex;
+          justify-content: space-between;
+        }
+        button {
+          background: white;
+          color: cornflowerblue;
+          font-weight: bold;
+          border: solid 2px black;
+        }
+        #apple_row {
+          display: flex;
+          justify-content: center;
+        }
+        img {
+          height: 60px;
+          width: 60px;
+          border-radius: 50%;
+          border: solid 4px pink;
+          margin: 5px;
+        }
+        </code>
+      type: code
+      autograder: copy
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>The font used is Arial.</li>
+      <li>The url for the Facebook image is <strong>images/facebook.png</strong></li>
+      <li>The url for the Instagram image is <strong>images/instagram.png</strong></li>
+      <li>Use the flex property instead of display to arrange the rows.</li>
+      </ul>"
+      quiz: true
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Arial;
+          }
+          h1 {
+            text-align: center;
+          }
+          nav {
+            background-color: salmon;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+          }
+          nav button {
+            background-color: lightgray;
+            padding: 6px 12px;
+            border: none;
+            margin: 4px;
+          }
+          footer {
+            background-color: salmon;
+            display: flex;
+            justify-content: center;
+          }
+          footer img {
+            height: 24px;
+            margin: 8px;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>
+          News
+        </h1>
+        <nav>
+          <button>Local News</button>
+          <button>Global News</button>
+          <button>Sports</button>
+        </nav>
+        <main>
+          <h3>Wildfires Rage in Australia</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        </main>
+        <footer>
+          <img src='images/facebook.png'>
+          <img src='images/instagram.png'>
+        </footer>
+      </body>
+      </html>
+      "
+      type: code
+5:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <header>
+          <img id='logo' src='images/kings-logo.png'>
+          <nav>
+            <a href='#'>Get Quote</a>
+            <a href='#'>Track Shipment</a>
+          </nav>
+        </header>
+        <main>
+          <div id='hero'>
+            <div id='hero-text'>
+              Ship your products internationally with speed and ease of mind.
+            </div>
+          </div>
+        </main>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        body {
+          font-family: Verdana;
+        }
+        header {
+          background-color: #c0392b;
+          padding: 8px;
+          display: flex;
+          justify-content: space-between;
+        }
+        a {
+          color: white;
+          text-decoration: none;
+          padding: 4px 10px;
+          margin-left: 6px;
+        }
+        #hero {
+          width: 100%;
+          height: 300px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 32px;
+          background-image: url('images/car-shipping.jpg');
+          background-size: cover;
+          background-position: center center;
+        }
+        #hero-text {
+          text-align: center;
+          padding: 40px;
+        }
+        #logo {
+          height: 20px;
+        }
+        </code>
+      type: code
+      autograder: copy
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>The font used is Arial.</li>
+      <li>Use the flex property instead of display to arrange the rows.</li>
+      </ul>"
+      quiz: true
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Arial;
+          }
+          h1 {
+            text-align: center;
+          }
+          #paint_row {
+            display: flex;
+            justify-content: space-between;
+          }
+          .swatch {
+            border: solid 1px black;
+            width: 120px;
+            height: 120px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>
+          Paint Store
+        </h1>
+        <div id='paint_row'>
+          <div class='swatch' style='background-color: salmon'>
+            <span>reds <br> maroons <br> browns</span>
+            <button>buy</button>
+          </div>
+          <div class='swatch' style='background-color: cornflowerblue'>
+            <span>blues <br> indigo</span>
+            <button>buy</button>
+          </div>
+          <div class='swatch' style='background-color: pink'>
+            <span>pinks <br> mauve</span>
+            <button>buy</button>
+          </div>
+        </div>
+      </body>
+      </html>
+      "
+      type: code      
+7:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <h1>Football Scores</h1>
+        <div id='teams'>
+          <div class='team' id='team1'>
+            <h3>Packers</h3>
+            <div class='score'>18</div>
+          </div>
+          <div class='team' id='team2'>
+            <h3>Patriots</h3>
+            <div class='score'>24</div>
+          </div>
+        </div>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        #teams {
+          display: flex;
+        }
+        .team {
+          flex-grow: 1;
+          padding: 12px;
+        }
+        h3 {
+          margin-top: 5px;
+        }
+        #team1 {
+          background-color: lightgreen;
+        }
+        #team2 {
+          text-align: right;
+          background-color: gold;
+        }
+        </code>
+      type: code
+      autograder: copy
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>The font used is Arial.</li>
+      <li>Use the flex property instead of display to arrange the rows.</li>
+      </ul>"
+      quiz: true
+      demo_code: "<html>
+      <head>
+        <style>
+          #panels {
+            display: flex;
+          }
+          .panel {
+            flex-grow: 1;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;            
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Select skills</h1>
+        <div id='panels'>
+          <div class='panel' style='background-color: salmon'>
+            <input type='checkbox'>
+            <strong>HTML</strong>
+          </div>
+          <div class='panel' style='background-color: lightblue'>
+            <input type='checkbox'>
+            <strong>CSS</strong>
+          </div>
+          <div class='panel' style='background-color: gold'>
+            <input type='checkbox'>
+            <strong>JS</strong>
+          </div>
+        </div>
+      </body>
+      </html>
+      "
+      type: code      
