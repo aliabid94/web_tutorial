@@ -118,7 +118,7 @@ body {
   margin: 4px 0;
   border: solid 1px #BBB;
   border-radius: 2px;
-  /* user-select: none; */
+  user-select: none;
   white-space: pre;
   overflow-x: auto;
 }
