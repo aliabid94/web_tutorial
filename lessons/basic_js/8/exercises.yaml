@@ -513,3 +513,182 @@
           return second;
         }
         </code>
+    - question: |*
+        A Caesar encryption encrypts a string by changing the alphabet position of every letter by the same amount. 
+        This is called its rotation. <br>
+        For example, to encrypt the string 'cat' with a rotation of 2, we would increase 'c' by 2 to become 'e', 'a' by 2 to become 'c', 
+        and 't' by 2 to become 'v'. In this encryption, 'cat' becomes 'ecv'. <br>
+        If any letter goes past the end of the alphabet, it starts from the beginning. When 'by' is encrypted with a rotation of 4, 
+        'b' becomes 'f', and 'y' becomes 'c'. In this encryption, 'by' becomes 'fc'. <br>
+        Write function <strong>encrypt</strong> that takes in a string and a rotation and returns the encrypted string. 
+      type: code
+      tests:
+        - "encrypt('code', 3) == 'frgh'"
+        - "encrypt('ace', 9) == 'jln'"
+        - "encrypt('wax', 4) == 'aeb'"
+      answer: |*
+        <code lang='js'>
+        function encrypt(word, rotation) {
+          let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+          let output = '';
+          for (let letter of word) {
+            let index = alphabet.indexOf(letter);
+            let new_index = (index + rotation) % 26;
+            output += alphabet[new_index];
+          }
+          return output;
+        }
+        </code>
+    - question: |*
+        Write function <strong>zeros</strong> that takes in a width and height, 
+        and returns a 2D array filled with zeros with the given width and height. 
+      type: code
+      tests:
+        - |
+          zeros(4, 3) == [
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+          ]
+        - |
+          zeros(2, 2) == [
+            [0, 0],
+            [0, 0],
+          ]
+        - |
+          zeros(3, 1) == [
+            [0, 0, 0],
+          ]
+      answer: |*
+        <code lang='js'>
+        function zeros(width, height) {
+          let output = [];
+          for (let row = 0; row < height; row++) {
+            let current_row = [];
+            for (let col = 0; col < width; col++) {
+              current_row.push(0);
+            }
+            output.push(current_row);
+          }
+          return output;
+        }
+        </code>
+    - question: |*
+        Write function <strong>mode</strong> that finds the most common number in an array. 
+      type: code
+      tests:
+        - "mode([2, 3, 3, 6, 7, 6, 6]) == 6"
+        - "mode([1, 5, 1, 1, 5]) == 1"
+        - "mode([0, 2, 0, 2, 2, 3]) == 2"
+      answer: |*
+        <code lang='js'>
+        function mode(array) {
+          let count = {};
+          for (let num of array) {
+            if (num in count) {
+              count[num]++;
+            } else {
+              count[num] = 1;
+            }
+          }
+          let mode_num = 0;
+          let mode_count = 0;
+          for (let num in count) {
+            if (count[num] > mode_count) {
+              mode_count = count[num];
+              mode_num = num;
+            }
+          }
+          return mode_num;
+        }
+        </code>
+    - question: |*
+        Given a historical sequence of weather and today's weather, predict tomorrow's weather.
+        Do this by seeing what type of weather usually follows the weather of today. For example,
+        'Today is rainy. Most of the time, after a rainy day there is a sunny day. So tomorrow will be sunny.' <br>
+        's' represents sunny, 'r' represents rainy, 'c' represents cloudy, 'f' represents foggy. <br>
+        Write function <strong>forecast</strong> that takes a string that represents history, and todays weather, 
+        and predicts tomorrow's weather. 
+      type: code
+      tests:
+        - "forecast('rfssrssrf', 'r') == 'f'"
+        - "forecast('sssrrsssf', 's') == 's'"
+        - "forecast('cscrcrccf', 'c') == 'r'"
+      answer: |*
+        <code lang='js'>
+        function mode(array) {
+          let count = {};
+          for (let num of array) {
+            if (num in count) {
+              count[num]++;
+            } else {
+              count[num] = 1;
+            }
+          }
+          let mode_num = 0;
+          let mode_count = 0;
+          for (let num in count) {
+            if (count[num] > mode_count) {
+              mode_count = count[num];
+              mode_num = num;
+            }
+          }
+          return mode_num;
+        }
+        function forecast(history, today) {
+          let next_days = [];
+          for (let i = 0; i < history.length - 1; i++) {
+            if (history[i] == today) {
+              let next_day = history[i + 1];
+              next_days.push(next_day);
+            }
+          }
+          return mode(next_days);
+        }
+        </code>
+    - question: |*
+        In the game 'Big-Tac-Toe', there is a 2D grid of any size where 2 players take turns placing their tiles, 'X' and 'O'. <br>
+        A player wins if they have 3 tiles in a row horizontally or vertically (no diagonals). <br>  
+        Write function <strong>findWinner</strong> that takes in a 2D array respesenting a grid, 
+        and returns the winner.
+      type: code
+      tests:
+        - |
+          findWinner([
+            [' ', ' ', ' ', ' '],
+            [' ', 'X', 'X', ' '],
+            [' ', 'X', 'O', 'X'],
+            [' ', 'O', 'O', 'O'],
+          ]) == 'O'
+        - |
+          findWinner([
+            [' ', ' ', 'O', 'X', 'O'],
+            [' ', ' ', 'X', 'X', 'O'],
+            [' ', 'X', ' ', ' ', 'O'],
+          ]) == 'O'
+        - |
+          findWinner([
+            ['X', 'O', 'O'],
+            ['X', 'O', 'X'],
+            ['X', 'X', 'O'],
+          ]) == 'O'
+      answer: |*
+        <code lang='js'>
+        function findWinner(board) {
+          let board_height = board.length;
+          let board_width = board[0].length;
+          for (let row = 0; row < board_height; row++) {
+            for (let col = 0; col < board_width; col++) {
+              let piece = board[row][col];
+              if (piece != ' ') {
+                if (board[row][col + 1] == piece && board[row][col + 2] == piece) {
+                  return piece;
+                }
+                if (board[row + 1][col] == piece && board[row + 2][col] == piece) {
+                  return piece;
+                }
+              }
+            }
+          }
+        }
+        </code>

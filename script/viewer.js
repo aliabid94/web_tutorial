@@ -325,8 +325,8 @@ $("body").on('click', '.run_code', function() {
     let js = "`" + code_set.js + "`";
     $iframe.contents().find("body").append(`
       <script>
-        function log(expr) {
-          if (expr instanceof Object) {
+        function log(expr, error) {
+          if (!error && expr instanceof Object) {
             expr = JSON.stringify(expr);
           }
           $("#log").append(expr + "<br>");
@@ -336,7 +336,7 @@ $("body").on('click', '.run_code', function() {
         try {
           eval(${js});
         } catch (error) {
-          log(error);
+          log(error, true);
         }
       </script>
     `);
