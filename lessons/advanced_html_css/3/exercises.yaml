@@ -1,0 +1,204 @@
+2:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <div class='card outline'>
+          <h2>Free Plan</h2>
+          <button class='outline'>Start Trial</button>
+        </div>
+        <div class='card outline'>
+          <h2>Paid Plan</h2>
+          <button class='outline'>Start Trial</button>
+        </div>
+        <div>
+          <button>Skip</button>
+        </div>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        .card {
+          display: inline-block;
+          background-color: lavendar;
+        }
+        .outline {
+          border: solid 2px midnightblue;
+          border-radius: 4px;
+          padding: 5px;
+        }
+        </code>
+      type: code
+      autograder: copy
+
+3:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <div class='card'>
+          <h2>Free Plan</h2>
+          <button class='start'>Start Trial</button>
+        </div>
+        <div class='card'>
+          <h2>Paid Plan</h2>
+          <button class='start'>Start Trial</button>
+        </div>
+        <div>
+          <button>Skip</button>
+        </div>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        .card {
+          display: inline-block;
+          background-color: lavendar;
+        }
+        .card, .start {
+          border: solid 2px midnightblue;
+          border-radius: 4px;
+          padding: 5px;
+        }
+        </code>
+      type: code
+      autograder: copy
+
+4:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <div class='card'>
+          <h2>Free Plan</h2>
+          <button>Start Trial</button>
+        </div>
+        <div class='card'>
+          <h2>Paid Plan</h2>
+          <button>Start Trial</button>
+        </div>
+        <div>
+          <button>Skip</button>
+        </div>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        .card {
+          display: inline-block;
+          background-color: lavendar;
+        }
+        .card, .card > button {
+          border: solid 2px midnightblue;
+          border-radius: 4px;
+          padding: 5px;
+        }
+        </code>
+      type: code
+      autograder: copy
+
+5:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <div id='cards'>
+          <div class='card'>
+            <h2>Free Plan</h2>
+            <button>Start Trial</button>
+          </div>
+          <div class='card'>
+            <h2>Paid Plan</h2>
+            <button>Start Trial</button>
+          </div>
+        </div>
+        <div>
+          <button>Skip</button>
+        </div>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        .card {
+          display: inline-block;
+          background-color: lavendar;
+        }
+        .card, #cards button {
+          border: solid 2px midnightblue;
+          border-radius: 4px;
+          padding: 5px;
+        }
+        </code>
+      type: code
+      autograder: copy
+
+6:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <div id='cards'>
+          <div class='card'>
+            <h2>Free Plan</h2>
+            <button>Start Trial</button>
+          </div>
+          <div class='card'>
+            <h2>Paid Plan</h2>
+            <button>Start Trial</button>
+          </div>
+        </div>
+        <div>
+          <button>Skip</button>
+        </div>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        .card {
+          display: inline-block;
+          background-color: lavendar;
+        }
+        .card:first-child {
+          background-color: gold;
+        }
+        .card, #cards button {
+          border: solid 2px midnightblue;
+          border-radius: 4px;
+          padding: 5px;
+        }
+        </code>
+      type: code
+      autograder: copy
+
+7:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <div id='cards'>
+          <div class='card'>
+            <h2>Free Plan</h2>
+            <button>Start Trial</button>
+          </div>
+          <div class='card'>
+            <h2>Paid Plan</h2>
+            <button>Start Trial</button>
+          </div>
+        </div>
+        <div>
+          <button>Skip</button>
+        </div>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        .card {
+          display: inline-block;
+          background-color: lavendar;
+        }
+        .card:hover {
+          background-color: gold;
+        }
+        .card, #cards button {
+          border: solid 2px midnightblue;
+          border-radius: 4px;
+          padding: 5px;
+        }
+        </code>
+      type: code
+      autograder: copy
+
