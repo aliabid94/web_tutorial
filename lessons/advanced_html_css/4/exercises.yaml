@@ -1,0 +1,63 @@
+4:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <<html>>
+          <<head>>
+            <<link rel='stylesheet' href='style/vendor/bootstrap.css'>>
+          <</head>>
+          <<body>>
+            <h1>Checkout</h1>
+            <h4>Payment Option</h4>
+            <div class='btn-group' role='group'>
+              <button type='button' class='btn btn-primary'>Credit Card</button>
+              <button type='button' class='btn btn-light'>Debit Card</button>
+              <button type='button' class='btn btn-light'>Cash</button>
+            </div>
+          <</body>>
+        <</html>>        
+        </code>
+      type: code
+      autograder: copy
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <<html>>
+          <<head>>
+            <<link rel='stylesheet' href='style/vendor/bootstrap.css'>>
+          <</head>>
+          <<body>>
+            <ul class='nav nav-tabs'>
+              <li class='nav-item'>
+                <a class='nav-link active'>Product</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link'>Image Album</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link'>Reviews</a>
+              </li>
+            </ul>
+          <</body>>
+        <</html>>        
+        </code>
+      type: code
+      autograder: copy
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>Read the documentation at <a href='https://getbootstrap.com/docs/4.4/'>https://getbootstrap.com/docs/4.4/</a>.</li>
+      <li>Look for the progress bar section under Components.</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <link rel='stylesheet' href='style/vendor/bootstrap.css'>
+      </head>
+      <body>
+        Uploading file...
+        <div class='progress'>
+          <div class='progress-bar progress-bar-striped' role='progressbar' style='width: 60%' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100'></div>
+        </div>      
+      </body>
+      </html>"
+      type: code
+
