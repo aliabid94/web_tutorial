@@ -1,4 +1,4 @@
-0:
+1:
   questions:
     - question: |*
         Write function <strong>countdown</strong> that takes a number, and returns an array starting with the input, and counting down to zero. 
@@ -689,6 +689,194 @@
                 }
               }
             }
+          }
+        }
+        </code>
+    - question: |*
+        In a crossword, you have to guess a word given its length and some of the letters in the word.
+        Write function <strong>crosswordHelper</strong> that takes in a mystery word 
+        (where '?' represents an unknown letter) and a list of possible words.
+        Return the word from the list of possible words that the mystery word could be. 
+      type: code
+      tests:
+        - "crosswordHelper('??a?k', ['white', 'black', 'red']) == 'black'"
+        - "crosswordHelper('??ew', ['flow', 'blow', 'flee', 'blew']) == 'blew'"
+        - "crosswordHelper('?oo?', ['noon', 'noun', 'claw']) == 'noon'"
+      answer: |*
+        <code lang='js'>
+        function crosswordHelper(mystery_word, possible_words) {
+          for (let word in possible_words) {
+            if (word.length != mystery_word.length) {
+              continue;
+            }
+            let same_word = true;
+            for (let i = 0; i < word.length; i++) {
+              if (mystery_word[i] != '?' && word[i] != mystery_word[i]) {
+                same_word = false;
+              }
+            }
+            if (same_word) {
+              return word;
+            }
+          }
+        }
+        </code>
+    - question: |*
+        Write function <strong>multiplicationTable</strong> that takes in a width and height, 
+        and returns a 2D array that represents a multiplication table of the given width and height. <br>
+        In a multiplication table, every number is the product of the row number and column number.
+      type: code
+      tests:
+        - |
+          multiplicationTable(3, 3) == [
+            [1, 2, 3],
+            [2, 4, 6],
+            [3, 6, 9],
+          ]
+        - |
+          multiplicationTable(4, 3) == [
+            [1, 2, 3, 4],
+            [2, 4, 6, 8],
+            [3, 6, 9, 12],
+          ]
+        - |
+          multiplicationTable(3, 2) == [
+            [1, 2, 3],
+            [2, 4, 6],
+          ]
+      answer: |*
+        <code lang='js'>
+        function multiplicationTable(width, height) {
+          let output = [];
+          for (let row = 0; row < height; row++) {
+            let current_row = [];
+            for (let col = 0; col < width; col++) {
+              current_row.push((col + 1) * (row + 1));
+            }
+            output.push(current_row);
+          }
+          return output;
+        }
+        </code>
+    - question: |*
+        Write function <strong>mostCommonVowel</strong> that finds the most common number in an array of words. 
+      type: code
+      tests:
+        - "mostCommonVowel(['erase', 'clear', 'declare']) == 'e'"
+        - "mostCommonVowel(['golden', 'delusion', 'moon']) == 'o'"
+        - "mostCommonVowel(['alien', 'caravan', 'moon', 'sour']) == 'a'"
+      answer: |*
+        <code lang='js'>
+        function mostCommonVowel(words) {
+          let vowel_count = {};
+          let vowels = 'aeiou';
+          for (let word of words) {
+            for (let letter of word) {
+              if (vowels.include(letter)) {
+                if (letter in vowel_count) {
+                  vowel_count[letter]++;
+                } else {
+                  vowel_count[letter] = 1;
+                }
+              }
+            }
+          }
+          let mode_vowel = 0;
+          let mode_count = 0;
+          for (let vowel in vowel_count) {
+            if (vowel_count[vowel] > mode_count) {
+              mode_count = vowel_count[vowel];
+              mode_vowel = vowel;
+            }
+          }
+          return mode_vowel;
+        }
+        </code>
+    - question: |*
+        Write function <strong>commonPrefix</strong> that takes an array of words, 
+        and finds the two words that start with the same 3 letters. 
+      type: code
+      tests:
+        - "commonPrefix(['clan', 'flow', 'clear', 'float']) == ['flow', 'float']"
+        - "commonPrefix(['apple', 'alert', 'alien', 'apply']) == ['apple', 'apply']"
+        - "commonPrefix(['claw', 'crow', 'crown']) == ['crow', 'crown']"
+      answer: |*
+        <code lang='js'>
+        function commonPrefix(words) {
+          prefix_to_word = {};
+          for (let word of words) {
+            let prefix = word.substring(0, 3);
+            if (prefix in prefix_to_word) {
+              return [word, prefix_to_word[prefix]];
+            } else {
+              prefix_to_word[prefix] = word;
+            }
+          }
+        }
+        </code>
+    - question: |*
+        In a 2D array respesenting a grid, the 'A' character must get to the 'B' character, 
+        without running into the 'X' character. Given an array that represents this grid,
+        and a series of movements, return true if the series of movements will allow 'A'
+        to safely reach 'B'. <br>
+        In the movements, 'u' represents up, 'd' represents down, 'l' represents left, and 'r' represents right.  
+      type: code
+      tests:
+        - |
+          validPath([
+            [' ', ' ', ' ', ' '],
+            [' ', ' ', ' ', ' '],
+            ['A', ' ', 'X', 'B'],
+            [' ', ' ', ' ', ' '],
+          ], 'ruu') == false
+        - |
+          validPath([
+            [' ', ' ', ' ', ' '],
+            [' ', ' ', ' ', ' '],
+            ['A', ' ', 'X', 'B'],
+            [' ', ' ', ' ', ' '],
+          ], 'rrr') == false
+        - |
+          validPath([
+            [' ', ' ', ' ', ' '],
+            [' ', ' ', ' ', ' '],
+            ['A', ' ', 'X', 'B'],
+            [' ', ' ', ' ', ' '],
+          ], 'rurrd') == true
+      answer: |*
+        <code lang='js'>
+        function validPath(board, movements) {
+          let board_height = board.length;
+          let board_width = board[0].length;
+          let locations = {};
+          for (let row = 0; row < board_height; row++) {
+            for (let col = 0; col < board_width; col++) {
+              let piece = board[row][col];
+              if (piece != ' ') {
+                location[piece] = [row, col];
+              } 
+            }
+          }
+          for (let movement of movements) {
+            if (movement == 'u') {
+              locations['A'][0]--;
+            } else if (movement == 'd') {
+              locations['A'][0]++;
+            } else if (movement == 'r') {
+              locations['A'][1]++;
+            } else if (movement == 'l') {
+              locations['A'][1]--;
+            }
+            if (locations['A'][0] == locations['X'][0] && 
+                locations['A'][1] == locations['X'][1]) {
+              return false;
+            }
+          }
+          if (locations['A'][0] == locations['B'][0] && 
+              locations['A'][1] == locations['B'][1]) {
+            return true;
+          } else {
+            return false;
           }
         }
         </code>
