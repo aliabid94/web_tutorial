@@ -1,4 +1,4 @@
-1:
+0:
   questions:
     - question: |*
         Write function <strong>countdown</strong> that takes a number, and returns an array starting with the input, and counting down to zero. 
