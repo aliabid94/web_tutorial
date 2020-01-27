@@ -21,26 +21,29 @@
     </script>
   </head>
   <body>
-    <div id="top">
-      <a href="course.html">
-        <button class="ui icon button teal"><i class="angle left icon"></i> Home</button>
-      </a>
-      <div id="login">
-        <div class="g-signin2 out" data-onsuccess="onSignIn"></div>
-        <div class="in">
-          Welcome <span id="fullname"></span>. 
-          <a href="#"  onclick="signOut();">Signout</a></div>
+    <header>
+      <div id="top" class="container">
+        <a href="course.html">
+          <button class="ui icon button teal"><i class="angle left icon"></i> Course</button>
+        </a>
+        <div id="login">
+          <div class="g-signin2 out" data-onsuccess="onSignIn"></div>
+          <div class="in">
+            Welcome <span id="fullname"></span>. 
+            <a href="#"  onclick="signOut();">Signout</a></div>
+        </div>
       </div>
-    </div>
-    <div id="slides"></div>
-    <div id="slide_control">
-      <button id="left" class="ui icon button"><i class="angle left icon"></i></button>
-      <div class="ui input"><input type="text" id="current_slide" value="1" /></div> of &nbsp;<span id="slide_count"></span>
-      <button id="right" class="ui icon button"><i class="angle right icon"></i></button>
-    </div>
-    <nav id="exercises_nav"><div id="exercises">Exercises:</div></nav>
-    <div id="problem_sets"></div>
-
+    </header>
+    <main>
+      <div id="slides"></div>
+      <div id="slide_control">
+        <button id="left" class="ui icon button"><i class="angle left icon"></i></button>
+        <div class="ui input"><input type="text" id="current_slide" value="1" /></div> of &nbsp;<span id="slide_count"></span>
+        <button id="right" class="ui icon button"><i class="angle right icon"></i></button>
+      </div>
+      <nav id="exercises_nav"><div id="exercises">Exercises:</div></nav>
+      <div id="problem_sets"></div>
+    </main>
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
