@@ -143,11 +143,11 @@
       $(".slide[slide='"+ (slide+1) + "']").show();  
     }
     $("#left").click(function() {
-      slide = (slide - 1) % SLIDE_COUNT;
+      slide = (slide - 1 + SLIDE_COUNT) % SLIDE_COUNT;
       load_slide();
     });
     $("#right").click(function() {
-      slide = (slide + 1) % SLIDE_COUNT;
+      slide = (slide + 1 + SLIDE_COUNT) % SLIDE_COUNT;
       load_slide();
     });
   </script>
