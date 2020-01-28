@@ -34,11 +34,16 @@
             <button id="left" class="ui icon button teal"><i class="angle left icon"></i></button>
             <div id="display-screen" class="shadow">
               <div id="image-holder">
-                <img src="images/saya.jpg">
+                <img class="slide" src="images/index/saya.jpg" slide="1">
+                <img class="slide" src="images/index/sib.jpg" slide="2">
               </div>
               <p id="caption">
-                <strong>Silicon Prep</strong> teaching code to high schoolers 
-                at the <strong>Saya School</strong> for underprivileged youth in Islamabad.
+                <span class="slide" slide="1">
+                  <strong>Silicon Prep</strong> teaching code to high schoolers at the <strong>Saya School</strong> for underprivileged youth in Islamabad.
+                </span>
+                <span class="slide" slide="2">
+                  Our <strong>volunteer</strong>  teachers come from <strong>strong engineering backgrounds</strong> and work at top companies.
+                </span>
               </p>
             </div>
             <button id="right" class="ui icon button teal"><i class="angle right icon"></i></button>            
@@ -130,7 +135,21 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
   <script>
+    var slide = 0;
+    var SLIDE_COUNT = 2;
     $('.ui.dropdown').dropdown();
+    function load_slide() {
+      $(".slide").hide();
+      $(".slide[slide='"+ (slide+1) + "']").show();  
+    }
+    $("#left").click(function() {
+      slide = (slide - 1) % SLIDE_COUNT;
+      load_slide();
+    });
+    $("#right").click(function() {
+      slide = (slide + 1) % SLIDE_COUNT;
+      load_slide();
+    });
   </script>
 </body>
 </html>
