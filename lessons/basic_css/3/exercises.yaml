@@ -190,7 +190,9 @@
             color: crimson;
           }
           #months {
+            background-color: pink;
             width: 100px;
+            height: 400px;
           }
           #current_month {
             font-weight: bold;
@@ -291,19 +293,19 @@
           <div class='row'>
             <div class='column car' id='car1'>
               <h3>Aston Martin</h3>
-              <img src='/images/cars/1.jpg'>
+              <img src='images/cars/1.jpg'>
               <p>Gorgeous luxury sports car from Britain</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
             <div class='column car' id='car2'>
               <h3>Ferarri</h3>
-              <img src='/images/cars/2.jpg'>
+              <img src='images/cars/2.jpg'>
               <p>A stunning racing machine from Italy</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
             <div class='column car' id='car3'>
               <h3>Mercedes</h3>
-              <img src='/images/cars/3.jpg'>
+              <img src='images/cars/3.jpg'>
               <p>What a powerful and beautiful tank</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
@@ -311,13 +313,13 @@
           <div class='row'>
             <div class='column car' id='car4'>
               <h3>Jaguar</h3>
-              <img src='/images/cars/4.jpg'>
+              <img src='images/cars/4.jpg'>
               <p>An American classic!</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
             <div class='column car' id='car5'>
               <h3>Tesla</h3>
-              <img src='/images/cars/5.jpg'>
+              <img src='images/cars/5.jpg'>
               <p>Drive a spaceship on the road!</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
@@ -358,7 +360,9 @@
             color: crimson;
           }
           #months {
+            background-color: pink;
             width: 100px;
+            height: 400px;
           }
           #current_month {
             font-weight: bold;
@@ -462,19 +466,19 @@
           <div class='row color'>
             <div class='column car' id='car1'>
               <h3>Aston Martin</h3>
-              <img src='/images/cars/1.jpg'>
+              <img src='images/cars/1.jpg'>
               <p>Gorgeous luxury sports car from Britain</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
             <div class='column car' id='car2'>
               <h3>Ferarri</h3>
-              <img src='/images/cars/2.jpg'>
+              <img src='images/cars/2.jpg'>
               <p>A stunning racing machine from Italy</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
             <div class='column car' id='car3'>
               <h3>Mercedes</h3>
-              <img src='/images/cars/3.jpg'>
+              <img src='images/cars/3.jpg'>
               <p>What a powerful and beautiful tank</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
@@ -482,13 +486,13 @@
           <div class='row color'>
             <div class='column car' id='car4'>
               <h3>Jaguar</h3>
-              <img src='/images/cars/4.jpg'>
+              <img src='images/cars/4.jpg'>
               <p>An American classic!</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
             <div class='column car' id='car5'>
               <h3>Tesla</h3>
-              <img src='/images/cars/5.jpg'>
+              <img src='images/cars/5.jpg'>
               <p>Drive a spaceship on the road!</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
@@ -528,7 +532,9 @@
             color: crimson;
           }
           #months {
+            background-color: pink;
             width: 100px;
+            height: 400px;
           }
           #current_month {
             font-weight: bold;
@@ -631,19 +637,19 @@
           <div class='row color'>
             <div class='column car color' id='car1'>
               <h3>Aston Martin</h3>
-              <img src='/images/cars/1.jpg'>
+              <img src='images/cars/1.jpg'>
               <p>Gorgeous luxury sports car from Britain</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
             <div class='column car color' id='car2'>
               <h3>Ferarri</h3>
-              <img src='/images/cars/2.jpg'>
+              <img src='images/cars/2.jpg'>
               <p>A stunning racing machine from Italy</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
             <div class='column car color' id='car3'>
               <h3>Mercedes</h3>
-              <img src='/images/cars/3.jpg'>
+              <img src='images/cars/3.jpg'>
               <p>What a powerful and beautiful tank</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
@@ -651,13 +657,13 @@
           <div class='row color'>
             <div class='column car color' id='car4'>
               <h3>Jaguar</h3>
-              <img src='/images/cars/4.jpg'>
+              <img src='images/cars/4.jpg'>
               <p>An American classic!</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
             <div class='column car color' id='car5'>
               <h3>Tesla</h3>
-              <img src='/images/cars/5.jpg'>
+              <img src='images/cars/5.jpg'>
               <p>Drive a spaceship on the road!</p>
               Vote for Favorite: <input type='radio' name='cars'>
             </div>
@@ -670,7 +676,7 @@
 10:
   questions:
     - question: "Breakdown all the remaining elements! <ul>
-      <li>The apple images used are '/images/apple/1.jpg', '/images/apple/2.jpg', '/images/apple/3.jpg'</li>
+      <li>The apple images used are 'images/apples/1.jpg', 'images/apples/2.jpg', 'images/apples/3.jpg'</li>
       </ul>"
       demo_code: "<html>
       <head>
@@ -696,7 +702,9 @@
             color: crimson;
           }
           #months {
+            background-color: pink;
             width: 100px;
+            height: 400px;
           }
           #current_month {
             font-weight: bold;
@@ -745,7 +753,7 @@
       </html>"
       type: code
     - question: "Breakdown all the remaining elements! <ul>
-      <li>The car images used are '/images/cars/1.jpg', '/images/cars/2.jpg', etc.</li>
+      <li>The car images used are 'images/cars/1.jpg', 'images/cars/2.jpg', etc.</li>
       </ul>"
       quiz: true
       demo_code: "<html>
@@ -799,19 +807,19 @@
           <div class='row color'>
             <div class='column car color' id='car1'>
               <h3 class='row color'>Aston Martin</h3>
-              <img src='/images/cars/1.jpg' class='row color'>
+              <img src='images/cars/1.jpg' class='row color'>
               <p class='row color'>Gorgeous luxury sports car from Britain</p>
               <div class='row color'>Vote for Favorite: <input type='radio' name='cars'></div>
             </div>
             <div class='column car color' id='car2'>
               <h3 class='row color'>Ferarri</h3>
-              <img src='/images/cars/2.jpg' class='row color'>
+              <img src='images/cars/2.jpg' class='row color'>
               <p class='row color'>A stunning racing machine from Italy</p>
               <div class='row color'>Vote for Favorite: <input type='radio' name='cars'></div>
             </div>
             <div class='column car color' id='car3'>
               <h3 class='row color'>Mercedes</h3>
-              <img src='/images/cars/3.jpg' class='row color'>
+              <img src='images/cars/3.jpg' class='row color'>
               <p class='row color'>What a powerful and beautiful tank</p>
               <div class='row color'>Vote for Favorite: <input type='radio' name='cars'></div>
             </div>
@@ -819,13 +827,13 @@
           <div class='row color'>
             <div class='column car color' id='car4'>
               <h3 class='row color'>Jaguar</h3>
-              <img src='/images/cars/4.jpg' class='row color'>
+              <img src='images/cars/4.jpg' class='row color'>
               <p class='row color'>An American classic!</p>
               <div class='row color'>Vote for Favorite: <input type='radio' name='cars'></div>
             </div>
             <div class='column car color' id='car5'>
               <h3 class='row color'>Tesla</h3>
-              <img src='/images/cars/5.jpg' class='row color'>
+              <img src='images/cars/5.jpg' class='row color'>
               <p class='row color'>Drive a spaceship on the road!</p>
               <div class='row color'>Vote for Favorite: <input type='radio' name='cars'></div>
             </div>
