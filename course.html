@@ -23,7 +23,14 @@
       </header>
       <main class="course">
         <div class="container shadow" id="main-page">
-          <h2>Course</h2>
+          <div id="course_select" class="ui floating dropdown">
+            Web Development <i class="dropdown icon"></i>
+            <div class="menu">
+              <a href="course.html" class="item">Web Development</a>
+              <a href="course_skills.html" class="item">Beginner Computer Skills</a>
+              <a href="course_svg.html" class="item">Coding SVG Graphics</a>
+            </div>
+          </div>
           <div class="ui horizontal divider">
             Beginner
           </div>
@@ -68,6 +75,7 @@
     <script src="script/sp.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
     <script>
+      $('.ui.dropdown').dropdown();
       api.getClassDates(function loadDates(dates) {
         var start_open = moment(dates.open.sort()[0], "YYYYMMDD");
         var end_open = moment(dates.open.sort()[dates.open.length-1], "YYYYMMDD");

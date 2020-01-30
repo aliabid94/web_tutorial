@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html id="course">
+  <head>
+    <title>Web Development</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150995863-1"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-150995863-1');</script>
+  </head>
+  <body class="ui">
+    <div id="body-wrap">
+      <header>
+        <div class="container">
+          <h1 class="primary">Silicon Prep</h1>
+          <nav>
+            <a href="/">Home</a>
+            <a href="course.html" class="selected">Course</a>
+            <a href="#">Blog</a>
+            <a href="index.html#contact-box">Contact</a>
+          </nav>
+        </div>
+      </header>
+      <main class="course">
+        <div class="container shadow" id="main-page">
+          <div id="course_select" class="ui floating dropdown">
+            Coding SVG Graphics <i class="dropdown icon"></i>
+            <div class="menu">
+              <a href="course.html" class="item">Web Development</a>
+              <a href="course_skills.html" class="item">Beginner Computer Skills</a>
+              <a href="course_svg.html" class="item">Coding SVG Graphics</a>
+            </div>
+          </div>
+          <div class="ui horizontal divider">
+            Beginner
+          </div>
+          <a href="etc/svg_game_1.html"><button class="ui button basic">Game 1: Reading Shapes</button></a>
+          <a href="etc/svg_game_2.html"><button class="ui button basic">Game 2: Writing Shapes</button></a>
+          <a href="etc/svg_editor.html"><button class="ui button basic">Editor</button></a>
+        </div>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="script/sp.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+    <script>
+      $('.ui.dropdown').dropdown();
+      api.getClassDates(function loadDates(dates) {
+        var start_open = moment(dates.open.sort()[0], "YYYYMMDD");
+        var end_open = moment(dates.open.sort()[dates.open.length-1], "YYYYMMDD");
+        $(".open_date_1").html(start_open.format("MMMM DD"));
+        $(".open_date_2").html(end_open.format("MMMM DD"));
+      });
+      $("#location").text(api.getLocation());
+    </script>
+  </body>
+</html>
