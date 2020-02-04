@@ -848,35 +848,194 @@
         function validPath(board, movements) {
           let board_height = board.length;
           let board_width = board[0].length;
-          let locations = {};
+          let x = 0, y = 0;
           for (let row = 0; row < board_height; row++) {
             for (let col = 0; col < board_width; col++) {
               let piece = board[row][col];
-              if (piece != ' ') {
-                location[piece] = [row, col];
+              if (piece == 'A') {
+                x = row;
+                y = col;
+                break;
               } 
             }
           }
           for (let movement of movements) {
             if (movement == 'u') {
-              locations['A'][0]--;
+              y--;
             } else if (movement == 'd') {
-              locations['A'][0]++;
+              y++;
             } else if (movement == 'r') {
-              locations['A'][1]++;
+              x++;
             } else if (movement == 'l') {
-              locations['A'][1]--;
+              x--;
             }
-            if (locations['A'][0] == locations['X'][0] && 
-                locations['A'][1] == locations['X'][1]) {
+            if (board[y][x] == 'X') {
+              return false;
+            } else if (board[y][x] == 'B') {
+              return true;
+            }
+          }
+          return false;
+        }
+        </code>
+    - question: |*
+        In a 2D grid, the formula for the distance between two points 
+        (X<sub>1</sub>, Y<sub>1</sub>) and (X<sub>2</sub>, Y<sub>2</sub>) is
+        <div style='text-align: center; margin: 6px 0'>
+        &radic;<div style='display: inline-block; border-top:solid 1px black;'>&nbsp;
+        (Y<sub>2</sub> - Y<sub>1</sub>)<sup>2</sup> +  
+        (X<sub>2</sub> - X<sub>1</sub>)<sup>2</sup>
+        </div>
+        </div>
+        Write function <strong>distance</strong> that takes in two points, 
+        and returns the distance between them. Use Google to find how to perform square roots
+        and exponents in Javascript.
+      type: code
+      tests:
+        - "distance({x: 1, y: 1}, {x: 4, y: 5}) == 5"
+        - "distance({x: 0, y: 0}, {x: 7, y: 12}) == 13"
+        - "distance({x: -4, y: 0}, {x: 2, y: 8}) == 10"
+      answer: |*
+        <code lang='js'>
+        function distance(pt1, pt2) {
+          return Math.sqrt((pt2.y - pt1.y) ** 2 + (pt2.x - pt1.x) ** 2);
+        }
+        </code>
+    - question: |*
+        A word is abbreviated by removing some of its letters, and keeping the remaining letters in order.
+        Write function <strong>validAbbreviation</strong> that takes in a word and a possible abbreviation, 
+        and returns true if the abbreviation if valid, false otherwise.
+      type: code
+      tests:
+        - "validAbbreviation('laptop', 'ltp') == true"
+        - "validAbbreviation('laptop', 'letop') == false"
+        - "validAbbreviation('crayon', 'cyrn') == false"
+      answer: |*
+        <code lang='js'>
+        function validAbbreviation(word, abbreviation) {
+          let abbr_index = 0;
+          for (let letter in word) {
+            if (letter == abbreviation[abbr_index]) {
+              abbr_index++;
+              if (abbr_index == abbreviation.length) {
+                return true;
+              }
+            }
+          }
+          return false;
+        }
+        </code>
+    - question: |*
+        In a 2D array respesenting a grid, a character starts at the top left corner and starts walking downward. <br>
+        If it runs into a 'u', it changes direction and starts walking upwards.
+        If it runs into a 'l', it changes direction and starts walking to the left.
+        If it runs into a 'r', it changes direction and starts walking to the right.
+        If it runs into a 'd', it changes direction and starts walking downwards. <br>
+        Write function <strong>finalLocation</strong> that takes in a 2D array representing a grid, 
+        and returns the final location as [row, column] of the character before it walks off the grid.
+      type: code
+      tests:
+        - |
+          finalLocation([
+            [' ', ' ', ' ', ' '],
+            [' ', ' ', ' ', ' '],
+            ['r', ' ', 'u', 'd'],
+            [' ', ' ', ' ', ' '],
+          ]) == [0, 2]
+        - |
+          finalLocation([
+            [' ', 'r', ' ', 'd'],
+            ['r', ' ', 'd', ' '],
+            [' ', 'u', 'l', 'r'],
+            [' ', ' ', ' ', ' '],
+          ]) == [2, 3]
+        - |
+          finalLocation([
+            [' ', ' ', ' ', ' '],
+            [' ', ' ', ' ', ' '],
+            ['u', 'd', 'l', 'r'],
+            [' ', ' ', ' ', ' '],
+          ]) == [0, 0]
+      answer: |*
+        <code lang='js'>
+        function finalLocation(board) {
+          let board_height = board.length;
+          let board_width = board[0].length;
+          let movement = 'd';
+          let x = 0, y = 0;
+          while (x > 0 && y > 0 && x < board_width && y < board_height) {
+            if (movement == 'u') {
+              y--;
+            } else if (movement == 'd') {
+              y++;
+            } else if (movement == 'r') {
+              x++;
+            } else if (movement == 'l') {
+              x--;
+            }
+            if (board[y][x] != ' ') {
+              movement = board[y][x];
+            }
+          }
+          return [y, x];
+        }
+        </code>
+    - question: |*
+        A bull run in a stock market is series of years when the stock goes up continuously, year over year.
+        Write function <strong>longestRun</strong> that takes in the values of stocks every year, 
+        and returns the length in years of the longest bull run.
+      type: code
+      tests:
+        - "longestRun([16, 12, 15, 18, 19, 14, 10, 12, 20]) == 3"
+        - "longestRun([1, 2, 3, 4, 2, 5, 8, 10, 20]) == 4"
+        - "longestRun([20, 18, 16, 17, 12, 10]) == 1"
+      answer: |*
+        <code lang='js'>
+        function longestRun(stocks) {
+          let longest_run = 0, current_run = 0;
+          for (let i = 1; i < stocks.length; i++) {
+            if (stocks[i] > stocks[i - 1]) {
+              current_run++;
+              if (current_run > longest_run) {
+                longest_run = current_run;
+              }
+            } else {
+              current_run = 0;
+            }
+          }
+          return longest_run;
+        }
+        </code>
+    - question: |*
+        A sequence of DNA consists of the letters 'A', 'C', 'T', 'G'. A gene is small part of the entire DNA.
+        DNA can be mutated such that one of the original letters turns into a different letter.
+        Write function <strong>findMutation</strong> that takes in sequence of DNA and gene that is somewhere in that DNA. 
+        The gene has been mutated such that one of the letters has been changed to a different letter.
+        Return the mutated version of the gene.
+      type: code
+      tests:
+        - "findMutation('ACCAGAATTA', 'CAGAG') == 'CAGAA'"
+        - "findMutation('CGGTATGTAT', 'AATGTA') == 'TATGTA'"
+        - "findMutation('CAGGACTGCTA', 'AGCAC') == 'AGGAC'"
+      answer: |*
+        <code lang='js'>
+        function equivalent(gene1, gene2) {
+          let differences = 0;
+          for (let i = 0; i < gene1.length; i++) {
+            if (gene1[i] != gene2[i]) {
+            differences++;
+            if (differences > 1) {
               return false;
             }
           }
-          if (locations['A'][0] == locations['B'][0] && 
-              locations['A'][1] == locations['B'][1]) {
-            return true;
-          } else {
-            return false;
+          return true;
+        }
+        function findMutation(dna, gene) {
+          for (let i = 0; i < dna.length - gene.length; i++) {
+            dna_gene = dna.substring(i, i + gene.length);
+            if (equivalent(dna_gene, gene)) {
+              return dna_gene;
+            }
           }
         }
         </code>
