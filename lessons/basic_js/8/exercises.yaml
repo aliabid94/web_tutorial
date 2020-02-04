@@ -932,7 +932,7 @@
         If it runs into a 'r', it changes direction and starts walking to the right.
         If it runs into a 'd', it changes direction and starts walking downwards. <br>
         Write function <strong>finalLocation</strong> that takes in a 2D array representing a grid, 
-        and returns the final location as [row, column] of the character before it walks off the grid.
+        and returns the final location as [row, column] of the character after it walks off the grid.
       type: code
       tests:
         - |
@@ -941,21 +941,21 @@
             [' ', ' ', ' ', ' '],
             ['r', ' ', 'u', 'd'],
             [' ', ' ', ' ', ' '],
-          ]) == [0, 2]
+          ]) == [-1, 2]
         - |
           finalLocation([
             [' ', 'r', ' ', 'd'],
             ['r', ' ', 'd', ' '],
             [' ', 'u', 'l', 'r'],
             [' ', ' ', ' ', ' '],
-          ]) == [2, 3]
+          ]) == [2, 4]
         - |
           finalLocation([
             [' ', ' ', ' ', ' '],
             [' ', ' ', ' ', ' '],
             ['u', 'd', 'l', 'r'],
             [' ', ' ', ' ', ' '],
-          ]) == [0, 0]
+          ]) == [-1, 0]
       answer: |*
         <code lang='js'>
         function finalLocation(board) {
@@ -963,7 +963,7 @@
           let board_width = board[0].length;
           let movement = 'd';
           let x = 0, y = 0;
-          while (x > 0 && y > 0 && x < board_width && y < board_height) {
+          while (x >= 0 && y >= 0 && x < board_width && y < board_height) {
             if (movement == 'u') {
               y--;
             } else if (movement == 'd') {
