@@ -215,7 +215,7 @@
       </html>
       "
       type: code
-    - question: "Write code to replicate the demo shown. Use the <strong>div</strong> element for each line."
+    - question: "Write code to replicate the demo shown."
       quiz: true
       demo_code: "<html>
       <head>
@@ -275,7 +275,11 @@
         </code>
       type: code
       autograder: copy
-    - question: "Write code to replicate the demo shown. Use the <strong>div</strong> element for each line."
+    - question: "Write code to replicate the demo shown. <ul>
+        <li>The font used is 'Verdana'.</li>
+        <li>The cat image used is 'images/cat.jpg'.</li>
+        <li>The dog image used is 'images/dog.jpg'.</li>
+        </ul>"
       quiz: true
       demo_code: "<html>
       <head>

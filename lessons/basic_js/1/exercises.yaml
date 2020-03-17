@@ -445,7 +445,7 @@
         </code>
       type: multiple_choice
       choices:
-        - "true"
         - "false"
+        - "true"
       quiz: true
 
