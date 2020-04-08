@@ -220,7 +220,7 @@
         ]
         for (let hotel of hotels) {
           if (hotel.cost < 150) {
-            $('ul').append('<li>' + hotel.name + '</li>');
+            $('ul').append('<<li>>' + hotel.name + '<</li>>');
           }
         }
         </code>
@@ -246,11 +246,11 @@
           {name: 'Ellie', animal: 'elephant', 'age': 12}
         ]
         for (let pet of pets) {
-          let row = '<tr>';
-          row += '<td>' + pet.name + '</td>';
-          row += '<td>' + pet.animal + '</td>';
-          row += '<td>' + pet.age + '</td>';
-          row += '</tr>';
+          let row = '<<tr>>';
+          row += '<<td>>' + pet.name + '<</td>>';
+          row += '<<td>>' + pet.animal + '<</td>>';
+          row += '<<td>>' + pet.age + '<</td>>';
+          row += '<</tr>>';
           $('table').append(row);
         }
         </code>
