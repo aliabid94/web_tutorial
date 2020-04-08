@@ -1,0 +1,259 @@
+3:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        Income: <span id='income'></span> <br>
+        Tax: <span id='tax'></span>% <br>
+        Spend: <span id='spend'></span> <br>
+        <hr>
+        Savings: <span id='savings'></span>     
+        </code>
+        and the following JS:
+        <code lang='js'>
+        let income = 50000;
+        let tax_rate = 0.35;
+        let spend = 12000;
+        $('#income').text(income);
+        $('#tax').text(tax_rate * 100);
+        $('#spend').text(spend);
+        let savings = income * tax_rate - spend;
+        $('#savings').text(savings);
+        </code>
+      type: code
+      autograder: copy
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        Welcome, <span id='name'>Jack Smith</span>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        body {
+          font-family: Verdana;
+        }
+        #name {
+          color: salmon;
+        }        
+        </code>
+        and the following JS:
+        <code lang='js'>
+        let full_name = $('#name').text();
+        let first_name = full_name.substring(5, 10);
+        $('#name').text('Mr. ' + first_name);        
+        </code>
+      type: code
+      autograder: copy
+    - question: |*
+        What is the final text of the HTML below:
+        <code lang='html'>
+        The <span id='item'></span> 
+        costs <span id='cost'></span>.
+        </code>
+        and the following JS:
+        <code lang='js'>
+        let items = ['watch', 'car', 'suit'];
+        let my_item = items[1];
+        let cost = 2000 * my_item.length;
+        $('#item').text(my_item);
+        $('#cost').text(cost);
+        </code>
+      type: multiple_choice
+      choices: 
+        - "The car costs 6000."
+        - "The suit costs 6000."
+        - "The watch costs 10000."
+        - "The watch costs 2000."
+    - question: |*
+        What is the final text of the span in the HTML below:
+        <code lang='html'>
+        <h1>Average Temperature per Season</h1>
+        <div id='summer'>60</div>
+        <div id='spring'>50</div>
+        <div id='winter'>40</div>
+        <div id='summer'>10</div>
+        Average: <span></span>
+        </code>
+        and the following JS:
+        <code lang='js'>
+        let seasons = ['summer', 'spring', 'winter', 'summer'];
+        let total_temp = 0;
+        for (let season of seasons) {
+          let season_temp = $('#' + season).text();
+          season_temp = parseInt(season_temp);
+          total_temp += season_temp;
+        }
+        let average_temp = total_temp / 4;
+        $('span').text(average_temp);
+        </code>
+      type: text
+      answer: "40"
+
+4:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        The 
+        <span id='item1'>treasure</span>
+        <span id='item2'>body</span>
+        is buried in
+        <span class='secret' id='atl'>Atlanta</span>
+        <span class='secret' id='chi'>Chicago</span>
+        <span class='secret' id='kar'>Karachi</span>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        .secret {
+          display: none;
+        }        
+        </code>
+        and the following JS:
+        <code lang='js'>
+        $('#item2').hide();
+        $('#chi').show();
+        </code>
+      type: code
+      autograder: copy
+    - question: |*
+        What is the final text of HTML below:
+        <code lang='html'>
+        <span class='a b c'>1</span>
+        <span class='a b'>2</span>
+        <span class='b c'>3</span>
+        <span class='a'>4</span>
+        </code>
+        with the following JS:
+        <code lang='js'>
+        $('.a').hide();
+        $('.b').show();
+        $('.c').hide();
+        </code>
+      type: multiple_choice
+      choices:
+        - "2"
+        - "2 3"
+        - "1 2 3 4"
+        - "4"
+
+5:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        Available flights: SFO - LAX
+        <div id='flight0'></div>
+        <div id='flight1'></div>
+        <div id='flight2'></div>
+        <div id='flight3'></div>
+        <div id='flight4'></div>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        div {
+          padding: 4px;
+          background-color: lightgray;
+          margin: 3px;
+        }
+        .discount {
+          background-color: lightgreen;
+        }        
+        </code>
+        and the following JS:
+        <code lang='js'>
+        flight_costs = [120, 180, 210, 110, 80];
+        for (let i = 0; i < 5; i++) {
+          flight_cost = flight_costs[i];
+          let id = '#flight' + i;
+          $(id).text('$' + flight_cost);
+          if (flight_cost < 150) {
+            $(id).addClass('discount');
+          }
+        }
+        </code>
+      type: code
+      autograder: copy
+    - question: |*
+        What is the final text of HTML below:
+        <code lang='html'>
+        <span class='a b c'>1</span>
+        <span class='a b'>2</span>
+        <span class='b c'>3</span>
+        <span class='a'>4</span>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        .b {
+          display: none;
+        }
+        </code>
+        with the following JS:
+        <code lang='js'>
+        $('.a').removeClass('b');
+        $('.c').toggleClass('a');
+        $('.a').removeClass('c');
+        $('.c').text(5);
+        </code>
+      type: multiple_choice
+      choices:
+        - "5 2 4"
+        - "2 5"
+        - "5 2 5 4"
+        - "4"
+
+
+5:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        Affordable hotels:
+        <ul>
+        </ul>
+        </code>
+        and the following JS:
+        <code lang='js'>
+        let hotels = [
+          {name: 'Megahotel', cost: 120},
+          {name: 'Quickstop', cost: 80},
+          {name: 'Trump Tower', cost: 400},
+          {name: 'Motel 8', cost: 50}
+        ]
+        for (let hotel of hotels) {
+          if (hotel.cost < 150) {
+            $('ul').append('<li>' + hotel.name + '</li>');
+          }
+        }
+        </code>
+      type: code
+      autograder: copy
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        My Pets:
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Animal</th>
+            <th>Age</th>
+          </thead>
+        </table>
+        </code>
+        and the following JS:
+        <code lang='js'>
+        let pets = [
+          {name: 'Doodle', animal: 'cat', 'age': 5},
+          {name: 'Spot', animal: 'dog', 'age': 6},
+          {name: 'Ellie', animal: 'elephant', 'age': 12}
+        ]
+        for (let pet of pets) {
+          let row = '<tr>';
+          row += '<td>' + pet.name + '</td>';
+          row += '<td>' + pet.animal + '</td>';
+          row += '<td>' + pet.age + '</td>';
+          row += '</tr>';
+          $('table').append(row);
+        }
+        </code>
+      type: code
+      autograder: copy

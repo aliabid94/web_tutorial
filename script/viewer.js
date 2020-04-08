@@ -306,40 +306,46 @@ $("body").on('click', '.run_code', function() {
   $iframe.ready(function() {
     $iframe.contents().find("body").html(code_set.html);
     $iframe.contents().find("head").html("<style>" + code_set.css + "</style>");
-    if (config_data.lang.length == 1 && config_data.lang[0] == "js") {
-      $iframe.contents().find("head").html(`
-        <style>
-        #log {
-          font-family: monospace;
-          font-size: 18px;
-        }
-        </style>
+    if (config_data.lang.includes("js")) {
+      $iframe.contents().find("body").append(`
+        <script>${jquery_code}</script>
       `);
-      $iframe.contents().find("body").html(`
-        <div id="log"></div>
-      `);
-    }
-    $iframe.contents().find("body").append(`
-      <script>${jquery_code}</script>
-    `);
-    let js = "`" + code_set.js + "`";
-    $iframe.contents().find("body").append(`
-      <script>
-        function log(expr, error) {
-          if (!error && expr instanceof Object) {
-            expr = JSON.stringify(expr);
+      if (config_data.lang.length == 1) {
+        $iframe.contents().find("head").html(`
+          <style>
+          #log {
+            font-family: monospace;
+            font-size: 18px;
           }
-          $("#log").append(expr + "<br>");
-        }
-      </script>
-      <script>
-        try {
-          eval(${js});
-        } catch (error) {
-          log(error, true);
-        }
-      </script>
-    `);
+          </style>
+        `);
+        $iframe.contents().find("body").html(`
+          <div id="log"></div>
+        `);
+        let js = "`" + code_set.js + "`";
+        $iframe.contents().find("body").append(`
+          <script>
+            function log(expr, error) {
+              if (!error && expr instanceof Object) {
+                expr = JSON.stringify(expr);
+              }
+              $("#log").append(expr + "<br>");
+            }
+          </script>
+          <script>
+            try {
+              eval(${js});
+            } catch (error) {
+              log(error, true);
+            }
+          </script>
+        `);
+      } else {
+        $iframe.contents().find("body").append(`
+          <script>${code_set.js}</script>
+        `);
+      }
+    }
   });
 })
 
