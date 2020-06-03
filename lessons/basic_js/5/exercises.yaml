@@ -179,9 +179,9 @@
         Write function <strong>swapEnds</strong> that takes an array and returns that array with the first and last elements swapped. 
       type: code
       tests:
-        - "swapFirst([1, 3, 10]) == [10, 3, 1]"
-        - "swapFirst([-2, 0]) == [0, -2]"
-        - "swapFirst([1, 2, 4, 5]) == [5, 2, 4, 1]"
+        - "swapEnds([1, 3, 10]) == [10, 3, 1]"
+        - "swapEnds([-2, 0]) == [0, -2]"
+        - "swapEnds([1, 2, 4, 5]) == [5, 2, 4, 1]"
 
 7:
   questions:
@@ -306,17 +306,17 @@
           }
           return cart;
         }
-        addToCart(cart, 'eggs');
-        addToCart(cart, 'mushrooms');
-        addToCart(cart, 'spinach');
-        addToCart(cart, 'ketchup');
-        addToCart(cart, 'bread');
-        if (cart.includes('eggs') && cart.includes('bread')) {
+        shop_cart = addToCart(shop_cart, 'eggs');
+        shop_cart = addToCart(shop_cart, 'mushrooms');
+        shop_cart = addToCart(shop_cart, 'spinach');
+        shop_cart = addToCart(shop_cart, 'ketchup');
+        shop_cart = addToCart(shop_cart, 'bread');
+        if (shop_cart.includes('eggs') && shop_cart.includes('bread')) {
           can_make_sandwich = true;
         } else {
           can_make_sandwich = false;
         }
-        if (cart.includes('eggs') && cart.includes('mushrooms')) {
+        if (shop_cart.includes('eggs') && shop_cart.includes('mushrooms')) {
           can_make_omelette = true;
         } else {
           can_make_omelette = false;
@@ -358,7 +358,7 @@
         Type the code into the editor below:
         <code lang='js'>
         city = 'Chicago, USA';
-        log(city.charAt(5));
+        log(city[5]);
         log(city.substring(0, 7));
         </code>
       type: code
@@ -366,7 +366,7 @@
         What would be logged by the code below?
         <code lang='js'>
         colors = ['red', 'green', 'blue'];
-        mini = colors[0].charAt(0) + colors[1].charAt(0);
+        mini = colors[0][0] + colors[1][1];
         log(mini);
         </code>
       type: text
