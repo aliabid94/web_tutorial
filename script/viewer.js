@@ -326,7 +326,15 @@ $("body").on('click', '.run_code', function() {
         $iframe.contents().find("body").append(`
           <script>
             function log(expr, error) {
-              if (!error && expr instanceof Object) {
+              if (error) {
+                let reg = /eval at .*:([0-9]+):([0-9]+)/g;
+                let trace_match = reg.exec(expr.stack);
+                let trace_str = "";
+                if (trace_match) {
+                  trace_str = " @ Ln " + trace_match[1] + ", Col " + trace_match[2];
+                }
+                expr = expr + trace_str;
+              } else if (expr instanceof Object) {
                 expr = JSON.stringify(expr);
               }
               $("#log").append(expr + "<br>");
