@@ -259,8 +259,55 @@
       "
       type: code
     - question: "Write code to replicate the demo shown. <ul>
+      <li>User enters a number of dice to roll. Clicking roll will role that number of dice.</li>
+      <li>The images for the dice faces are stored in 'images/dice/1.jpg', 'images/dice/2.jpg', etc.</li>
+      <li>The font used in the page is Verdana.</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          #dice_box {
+            width: 100%;
+            height: 80px;
+            margin-top: 20px;
+            border: solid 2px brown;
+            background-color: wheat;
+          }
+          img {
+            height: 32px;
+            margin: 8px;
+            border-radius: 4px;
+          }        
+        </style>
+      </head>
+      <body>
+        <h3>Dice Roll!</h3>
+        Number of Dice to Roll:
+        <input id='dice_num' type='text'>
+        <button id='roll'>Roll</button>
+        <div id='dice_box'></div>
+      <script src='script/vendor/jquery-3.1.1.min.js'></script>
+      <script>
+        $('#roll').click(function() {
+          $('#dice_box').empty();
+          let roll_count = parseInt($('#dice_num').val());
+          for (let i = 0; i < roll_count; i++) {
+            let roll = Math.floor(Math.random() * 6) + 1;
+            $('#dice_box').append('<img src=\"images/dice/' + roll + '.jpg\">')
+          }
+        })      
+      </script>
+      </body>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown. <ul>
       <li>User can set a name, age and gender.</li>
       <li>Clicking 'Add Entry' will add the set values to the table as single row.</li>
+      <li>The font used in the page is Verdana.</li>
       </ul>"
       demo_code: "<html>
       <head>

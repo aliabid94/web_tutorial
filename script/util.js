@@ -29,6 +29,7 @@ function getRandomSample(range, size) {
 function parseFormattedYAML(str) {
   let pre_replacements = [
     [/#/g, '&#35;'],
+    [/\\"/g, '&quot;'],
     [/<</g, '&lt;'],
     [/<code(.*)>(\r\n|\n|\r) */g, '<code$1>'],
     [/>>/g, '&gt;'],
