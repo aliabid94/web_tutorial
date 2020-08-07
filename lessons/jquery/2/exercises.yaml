@@ -1,0 +1,316 @@
+4:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <div id='value'>0</div>
+        <button id='minus'>-</button>
+        <button id='plus'>+</button>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        #value {
+          font-weight: bold;
+          font-size: 24px;
+        }
+        </code>
+        and the following JS:
+        <code lang='js'>
+        num = 0
+        $('#plus').click(function() {
+          num++;
+          $('#value').text(num);
+        })
+        $('#minus').click(function() {
+          num--;
+          $('#value').text(num);
+        })        
+        </code>
+      type: code
+      autograder: copy
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <h3>To Do List</h3>
+        <ul id='todo'>
+        </ul>
+        <input id='entry' type='text' placeholder='Task...'>
+        <button id='add_task'>Add</button>
+        </code>
+        and the following JS:
+        <code lang='js'>
+        $('#add_task').click(function() {
+          let task = $('#entry').val();
+          $('ul').append('<<li>>' + task + '<</li>>');
+          $('#entry').val('');  
+        })
+        </code>
+      type: code
+      autograder: copy
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <h3>Guess the Number from 0 to 100</h3>
+        <div id='response'></div>
+        <input id='x' type='text'>
+        <button id='guess'>Guess</button>
+        <button id='reset'>New Game</button>
+        </code>
+        and the following JS:
+        <code lang='js'>
+        var secret_num;
+
+        function reset() {
+          // Pick a random number between 1 and 100
+          secret_num = Math.floor(Math.random() * 100) + 1;  
+          $('#response').empty();
+        }
+        reset();
+        $('#reset').click(reset);
+
+        $('#guess').click(function() {
+          let guess_num = parseInt($('#x').val());
+          if (guess_num < secret_num) {
+            statement = 'Too low!';
+          } else if (guess_num > secret_num) {
+            statement = 'Too high!';
+          } else {
+            statement = 'Correct!'
+          }
+          $('#response').text(statement);
+        })
+        </code>
+      type: code
+      autograder: copy
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <h3>Tax Calulator</h3>
+        <label for='income'>Income:</label>
+        <input id='income' type='text'><br>
+        <label for='marital'>Marital Status:</label>
+        <select id='marital'>
+          <option value='s'>Single</option>
+          <option value='m'>Married</option>
+          <option value='d'>Divorced</option>
+        </select><br>
+        <button id='calc'>Calculate</button>
+        <div id='tax'></div>
+        </code>
+        and the following JS:
+        <code lang='js'>
+        $('#calc').click(function() {
+          let income = parseInt($('#income').val());
+          if ($('#marital').val() == 'm') {
+            var married = true;
+          } else {
+            var married = false;
+          }
+          if (married) {
+            $('#tax').text(income * 0.35);
+          } else {
+            $('#tax').text(income * 0.40);  
+          }
+        })
+        </code>
+      type: code
+      autograder: copy
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <h3>Hangman!</h3>
+        <div id='phrase'></div>
+        <input id='letter' maxlength='1' type='text'>
+        <button id='guess'>Guess</button>
+        <h5>Used so far</h5>
+        <div id='used_letters'></div>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        #phrase {
+          font-size: 18px;
+          font-family: monospace;
+        }
+        </code>
+        and the following JS:
+        <code lang='js'>
+        secret_phrase = 'do you love coding'
+        used_letters = []
+
+        function load_phrase() {
+          hidden_phrase = '';
+          for (let letter of secret_phrase) {
+            if (used_letters.includes(letter) || letter == ' ') {
+              hidden_phrase += letter;
+            } else {
+              hidden_phrase += '?';
+            }
+          }
+          $('#phrase').text(hidden_phrase);
+        }
+        load_phrase();
+
+        $('#guess').click(function() {
+          let letter = $('#letter').val();
+          used_letters.push(letter);
+          $('#used_letters').append(letter);
+          load_phrase();
+        })        
+        </code>
+      type: code
+      autograder: copy
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>Clicking the vote buttons increases the tally for each party.</li>
+      <li>The race status is updated after every vote.</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+        #vd {
+          background-color: lightblue;
+        }
+        #vr {
+          background-color: pink;
+        }        
+        </style>
+      </head>
+      <body>
+        <h3>Vote Counter</h3>
+        Democrat: <span id='d'>0</span><br>
+        Republican: <span id='r'>0</span><br>
+        <button id='vd'>Democrat Vote</button>
+        <button id='vr'>Republican Vote</button>
+        <p id='status'></p>
+      <script src='script/vendor/jquery-3.1.1.min.js'></script>
+      <script>
+        d = 0;
+        r = 0;
+
+        function update_status() {
+          if (d > r) {
+            $('#status').text('Democrats leading.');
+          } else if (r > d) {
+            $('#status').text('Republicans leading.');
+          } else {
+            $('#status').text('Tie!');
+          }
+        }
+        update_status();
+
+        $('#vd').click(function() {
+          d++;
+          $('#d').text(d);
+          update_status();  
+        })
+        $('#vr').click(function() {
+          r++;
+          $('#r').text(r);
+          update_status();  
+        })
+      </script>
+      </body>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>User can enter any integer in the text boxes and choose any of the 4 operations.</li>
+      <li>Clicking the equal sign button will produce the result of the calculation.</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+        #a, #b {
+          width: 50px;
+        }
+        </style>
+      </head>
+      <body>
+        <h3>Simple Calculator</h3>
+        <input type='text' id='a'>
+        <select id='op'>
+          <option value='add'>+</option>
+          <option value='sub'>-</option>
+          <option value='mul'>x</option>
+          <option value='div'>/</option>
+        </select>
+        <input type='text' id='b'>
+        <button id='eq'>=</button>
+        <span id='ans'></span>
+      <script src='script/vendor/jquery-3.1.1.min.js'></script>
+      <script>
+        $('#eq').click(function() {
+          let a = parseInt($('#a').val());
+          let b = parseInt($('#b').val());
+          let op = $('#op').val();
+          if (op == 'add') {
+            val = a + b;
+          } else if (op == 'sub') {
+            val = a - b;   
+          } else if (op == 'mul') {
+            val = a * b;
+          } else if (op == 'div') {
+            val = a / b;
+          }
+          $('#ans').text(val);
+        })
+      </script>
+      </body>
+      </html>
+      "
+      type: code
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>User can set a name, age and gender.</li>
+      <li>Clicking 'Add Entry' will add the set values to the table as single row.</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+          body {
+            font-family: Verdana;
+          }
+          td, th {
+            padding: 8px;
+          }
+          #add {
+            background-color: lightblue;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+          }        
+        </style>
+      </head>
+      <body>
+        <h3>Data Entry</h3>
+        <label for='name'>Name: </label>
+        <input type='text' id='name'><br><br>
+        <label for='age'>Age: </label>
+        0<input type='range' id='age' min=0 max=120>120<br><br>
+        <label for='gender'>Gender: </label>
+        <select id='gender'>
+          <option value='m'>Male</option>
+          <option value='f'>Female</option>
+        </select><br><br>
+        <button id='add'>Add Entry</button><br><br>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+          </thead>
+        </table>      
+      <script src='script/vendor/jquery-3.1.1.min.js'></script>
+      <script>
+        $('#add').click(function() {
+          let name = $('#name').val();
+          let age = parseInt($('#age').val());
+          let gender = $('#gender').val();
+          $('table').append('<<tr>><<td>>'+name+'<</td>>'+
+            '<<td>>'+age+'<</td>>'+
+            '<<td>>'+gender+'<</td>><</tr>>'
+            );
+        });      
+      </script>
+      </body>
+      </html>
+      "
+      type: code
