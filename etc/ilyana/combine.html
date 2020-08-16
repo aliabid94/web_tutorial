@@ -7,11 +7,21 @@
   </head>
   <body>
     <a href="/etc/ilyana" id="back">&lt; Back</a>
-    <h1>Counting Apples!</h1>
+    <h1><span id="a"></span> + <span id="b"></span></h1>
     <div class="link">Start</div>
     <main>
-      <div id="basket"></div>
-      <h2>How many apples in the basket?</h2>
+      <div id="basket_sets">      
+        <div class="basket_set" set="1">
+          <img class="tree" src="img/orange_tree.png">
+          <div class="basket"></div>
+          <button class="empty">Empty</button>
+        </div>
+        <div class="basket_set" set="2">
+          <img class="tree" src="img/orange_tree.png">
+          <div class="basket"></div>
+          <button class="empty">Empty</button>
+        </div>
+      </div>        
       <div id="count-buttons"></div>
     </main>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -22,7 +32,8 @@
         reset();
       })
       let max_buttons = 20;
-      let apples = 0;
+      let a = 0;
+      let b = 0;
       for (let i = 0; i < max_buttons; i++) {
         $("#count-buttons").append(`
         <div class="count" num="${i+1}">${i+1}</div>
@@ -32,16 +43,22 @@
         return Math.ceil(Math.random() * max);
       }
       let reset = () => {
-        apples = rand_gen(max_buttons);
-        $("#basket").empty();
-        for (let i = 0; i < apples; i++) {
-          $("#basket").append(`<img src="img/apple.png">`)
-        }
+        a = rand_gen(10);
+        b = rand_gen(10);
+        $(".basket").empty();
+        $("#a").text(a);
+        $("#b").text(b);
       }
+      $(".empty").click(function() {
+        $(this).parent().find(".basket").empty();
+      })
+      $(".tree").click(function() {
+        $(this).parent().find(".basket").append(`<img src="img/orange.png">`);
+      });
       $(".count").click(function() {
         let num = parseInt($(this).attr("num"));
         var target = $(this);
-        if (num == apples) {
+        if (num == a + b) {
           target.addClass("correct");
           window.setTimeout(function() {
             target.removeClass("correct");

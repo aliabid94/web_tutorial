@@ -5,24 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="index.css">
   </head>
-  <body>
+  <body id="full" class="rel">
     <a href="/etc/ilyana" id="back">&lt; Back</a>
-    <h1>Counting Apples!</h1>
-    <div class="link">Start</div>
+    <h1>Falling Leaves</h1>
+    <div mode="easy" class="link">Easy</div>
+    <div mode="medium" class="link">Medium</div>
+    <div mode="hard" class="link">Hard</div>
     <main>
-      <div id="basket"></div>
-      <h2>How many apples in the basket?</h2>
       <div id="count-buttons"></div>
     </main>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script>
+      var mode;
+      var time = "";
+      var evt = null;
       $(".link").click(function() {
+        mode = $(this).attr("mode");
+        if (mode == "easy") {
+          time = "40"
+        } else if (mode == "medium") {
+          time = "30"
+        } else if (mode == "hard") {
+          time = "15"
+        }
         $(".link").hide();
         $("main").show();
         reset();
       })
       let max_buttons = 20;
-      let apples = 0;
+      let a = 0;
+      let b = 0;
       for (let i = 0; i < max_buttons; i++) {
         $("#count-buttons").append(`
         <div class="count" num="${i+1}">${i+1}</div>
@@ -32,21 +44,42 @@
         return Math.ceil(Math.random() * max);
       }
       let reset = () => {
-        apples = rand_gen(max_buttons);
-        $("#basket").empty();
-        for (let i = 0; i < apples; i++) {
-          $("#basket").append(`<img src="img/apple.png">`)
+        $("#leaf").css("top", "-50px");
+        $("#leaf").remove();
+        $("body").append(`
+        <div id="leaf">
+          <span id="a"></span> + <span id="b"></span>
+        </div>
+        `)
+        $("#leaf").css("transition", "top " + time + "s linear");
+        window.setTimeout(function() {
+          $("#leaf").css("left", rand_gen(60) + "%");
+          $("#leaf").css("top", "100%");
+        }, 1)
+        let max = (mode == "easy" ? 5 : 10)
+        a = rand_gen(max);
+        b = rand_gen(max);
+        $("#a").text(a);
+        $("#b").text(b);
+        if (evt) {
+          window.clearTimeout(evt);
         }
+        evt = window.setTimeout(function() {
+          reset();
+          var obj = document.createElement("audio");
+          obj.src = "wrong.mp3"; 
+          obj.play(); 
+        }, time * 1000)
       }
       $(".count").click(function() {
         let num = parseInt($(this).attr("num"));
         var target = $(this);
-        if (num == apples) {
+        if (num == a + b) {
           target.addClass("correct");
           window.setTimeout(function() {
             target.removeClass("correct");
-            reset();
-          }, 500)
+          }, 500)          
+          reset();
           var obj = document.createElement("audio");
           obj.src = "right.wav"; 
           obj.play(); 
