@@ -1,0 +1,118 @@
+body {
+    background-image: url("img/bg.jpg");
+    background-size: cover;
+    padding: 20px 40px;
+    text-align: center;
+    font-family: "Comic Sans MS";
+}
+* {
+    font-family: inherit;
+}
+h1 {
+    font-size: 60px;
+}
+.link {
+    background-color: darkorange;
+    border: solid 4px orange;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    padding: 10px 40px;
+    color: white;
+    display: block;
+    width: 400px;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px auto;
+    cursor: pointer;
+}
+.link img {
+    height: 44px;
+    margin-right: 24px;
+    vertical-align: middle;
+}
+.link:hover {
+    font-size: 32px;
+}
+#back {
+    display: block;
+    text-decoration: none;
+    text-align: left;
+}
+main {
+    display: none;
+    position: relative;
+}
+#basket {
+    width: 800px;
+    height: 160px;
+    background-color: gold;
+    border: solid 4px orange;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+#basket img {
+    height: 48px;
+    width: 48px;
+    margin: 14px;
+}
+#count-buttons {
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+.count {
+    cursor: pointer;
+    display: inline-block;
+    border: solid 4px gray;
+    background-color: lightgray;
+    border-radius: 4px;
+    padding: 8px;
+    width: 40px;
+    font-size: 24px;
+    transition: all 0.2s ease;
+    margin: 16px;
+    font-weight: bold;
+}
+.count:hover {
+    background-color: coral;
+    border-color: gold;
+}
+.count.incorrect {
+    background-color: red !important;
+    border-color: red !important;
+}
+.count.correct {
+    background-color: green !important;
+    border-color: green !important;
+}
+#trees {
+    position: fixed;
+    bottom: 0;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+#trees img {
+    cursor: pointer;
+}
+#empty, #done {
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 24px;
+    transition: all 0.2s ease;
+    margin: 16px;
+    font-weight: bold;
+}
+#done {
+    border: solid 4px green;
+    background-color: lightgreen;
+}
+#empty {
+    border: solid 4px red;
+    background-color: pink;
+}

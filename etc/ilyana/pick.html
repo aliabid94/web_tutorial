@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ilyana Goes to the Orchard!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  <body>
+    <a href="/etc/ilyana" id="back">&lt; Back</a>
+    <h1><span id="count"></span> <span id="fruit"></span></h1>
+    <div class="link">Start</div>
+    <main>
+      
+      <div id="basket"></div>
+      <button id="empty">Empty</button>
+      <button id="done">Done</button>
+      <div id="trees">
+        <img fruit="apple" src="img/apple_tree.png">
+        <img fruit="orange" src="img/orange_tree.png">
+        <img fruit="lemon" src="img/lemon_tree.png">
+        <img fruit="blueberry" src="img/blueberry_tree.png">
+      </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script>
+      $(".link").click(function() {
+        $(".link").hide();
+        $("main").show();
+      })
+      let fruits = ["apple", "orange", "lemon", "blueberry"];
+      let colors = ["red", "orange", "gold", "blue"];
+      let fruits_pl = ["apples", "oranges", "lemons", "blueberries"];
+      let max_buttons = 20;
+      let fruit = "";
+      let count = 0;
+      let basket = [];
+      let rand_gen = (max) => {
+        return Math.ceil(Math.random() * max);
+      }
+      let reset = () => {
+        count = rand_gen(max_buttons);
+        let fruit_index = rand_gen(fruits.length) - 1;
+        fruit = fruits[fruit_index];
+        fruit_pl = fruits_pl[fruit_index];
+        color = colors[fruit_index];
+        basket = [];
+        $("#basket").empty();
+        $("#count").text(count);
+        $("#fruit").text(fruit_pl);
+        $("#fruit").css("color", color);
+      }
+      reset();
+      $("#empty").click(function() {
+        $("#basket").empty();
+        basket = [];
+      })
+      $("#done").click(function() {
+        target = $("#done");
+        if (basket.length == count && basket[0] == fruit) {
+          target.addClass("correct");
+          window.setTimeout(function() {
+            target.removeClass("correct");
+            reset();
+          }, 500)
+          var obj = document.createElement("audio");
+          obj.src = "right.wav"; 
+          obj.play(); 
+        } else {
+          target.addClass("incorrect");
+          window.setTimeout(function() {
+            target.removeClass("incorrect");
+          }, 500)
+          var obj = document.createElement("audio");
+          obj.src = "wrong.mp3"; 
+          obj.play(); 
+        }
+      })
+      $("#trees img").click(function() {
+        if (basket.length >= max_buttons) {
+          return;
+        }
+        let fruit = $(this).attr("fruit");
+        basket.push(fruit);
+        $("#basket").append(`<img src="img/${fruit}.png">`);
+      });
+      var play = false;
+      $("body").on("click", function() {
+        if (play) {
+          return;
+        }
+        var obj = document.createElement("audio");
+        obj.src = "bg.mp3"; 
+        obj.loop = true;
+//        obj.play(); 
+        play = true;
+      })
+
+    </script>
+  </body>
+</html>
+
