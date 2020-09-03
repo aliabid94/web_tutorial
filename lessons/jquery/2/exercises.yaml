@@ -361,3 +361,260 @@
       </html>
       "
       type: code
+
+5:
+  questions:
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <h3>Survey</h3>
+        <p>Thank you for staying with us! Please rate your stay:</p>
+        <img src='images/happiest.png'>
+        <img src='images/happy.png'>
+        <img src='images/content.png'>
+        <img src='images/sad.png'>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        img {
+          height: 32px;
+          margin-right: 12px;
+        }
+        .selected {
+          background-color: gold;
+        }
+        </code>
+        and the following JS:
+        <code lang='js'>
+        $('img').click(function() {
+          $('img').removeClass('selected');
+          $(this).addClass('selected')
+        })
+        </code>
+      type: code
+      autograder: copy
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <h3>Cash Counter</h3>
+        <div id='coins'></div>
+        <div id='bills'></div>
+        Total: $<span id='total'>0.00</span>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        .coin {
+          padding: 10px;
+          border-radius: 50%;
+          background-color: lightgray;
+        }
+        .bill {
+          padding: 10px 40px;
+          background-color: #2ECC71;  
+        }
+        .coin, .bill {
+          cursor: pointer;
+          display: inline-block;
+          margin-right: 20px;
+          margin-bottom: 20px;
+          font-weight: bold;
+        }
+        </code>
+        and the following JS:
+        <code lang='js'>
+        total = 0;
+        coins = [1, 5, 10, 25];
+        bills = [1, 2, 5, 10, 20, 100];
+        for (let coin of coins) {
+          $('#coins').append('<<div class=coin>>' + coin + '<</div>>')          
+        }
+        for (let bill of bills) {
+          $('#bills').append('<<div class=bill>>' + bill + '<</div>>')          
+        }
+        $('.coin').click(function() {
+          total += parseInt($(this).text()) / 100;
+          $('#total').text(total.toFixed(2));
+        })
+        $('.bill').click(function() {
+          total += parseInt($(this).text());
+          $('#total').text(total.toFixed(2));
+        })
+        </code>
+      type: code
+      autograder: copy
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <h3>Pizza Maker</h3>
+        <p>Please select your toppings:</p>
+        <div class='topping' food_type='veg'>Olives</div>
+        <div class='topping' food_type='veg'>Onion</div>
+        <div class='topping' food_type='meat'>Pepperoni</div>
+        <div class='topping' food_type='veg'>Cheese</div>
+        <div class='topping' food_type='meat'>Beef</div>
+        <div class='topping' food_type='veg'>Pineapple</div>
+        <p>
+          Type: <span id='type'>-</span>
+        </p>
+        <p>
+          Topping Count: <span id='top_count'>0</span>
+        </p>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        body {
+          font-family: Verdana;
+        }
+        .topping {
+          background-color: lightgray;
+          border-radius: 4px;
+          padding: 12px;
+          display: inline-block;
+          margin-right: 8px;
+          margin-bottom: 8px;
+          cursor: pointer;
+        }
+        .selected {
+          background-color: lightblue;
+        }
+        </code>
+        and the following JS:
+        <code lang='js'>
+        topping_count = 0;
+        type = 'vegetarian';
+
+        $('.topping').click(function() {
+          if ($(this).hasClass('selected')) {
+            return;
+          }
+          $(this).addClass('selected');
+          topping_count += 1;
+          if ($(this).attr('food_type') == 'meat') {
+            type = 'meat';
+          }
+          $('#top_count').text(topping_count);
+          $('#type').text(type);
+        });
+        </code>
+      type: code
+      autograder: copy
+    - question: |*
+        Type the following HTML:
+        <code lang='html'>
+        <h3>Tic-Tac-Toe</h3>
+        <div class='row'>
+          <div class='cell'>-</div>
+          <div class='cell'>-</div>  
+          <div class='cell'>-</div>
+        </div>
+        <div class='row'>
+          <div class='cell'>-</div>
+          <div class='cell'>-</div>  
+          <div class='cell'>-</div>
+        </div>
+        <div class='row'>
+          <div class='cell'>-</div>
+          <div class='cell'>-</div>  
+          <div class='cell'>-</div>
+        </div>
+        <button id='reset'>Reset</button>
+        </code>
+        and the following CSS:
+        <code lang='css'>
+        body {
+          font-family: monospace;
+        }
+        .cell {
+          display: inline-block;
+          padding: 8px 12px;
+          text-align: center;
+          margin: 2px;
+          font-size: 24px;
+          background-color: lightgray;
+        }
+        #reset {
+          padding: 8px;
+          margin-top: 12px;
+          background-color: pink;
+          border: none;
+        }
+        </code>
+        and the following JS:
+        <code lang='js'>
+        turn = 'O';
+
+        $('.cell').click(function() {
+          if ($(this).text() != '-') {
+            return;
+          }
+          $(this).text(turn);
+          if (turn == 'O') {
+            turn = 'X'
+          } else {
+            turn = 'O'
+          }
+        })
+
+        $('#reset').click(function() {
+          $('.cell').text('-');
+        })
+        </code>
+      type: code
+      autograder: copy
+    - question: "Write code to replicate the demo shown. <ul>
+      <li>Clicking on a key will add the letter to the text.</li>
+      <li>The font used is monospace.</li>
+      </ul>"
+      demo_code: "<html>
+      <head>
+        <style>
+        body {
+          font-family: monospace;
+          text-align: center;
+        }
+
+        .key {
+          background-color: lightgray;
+          padding: 8px;
+          margin: 4px;
+          display: inline-block;
+        }
+
+        #space {
+          width: 200px;
+        }
+
+        #text {
+          font-size: 24px;
+        }
+        </style>
+      </head>
+      <body>
+        <h3>Typewriter</h3>
+        <div id='text'></div>
+        <div id='row0'></div>
+        <div id='row1'></div>
+        <div id='row2'></div>
+        <div id='space' class='key'> </div>      
+      <script src='script/vendor/jquery-3.1.1.min.js'></script>
+      <script>
+      keyboard = [
+        'qwertyuiop',
+        'asdfghjkl',
+        'zxcvbnm'
+      ]
+
+      for (let [i, row] of keyboard.entries()) {
+        for (let letter of row) {
+          $('#row'+i).append('<div class=key>' + letter + '</div>');
+        }
+      }
+
+      $('.key').click(function() {
+        $('#text').append($(this).text());
+      })
+      </script>
+      </body>
+      </html>
+      "
+      type: code

@@ -30,6 +30,7 @@ function parseFormattedYAML(str) {
   let pre_replacements = [
     [/#/g, '&#35;'],
     [/\\"/g, '&quot;'],
+    [/\\`/g, '&#96;'],
     [/<</g, '&lt;'],
     [/<code(.*)>(\r\n|\n|\r) */g, '<code$1>'],
     [/>>/g, '&gt;'],
@@ -50,7 +51,7 @@ function parseFormattedYAML(str) {
   try {
     return JSON.parse(replaced_string_data)
   } catch (e) {
-    console.log(e);
+    console.error(e)
     console.log(replaced_string_data)
   }
 }
