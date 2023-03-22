@@ -109,19 +109,19 @@ function autoupload() {
 
 var username = "";
 $("body").on('click', '.exercise_link', function() {
-  if (!username) {
-    if (adminview) {
-      username = encode(adminview);
-      api.init();      
-    } else if (isLoggedIn) {
-      username = encode(profile.getEmail());
-      api.init();
-      window.setInterval(autoupload, 3000)
-    } else {
-      alert("Please sign in.")
-      return
-    }
-  }
+  // if (!username) {
+  //   if (adminview) {
+  //     username = encode(adminview);
+  //     api.init();      
+  //   } else if (isLoggedIn) {
+  //     username = encode(profile.getEmail());
+  //     api.init();
+  //     window.setInterval(autoupload, 3000)
+  //   } else {
+  //     alert("Please sign in.")
+  //     return
+  //   }
+  // }
   $(".exercise_set").hide();
   $(".exercise_link").removeClass("active_exercise").removeClass("blue");
   if (!$(this).hasClass("complete_exercise")) {
